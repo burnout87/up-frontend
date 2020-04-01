@@ -32,7 +32,7 @@ export class MapComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.onChanges.next(changes);
+    
   }
 
   ngAfterViewInit(): void {

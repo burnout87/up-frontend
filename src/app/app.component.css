@@ -1,4 +1,46 @@
 
+  .menu-item {
+    position: absolute;
+    width: 51px;
+    height: 25px;
+    left: 1181px;
+    top: 28px;
+    
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    /* identical to box height */
+    color: #000000;
+  }
+
+  .container-image {
+    position: absolute;
+    width: 271px;
+    height: 43px;
+    left: 124px;
+    top: 16px;
+    
+    font-family: Sen;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 43px;
+    
+    color: #000000;
+  }
+
+  .container {
+    position: absolute;
+    width: 1440px;
+    height: 84px;
+    left: 0px;
+    top: 0px;
+
+    background: #FECE2F;
+  }
+
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;

@@ -1,0 +1,6 @@
+<h2>Negozianti</h2>
+<ul *ngFor="let negoziante of negozianti">
+  <li>
+    <a routerLink="/negozianti/{{negoziante.id}}">{{negoziante.name}}</a>
+  </li>
+</ul>

@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { StorieComponent } from './storie/storie.component';
 import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
 import { DomandeComponent } from './domande/domande.component';
+import { NegozianteComponent } from './negoziante/negoziante.component'
+import { NegoziantiComponent } from './negozianti/negozianti.component'
 
 
 const routes: Routes = [
@@ -17,14 +19,24 @@ const routes: Routes = [
   {
     path: 'domande',
     component: DomandeComponent
+  },
+  {
+    path: 'negozianti',
+    component: NegoziantiComponent
+  },
+  {
+    path: 'negozianti/:id',
+    component: NegozianteComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabled'
+})],
   exports: [RouterModule]
 })
 
 export class AppRoutingModule { }
 
-export const routingComponents = [ChiSiamoComponent, StorieComponent, DomandeComponent]
+export const routingComponents = [ChiSiamoComponent, StorieComponent, DomandeComponent, NegozianteComponent, NegoziantiComponent]

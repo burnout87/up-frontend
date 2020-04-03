@@ -7,16 +7,16 @@
 
     <nav>
         <ul>
-            <li class="menu-item"><a href="https://www.unitipossiamo.it/">Home</a></li>
-            <li class="menu-item"><a routerLink='/chi-siamo'>Chi siamo</a></li>
-            <li class="menu-item"><a routerLink='/domande'>Domande?</a></li>
-            <li class="menu-item"><a routerLink='/storie'>Storie</a></li>
+            <li><a routerLink='/'>Home</a></li>
+            <li><a routerLink='/chi-siamo'>Chi siamo</a></li>
+            <li><a routerLink='/domande'>Domande?</a></li>
+            <li><a routerLink='/storie'>Storie</a></li>
         </ul>
     </nav> 
 
-<div class="content" role="main">
+<!-- <div class="content" role="main">
     <app-map *ngIf="router.url == '/'"></app-map>
-</div>
+</div> -->
 
 <router-outlet></router-outlet>
 <!-- Router view goes here -->

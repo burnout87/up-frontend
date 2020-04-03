@@ -16,7 +16,7 @@ import { DomandeComponent } from './domande/domande.component';
     DomandeComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule
   ],
   providers: [],

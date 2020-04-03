@@ -14,9 +14,15 @@
         </ul>
     </nav> 
 
-<!-- <div class="content" role="main">
-    <app-map *ngIf="router.url == '/'"></app-map>
-</div> -->
+<div class="content" role="main">
+    <agm-map *ngIf="isBrowser && router.url == '/'"
+            [latitude]='latitude' 
+            [longitude]='longitude' 
+            [mapTypeId]='mapType'
+            [zoom]='zoom'>
+    </agm-map>
+</div> 
+
 
 <router-outlet></router-outlet>
 <!-- Router view goes here -->

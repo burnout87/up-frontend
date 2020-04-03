@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "up-frontend:build"
+            "browserTarget": "upFrontend:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "up-frontend:build:production"
+              "browserTarget": "upFrontend:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "up-frontend:build"
+            "browserTarget": "upFrontend:build"
           }
         },
         "test": {
@@ -111,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "up-frontend:serve"
+            "devServerTarget": "upFrontend:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "up-frontend:serve:production"
+              "devServerTarget": "upFrontend:serve:production"
             }
           }
         },
@@ -144,5 +144,5 @@
         }
       }
     }},
-  "defaultProject": "up-frontend"
+  "defaultProject": "upFrontend"
 }

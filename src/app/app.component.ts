@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +10,16 @@ import { Router } from '@angular/router';
 })
 
 export class AppComponent {
-  title = 'up-frontend';
+  title = 'upFrontend';
   router: Router;
+  isBrowser: boolean;
+  latitude = -28.68352;
+  longitude = -147.20785;
+  mapType = 'terrain';
+  zoom = 5;
 
-  constructor(private _router: Router){
-
+  constructor(private _router: Router, @Inject(PLATFORM_ID) platformId: Object){
+    this.isBrowser = isPlatformBrowser(platformId);
     this.router = _router; 
   }
 

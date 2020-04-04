@@ -20,4 +20,8 @@ export class ConnectivityService {
     return this.http.get(environment.posts);
   }
 
+  public getPost(id: Number): Rx.Observable<object> {
+    return this.http.get(environment.posts + '/' + id);
+  }
+
 }

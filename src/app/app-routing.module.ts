@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StorieComponent } from './storie/storie.component';
+import { StoriaComponent } from './storia/storia.component';
 import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
 import { DomandeComponent } from './domande/domande.component';
 import { NegozianteComponent } from './negoziante/negoziante.component'
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'storie',
     component: StorieComponent
+  },
+  {
+    path: 'storie/:id',
+    component: StoriaComponent
   },
   {
     path: 'domande',
@@ -39,4 +44,4 @@ const routes: Routes = [
 
 export class AppRoutingModule { }
 
-export const routingComponents = [ChiSiamoComponent, StorieComponent, DomandeComponent, NegozianteComponent, NegoziantiComponent]
+export const routingComponents = [ChiSiamoComponent, StorieComponent, StoriaComponent, DomandeComponent, NegozianteComponent, NegoziantiComponent]

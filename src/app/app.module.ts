@@ -15,8 +15,7 @@ import { ConnectivityService } from './connectivity.service';
     AppComponent,
     MapComponent,
     ProviderComponent,
-    routingComponents,
-    DomandeComponent
+    routingComponents
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

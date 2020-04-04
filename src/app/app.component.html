@@ -1,4 +1,7 @@
 <div class="contaier">
+
+<div class="header">
+
     <div class="container-image">
         <a routerLink='/'>
             <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/Logo-Header.svg" class="attachment-full size-full" alt="" />
@@ -12,16 +15,19 @@
             <li><a routerLink='/domande'>Domande?</a></li>
             <li><a routerLink='/storie'>Storie</a></li>
         </ul>
-    </nav> 
+    </nav>
+
+</div>
 
 <div class="content" role="main">
     <agm-map *ngIf="isBrowser && router.url == '/'"
-            [latitude]='latitude' 
-            [longitude]='longitude' 
+            [latitude]='latitude'
+            [longitude]='longitude'
             [mapTypeId]='mapType'
             [zoom]='zoom'>
+            <agm-marker *ngFor="let marker of location.markers" [latitude]="marker.lat" [longitude]="marker.lng"></agm-marker>
     </agm-map>
-</div> 
+</div>
 
 
 <router-outlet></router-outlet>

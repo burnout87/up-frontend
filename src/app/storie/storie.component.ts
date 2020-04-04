@@ -11,12 +11,6 @@ export class StorieComponent implements OnInit {
   storie:Array<Storia> = new Array();
 
   constructor(private wsService: ConnectivityService) { 
-  }
-
-  ngOnInit() {
-  }
-
-  ngAfterViewInit(): void {
     this.wsService.getListPosts().subscribe((wpStorie:any) => {
       wpStorie.forEach((wpStoria: any)  => {
         var storia: Storia = {
@@ -51,6 +45,13 @@ export class StorieComponent implements OnInit {
         this.storie.push(storia);
       });
     });
+  }
+
+  ngOnInit() {
+  }
+
+  ngAfterViewInit(): void {
+    
   }
 
 }

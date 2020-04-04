@@ -1,27 +1,30 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import * as Rx from "rxjs";
-import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { isPlatformBrowser } from '@angular/common';
 
-const headers = new HttpHeaders()
-      // .append('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,DELETE,PUT')
-      // .append('Access-Control-Allow-Origin', '*')
-      .append('responseType', 'text/plain');
+const headers = new HttpHeaders();
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConnectivityService {
 
-  constructor(private http: HttpClient) { }
+  isBrowser: boolean;
+
+  constructor(private http: HttpClient, @Inject(PLATFORM_ID) platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
+    if(this.isBrowser)
+      headers.append('Origin', 'X-Requested-With');
+   }
 
   public getListPosts(): Rx.Observable<object> {
-    return this.http.get(environment.posts);
+    return this.http.get(environment.posts, { headers: headers });
   }
 
   public getPost(id: Number): Rx.Observable<object> {
-    return this.http.get(environment.posts + '/' + id);
+    return this.http.get(environment.posts + '/' + id, { headers: headers });
   }
 
 }

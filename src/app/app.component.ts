@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
@@ -9,7 +9,7 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'upFrontend';
   router: Router;
   isBrowser: boolean;
@@ -17,20 +17,25 @@ export class AppComponent implements OnInit{
   longitude = 12.8701779;
   mapType = 'roadmap';
   zoom = 5;
+  location: Location;
 
   // init map
   // TODO load data from API
   // check -> this.http.get<Address>("url")
   ngOnInit() {
           this.location = {
+            zoom: 5,
+            latitude: 41.6650266,
+            longitude: 12.8701779,
+            mapType:'roadmap',
             markers : [{
                           lat: 41.6650266,
                           lng: 12.8701779
                       },
                       {
-                                    lat: 45.6650266,
-                                    lng: 12.8701779
-                                }]
+                          lat: 45.6650266,
+                          lng: 12.8701779
+                      }]
           }
         }
 
@@ -49,7 +54,7 @@ interface Marker {
 interface Location {
     latitude: number;
     longitude: number;
-    mapType: ?string;
-    zoom: ?number;
-    marker: Marker;
+    mapType: string;
+    zoom: number;
+    markers: Marker[];
 }

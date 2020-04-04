@@ -42,8 +42,6 @@
     width: 100%;
     left: 0px;
     top: 0px;
-
-    background: #FECE2F;
   }
 
   :host {
@@ -373,4 +371,14 @@
   .header-extra{
     padding:20px;
     width:100%;
+  }
+  .header-extra p{
+    padding:20px;
+  }
+  h1{
+    color: #1E1E1E;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 20px;
   }

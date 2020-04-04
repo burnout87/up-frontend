@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  posts: 'https://cors-anywhere.herokuapp.com/https://unitipossiamo.it/wp-json/wp/v2/posts'
 };
 
 /*
@@ -14,3 +15,10 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+// <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js)$">
+//     Header set Access-Control-Allow-Origin "*"
+//     Header set Access-Control-Allow-Methods: "*"
+//     Header set Access-Control-Allow-Headers: "*"
+// </FilesMatch>

@@ -1,1 +1,7 @@
-<p>storie works!</p>
+<h2>Storie</h2>
+<ul *ngFor="let storia of storie">
+  <li>
+    <h3 innerHtml="{{storia.title}}"></h3>
+    <p innerHtml="{{storia.content}}"></p>
+  </li>
+</ul>

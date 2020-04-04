@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule , routingComponents} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { ProviderComponent } from './provider/provider.component';
 import { DomandeComponent } from './domande/domande.component';
+import { ConnectivityService } from './connectivity.service';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { DomandeComponent } from './domande/domande.component';
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDgbhE4JU0eLfjTogXctQkSZIEh-3x5Q-4'
       /* apiKey is required, unless you are a 
@@ -27,7 +30,7 @@ import { DomandeComponent } from './domande/domande.component';
       */
     })
   ],
-  providers: [],
+  providers: [ConnectivityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

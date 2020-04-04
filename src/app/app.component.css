@@ -1,6 +1,6 @@
 
   agm-map {
-    width: 400px;
+    width: 100%;
     height: 400px;
   }
 
@@ -356,4 +356,11 @@
   }
   .header-extra{
     padding:0;
+  }
+  .homeview{
+    margin-top:0;
+  }
+  .content{
+    padding:0;
+    margin:0;
   }

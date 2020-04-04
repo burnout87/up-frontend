@@ -21,6 +21,8 @@
 
 <div class="content" role="main">
 
+  <div class="homeview" *ngIf="isBrowser && router.url == '/'">
+
     <div class="header-extra yellowbg">
     <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-teamwork-in-office-300x300.png" class="attachment-medium size-medium" alt="" srcset="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-teamwork-in-office-300x300.png 300w, https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-teamwork-in-office-150x150.png 150w, https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-teamwork-in-office-768x767.png 768w, https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-teamwork-in-office.png 912w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="300">
     <h1 class="elementor-heading-title elementor-size-default">Il primo aggregatore italiano che aiuta le aziende durante l'emergenza COVID-19</h1>
@@ -34,7 +36,7 @@
     </div>
 
     <p>Aiutaci a far conoscere il servizio:</p>
-    
+
     <a class="" href="https://www.facebook.com/sharer/sharer.php?u=https://unitipossiamo.it/" target="_blank">
         <span class="elementor-screen-only">Facebook</span>
         <i class="fab fa-facebook"></i>
@@ -48,7 +50,7 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <agm-map *ngIf="isBrowser && router.url == '/'"
+    <agm-map
             [latitude]='location.latitude'
             [longitude]='location.longitude'
             [mapTypeId]='location.mapType'
@@ -56,8 +58,10 @@
             <agm-marker *ngFor="let marker of location.markers" [latitude]="marker.lat" [longitude]="marker.lng"></agm-marker>
     </agm-map>
 
+    </div>
+
+    <router-outlet></router-outlet>
+
 </div>
 
-
-<router-outlet></router-outlet>
 <!-- Router view goes here -->

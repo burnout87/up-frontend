@@ -4,27 +4,40 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { isPlatformBrowser } from '@angular/common';
 
-const headers = new HttpHeaders();
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConnectivityService {
-
+  
+  headers = new HttpHeaders()
+        .append('Origin', 'X-Requested-With');
   isBrowser: boolean;
 
   constructor(private http: HttpClient, @Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
-    if(this.isBrowser)
-      headers.append('Origin', 'X-Requested-With');
    }
 
   public getListPosts(): Rx.Observable<object> {
-    return this.http.get(environment.posts, { headers: headers });
+    if(!this.isBrowser) {
+      console.log('Not in the browser');
+      return this.http.get(environment.posts, { headers: this.headers });
+    }
+    else {
+      console.log('In the browser');
+      return this.http.get(environment.posts);
+    }
   }
 
   public getPost(id: Number): Rx.Observable<object> {
-    return this.http.get(environment.posts + '/' + id, { headers: headers });
+    if(!this.isBrowser) {
+      console.log('Not in the browser');
+      return this.http.get(environment.posts + '/' + id, { headers: this.headers });
+    }
+    else {
+      console.log('In the browser');
+      return this.http.get(environment.posts + '/' + id);
+    }
   }
 
 }

@@ -1,6 +1,6 @@
 <div class="contaier">
 
-<div class="header">
+<div class="header yellowbg">
 
     <div class="container-image">
         <a routerLink='/'>
@@ -20,6 +20,19 @@
 </div>
 
 <div class="content" role="main">
+
+<div class="header-extra yellowbg">
+  <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-teamwork-in-office-300x300.png" class="attachment-medium size-medium" alt="" srcset="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-teamwork-in-office-300x300.png 300w, https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-teamwork-in-office-150x150.png 150w, https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-teamwork-in-office-768x767.png 768w, https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-teamwork-in-office.png 912w" sizes="(max-width: 300px) 100vw, 300px" width="300" height="300">
+  <h1 class="elementor-heading-title elementor-size-default">Il primo aggregatore italiano che aiuta le aziende durante l'emergenza COVID-19</h1>
+
+  <div>
+					<div>
+            <p>Vuoi <b>aiutare un commerciante</b>? Esplora la mappa e trova il negozio più vicino a te</p><p>Se sei un <strong>venditore</strong>, trova l’iniziativa che fa per te e registra la tua attività… <strong>è gratis!</strong></p>
+          </div>
+				</div>
+
+</div>
+
     <agm-map *ngIf="isBrowser && router.url == '/'"
             [latitude]='latitude'
             [longitude]='longitude'
@@ -27,6 +40,7 @@
             [zoom]='zoom'>
             <agm-marker *ngFor="let marker of location.markers" [latitude]="marker.lat" [longitude]="marker.lng"></agm-marker>
     </agm-map>
+
 </div>
 
 

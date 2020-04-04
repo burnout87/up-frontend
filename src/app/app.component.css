@@ -1,5 +1,5 @@
 
-  agm-map { 
+  agm-map {
     width: 400px;
     height: 400px;
   }
@@ -10,7 +10,7 @@
     height: 25px;
     left: 1181px;
     top: 28px;
-    
+
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
@@ -21,18 +21,19 @@
   }
 
   .container-image {
-    position: absolute;
+    /*position: absolute;*/
+    position: relative;
     width: 271px;
     height: 43px;
     left: 124px;
     top: 16px;
-    
+
     font-family: Sen;
     font-style: normal;
     font-weight: 800;
     font-size: 36px;
     line-height: 43px;
-    
+
     color: #000000;
   }
 
@@ -338,4 +339,21 @@
       display: none;
       visibility: hidden;
     }
+  }
+
+  /* O  O */
+  /* --- */
+  body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .yellowbg{
+    background:#fece2f;
+  }
+  .container-image img{
+      width:100%;
+  }
+  .header-extra{
+    padding:0;
   }

@@ -364,3 +364,10 @@
     padding:0;
     margin:0;
   }
+  .banner-share{
+    background:black;
+    width:100%;
+    color:white;
+    font-weight: 600;
+    padding:20px;
+  }

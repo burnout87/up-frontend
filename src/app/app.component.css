@@ -1,22 +1,12 @@
-  .menu-item {
-    position: absolute;
-    width: 51px;
-    height: 25px;
-    left: 1181px;
-    top: 28px;
-
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 25px;
-    /* identical to box height */
-    color: #000000;
-  }
-
   .container-image {
     float: left;
-    width: 200px;
+    padding: 20px;
+    margin: auto;
+  }
+
+  .container-image-header {
+    width: 100px;  
+    float: left;
     padding: 20px;
     margin: auto;
   }
@@ -104,9 +94,6 @@
     align-items: center;
   }
 
-
-  /* O  O */
-  /* --- */
   body{
     width: 100%;
     padding: 0;
@@ -129,9 +116,8 @@
     padding:0;
     width:100%;
   }
-  .homeview{
-    margin-top:0;
-  }
+
+
   .content{
     padding:0;
     margin:0;

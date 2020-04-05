@@ -1,16 +1,14 @@
 .map-container {
   position: relative;
   margin: 30px;
+  height: 450px;
+  width: 850px;
 }
 
 .map-frame {
   border: 2px solid black;
 }
 
-#map {
-  height: 450px;
-  width: 850px;
-}
 
 agm-map {
   height: 400px;

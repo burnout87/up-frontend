@@ -11,10 +11,25 @@ export class MapComponent implements OnInit {
 
   private map;
   private onChanges = new Subject<SimpleChanges>();
+  private location: Location;
 
   constructor() { }
 
   ngOnInit() {
+    this.location = {
+      zoom: 5,
+      latitude: 41.6650266,
+      longitude: 12.8701779,
+      mapType:'roadmap',
+      markers : [{
+                    lat: 41.6650266,
+                    lng: 12.8701779
+                },
+                {
+                    lat: 45.6650266,
+                    lng: 12.8701779
+                }]
+    }
   }
 
   public cleanMap() {
@@ -33,4 +48,17 @@ export class MapComponent implements OnInit {
   getMapBounds() {
   }
 
+}
+
+interface Marker {
+    lat: number;
+    lng: number;
+}
+
+interface Location {
+    latitude: number;
+    longitude: number;
+    mapType: string;
+    zoom: number;
+    markers: Marker[];
 }

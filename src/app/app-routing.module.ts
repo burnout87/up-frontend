@@ -6,12 +6,17 @@ import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
 import { DomandeComponent } from './domande/domande.component';
 import { NegozianteComponent } from './negoziante/negoziante.component'
 import { NegoziantiComponent } from './negozianti/negozianti.component'
+import { AiutaciComponent } from './aiutaci/aiutaci.component';
 
 
 const routes: Routes = [
   {
     path:  'chi-siamo',
     component: ChiSiamoComponent
+  },
+  {
+    path: 'aiutaci',
+    component: AiutaciComponent
   },
   {
     path: 'storie',
@@ -44,4 +49,4 @@ const routes: Routes = [
 
 export class AppRoutingModule { }
 
-export const routingComponents = [ChiSiamoComponent, StorieComponent, StoriaComponent, DomandeComponent, NegozianteComponent, NegoziantiComponent]
+export const routingComponents = [ChiSiamoComponent, StorieComponent, StoriaComponent, DomandeComponent, NegozianteComponent, NegoziantiComponent, AiutaciComponent]

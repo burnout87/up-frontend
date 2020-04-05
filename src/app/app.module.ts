@@ -10,13 +10,15 @@ import { ProviderComponent } from './provider/provider.component';
 import { DomandeComponent } from './domande/domande.component';
 import { ConnectivityService } from './connectivity.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AiutaciComponent } from './aiutaci/aiutaci.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     ProviderComponent,
-    routingComponents
+    routingComponents,
+    AiutaciComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

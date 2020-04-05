@@ -13,48 +13,12 @@ export class AppComponent implements OnInit {
   title = 'upFrontend';
   router: Router;
   isBrowser: boolean;
-  latitude = 41.6650266;
-  longitude = 12.8701779;
-  mapType = 'roadmap';
-  zoom = 5;
-  location: Location;
 
-  // init map
-  // TODO load data from API
-  // check -> this.http.get<Address>("url")
-  ngOnInit() {
-          this.location = {
-            zoom: 5,
-            latitude: 41.6650266,
-            longitude: 12.8701779,
-            mapType:'roadmap',
-            markers : [{
-                          lat: 41.6650266,
-                          lng: 12.8701779
-                      },
-                      {
-                          lat: 45.6650266,
-                          lng: 12.8701779
-                      }]
-          }
-        }
+  ngOnInit() { }
 
   constructor(private _router: Router, @Inject(PLATFORM_ID) platformId: Object){
     this.isBrowser = isPlatformBrowser(platformId);
     this.router = _router;
   }
 
-}
-
-interface Marker {
-    lat: number;
-    lng: number;
-}
-
-interface Location {
-    latitude: number;
-    longitude: number;
-    mapType: string;
-    zoom: number;
-    markers: Marker[];
 }

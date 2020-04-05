@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NEGOZIANTI } from '../mocked-negozianti'
+import { ConnectivityService } from '../connectivity.service';
+import { Negoziante } from '../negoziante';
 
 @Component({
   selector: 'app-negozianti',
@@ -7,9 +9,23 @@ import { NEGOZIANTI } from '../mocked-negozianti'
   styleUrls: ['./negozianti.component.css']
 })
 export class NegoziantiComponent implements OnInit {
-  negozianti = NEGOZIANTI;
+  
+  negozianti:Array<Negoziante> = new Array();
 
-  constructor() { }
+  constructor(private wsService: ConnectivityService) { 
+    this.wsService.getStores().subscribe((storesDB:any) => {
+      storesDB.forEach((storeDB: any)  => {
+      var store:Negoziante = {
+        id: storeDB.id,
+        name: storeDB.name,
+        type: storeDB.type,
+        description: storeDB.description
+      }
+      this.negozianti.push(store);
+    });
+    });
+    
+  }
 
   ngOnInit() {
   }

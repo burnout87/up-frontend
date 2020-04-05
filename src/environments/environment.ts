@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  posts: 'https://cors-anywhere.herokuapp.com/https://unitipossiamo.it/wp-json/wp/v2/posts'
+  posts: 'https://cors-anywhere.herokuapp.com/https://unitipossiamo.it/wp-json/wp/v2/posts',
+  stores: 'http://localhost:4000/api/negozianti'
 };
 
 /*

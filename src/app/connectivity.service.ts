@@ -18,25 +18,39 @@ export class ConnectivityService {
     this.isBrowser = isPlatformBrowser(platformId);
    }
 
-  public getListPosts(): Rx.Observable<object> {
+  public getPosts(): Rx.Observable<object> {
     if(!this.isBrowser) {
-      console.log('Not in the browser');
       return this.http.get(environment.posts, { headers: this.headers });
     }
     else {
-      console.log('In the browser');
       return this.http.get(environment.posts);
     }
   }
 
   public getPost(id: Number): Rx.Observable<object> {
     if(!this.isBrowser) {
-      console.log('Not in the browser');
       return this.http.get(environment.posts + '/' + id, { headers: this.headers });
     }
     else {
-      console.log('In the browser');
       return this.http.get(environment.posts + '/' + id);
+    }
+  }
+
+  public getStores(): Rx.Observable<object> {
+    if(!this.isBrowser) {
+      return this.http.get(environment.stores, { headers: this.headers });
+    }
+    else {
+      return this.http.get(environment.stores);
+    }
+  }
+
+  public getStore(id: Number): Rx.Observable<object> {
+    if(!this.isBrowser) {
+      return this.http.get(environment.stores + '/' + id, { headers: this.headers });
+    }
+    else {
+      return this.http.get(environment.stores + '/' + id);
     }
   }
 

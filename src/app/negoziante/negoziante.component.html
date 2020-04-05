@@ -1,5 +1,4 @@
-<div >
+<div *ngIf="negoziante != null">
     <h2>{{negoziante.name}}</h2>
-    <p>{{negoziante.description}}</p>
-    <p>{{url}}</p>
+    <p>{{negoziante.type}}: {{negoziante.description}}</p>
 </div>

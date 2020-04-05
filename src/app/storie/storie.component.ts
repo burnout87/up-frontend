@@ -11,7 +11,7 @@ export class StorieComponent implements OnInit {
   storie:Array<Storia> = new Array();
 
   constructor(private wsService: ConnectivityService) { 
-    this.wsService.getListPosts().subscribe((wpStorie:any) => {
+    this.wsService.getPosts().subscribe((wpStorie:any) => {
       wpStorie.forEach((wpStoria: any)  => {
         var storia: Storia = {
           id: wpStoria.id,

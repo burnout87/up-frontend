@@ -9,6 +9,7 @@ import { MapComponent } from './map/map.component';
 import { ProviderComponent } from './provider/provider.component';
 import { DomandeComponent } from './domande/domande.component';
 import { ConnectivityService } from './connectivity.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ConnectivityService } from './connectivity.service';
       premium customer, in which case you can 
       use clientId 
       */
-    })
+    }),
+    BrowserAnimationsModule
   ],
   providers: [ConnectivityService],
   bootstrap: [AppComponent]

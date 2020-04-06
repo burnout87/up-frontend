@@ -29,13 +29,29 @@
             </div>
             <!-- <h1 id="title">Il primo aggregatore italiano che aiuta le aziende durante l'emergenza COVID-19</h1> -->
             <div class="">
-                <h1 class="">Il primo aggregatore italiano che aiuta le aziende durante l'emergenza COVID-19</h1> 
+                <h2 class="main_title">Il primo aggregatore italiano che aiuta le aziende durante l'emergenza COVID-19</h2>
+                <h2>Compra dal tuo commerciante di quartiere</h2>
             </div>
-            <div>
+            
+            <div class="sub_title">
+                Vuoi aiutare un commerciante?
+                <p class="content_sub_title">Esplora la mappa, trova il negozio più vicino a te e scopri se <strong>consegna a domicilio</strong> o offre <strong>gift card!</strong></p>
+            </div> 
+            
+            
+            <div class="sub_title">
+                Sei un commerciante?
+                <p class="content_sub_title">Fatti conoscere! Trova l’iniziativa che fa per te nell’elenco qui sotto e registra la tua attività… è <strong>cgratis</strong>!<p></p>
+                <a class="video_link">CLICCA QUI PER IL VIDEO-TUTORIAL</a>
+            </div>
+            
+            
+            
+            <!-- <div>
                 <div>
                     <p>Vuoi <b>aiutare un commerciante</b>? Esplora la mappa e trova il negozio più vicino a te</p><p>Se sei un <strong>venditore</strong>, trova l’iniziativa che fa per te e registra la tua attività… <strong>è gratis!</strong></p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -55,6 +71,13 @@
     <app-map *ngIf="isBrowser && router.url == '/'"></app-map>
 
     <router-outlet></router-outlet>
+
+    
+    <footer class="fixed_footer">
+        <div class="footer_box">
+            <p>Copyright 2020 - <strong>Uniti Possiamo</strong></p>
+        </div>
+    </footer>
 </div>
 
-<!-- Router view goes here -->
+

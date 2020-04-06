@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule, Injectable } from '@angular/core';
+import { Routes, RouterModule, Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import { StorieComponent } from './storie/storie.component';
 import { StoriaComponent } from './storia/storia.component';
 import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
@@ -7,6 +7,21 @@ import { DomandeComponent } from './domande/domande.component';
 import { NegozianteComponent } from './negoziante/negoziante.component'
 import { NegoziantiComponent } from './negozianti/negozianti.component'
 import { AiutaciComponent } from './aiutaci/aiutaci.component';
+import { Negoziante } from './negoziante';
+import { Observable } from 'rxjs';
+import { ConnectivityService } from './connectivity.service';
+
+/*Store resolver*/
+@Injectable({ providedIn: 'root' })
+export class NegozianteResolver implements Resolve<Negoziante> {
+  constructor(private cService: ConnectivityService) {}
+
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any 
+  {
+    const storeId:any = route.paramMap.get('id');
+    return this.cService.getStore(storeId);
+  }
+}
 
 
 const routes: Routes = [
@@ -36,9 +51,13 @@ const routes: Routes = [
   },
   {
     path: 'negozianti/:id',
-    component: NegozianteComponent
+    component: NegozianteComponent,
+    resolve: {
+      negoziante: NegozianteResolver
+    }
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {

@@ -11,7 +11,7 @@ export class MapComponent implements OnInit {
 
   private map;
   private onChanges = new Subject<SimpleChanges>();
-  private location: Location;
+  public location: Location;
 
   constructor() { }
 

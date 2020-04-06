@@ -16,18 +16,26 @@ export class NegozianteComponent implements OnInit {
   negoziante: Negoziante;
 
   constructor(private route: ActivatedRoute, private location: Location, private wsService: ConnectivityService) {
+
     const storeId:any = this.route.snapshot.paramMap.get('id');
-    this.wsService.getStore(storeId).subscribe((storeDB:any) => {
-      if(storeDB.length == 1){
-        storeDB = storeDB[0];
-        this.negoziante = {
-          id: storeDB.id,
-          name: storeDB.name,
-          type: storeDB.type,
-          description: storeDB.description
-        }
-      }
-    });
+    const data:any = this.route.snapshot.data['negoziante'];
+    this.negoziante = {
+      id: data[0].id,
+      name: data[0].name,
+      type: data[0].type,
+      description: data[0].description
+    };
+    // this.wsService.getStore(storeId).subscribe((storeDB:any) => {
+    //   if(storeDB.length == 1){
+    //     storeDB = storeDB[0];
+    //     this.negoziante = {
+    //       id: storeDB.id,
+    //       name: storeDB.name,
+    //       type: storeDB.type,
+    //       description: storeDB.description
+    //     }
+    //   }
+    // });
   }
 
   ngOnInit() {

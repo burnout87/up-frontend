@@ -6,6 +6,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## MongoDB connection
+
+In order to retrieve data from the MongoDB collections, the relative IP address needs to be provided: modify the entry 'stores' within the environment/environment.ts and environment/environment.prod.ts files
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.

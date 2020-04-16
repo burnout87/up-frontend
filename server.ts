@@ -20,10 +20,11 @@ import 'zone.js/dist/zone-node';
 import * as express from 'express';
 import {join} from 'path';
 
+const api = require('./api.js');
 // Express server
 const app = express();
 
-const PORT = process.env.PORT || 4100;
+const PORT = process.env.PORT || 4000;
 const DIST_FOLDER = join(process.cwd(), 'dist/browser');
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
@@ -39,6 +40,9 @@ app.engine('html', ngExpressEngine({
 
 app.set('view engine', 'html');
 app.set('views', DIST_FOLDER);
+
+// my custom API
+app.use("/api/",api)
 
 // Example Express Rest API endpoints
 // app.get('/api/**', (req, res) => { });

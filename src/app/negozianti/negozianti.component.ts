@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NEGOZIANTI } from '../mocked-negozianti'
 import { ConnectivityService } from '../connectivity.service';
 import { Negoziante } from '../negoziante';
 

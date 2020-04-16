@@ -11,7 +11,10 @@
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build --prod && ng run upFrontend:server:production --bundleDependencies all"
+    "build:client-and-server-bundles": "ng build && ng run upFrontend:server:production --bundleDependencies all",
+    "server:start": "pm2 start dist/server --name upserver",
+    "server:stop": "pm2 stop upserver",
+    "server:restart": "pm2 restart upserver"
   },
   "private": true,
   "dependencies": {
@@ -33,7 +36,11 @@
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "typings": "^2.1.1",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "mongodb": "^3.5.5",
+    "pm2": "^4.2.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.18",

@@ -10,7 +10,10 @@ import { ProviderComponent } from './provider/provider.component';
 import { DomandeComponent } from './domande/domande.component';
 import { ConnectivityService } from './connectivity.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MaterialModule } from './material.modules';
 import { AiutaciComponent } from './aiutaci/aiutaci.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { AiutaciComponent } from './aiutaci/aiutaci.component';
     MapComponent,
     ProviderComponent,
     routingComponents,
-    AiutaciComponent
+    AiutaciComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
+    LayoutModule,
+    MaterialModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDgbhE4JU0eLfjTogXctQkSZIEh-3x5Q-4'

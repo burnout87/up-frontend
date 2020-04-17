@@ -10,6 +10,7 @@ export class ChiSiamoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

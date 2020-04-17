@@ -1,0 +1,81 @@
+.flex-container-home {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .flex-item-home {
+    padding: 10px;
+    margin: auto;
+  }
+
+  .videotutorials {
+    width: 100%;
+    text-align: center;
+  }
+
+  .videotutorials-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .videotutorial {
+    margin: auto;
+    width: 33%;
+  }
+
+  .image-teamwork {
+    width: 75%;
+  }
+
+  .map{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+
+  #btmshare {
+    align-self: flex-end;
+    text-align: center;
+  }
+
+  .flex-container-banner {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .flex-item-banner {
+    padding: 10px;
+    margin: auto;
+  }
+
+  .social {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .mat-mini-fab {
+    box-shadow: none !important;
+    color: #FFFFFF;
+    margin-right: 30px;
+  }
+  .facebook {
+    background-color: #3b5998;
+  }
+
+  .linkedin {
+    background-color: #0077b5;
+  }
+
+  .whatsapp {
+    background-color: #25d366;
+  }

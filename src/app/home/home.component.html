@@ -1,0 +1,59 @@
+<section class="flex-container-home yellow">
+    <div class="flex-item-home videotutorials">
+        <h1 class="title">Aiuta le aziende italiane durante l'emergenza COVID-19!
+            Compra dal tuo commerciante di quartiere</h1>
+
+        <div class="videotutorials-container">
+
+        <div class="videotutorial imagebox-teamwork">
+            <img class="image-teamwork" src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-teamwork-in-office-300x300.png"/>
+        </div>
+        <div class="videotutorial">
+            <p>Unitipossiamo è il più grande aggregatore di tutte le iniziative nate sul territorio italiano per aiutare le attività commerciali a superare il periodo di crisi che stanno vivendo a causa del COVID-19.</p>
+        </div>
+        <div class="videotutorial">
+            <p>Unitipossiamo è il più grande aggregatore di tutte le iniziative nate sul territorio italiano per aiutare le attività commerciali a superare il periodo di crisi che stanno vivendo a causa del COVID-19.</p>
+        </div>
+        
+        </div>
+    </div>
+</section>
+
+<section class="flex-container-home">
+    <div class="flex-item-home videotutorials">
+        <h1 class="title">Trova nella mappa i negozi vicini a te</h1>
+        <p>Clicca sull'icona per visitare la piattaforma a cui il negozio è registrato e acquistare i suoi prodotti</p>
+        <div class="map">
+            <app-map *ngIf="isBrowser && router.url == '/home'"></app-map>
+        </div>
+    </div>
+</section>
+
+<section class="flex-container-home">
+    <div class="flex-item-home partners">
+        <h1 class="title">Non hai trovato negozi nei tuoi dintorni?</h1>
+        <p>Spargi la voce e aiutaci a raggiungere più attività commerciali, condividi il link sui tuoi canali! ツ</p>
+    </div>
+</section>
+
+<section class="flex-container-banner gray">
+    <div id="flex-item-banner">
+        <div class="social">
+            <form action="https://www.facebook.com/sharer/sharer.php?u=https://unitipossiamo.it/" method="get" target="_blank">
+            <button mat-mini-fab class="facebook" >
+                <mat-icon>favorite</mat-icon>
+            </button>
+            </form>
+            <form action="https://www.linkedin.com/shareArticle?mini=true&url=https://unitipossiamo.it/" method="get" target="_blank">
+            <button mat-mini-fab class="linkedin" >
+                <mat-icon>favorite</mat-icon>
+            </button>
+            </form>
+            <form action="whatsapp://send?text=https://unitipossiamo.it/" method="get" target="_blank">
+            <button mat-mini-fab class="whatsapp" >
+                <mat-icon>favorite</mat-icon>
+            </button>
+            </form>
+        </div>
+    </div>
+</section>

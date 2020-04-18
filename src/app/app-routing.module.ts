@@ -10,6 +10,7 @@ import { AiutaciComponent } from './aiutaci/aiutaci.component';
 import { Negoziante } from './negoziante';
 import { Observable } from 'rxjs';
 import { ConnectivityService } from './connectivity.service';
+import { HomeComponent } from './home/home.component';
 
 /*Store resolver*/
 @Injectable({ providedIn: 'root' })
@@ -25,6 +26,10 @@ export class NegozianteResolver implements Resolve<Negoziante> {
 
 
 const routes: Routes = [
+  {
+    path:  'home',
+    component: HomeComponent
+  },
   {
     path:  'chi-siamo',
     component: ChiSiamoComponent
@@ -55,7 +60,8 @@ const routes: Routes = [
     resolve: {
       negoziante: NegozianteResolver
     }
-  }
+  },
+  { path: '',   redirectTo: '/home', pathMatch: 'full' }
 ];
 
 
@@ -68,4 +74,4 @@ const routes: Routes = [
 
 export class AppRoutingModule { }
 
-export const routingComponents = [ChiSiamoComponent, StorieComponent, StoriaComponent, DomandeComponent, NegozianteComponent, NegoziantiComponent, AiutaciComponent]
+export const routingComponents = [HomeComponent, ChiSiamoComponent, StorieComponent, StoriaComponent, DomandeComponent, NegozianteComponent, NegoziantiComponent, AiutaciComponent]

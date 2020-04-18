@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {MatSliderModule} from '@angular/material/slider';
 
-@MatSliderModule ({
-  selector: 'slider-overview-example',
-  templateUrl: 'slider-overview-example.html',
-  styleUrls: ['slider-overview-example.css'],
-})
+// @MatSliderModule ({
+//   selector: 'slider-overview-example',
+//   templateUrl: 'slider-overview-example.html',
+//   styleUrls: ['slider-overview-example.css'],
+// })
 export class Button {}
 
 @Component({
@@ -18,6 +18,7 @@ export class ChiSiamoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

@@ -1,0 +1,31 @@
+.media-card {
+    display: inline-flex;
+ }
+
+ .card-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+ }
+
+ .card-container > .item-container {
+   background-color: #f1f1f1;
+   width: 210px;
+   margin: 10px;
+ }
+
+ .volto {
+    width: 208px;
+  }
+
+  .desc {
+    text-align: center;
+  }
+
+  h4 {
+    margin: auto;
+  }
+
+  h5 {
+    margin: auto;
+  }

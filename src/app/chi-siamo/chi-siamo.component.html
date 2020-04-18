@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<p>chi-siamo works!</p>
-<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
-=======
 
 <section class="flex-container yellow">
     <div class="flex-item imagebox-taxi-3">
@@ -55,100 +51,12 @@
     </div>
 </section>
 
+<!-- Members cards-->
 <section class="flex-container">
     <div class="flex-item voltibox">
         <h1 class="title">I nostri volti</h1>
           <div class="card-container">
-            <div class="item-container">
-                <div>
-                    <img class="volto" src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Elena-B.jpg"/>
-                </div>
-                <div class="desc">
-                    <h4>Elena</h4>
-                    <h5>Innovative Business Developer</h5>
-                </div>
-            </div>
-            <div class="item-container">
-                <div>
-                    <img class="volto" src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Elena-B.jpg"/>
-                </div>
-                <div class="desc">
-                    <h4>Elena</h4>
-                    <h5>Innovative Business Developer</h5>
-                </div>
-            </div>
-            <div class="item-container">
-                <div>
-                    <img class="volto" src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Elena-B.jpg"/>
-                </div>
-                <div class="desc">
-                    <h4>Elena</h4>
-                    <h5>Innovative Business Developer</h5>
-                </div>
-            </div>
-            <div class="item-container">
-                <div>
-                    <img class="volto" src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Elena-B.jpg"/>
-                </div>
-                <div class="desc">
-                    <h4>Elena</h4>
-                    <h5>Innovative Business Developer</h5>
-                </div>
-            </div>
-            <div class="item-container">
-                <div>
-                    <img class="volto" src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Elena-B.jpg"/>
-                </div>
-                <div class="desc">
-                    <h4>Elena</h4>
-                    <h5>Innovative Business Developer</h5>
-                </div>
-            </div>
-            <div class="item-container">
-                <div>
-                    <img class="volto" src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Elena-B.jpg"/>
-                </div>
-                <div class="desc">
-                    <h4>Elena</h4>
-                    <h5>Innovative Business Developer</h5>
-                </div>
-            </div>
-            <div class="item-container">
-                <div>
-                    <img class="volto" src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Elena-B.jpg"/>
-                </div>
-                <div class="desc">
-                    <h4>Elena</h4>
-                    <h5>Innovative Business Developer</h5>
-                </div>
-            </div>
-            <div class="item-container">
-                <div>
-                    <img class="volto" src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Elena-B.jpg"/>
-                </div>
-                <div class="desc">
-                    <h4>Elena</h4>
-                    <h5>Innovative Business Developer</h5>
-                </div>
-            </div>
-            <div class="item-container">
-                <div>
-                    <img class="volto" src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Elena-B.jpg"/>
-                </div>
-                <div class="desc">
-                    <h4>Elena</h4>
-                    <h5>Innovative Business Developer</h5>
-                </div>
-            </div>
-            <div class="item-container">
-                <div>
-                    <img class="volto" src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Elena-B.jpg"/>
-                </div>
-                <div class="desc">
-                    <h4>Elena</h4>
-                    <h5>Innovative Business Developer</h5>
-                </div>
-            </div>
+            <app-member *ngFor="let membro of membri" [membroData]=membro></app-member>
           </div>
     </div>
 </section>
@@ -285,4 +193,3 @@
         <img class="image-Hack_for_Italy" src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Hack_for_Italy.jpeg"/>
     </div>
 </section>
->>>>>>> 11c5f386f2a6431e1b9438ab0c360e0d05fd30a3

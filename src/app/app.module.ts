@@ -14,6 +14,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MaterialModule } from './material.modules';
 import { AiutaciComponent } from './aiutaci/aiutaci.component';
 import { HomeComponent } from './home/home.component';
+import { MemberComponent } from './member/member.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomeComponent } from './home/home.component';
     ProviderComponent,
     routingComponents,
     AiutaciComponent,
-    HomeComponent
+    HomeComponent,
+    MemberComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

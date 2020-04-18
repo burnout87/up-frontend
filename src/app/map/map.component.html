@@ -1,11 +1,16 @@
 <div class="map-container">
     <div class="map-frame">
         <agm-map
-        [latitude]='location.latitude'
-        [longitude]='location.longitude'
-        [mapTypeId]='location.mapType'
-        [zoom]='location.zoom'>
-        <agm-marker *ngFor="let marker of location.markers" [latitude]="marker.lat" [longitude]="marker.lng"></agm-marker>
+            [latitude]='location.latitude'
+            [longitude]='location.longitude'
+            [mapTypeId]='location.mapType'
+            [zoom]='location.zoom'>
+        <agm-marker 
+            *ngFor="let marker of location.markers" 
+            [latitude]="marker.lat" 
+            [longitude]="marker.lng"
+            
+            ></agm-marker>
     </agm-map>
     </div>
 </div>

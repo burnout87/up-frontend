@@ -1,22 +1,26 @@
 <div class="map-container">
     <div class="map-frame">
-        <agm-map
+        <agm-map #gm
             [latitude]='location.latitude'
             [longitude]='location.longitude'
             [mapTypeId]='location.mapType'
-            [zoom]='location.zoom'>
-        <agm-marker 
-            *ngFor="let m of location.markers" 
-            [latitude]="m.lat" 
-            [longitude]="m.lng"
-            [iconUrl]="marker"
-            [title]="m.label"
-            (markerClick)="getInfoMarker(m)"
-            >
-            <agm-info-window [disableAutoPan]="true" [isOpen]="visible" >
-                <strong>{{m.label}}</strong>
-              </agm-info-window>
-        </agm-marker>
+            [zoom]='location.zoom'
+            (mapClick)="hideInfo(gm, $event)">
+            <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+
+                <agm-marker 
+                    *ngFor="let m of markers" 
+                    [latitude]="m.latitude" 
+                    [longitude]="m.longitude"
+                    [iconUrl]="marker"
+                    [title]="m.label"
+                    (markerClick)="getInfoMarker(m, gm, infoWindow)"
+                    >
+                    <agm-info-window [disableAutoPan]="false" #infoWindow>
+                        <strong>{{m.label}}</strong>
+                    </agm-info-window>
+                </agm-marker>
+            </agm-marker-cluster>
     </agm-map>
     </div>
 </div>

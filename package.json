@@ -19,6 +19,7 @@
   "private": true,
   "dependencies": {
     "@agm/core": "^1.1.0",
+    "@agm/js-marker-clusterer": "^1.1.0",
     "@angular/animations": "~8.2.13",
     "@angular/cdk": "~8.2.3",
     "@angular/common": "~8.2.13",
@@ -37,6 +38,7 @@
     "bootstrap": "^4.4.1",
     "cors": "^2.8.5",
     "express": "^4.15.2",
+    "js-marker-clusterer": "^1.0.0",
     "mongodb": "^3.5.5",
     "pm2": "^4.2.3",
     "rxjs": "~6.4.0",

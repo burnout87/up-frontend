@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
+import { MarkerManager, GoogleMapsAPIWrapper } from '@agm/core';
+import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
 
 import { AppRoutingModule , routingComponents} from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +34,7 @@ import { MemberComponent } from './member/member.component';
     LayoutModule,
     MaterialModule,
     HttpClientModule,
+    AgmJsMarkerClustererModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDgbhE4JU0eLfjTogXctQkSZIEh-3x5Q-4'
       /* apiKey is required, unless you are a 
@@ -41,7 +44,7 @@ import { MemberComponent } from './member/member.component';
     }),
     BrowserAnimationsModule
   ],
-  providers: [ConnectivityService],
+  providers: [ConnectivityService, MarkerManager, GoogleMapsAPIWrapper],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

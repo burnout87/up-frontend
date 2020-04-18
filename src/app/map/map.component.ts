@@ -20,8 +20,10 @@ export class MapComponent implements OnInit {
       readyDatas.forEach((readyData: any)  => {
         if(readyData && readyData.coords) {
             var marker = {
+              label: readyData.title,
               lat: readyData.coords.lat,
-              lng: readyData.coords.lng
+              lng: readyData.coords.lng,
+              url: readyData.link
             }
             this.markers.push(marker);
         }
@@ -50,7 +52,8 @@ export class MapComponent implements OnInit {
   ngAfterViewInit(): void {
   }
 
-  private initMap(): void {
+  getInfoMarker(marker:any) {
+    console.log(marker);
   }
 
   getMapBounds() {

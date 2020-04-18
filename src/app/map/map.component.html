@@ -6,10 +6,12 @@
             [mapTypeId]='location.mapType'
             [zoom]='location.zoom'>
         <agm-marker 
-            *ngFor="let marker of location.markers" 
-            [latitude]="marker.lat" 
-            [longitude]="marker.lng"
-            
+            *ngFor="let m of location.markers" 
+            [latitude]="m.lat" 
+            [longitude]="m.lng"
+            [iconUrl]="marker"
+            [title]="m.label"
+            (markerClick)="getInfoMarker(m)"
             ></agm-marker>
     </agm-map>
     </div>

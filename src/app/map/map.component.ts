@@ -10,10 +10,10 @@ import { ConnectivityService } from '../connectivity.service';
 
 export class MapComponent implements OnInit {
 
-  private map;
   private onChanges = new Subject<SimpleChanges>();
   public location: Location;
   private markers = [];
+  private visible : boolean = false;
 
   constructor(private wsService: ConnectivityService) { 
     this.wsService.getReadyData().subscribe((readyDatas:any) => {
@@ -54,6 +54,7 @@ export class MapComponent implements OnInit {
 
   getInfoMarker(marker:any) {
     console.log(marker);
+    this.visible = true;
   }
 
   getMapBounds() {

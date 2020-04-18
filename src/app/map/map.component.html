@@ -12,7 +12,11 @@
             [iconUrl]="marker"
             [title]="m.label"
             (markerClick)="getInfoMarker(m)"
-            ></agm-marker>
+            >
+            <agm-info-window [disableAutoPan]="true" [isOpen]="visible" >
+                <strong>{{m.label}}</strong>
+              </agm-info-window>
+        </agm-marker>
     </agm-map>
     </div>
 </div>

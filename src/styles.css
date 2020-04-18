@@ -1,39 +1,92 @@
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-
-body{
-  margin:0
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Sen:wght@800&display=swap");
+@import url(c:\Users\david\Desktop\UnitiPossiamo\Sito\up-frontend\src\app\bootstrap.min.css);
+@import url(c:\Users\david\Desktop\UnitiPossiamo\Sito\up-frontend\src\app\bootstrap-grid.min.css);
+/* @Davide = nei miei interventi metterò dei simboli "=" come qui sotto
+=============
+Variables
+=============
+*/
+/*
+=============
+End Variables
+=============
+*/
+/*
+=============
+Mixings
+=============
+*/
+/*
+=============
+End Mixins
+=============
+*/
+/*
+=============
+Generals
+=============
+*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-.container{
-  display:grid;
-}
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.title {
-  color: #1E1E1E;
-  font-family: "Montserrat", Sans-serif;
-  /* font-size: 64px; */
-  font-weight: 800;
-  line-height: 1.2em;
-  letter-spacing: 1px;
+body {
+  font-family: 'Open Sans', "Helvetica Neue", sans-serif;
+  -ms-overflow-style: none;
 }
 
-.pointer{
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.pointer {
   cursor: pointer;
 }
 
-.yellow {
+/*
+=============
+End Generals
+=============
+*/
+.title {
+  font: bolder 72px Sen;
+  color: #1E1E1E;
+}
+
+.bg-yellow {
   background-color: #FECE2F;
+  height: auto;
+  width: 100%;
 }
 
-.purple {
-  color: #593C8F;
+.bg-yellow .title {
+  font: bolder 72px Sen;
+  color: #1E1E1E;
 }
 
-.gray {
+.bg-lightgray {
   background-color: #ECECEC;
+  height: auto;
+  width: 100%;
 }
+
+.bg-lightgray .title {
+  font: bolder 72px Sen;
+  color: #1E1E1E;
+}
+
+.image-m {
+  max-width: 80%;
+  height: auto;
+}
+/*# sourceMappingURL=styles.css.map */

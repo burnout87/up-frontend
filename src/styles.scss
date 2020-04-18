@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@800&display=swap');
+@import './app/bootstrap.min.css';
+@import './app/bootstrap-grid.min.css';
+
+/* @Davide = nei miei interventi metterò dei simboli "=" come qui sotto
+=============
+Variables
+=============
+*/
+
+// Colors 
+$primaryColor: #FECE2F;
+$secondaryColor: #593C8F;
+$darkColor: #1E1E1E;
+$lightGrayColor: #ECECEC;
+$brightColor: #FFFEF7;
+
+// Typography Size
+$textXL: 72px;
+$textL: 65px;
+$textM: 18px;
+$textS: 16px;
+$textXs: 14px;
+
+// Typography
+$headerFont: bolder $textXL Sen;
+$titleFont: bolder $textL Sen;
+$textParagraph: $textM;
+$textFootnote: $textXs;
+
+// Image Size
+$imageL: 100%;
+$imageM: 80%;
+$imageS: 50%;
+$imageXs: 35%;
+
+
+
+/*
+=============
+End Variables
+=============
+*/
+
+/*
+=============
+Mixings
+=============
+*/
+
+@mixin bgYellow {
+    background-color: $primaryColor;
+    height: auto;
+    width: 100%;
+}
+
+@mixin bgLightGray {
+    background-color: $lightGrayColor;
+    height: auto;
+    width: 100%;
+}
+
+
+@mixin titleHeader {
+    font: $headerFont;
+    color: $darkColor;
+  }
+
+
+/*
+=============
+End Mixins
+=============
+*/
+
+
+
+/*
+=============
+Generals
+=============
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+  
+body { 
+    font-family: 'Open Sans', "Helvetica Neue", sans-serif; 
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.pointer{ cursor: pointer; }
+
+/*
+=============
+End Generals
+=============
+*/
+.title {
+    @include titleHeader();
+}
+
+.bg-yellow {
+    @include bgYellow();
+    .title {
+        @include titleHeader();
+    }
+}
+
+.bg-lightgray {
+    @include bgLightGray();
+    .title {
+        @include titleHeader();
+    }
+}
+
+.image-m {
+    max-width: $imageM;
+    height: auto;
+}

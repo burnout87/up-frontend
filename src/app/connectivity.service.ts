@@ -45,6 +45,15 @@ export class ConnectivityService {
     }
   }
 
+  public getReadyData():Rx.Observable<object> {
+    if(!this.isBrowser) {
+      return this.http.get(environment.readyData, { headers: this.headers });
+    }
+    else {
+      return this.http.get(environment.readyData);
+    }
+  }
+
   public getStore(id: Number): Rx.Observable<object> {
     if(!this.isBrowser) {
       return this.http.get(environment.stores + '/' + id, { headers: this.headers });

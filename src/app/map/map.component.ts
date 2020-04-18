@@ -1,5 +1,6 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Subject } from 'rxjs';
+import { ConnectivityService } from '../connectivity.service';
 
 @Component({
   selector: 'app-map',
@@ -12,24 +13,31 @@ export class MapComponent implements OnInit {
   private map;
   private onChanges = new Subject<SimpleChanges>();
   public location: Location;
+  private markers = [];
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private wsService: ConnectivityService) { 
+    this.wsService.getReadyData().subscribe((readyDatas:any) => {
+      readyDatas.forEach((readyData: any)  => {
+        if(readyData && readyData.coords) {
+            var marker = {
+              lat: readyData.coords.lat,
+              lng: readyData.coords.lng
+            }
+            this.markers.push(marker);
+        }
+    });
+    });
     this.location = {
       zoom: 5,
       latitude: 41.6650266,
       longitude: 12.8701779,
       mapType:'roadmap',
-      markers : [{
-                    lat: 41.6650266,
-                    lng: 12.8701779
-                },
-                {
-                    lat: 45.6650266,
-                    lng: 12.8701779
-                }]
+      markers : this.markers
     }
+  }
+
+  ngOnInit() {
+    
   }
 
   public cleanMap() {

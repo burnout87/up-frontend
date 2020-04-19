@@ -1,13 +1,13 @@
 <div class="map-container">
     <div class="map-frame">
-        <agm-map #gm
+        <agm-map   #gm
             [latitude]='location.latitude'
             [longitude]='location.longitude'
             [mapTypeId]='location.mapType'
             [zoom]='location.zoom'
             (mapClick)="hideInfo(gm, $event)">
             <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
-                <agm-marker 
+                <agm-marker  
                     *ngFor="let m of markers" 
                     [latitude]="m.latitude" 
                     [longitude]="m.longitude"

@@ -1,4 +1,5 @@
-import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit, SimpleChanges, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Subject } from 'rxjs';
 import { ConnectivityService } from '../connectivity.service';
 import { MarkerManager, AgmMarker, Marker, GoogleMapsAPIWrapper } from "@agm/core";
@@ -16,8 +17,10 @@ export class MapComponent implements OnInit {
   private _map: any;
   public location: Location;
   public markers: AgmMarker[] = [];
+  public isBrowser: boolean;
 
-  constructor(private wsService: ConnectivityService, private markerManager: MarkerManager, private gmapsApi: GoogleMapsAPIWrapper) {
+  constructor(private wsService: ConnectivityService, private markerManager: MarkerManager, private gmapsApi: GoogleMapsAPIWrapper, @Inject(PLATFORM_ID) platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
     this.location = {
       zoom: 5,
       latitude: 41.6650266,

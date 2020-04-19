@@ -34,7 +34,7 @@ export class ChiSiamoComponent implements OnInit {
         'Siamo ^1000 <span style="color:#593C8F"> volontari</span>', 
         'Siamo ^1000 <span style="color:#593C8F"> marketers</span>', 
         'Siamo ^1000 <span style="color:#593C8F"> persone</span>',
-        'Siamo ^1000 <span style="color:#593C8F">designers</span>'
+        'Siamo ^1000 <span style="color:#593C8F"> designers</span>'
       ],
       loop: true,
       typeSpeed: 80

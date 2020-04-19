@@ -102,11 +102,11 @@ router.get('/negozianti', cors(), async function (req, res) {
 })
 
 router.get('/readydata', cors(), async function (req, res) {
-    res.send(await mongoSelectReadyData(req.params.q).catch(console.error));
+    res.send(await mongoSelectReadyData(req.params.q?req.params.q:{}).catch(console.error));
 })
 
 router.get('/rawdata', cors(), async function (req, res) {
-    res.send(await mongoSelectRawData(req.params.q).catch(console.error));
+    res.send(await mongoSelectRawData(req.params.q?req.params.q:{}).catch(console.error));
 })
 
 router.get('/negozianti/add/:name/:type', cors(), async function (req, res) {

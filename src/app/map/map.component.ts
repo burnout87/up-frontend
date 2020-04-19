@@ -12,10 +12,10 @@ import { MarkerManager, AgmMarker, Marker, GoogleMapsAPIWrapper } from "@agm/cor
 export class MapComponent implements OnInit {
 
   private onChanges = new Subject<SimpleChanges>();
-  private markers: AgmMarker[] = [];
   private visible: boolean = false;
-  private location: Location;
   private _map: any;
+  public location: Location;
+  public markers: AgmMarker[] = [];
 
   constructor(private wsService: ConnectivityService, private markerManager: MarkerManager, private gmapsApi: GoogleMapsAPIWrapper) {
     this.location = {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { MEMBRI } from '../mocked-members';
 import { Member } from '../member';
+import Typed from 'typed.js';
 // @MatSliderModule ({
 //   selector: 'slider-overview-example',
 //   templateUrl: 'slider-overview-example.html',
@@ -27,7 +28,17 @@ export class ChiSiamoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+    var typed = new Typed('#typed', {
+      strings: [
+        'Siamo ^1000 <span style="color:#593C8F"> imprenditori</span>', 
+        'Siamo ^1000 <span style="color:#593C8F"> volontari</span>', 
+        'Siamo ^1000 <span style="color:#593C8F"> marketers</span>', 
+        'Siamo ^1000 <span style="color:#593C8F"> persone</span>',
+        'Siamo ^1000 <span style="color:#593C8F">designers</span>'
+      ],
+      loop: true,
+      typeSpeed: 80
+    });
   }
 
 }

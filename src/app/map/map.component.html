@@ -7,12 +7,10 @@
             [zoom]='location.zoom'
             (mapClick)="hideInfo(gm, $event)">
             <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
-
                 <agm-marker 
                     *ngFor="let m of markers" 
                     [latitude]="m.latitude" 
                     [longitude]="m.longitude"
-                    [iconUrl]="marker"
                     [title]="m.label"
                     (markerClick)="getInfoMarker(m, gm, infoWindow)"
                     >

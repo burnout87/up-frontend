@@ -50,7 +50,7 @@ async function mongoSelectReadyData(q) {
       }
     return result;
   }
-  
+
   async function mongoInsertReadyData(data) {
       try {
           const db = client.db('up');
@@ -62,7 +62,7 @@ async function mongoSelectReadyData(q) {
             return -1;
         }
     }
-    
+
     async function mongoSelectRawData(q) {
       var result = {};
         try {
@@ -102,11 +102,11 @@ router.get('/negozianti', cors(), async function (req, res) {
 })
 
 router.get('/readydata', cors(), async function (req, res) {
-    res.send(await mongoSelectReadyData({}).catch(console.error));
+    res.send(await mongoSelectReadyData(req.params.q).catch(console.error));
 })
 
 router.get('/rawdata', cors(), async function (req, res) {
-    res.send(await mongoSelectRawData({}).catch(console.error));
+    res.send(await mongoSelectRawData(req.params.q).catch(console.error));
 })
 
 router.get('/negozianti/add/:name/:type', cors(), async function (req, res) {

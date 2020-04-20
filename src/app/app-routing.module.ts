@@ -11,6 +11,7 @@ import { Negoziante } from './negoziante';
 import { Observable } from 'rxjs';
 import { ConnectivityService } from './connectivity.service';
 import { HomeComponent } from './home/home.component';
+import { AgmMarker } from '@agm/core';
 
 /*Store resolver*/
 @Injectable({ providedIn: 'root' })
@@ -24,11 +25,24 @@ export class NegozianteResolver implements Resolve<Negoziante> {
   }
 }
 
+/*Markers resolver*/
+@Injectable({ providedIn: 'root' })
+export class MarkersResolver implements Resolve<AgmMarker> {
+  constructor(private cService: ConnectivityService) {}
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any 
+  {
+    return this.cService.getReadyData();
+  }
+}
+
 
 const routes: Routes = [
   {
     path:  'home',
-    component: HomeComponent
+    component: HomeComponent,
+    resolve: {
+      markers: MarkersResolver
+    }
   },
   {
     path:  'chi-siamo',

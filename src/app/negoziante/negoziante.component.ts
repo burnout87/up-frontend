@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NEGOZIANTI } from '../mocked-negozianti'
 import { Negoziante } from '../negoziante';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 import { ConnectivityService } from '../connectivity.service';
 
 @Component({
@@ -15,7 +14,7 @@ export class NegozianteComponent implements OnInit {
   negozianti = NEGOZIANTI;
   negoziante: Negoziante;
 
-  constructor(private route: ActivatedRoute, private location: Location, private wsService: ConnectivityService) {
+  constructor(private route: ActivatedRoute, private wsService: ConnectivityService) {
 
     const storeId:any = this.route.snapshot.paramMap.get('id');
     const data:any = this.route.snapshot.data['negoziante'];
@@ -25,17 +24,6 @@ export class NegozianteComponent implements OnInit {
       type: data[0].type,
       description: data[0].description
     };
-    // this.wsService.getStore(storeId).subscribe((storeDB:any) => {
-    //   if(storeDB.length == 1){
-    //     storeDB = storeDB[0];
-    //     this.negoziante = {
-    //       id: storeDB.id,
-    //       name: storeDB.name,
-    //       type: storeDB.type,
-    //       description: storeDB.description
-    //     }
-    //   }
-    // });
   }
 
   ngOnInit() {

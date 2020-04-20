@@ -3,6 +3,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { Subject } from 'rxjs';
 import { ConnectivityService } from '../connectivity.service';
 import { MarkerManager, AgmMarker, Marker, GoogleMapsAPIWrapper } from "@agm/core";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-map',
@@ -12,28 +13,18 @@ import { MarkerManager, AgmMarker, Marker, GoogleMapsAPIWrapper } from "@agm/cor
 
 export class MapComponent implements OnInit {
 
-  private onChanges = new Subject<SimpleChanges>();
-  private visible: boolean = false;
-  private _map: any;
   public location: Location;
   public markers: AgmMarker[] = [];
   public isBrowser: boolean;
 
-  constructor(private wsService: ConnectivityService, private markerManager: MarkerManager, private gmapsApi: GoogleMapsAPIWrapper, @Inject(PLATFORM_ID) platformId: Object) {
+  constructor(private route: ActivatedRoute, private wsService: ConnectivityService, private markerManager: MarkerManager, @Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
     this.location = {
       zoom: 5,
       latitude: 41.6650266,
       longitude: 12.8701779,
       mapType:'roadmap'
-    }
-    this.wsService.getReadyData().subscribe((readyDatas:any) => {
-      readyDatas.forEach((readyData: any)  => {
-        if(readyData && readyData.coords) {
-            this.addMarker(readyData);
-        }
-      });
-    });
+    };
   }
   
 
@@ -46,11 +37,19 @@ export class MapComponent implements OnInit {
     this.markers.push(marker);
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    // markerData are pre-fetched
+    var markersData = this.route.snapshot.data['markers'];
+    markersData.forEach((markerData: any)  => {
+        if(markerData && markerData.coords) {
+            this.addMarker(markerData);
+        }
+      });
+  }
 
   public cleanMap() { }
 
-  getInfoMarker(m, gm, infoWindow) {
+  getInfoMarker(m: AgmMarker, gm, infoWindow) {
     if (gm.lastOpen != null) {
       gm.lastOpen.close();
     }

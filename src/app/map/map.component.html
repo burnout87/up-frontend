@@ -13,10 +13,12 @@
                     [latitude]="m.latitude" 
                     [longitude]="m.longitude"
                     [title]="m.label"
+                    [iconUrl]="m.iconUrl" 
                     (markerClick)="getInfoMarker(m, gm, infoWindow)"
                     >
                     <agm-info-window [disableAutoPan]="false" #infoWindow>
                         <strong>{{m.label}}</strong>
+                        <p>{{m.categ}}</p>
                     </agm-info-window>
                 </agm-marker>
             </agm-marker-cluster>

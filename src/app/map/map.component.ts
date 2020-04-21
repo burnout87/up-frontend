@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { ConnectivityService } from '../connectivity.service';
 import { MarkerManager, AgmMarker, Marker, GoogleMapsAPIWrapper } from "@agm/core";
 import { ActivatedRoute } from '@angular/router';
+import { MapMarker } from '../marker';
 
 @Component({
   selector: 'app-map',
@@ -14,7 +15,7 @@ import { ActivatedRoute } from '@angular/router';
 export class MapComponent implements OnInit {
 
   public location: Location;
-  public markers: AgmMarker[] = [];
+  public markers: MapMarker[] = [];
   public isBrowser: boolean;
 
   constructor(private route: ActivatedRoute, private wsService: ConnectivityService, private markerManager: MarkerManager, @Inject(PLATFORM_ID) platformId: Object) {
@@ -28,11 +29,17 @@ export class MapComponent implements OnInit {
   }
   
 
+
   addMarker(markerData) {
-    let marker = new AgmMarker(this.markerManager);
+    let marker = new MapMarker(this.markerManager);
+    // let marker = new AgmMarker(this.markerManager);
     marker.latitude = Number(markerData.coords.lat);
     marker.longitude = Number(markerData.coords.lng);
     marker.label = markerData.title;
+    marker.categ = markerData.categ;
+    var categ = (markerData.categ).toLowerCase();
+    // if(fs.existsSync("/assets/markerIcons/" + categ + ".png"))
+    marker.iconUrl = "/assets/markerIcons/" + categ + ".png";
     this.markerManager.addMarker(marker);
     this.markers.push(marker);
   }
@@ -49,7 +56,7 @@ export class MapComponent implements OnInit {
 
   public cleanMap() { }
 
-  getInfoMarker(m: AgmMarker, gm, infoWindow) {
+  getInfoMarker(m: MapMarker, gm, infoWindow) {
     if (gm.lastOpen != null) {
       gm.lastOpen.close();
     }

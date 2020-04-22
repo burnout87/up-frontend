@@ -21,6 +21,11 @@ interface Storia {
     meta: any;
     categories: any;
     tags: any;
+    _media_full: string;
+    _media_medium: string;
+    _media_large: string;
+    _media_thumbnail: string;
+    _media_medium_large: string;
     _links_self: string;
     _links_collection: string;
     _links_about: string;

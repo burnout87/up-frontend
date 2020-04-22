@@ -2,6 +2,6 @@
 <ul *ngFor="let storia of storie">
   <li>
     <h3 routerLink="/storie/{{storia.id}}" innerHtml="{{storia.title}}"></h3>
-    
+    <img src="{{storia._media_thumbnail}}"/>
   </li>
 </ul>

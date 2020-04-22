@@ -1,7 +1,62 @@
-<h2>Storie</h2>
+<!-- <h2>Storie</h2>
 <ul *ngFor="let storia of storie">
   <li>
     <h3 routerLink="/storie/{{storia.id}}" innerHtml="{{storia.title}}"></h3>
     <img src="{{storia._media_thumbnail}}"/>
   </li>
-</ul>
+</ul> -->
+
+
+<div class="container-page">
+
+  <div class="test-theme">
+  
+  <h1 class="mat-display-1">Jackdaws love my big sphinx of quartz.</h1>
+  <h2 class="mat-h2">The quick brown fox jumps over the lazy dog.</h2>
+  
+  <!-- By default, Angular Material applies no global styles to native elements. -->
+  <h1>This header is unstyled</h1>
+  
+  <!-- Applying the mat-tyography class adds styles for native elements. -->
+  <section class="mat-typography">
+    <h1>This header will be styled</h1>
+  </section>
+  
+  <h3 class="mat-h3">Flat Buttons</h3>
+  <div class="example-button-row">
+    <button mat-flat-button>Basic</button>
+    <button mat-flat-button color="primary">Primary</button>
+    <button mat-flat-button color="accent">Accent</button>
+    <button mat-flat-button color="warn">Warn</button>
+    <button mat-flat-button disabled>Disabled</button>
+    <a mat-flat-button routerLink=".">Link</a>
+  </div>
+  
+  </div>
+  
+  <div class="title-header">
+    <h1 class="mat-display-1">Storie</h1>
+  </div>
+  
+  <div class="subtitle-header">
+    <h1 class="mat-h1">Questa sezione è stata creata per raccontarti le straordinarie storie dei commercianti che non si arrendono, per aggiornarvi sulle nuove iniziative, per guidarvi nell’utilizzo della nostra piattaforma e per raccontarvi di noi.</h1>
+  </div>
+  
+  <div class="list-card">
+    <mat-card class="example-card" *ngFor="let storia of storie" routerLink="/storie/{{storia.id}}">
+      <img mat-card-image src="{{storia._media_full}}" >
+      <mat-card-footer>
+        <!-- <mat-card-title><h3 class="mat-h3" innerHtml="{{storia.title}}"></h3></mat-card-title>
+        <mat-card-subtitle><h3 class="mat-h3" innerHtml="{{storia.content}}"></h3></mat-card-subtitle> -->
+        <mat-card-title innerHtml="{{storia.title}}"></mat-card-title>
+        <mat-card-subtitle innerHtml="{{storia.content}}"></mat-card-subtitle>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+  
+  <div class="container-load">
+    <button class="button-load" mat-flat-button color="accent"><h3 class="mat-h3">Load More</h3></button>
+  </div>
+  
+  </div>
+  

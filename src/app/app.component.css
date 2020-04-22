@@ -389,17 +389,16 @@
   .mat-toolbar-row {
     height: 94px;
     padding: 0 5%;
-    font-family: "Montserrat", Sans-serif !important;
   }
 
-  mat-toolbar-row > span:hover {
+  /* mat-toolbar-row > span:hover {
     color: #593C8F;
-  }
+  } */
 
   .example-toolbar {
     position: fixed;
     z-index: 2;
-    background-color: #FECE2F;
+    /* background-color: #FECE2F; */
     font-weight: bold;
   }
 

@@ -1,0 +1,61 @@
+.container-page {
+    width: 55%;
+    margin: auto;
+    padding-top: 2em;
+  }
+
+.other{
+    width: 85%;
+    margin: auto;
+    padding-top: 2em;
+  }
+
+.title-header {
+    padding-top: 2em;
+  }
+  
+.content-article {
+    text-align: left;
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+  }
+  
+.content-other {
+    padding-top: 2.5em;
+    padding-bottom: 2em;
+}
+
+.list-other {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    padding-top: 2em;
+  }
+  
+  mat-card {
+    background-color: none !important;
+    border-radius: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+  .example-card {
+    max-width: 25%;
+    margin: 10px;
+  }
+  
+  mat-card-title {
+    margin: 10px;
+    height: 50px;
+  }
+  
+  mat-card-subtitle {
+    margin: 15px;
+    height: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

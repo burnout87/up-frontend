@@ -1,0 +1,75 @@
+
+.container-page {
+    width: 85%;
+    margin: auto;
+    padding-top: 2em;
+  }
+  
+  .test-theme {
+    text-align: center;
+  }
+  
+  .title-header {
+    padding-top: 2em;
+    text-align: center;
+  }
+  
+  .subtitle-header {
+    text-align: left;
+  }
+  
+  .example-button-row button,
+  .example-button-row a {
+    margin-right: 8px;
+  }
+  
+  .list-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    padding-top: 2em;
+  }
+  
+  mat-card {
+    background-color: #FECE2F;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid rgba(0,0,0,.1);
+  }
+  
+  .mat-card-image:first-child {
+    border-top-left-radius: none !important;
+    border-top-right-radius: none !important;
+  }
+  
+  .example-card {
+    max-width: 25%;
+    margin: 10px;
+  }
+  
+  mat-card-title {
+    margin: 10px;
+    height: 50px;
+  }
+  
+  mat-card-subtitle {
+    margin: 15px;
+    height: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .container-load {
+    margin: 2em;
+    text-align: center;
+  }
+  
+  .button-load {
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+  

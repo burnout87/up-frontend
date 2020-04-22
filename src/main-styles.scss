@@ -1,0 +1,28 @@
+
+@import './custom.theme.scss';
+
+$custom-theme-foreground: mat-palette($mat-customPaletteForeground, 500);
+$custom-theme-background: mat-palette($mat-customPaletteBackground, 500);
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    color: mat-color($custom-theme-foreground, 500);
+}
+
+.pointer{ cursor: pointer; }
+
+.example-toolbar{
+    background-color: mat-color($custom-theme-primary);
+    span{
+        color: mat-color($custom-theme-foreground, 500);
+    }
+}
+
+mat-toolbar-row > span:hover {
+    color: mat-color($custom-theme-accent, 500);
+  }

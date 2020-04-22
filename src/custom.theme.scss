@@ -1,0 +1,19 @@
+@import '~@angular/material/theming';
+@import './custom-palette.scss';
+@import './custom-typography.scss';
+
+@include mat-core($first-custom-typography);
+
+//For each palette, you can optionally specify a default, lighter, and darker hue.
+
+//colors most widely used across all screens and components.
+$custom-theme-primary: mat-palette($mat-customPrimary, 500);
+//colors used for the floating action button and interactive elements.
+$custom-theme-accent: mat-palette($mat-customPaletteAccent, 500, A100, A400);
+//colors used to convey error state.
+$custom-theme-warn: mat-palette($mat-red);
+
+
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+@include angular-material-theme($custom-theme);

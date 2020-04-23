@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConnectivityService } from '../connectivity.service';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-storie',
@@ -8,10 +9,48 @@ import { ConnectivityService } from '../connectivity.service';
 })
 export class StorieComponent implements OnInit {
 
+  public isSmall;
+  public isMedium;
+  public isLarge;
+
   storie:Array<Storia> = new Array();
 
-  constructor(private wsService: ConnectivityService) { 
-    
+  constructor(private wsService: ConnectivityService,
+              private breakpointObserver: BreakpointObserver,
+    ) {
+
+      this.breakpointObserver
+      .observe([Breakpoints.XSmall, Breakpoints.HandsetPortrait])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.isSmall = true;
+        } else {
+          this.isSmall = false;
+        }
+        console.log('this.isSmall', this.isSmall);
+      });
+
+      this.breakpointObserver
+      .observe([Breakpoints.Small, Breakpoints.Medium])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.isMedium = true;
+        } else {
+          this.isMedium = false;
+        }
+        console.log('this.isMedium', this.isMedium);
+      });
+
+      this.breakpointObserver
+      .observe([Breakpoints.Large, Breakpoints.XLarge])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.isLarge = true;
+        } else {
+          this.isLarge = false;
+        }
+        console.log('this.isLarge', this.isLarge);
+      });
   }
 
   ngOnInit() {

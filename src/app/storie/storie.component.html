@@ -7,7 +7,7 @@
 </ul> -->
 
 
-<div class="container-page">
+<div [class.container-page_S]="isSmall" [class.container-page_M]="isMedium" [class.container-page_L]="isLarge">
 
   <div class="test-theme">
   
@@ -41,9 +41,11 @@
   <div class="subtitle-header">
     <h1 class="mat-h1">Questa sezione è stata creata per raccontarti le straordinarie storie dei commercianti che non si arrendono, per aggiornarvi sulle nuove iniziative, per guidarvi nell’utilizzo della nostra piattaforma e per raccontarvi di noi.</h1>
   </div>
-  
+
+</div>
+<div class="container-card">
   <div class="list-card">
-    <mat-card class="example-card" *ngFor="let storia of storie" routerLink="/storie/{{storia.id}}">
+    <mat-card [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" *ngFor="let storia of storie" routerLink="/storie/{{storia.id}}">
       <img mat-card-image src="{{storia._media_full}}" >
       <mat-card-footer>
         <!-- <mat-card-title><h3 class="mat-h3" innerHtml="{{storia.title}}"></h3></mat-card-title>
@@ -57,6 +59,7 @@
   <div class="container-load">
     <button class="button-load" mat-flat-button color="accent"><h3 class="mat-h3">Load More</h3></button>
   </div>
+</div>
   
-  </div>
+  
   

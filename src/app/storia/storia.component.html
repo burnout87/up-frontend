@@ -5,12 +5,15 @@
 </div> -->
 
 
-<div class="container-page" *ngIf="storia != null">
+<div [class.container-page_S]="isSmall" [class.container-page_M]="isMedium" [class.container-page_L]="isLarge" *ngIf="storia != null">
     <div class="title-header">
         <h1 class="mat-display-1" innerHtml="{{storia.title}}"></h1>
     </div>
     <mat-divider></mat-divider>
-    <h4 class="mat-h4" innerHtml="{{storia.date}}"></h4>
+    <div class="subtitle-header">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">access_time</mat-icon>
+      <h4 class="mat-h4" innerHtml="{{ storia.date | date: 'dd MMMM yyyy' }}"></h4>
+    </div>
     <div class="content-article">
         <p innerHtml="{{storia.content}}"></p>
     </div>
@@ -19,10 +22,24 @@
 <div class="other">
 <mat-divider></mat-divider>
 <div class="content-other">
-  <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_right</mat-icon> -->
+  <div class="title-other">
+    <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_right</mat-icon>
     <h3 class="mat-h3"> POTREBBE ANCHE PIACERTI</h3>
+  </div>
     <div class="list-other">
-        <mat-card class="example-card" routerLink="/storie/{{storia.id}}">
+        <mat-card [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" routerLink="/storie/{{storia.id}}">
+            <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Immagini-per-articoli-2-576x1024.jpg" >
+            <mat-card-footer>
+              <!-- <mat-card-title><h3 class="mat-h3" innerHtml="{{storia.title}}"></h3></mat-card-title>
+              <mat-card-subtitle><h3 class="mat-h3" innerHtml="{{storia.content}}"></h3></mat-card-subtitle> -->
+              <mat-card-title innerHtml="{{storia.title}}"></mat-card-title>
+              <mat-card-subtitle>
+                <mat-icon aria-hidden="false" aria-label="Example home icon">access_time</mat-icon>
+                <span innerHtml="{{ storia.date | date: 'dd MMMM yyyy' }}"></span>
+              </mat-card-subtitle>
+            </mat-card-footer>
+          </mat-card>
+          <mat-card [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" class="example-card" routerLink="/storie/{{storia.id}}">
             <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Immagini-per-articoli-2-576x1024.jpg" >
             <mat-card-footer>
               <!-- <mat-card-title><h3 class="mat-h3" innerHtml="{{storia.title}}"></h3></mat-card-title>
@@ -31,16 +48,7 @@
               <mat-card-subtitle innerHtml="{{storia.date}}"></mat-card-subtitle>
             </mat-card-footer>
           </mat-card>
-          <mat-card class="example-card" routerLink="/storie/{{storia.id}}">
-            <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Immagini-per-articoli-2-576x1024.jpg" >
-            <mat-card-footer>
-              <!-- <mat-card-title><h3 class="mat-h3" innerHtml="{{storia.title}}"></h3></mat-card-title>
-              <mat-card-subtitle><h3 class="mat-h3" innerHtml="{{storia.content}}"></h3></mat-card-subtitle> -->
-              <mat-card-title innerHtml="{{storia.title}}"></mat-card-title>
-              <mat-card-subtitle innerHtml="{{storia.date}}"></mat-card-subtitle>
-            </mat-card-footer>
-          </mat-card>
-          <mat-card class="example-card" routerLink="/storie/{{storia.id}}">
+          <mat-card [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" class="example-card" routerLink="/storie/{{storia.id}}">
             <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Immagini-per-articoli-2-576x1024.jpg" >
             <mat-card-footer>
               <!-- <mat-card-title><h3 class="mat-h3" innerHtml="{{storia.title}}"></h3></mat-card-title>

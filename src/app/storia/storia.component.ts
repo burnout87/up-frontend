@@ -20,7 +20,6 @@ export class StoriaComponent implements OnInit {
   constructor(private route: ActivatedRoute, private wsService: ConnectivityService,
               private breakpointObserver: BreakpointObserver,
     ) {
-
     this.breakpointObserver
     .observe([Breakpoints.XSmall, Breakpoints.HandsetPortrait])
     .subscribe((state: BreakpointState) => {

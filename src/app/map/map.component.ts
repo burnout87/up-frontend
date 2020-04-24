@@ -37,9 +37,10 @@ export class MapComponent implements OnInit {
     marker.longitude = Number(markerData.coords.lng);
     marker.label = markerData.title;
     marker.categ = markerData.categ;
-    var categ = (markerData.categ).toLowerCase();
-    // if(fs.existsSync("/assets/markerIcons/" + categ + ".png"))
-    marker.iconUrl = "/assets/markerIcons/" + categ + ".png";
+    if(markerData.categ) {
+      var categ = markerData.categ ?(markerData.categ).toLowerCase() :"";
+      marker.iconUrl = "/assets/markerIcons/" + categ + ".png";
+    }
     this.markerManager.addMarker(marker);
     this.markers.push(marker);
   }

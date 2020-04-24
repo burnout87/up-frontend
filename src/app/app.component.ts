@@ -41,7 +41,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
       } else {
         this.isSmallScreen = false;
       }
-      console.log('this.isSmallScreen', this.isSmallScreen);
     });
   }
 
@@ -56,6 +55,14 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   toggleSide() {
     this.sidenavService.toggle();
     this.isOpen = this.sidenavService.isOpen;
+  }
+
+  onResize() {
+    this.sidenavService.close();
+  }
+
+  closeSide() {
+    this.sidenavService.close();
   }
 
 }

@@ -27,7 +27,6 @@ export class StorieComponent implements OnInit {
         } else {
           this.isSmall = false;
         }
-        console.log('this.isSmall', this.isSmall);
       });
 
       this.breakpointObserver
@@ -38,7 +37,6 @@ export class StorieComponent implements OnInit {
         } else {
           this.isMedium = false;
         }
-        console.log('this.isMedium', this.isMedium);
       });
 
       this.breakpointObserver
@@ -49,7 +47,6 @@ export class StorieComponent implements OnInit {
         } else {
           this.isLarge = false;
         }
-        console.log('this.isLarge', this.isLarge);
       });
   }
 

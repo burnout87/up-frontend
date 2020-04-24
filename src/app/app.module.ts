@@ -7,6 +7,9 @@ import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
 
 import { AppRoutingModule , routingComponents} from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { ShareButtonsModule } from '@ngx-share/buttons';
+
 import { MapComponent } from './map/map.component';
 import { ProviderComponent } from './provider/provider.component';
 import { DomandeComponent } from './domande/domande.component';
@@ -34,6 +37,9 @@ import { MemberComponent } from './member/member.component';
     LayoutModule,
     MaterialModule,
     HttpClientModule,
+    ShareButtonsModule.withConfig({
+      debug: true
+    }),
     AgmJsMarkerClustererModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDgbhE4JU0eLfjTogXctQkSZIEh-3x5Q-4'

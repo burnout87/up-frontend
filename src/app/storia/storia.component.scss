@@ -30,6 +30,11 @@
 .subtitle-header {
   display: flex;
   align-content: center;
+  padding-top: 1em;
+  span {
+      padding-left: 5px;
+      padding-right: 5px;
+  }
 }
   
 .content-article {
@@ -39,7 +44,7 @@
   }
   
 .content-other {
-    padding-top: 2.5em;
+    padding-top: 2em;
     padding-bottom: 2em;
 }
 
@@ -83,6 +88,9 @@
   mat-card-title {
     margin: 10px;
     height: 50px;
+    // white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   mat-card-subtitle {
@@ -99,5 +107,32 @@
   .title-other{
     display: flex;
     align-content: center;
-    color: #13aff0;
+    mat-icon {
+        color: #13aff0;
+    }
+  }
+
+  .container-social_S {
+    width: 90%;
+    margin: auto;
+  }
+
+  .container-social_M {
+    width: 80%;
+    margin: auto;
+  }
+
+  .container-social_L {
+    width: 65%;
+    margin: auto;
+  }
+
+  .button-social {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    padding-bottom: 16px;
   }

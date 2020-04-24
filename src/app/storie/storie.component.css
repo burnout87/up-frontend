@@ -74,15 +74,18 @@
   mat-card-title {
     margin: 10px;
     height: 50px;
+    /* white-space: nowrap; */
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
-  mat-card-subtitle {
+  /* mat-card-subtitle {
     margin: 15px;
     height: 50px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
+  } */
   
   .container-load {
     margin: 2em;

@@ -6,7 +6,7 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 @Component({
   selector: 'app-storia',
   templateUrl: './storia.component.html',
-  styleUrls: ['./storia.component.css']
+  styleUrls: ['./storia.component.scss']
 })
 export class StoriaComponent implements OnInit {
 
@@ -29,7 +29,6 @@ export class StoriaComponent implements OnInit {
       } else {
         this.isSmall = false;
       }
-      console.log('this.isSmall', this.isSmall);
     });
 
     this.breakpointObserver
@@ -40,7 +39,6 @@ export class StoriaComponent implements OnInit {
       } else {
         this.isMedium = false;
       }
-      console.log('this.isMedium', this.isMedium);
     });
 
     this.breakpointObserver
@@ -51,7 +49,6 @@ export class StoriaComponent implements OnInit {
       } else {
         this.isLarge = false;
       }
-      console.log('this.isLarge', this.isLarge);
     });
 
   }

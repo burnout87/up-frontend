@@ -1,23 +1,11 @@
-<!-- <h2>Storie</h2>
-<ul *ngFor="let storia of storie">
-  <li>
-    <h3 routerLink="/storie/{{storia.id}}" innerHtml="{{storia.title}}"></h3>
-    <img src="{{storia._media_thumbnail}}"/>
-  </li>
-</ul> -->
-
 
 <div [class.container-page_S]="isSmall" [class.container-page_M]="isMedium" [class.container-page_L]="isLarge">
 
-  <div class="test-theme">
+  <!-- <div class="test-theme">
   
   <h1 class="mat-display-1">Jackdaws love my big sphinx of quartz.</h1>
   <h2 class="mat-h2">The quick brown fox jumps over the lazy dog.</h2>
   
-  <!-- By default, Angular Material applies no global styles to native elements. -->
-  <h1>This header is unstyled</h1>
-  
-  <!-- Applying the mat-tyography class adds styles for native elements. -->
   <section class="mat-typography">
     <h1>This header will be styled</h1>
   </section>
@@ -32,10 +20,10 @@
     <a mat-flat-button routerLink=".">Link</a>
   </div>
   
-  </div>
+  </div> -->
   
   <div class="title-header">
-    <h1 class="mat-display-1">Storie</h1>
+    <h1 class="mat-display-1"><strong>Le nostre storie</strong></h1>
   </div>
   
   <div class="subtitle-header">
@@ -51,7 +39,7 @@
         <!-- <mat-card-title><h3 class="mat-h3" innerHtml="{{storia.title}}"></h3></mat-card-title>
         <mat-card-subtitle><h3 class="mat-h3" innerHtml="{{storia.content}}"></h3></mat-card-subtitle> -->
         <mat-card-title innerHtml="{{storia.title}}"></mat-card-title>
-        <mat-card-subtitle innerHtml="{{storia.content}}"></mat-card-subtitle>
+        <!-- <mat-card-subtitle innerHtml="{{storia.content}}"></mat-card-subtitle> -->
       </mat-card-footer>
     </mat-card>
   </div>

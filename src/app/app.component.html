@@ -1,5 +1,5 @@
 
-<div class="example-container" [class.example-is-mobile]="isSmallScreen">
+<div class="example-container" [class.example-is-mobile]="isSmallScreen" (window:resize)="onResize()">
 
     <mat-toolbar class="example-toolbar">
         <mat-toolbar-row>
@@ -30,22 +30,22 @@
     >
     <div class="sidebar">
       <mat-nav-list>
-        <mat-list-item routerLink='/'>
+        <mat-list-item routerLink='/' (click)="closeSide()">
           <strong>Home</strong>
         </mat-list-item>
-        <mat-list-item routerLink='/chi-siamo'>
+        <mat-list-item routerLink='/chi-siamo' (click)="closeSide()">
           <strong>Chi siamo</strong>
         </mat-list-item>
-        <mat-list-item routerLink='/domande'>
+        <mat-list-item routerLink='/domande' (click)="closeSide()">
           <strong>Domande?</strong>
         </mat-list-item>
-        <mat-list-item routerLink='/storie'>
+        <mat-list-item routerLink='/storie' (click)="closeSide()">
           <strong>Storie</strong>
         </mat-list-item>
-        <mat-list-item routerLink='/aiutaci'>
+        <mat-list-item routerLink='/aiutaci' (click)="closeSide()">
           <strong>Aiutaci</strong>
         </mat-list-item>
-        <mat-list-item routerLink='/negozianti'>
+        <mat-list-item routerLink='/negozianti' (click)="closeSide()">
           <strong>Negozi</strong>
         </mat-list-item>
       </mat-nav-list>

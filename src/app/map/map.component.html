@@ -5,9 +5,12 @@
             [longitude]='location.longitude'
             [mapTypeId]='location.mapType'
             [zoom]='location.zoom'
+            [scrollwheel]='location.scrollwheel'
+            [clickableIcons]='location.clickableIcons'
+            [styles]='location.styles'
             (mapClick)="hideInfo(gm, $event)">
-            <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
-                <!-- <agm-marker-cluster imagePath="/assets/uploads/cluster/cluster"> -->
+            <!-- <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m"> -->
+            <agm-marker-cluster imagePath = "/assets/cluster/cluster">
                 <agm-marker  
                     *ngFor="let m of markers" 
                     [latitude]="m.latitude" 
@@ -22,6 +25,6 @@
                     </agm-info-window>
                 </agm-marker>
             </agm-marker-cluster>
-    </agm-map>
+        </agm-map>
     </div>
 </div>

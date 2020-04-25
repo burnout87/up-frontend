@@ -5,6 +5,7 @@ import { ConnectivityService } from '../connectivity.service';
 import { MarkerManager, AgmMarker, Marker, GoogleMapsAPIWrapper } from "@agm/core";
 import { ActivatedRoute } from '@angular/router';
 import { MapMarker } from '../marker';
+import { async } from '@angular/core/testing';
 
 @Component({
   selector: 'app-map',
@@ -24,35 +25,76 @@ export class MapComponent implements OnInit {
       zoom: 5,
       latitude: 41.6650266,
       longitude: 12.8701779,
-      mapType:'roadmap'
+      mapType:'roadmap',
+      scrollwheel: false,
+      clickableIcons: false,
+      styles: [
+        {
+          featureType: 'poi',
+          stylers: [{ visibility: 'off' }, { saturation: -100 } ]
+        },
+        {
+          featureType: 'transit',
+          elementType: 'labels.icon',
+          stylers: [{ visibility: 'off' }, { saturation: -100 } ]
+        },
+        {
+          featureType: 'landscape',
+          elementType: 'all',
+          stylers: [{ saturation: -100 } ]
+        },
+        {
+          featureType: "road",
+          elementType: "all",
+          stylers: [{ saturation: -100 } ]
+        }
+      ],
+      styleIds: [
+        {elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},
+        {elementType: 'labels.text.fill', stylers: [{color: '#523735'}]},
+        {elementType: 'labels.text.stroke', stylers: [{color: '#f5f1e6'}]},
+        {
+          featureType: 'administrative',
+          elementType: 'geometry.stroke',
+          stylers: [{color: '#c9b2a6'}]
+        }
+      ]
     };
   }
+
   
-
-
-  addMarker(markerData) {
+  addMarker(markerData:any) {
     let marker = new MapMarker(this.markerManager);
-    // let marker = new AgmMarker(this.markerManager);
     marker.latitude = Number(markerData.coords.lat);
     marker.longitude = Number(markerData.coords.lng);
     marker.label = markerData.title;
     marker.categ = markerData.categ;
-    if(markerData.categ) {
-      var categ = markerData.categ ?(markerData.categ).toLowerCase() :"";
-      marker.iconUrl = "/assets/markerIcons/" + categ + ".png";
+    // if(markerData.categ) {
+    //   var categ = markerData.categ ?(markerData.categ).toLowerCase() :"";
+    //   marker.iconUrl = "/assets/markerIcons/" + categ + ".png";
+    // }
+    if(markerData.coupon) {
+      marker.iconUrl = "/assets/markerIcons/up_icon_geoloc_purple.svg";
+    } else {
+      marker.iconUrl = "/assets/markerIcons/up_icon_geoloc_yellow.svg";
     }
     this.markerManager.addMarker(marker);
     this.markers.push(marker);
   }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  ngAfterViewInit () {
     // markerData are pre-fetched
     var markersData = this.route.snapshot.data['markers'];
-    markersData.forEach((markerData: any)  => {
+    (async () => {
+
+      markersData.forEach((markerData: any)  => {
         if(markerData && markerData.coords) {
             this.addMarker(markerData);
         }
       });
+    })();
   }
 
   public cleanMap() { }
@@ -66,12 +108,12 @@ export class MapComponent implements OnInit {
     infoWindow.open();
   }
 
-  hideInfo(gm, event){
+  hideInfo(gm, event) {
     if (gm.lastOpen != null) {
       gm.lastOpen.close();
     }
   }
-
+  
 }
 
 interface Location {
@@ -79,4 +121,8 @@ interface Location {
     longitude: number;
     mapType: string;
     zoom: number;
+    scrollwheel: boolean;
+    clickableIcons: boolean;
+    styles: any[];
+    styleIds: any[];
 }

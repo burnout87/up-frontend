@@ -20,19 +20,37 @@ export class ConnectivityService {
 
   public getPosts(): Rx.Observable<object> {
     if(!this.isBrowser) {
-      return this.http.get(environment.posts, { headers: this.headers });
+      return this.http.get(environment.posts + '?_embed', { headers: this.headers });
     }
     else {
-      return this.http.get(environment.posts);
+      return this.http.get(environment.posts + '?_embed');
+    }
+  }
+
+  public getLatestPosts(idExclude:Number): Rx.Observable<object> {
+    if(!this.isBrowser) {
+      return this.http.get(environment.posts + '?page=1&per_page=3&_embed&exclude=' + idExclude, { headers: this.headers });
+    }
+    else {
+      return this.http.get(environment.posts + '?page=1&per_page=3&_embed&exclude=' + idExclude);
+    }
+  }
+
+  public getLatestMedia(idExclude:Number): Rx.Observable<object> {
+    if(!this.isBrowser) {
+      return this.http.get(environment.media + '?page=1&per_page=3&exclude=' + idExclude, { headers: this.headers });
+    }
+    else {
+      return this.http.get(environment.media + '?page=1&per_page=3&exclude=' + idExclude);
     }
   }
 
   public getPost(id: Number): Rx.Observable<object> {
     if(!this.isBrowser) {
-      return this.http.get(environment.posts + '/' + id, { headers: this.headers });
+      return this.http.get(environment.posts + '/' + id + '?_embed', { headers: this.headers });
     }
     else {
-      return this.http.get(environment.posts + '/' + id);
+      return this.http.get(environment.posts + '/' + id + '?_embed');
     }
   }
 

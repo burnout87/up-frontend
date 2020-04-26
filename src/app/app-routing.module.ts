@@ -15,7 +15,7 @@ import { AgmMarker } from '@agm/core';
 
 /*Store resolver*/
 @Injectable({ providedIn: 'root' })
-export class NegozianteResolver implements Resolve<Negoziante> {
+export class NegozianteResolver implements Resolve<Object> {
   constructor(private cService: ConnectivityService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any 
@@ -27,7 +27,7 @@ export class NegozianteResolver implements Resolve<Negoziante> {
 
 /*Markers resolver*/
 @Injectable({ providedIn: 'root' })
-export class MarkersResolver implements Resolve<AgmMarker> {
+export class MarkersResolver implements Resolve<Object> {
   constructor(private cService: ConnectivityService) {}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any 
   {
@@ -35,6 +35,59 @@ export class MarkersResolver implements Resolve<AgmMarker> {
   }
 }
 
+/*Storie resolver*/
+@Injectable({ providedIn: 'root' })
+export class StorieResolver implements Resolve<any> {
+  constructor(private cService: ConnectivityService) {}
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any 
+  {
+     return this.cService.getPosts();
+  }
+}
+
+/*Single storia resolver*/
+@Injectable({ providedIn: 'root' })
+export class StoriaResolver implements Resolve<any> {
+  constructor(private cService: ConnectivityService) {}
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any 
+  {
+    const storiaId:any = route.paramMap.get('id');
+     return this.cService.getPost(storiaId);
+  }
+}
+
+/*Single media resolver*/
+@Injectable({ providedIn: 'root' })
+export class StoriaMediaResolver implements Resolve<any> {
+  constructor(private cService: ConnectivityService) {}
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any 
+  {
+    const storiaId:any = route.paramMap.get('id');
+    return this.cService.getMedia(storiaId);
+  }
+}
+
+/*Latest storia resolver*/
+@Injectable({ providedIn: 'root' })
+export class LatestStorieResolver implements Resolve<any> {
+  constructor(private cService: ConnectivityService) {}
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any 
+  {
+    const storiaId:any = route.paramMap.get('id');
+    return this.cService.getLatestPosts(storiaId);
+  }
+}
+
+/*Latest media resolver*/
+@Injectable({ providedIn: 'root' })
+export class LatestMediaResolver implements Resolve<any> {
+  constructor(private cService: ConnectivityService) {}
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any 
+  {
+    const storiaId:Number = Number(route.paramMap.get('id'));
+    return this.cService.getLatestMedia(storiaId);
+  }
+}
 
 const routes: Routes = [
   {
@@ -54,11 +107,18 @@ const routes: Routes = [
   },
   {
     path: 'storie',
-    component: StorieComponent
+    component: StorieComponent,
+    resolve: {
+      storie: StorieResolver
+    }
   },
   {
     path: 'storie/:id',
-    component: StoriaComponent
+    component: StoriaComponent,
+    resolve: {
+      storia: StoriaResolver,
+      latestStorie: LatestStorieResolver
+    }
   },
   {
     path: 'domande',

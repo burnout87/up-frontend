@@ -14,7 +14,7 @@
             <span class="pointer" [class.remove]="isSmallScreen" routerLink='/domande'>Domande?</span>
             <span class="pointer" [class.remove]="isSmallScreen" routerLink='/storie'>Storie</span>
             <span class="pointer" [class.remove]="isSmallScreen" routerLink='/aiutaci'>Aiutaci</span>
-            <span class="pointer" [class.remove]="isSmallScreen" routerLink='/negozianti'>Negozi</span>
+            <!-- <span class="pointer" [class.remove]="isSmallScreen" routerLink='/negozianti'>Negozi</span> -->
           </div>
           <button class="example-icon" [class.remove]="!isSmallScreen" mat-icon-button (click)="toggleSide()">
             <mat-icon>{{ isOpen ? 'clear' : 'more_vert' }}</mat-icon>
@@ -45,9 +45,9 @@
         <mat-list-item routerLink='/aiutaci' (click)="closeSide()">
           <strong>Aiutaci</strong>
         </mat-list-item>
-        <mat-list-item routerLink='/negozianti' (click)="closeSide()">
+        <!-- <mat-list-item routerLink='/negozianti' (click)="closeSide()">
           <strong>Negozi</strong>
-        </mat-list-item>
+        </mat-list-item> -->
       </mat-nav-list>
       </div>      
 

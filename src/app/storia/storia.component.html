@@ -38,10 +38,21 @@
     <h3 class="mat-h3"><strong> POTREBBE ANCHE PIACERTI </strong></h3>
   </div>
     <div class="list-other">
-        <mat-card [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" routerLink="/storie/{{storia?.id}}">
-            <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Immagini-per-articoli-2-576x1024.jpg" >
+        <mat-card *ngFor="let latestStoria of latestStorie" [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" routerLink="/storie/{{latestStoria?.id}}">
+            <img mat-card-image src="{{latestStoria?._media_full}}" >
             <mat-card-footer>
               <!-- <mat-card-title><h3 class="mat-h3" innerHtml="{{storia.title}}"></h3></mat-card-title> -->
+              <mat-card-title innerHtml="{{latestStoria?.title}}"></mat-card-title>
+              <mat-card-subtitle>
+                <mat-icon aria-hidden="false" aria-label="Example home icon">access_time</mat-icon>
+                <span innerHtml="{{ latestStoria?.date | date: 'dd MMMM yyyy' }}"></span>
+              </mat-card-subtitle>
+            </mat-card-footer>
+          </mat-card>
+          <!-- <mat-card [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" routerLink="/storie/{{storia?.id}}">
+            <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Immagini-per-articoli-2-576x1024.jpg" >
+            <mat-card-footer>
+              <mat-card-title><h3 class="mat-h3" innerHtml="{{storia.title}}"></h3></mat-card-title>
               <mat-card-title innerHtml="{{storia?.title}}"></mat-card-title>
               <mat-card-subtitle>
                 <mat-icon aria-hidden="false" aria-label="Example home icon">access_time</mat-icon>
@@ -52,25 +63,14 @@
           <mat-card [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" routerLink="/storie/{{storia?.id}}">
             <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Immagini-per-articoli-2-576x1024.jpg" >
             <mat-card-footer>
-              <!-- <mat-card-title><h3 class="mat-h3" innerHtml="{{storia.title}}"></h3></mat-card-title> -->
+              <mat-card-title><h3 class="mat-h3" innerHtml="{{storia.title}}"></h3></mat-card-title>
               <mat-card-title innerHtml="{{storia?.title}}"></mat-card-title>
               <mat-card-subtitle>
                 <mat-icon aria-hidden="false" aria-label="Example home icon">access_time</mat-icon>
                 <span innerHtml="{{ storia?.date | date: 'dd MMMM yyyy' }}"></span>
               </mat-card-subtitle>
             </mat-card-footer>
-          </mat-card>
-          <mat-card [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" routerLink="/storie/{{storia?.id}}">
-            <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Immagini-per-articoli-2-576x1024.jpg" >
-            <mat-card-footer>
-              <!-- <mat-card-title><h3 class="mat-h3" innerHtml="{{storia.title}}"></h3></mat-card-title> -->
-              <mat-card-title innerHtml="{{storia?.title}}"></mat-card-title>
-              <mat-card-subtitle>
-                <mat-icon aria-hidden="false" aria-label="Example home icon">access_time</mat-icon>
-                <span innerHtml="{{ storia?.date | date: 'dd MMMM yyyy' }}"></span>
-              </mat-card-subtitle>
-            </mat-card-footer>
-          </mat-card>
+          </mat-card> -->
     </div>    
 </div>
 </div>

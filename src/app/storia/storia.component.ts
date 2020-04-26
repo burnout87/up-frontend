@@ -14,8 +14,9 @@ export class StoriaComponent implements OnInit {
   public isMedium;
   public isLarge;
 
-  storiaId: any;
-  storia?: Storia;
+  public storia?: Storia;
+  public latestStorie?: Storia[] = [];
+
 
   constructor(private route: ActivatedRoute, private wsService: ConnectivityService,
               private breakpointObserver: BreakpointObserver,
@@ -50,54 +51,55 @@ export class StoriaComponent implements OnInit {
       }
     });
 
-  }
-  
-  ngOnInit() {
-    this.storiaId = this.route.snapshot.paramMap.get('id');
-    this.wsService.getPost(this.storiaId).subscribe((wpStoria:any) => {
-      this.storia = {
-        id: wpStoria.id,
-        date: wpStoria.date,
-        date_gmt: wpStoria.date_gmt,
-        modified: wpStoria.modified,
-        modified_gmt: wpStoria.modified_gmt,
-        slug: wpStoria.slug,
-        status: wpStoria.status,
-        type: wpStoria.type,
-        link: wpStoria.link,
-        title: wpStoria.title.rendered,
-        content: wpStoria.content.rendered,
-        excerpt: wpStoria.excerpt.rendered,
-        author: wpStoria.author,
-        featured_media: wpStoria.featured_media,
-        comment_status: wpStoria.comment_status,
-        ping_status: wpStoria.ping_status,
-        sticky: wpStoria.sticky,
-        template: wpStoria.template,
-        format: wpStoria.format,
-        meta: wpStoria.meta,
-        categories: wpStoria.categories,
-        tags: wpStoria.tags,
-        _links_self: wpStoria._links.self[0].href,
-        _links_collection: wpStoria._links.collection[0].href,
-        _links_about: wpStoria._links.about[0].href,
-        _links_author: wpStoria._links.author[0].href,
-        _links_replies: wpStoria._links.replies[0].href,
-        _media_full: "",
-        _media_medium: "",
-        _media_large: "",
-        _media_thumbnail: "",
-        _media_medium_large: ""
-      };
-      this.wsService.getMedia(this.storia.id).subscribe((wpMedia:any) => {
-        this.storia._media_full = wpMedia[0].media_details.sizes.full?wpMedia[0].media_details.sizes.full.source_url:"";
-        this.storia._media_medium = wpMedia[0].media_details.sizes.medium?wpMedia[0].media_details.sizes.medium.source_url:"";
-        this.storia._media_large = wpMedia[0].media_details.sizes.large?wpMedia[0].media_details.sizes.large.source_url:"";
-        this.storia._media_thumbnail = wpMedia[0].media_details.sizes.thumbnail?wpMedia[0].media_details.sizes.thumbnail.source_url:"";
-        this.storia._media_medium_large = wpMedia[0].media_details.sizes.medium_large?wpMedia[0].media_details.sizes.medium_large.source_url:"";
-      });
+    const dataStoria = this.route.snapshot.data['storia'];
+    const latestStorie = this.route.snapshot.data['latestStorie'];
+    this.storia = this.populateStoria(dataStoria);
+    latestStorie.forEach((latestStoriaData: any) => {
+        this.latestStorie.push(this.populateStoria(latestStoriaData));
     });
   }
+  
+  private populateStoria(dataStoria: any) : Storia {
+    var storia = {
+      id: dataStoria.id,
+      date: dataStoria.date,
+      date_gmt: dataStoria.date_gmt,
+      modified: dataStoria.modified,
+      modified_gmt: dataStoria.modified_gmt,
+      slug: dataStoria.slug,
+      status: dataStoria.status,
+      type: dataStoria.type,
+      link: dataStoria.link,
+      title: dataStoria.title.rendered,
+      content: dataStoria.content.rendered,
+      excerpt: dataStoria.excerpt.rendered,
+      author: dataStoria.author,
+      featured_media: dataStoria.featured_media,
+      comment_status: dataStoria.comment_status,
+      ping_status: dataStoria.ping_status,
+      sticky: dataStoria.sticky,
+      template: dataStoria.template,
+      format: dataStoria.format,
+      meta: dataStoria.meta,
+      categories: dataStoria.categories,
+      tags: dataStoria.tags,
+      _links_self: dataStoria._links.self[0].href,
+      _links_collection: dataStoria._links.collection[0].href,
+      _links_about: dataStoria._links.about[0].href,
+      _links_author: dataStoria._links.author[0].href,
+      _links_replies: dataStoria._links.replies[0].href,
+      _media_full: dataStoria._embedded["wp:featuredmedia"][0].media_details.sizes.full?dataStoria._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url:"",
+      _media_medium: dataStoria._embedded["wp:featuredmedia"][0].media_details.sizes.medium?dataStoria._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url:"",
+      _media_large: dataStoria._embedded["wp:featuredmedia"][0].media_details.sizes.large?dataStoria._embedded["wp:featuredmedia"][0].media_details.sizes.large.source_url:"",
+      _media_thumbnail: dataStoria._embedded["wp:featuredmedia"][0].media_details.sizes.thumbnail?dataStoria._embedded["wp:featuredmedia"][0].media_details.sizes.thumbnail.source_url:"",
+      _media_medium_large: dataStoria._embedded["wp:featuredmedia"][0].media_details.sizes.medium_large?dataStoria._embedded["wp:featuredmedia"][0].media_details.sizes.medium_large.source_url:""
+    };
+
+    return storia;
+    
+  }
+
+  ngOnInit() {  }
 
   ngAfterViewInit(): void {
     

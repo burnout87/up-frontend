@@ -20,6 +20,7 @@ import { MaterialModule } from './material.modules';
 import { AiutaciComponent } from './aiutaci/aiutaci.component';
 import { HomeComponent } from './home/home.component';
 import { MemberComponent } from './member/member.component';
+import { SafeHtmlPipe } from './safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MemberComponent } from './member/member.component';
     routingComponents,
     AiutaciComponent,
     HomeComponent,
-    MemberComponent
+    MemberComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

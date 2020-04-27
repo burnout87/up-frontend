@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ConnectivityService } from '../connectivity.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
@@ -8,11 +8,17 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
   templateUrl: './storia.component.html',
   styleUrls: ['./storia.component.scss']
 })
-export class StoriaComponent implements OnInit {
+export class StoriaComponent implements OnInit, AfterViewInit {
 
   public isSmall;
   public isMedium;
   public isLarge;
+
+  public isMax;
+
+  public figures;
+  public imgfigures;
+  public iframes;
 
   public storia?: Storia;
   public latestStorie?: Storia[] = [];
@@ -21,6 +27,9 @@ export class StoriaComponent implements OnInit {
   constructor(private route: ActivatedRoute, private wsService: ConnectivityService,
               private breakpointObserver: BreakpointObserver,
     ) {
+
+    this.iframes = document.querySelectorAll('iframe');
+
     this.breakpointObserver
     .observe([Breakpoints.XSmall, Breakpoints.HandsetPortrait])
     .subscribe((state: BreakpointState) => {
@@ -48,6 +57,24 @@ export class StoriaComponent implements OnInit {
         this.isLarge = true;
       } else {
         this.isLarge = false;
+      }
+    });
+
+    this.breakpointObserver
+    .observe(['(max-width: 800px)'])
+    .subscribe((state: BreakpointState) => {
+      if (state.matches) {
+        this.isMax = true;
+        this.iframes.forEach((iframe) => {
+          iframe.style.width = '300px';
+          iframe.style.height = '167.75px';
+        });
+      } else {
+        this.isMax = false;
+        this.iframes.forEach((iframe) => {
+          iframe.style.width = '600px';
+          iframe.style.height = '335.5px';
+        });
       }
     });
 
@@ -102,7 +129,31 @@ export class StoriaComponent implements OnInit {
   ngOnInit() {  }
 
   ngAfterViewInit(): void {
-    
+
+    this.figures = document.querySelectorAll('figure');
+    this.imgfigures = document.querySelectorAll('figure > img');
+    this.iframes = document.querySelectorAll('iframe');
+
+    this.figures.forEach((figure) => {
+      figure.style.margin = '0px';
+    });
+
+    this.imgfigures.forEach((img) => {
+      img.style.width = '100%';
+    });
+
+    if (this.isMax === true) {
+      this.iframes.forEach((iframe) => {
+        iframe.style.width = '300px';
+        iframe.style.height = '167.75px';
+      });
+    } else {
+      this.iframes.forEach((iframe) => {
+        iframe.style.width = '600px';
+        iframe.style.height = '335.5px';
+      });
+    }
+
   }
 
 }

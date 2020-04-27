@@ -80,7 +80,7 @@ export class StorieComponent implements OnInit {
         format: wpStoria.format,
         meta: wpStoria.meta,
         categories: wpStoria.categories,
-        tags: wpStoria.tags,
+        tags: wpStoria._embedded["wp:term"].filter(x => x.length > 0 && x[0].taxonomy && x[0].taxonomy == 'post_tag').length > 0?wpStoria._embedded["wp:term"].filter(x => x[0].taxonomy == 'post_tag')[0]:[],
         _links_self: wpStoria._links.self[0].href,
         _links_collection: wpStoria._links.collection[0].href,
         _links_about: wpStoria._links.about[0].href,

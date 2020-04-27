@@ -82,7 +82,7 @@ export class StoriaComponent implements OnInit {
       format: dataStoria.format,
       meta: dataStoria.meta,
       categories: dataStoria.categories,
-      tags: dataStoria.tags,
+      tags: dataStoria._embedded["wp:term"].filter(x => x.length > 0 && x[0].taxonomy && x[0].taxonomy == 'post_tag').length > 0?dataStoria._embedded["wp:term"].filter(x => x[0].taxonomy == 'post_tag')[0]:[],
       _links_self: dataStoria._links.self[0].href,
       _links_collection: dataStoria._links.collection[0].href,
       _links_about: dataStoria._links.about[0].href,

@@ -27,7 +27,7 @@
     [url]="storia?.link"
    ></share-buttons>
   </div>
-  <h4 class="mat-h4">TAG: {{ storia?.tags }}</h4>
+  <h4 class="mat-h4">TAG: <p *ngFor="let tag of storia?.tags"><a href="{{tag.link}}">{{tag.name}}</a></p></h4>
 </div>
 
 <div class="other">

@@ -1,11 +1,10 @@
-import { Component, OnInit, SimpleChanges, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, SimpleChanges, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Subject } from 'rxjs';
 import { ConnectivityService } from '../connectivity.service';
-import { MarkerManager, AgmMarker, Marker, GoogleMapsAPIWrapper } from "@agm/core";
+import { MarkerManager, AgmMap, LatLngBounds } from "@agm/core";
 import { ActivatedRoute } from '@angular/router';
-import { MapMarker } from '../marker';
-import { async } from '@angular/core/testing';
+// import { MapMarker } from '../marker';
 
 @Component({
   selector: 'app-map',
@@ -16,13 +15,15 @@ import { async } from '@angular/core/testing';
 export class MapComponent implements OnInit {
 
   public location: Location;
-  public markers: MapMarker[] = [];
+  public markers: Marker[] = [];
   public isBrowser: boolean;
+
+  @ViewChild('AgmMap', {static: false}) agmMap: AgmMap;
 
   constructor(private route: ActivatedRoute, private wsService: ConnectivityService, private markerManager: MarkerManager, @Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
     this.location = {
-      zoom: 5,
+      zoom: 10,
       latitude: 41.6650266,
       longitude: 12.8701779,
       mapType:'roadmap',
@@ -59,11 +60,14 @@ export class MapComponent implements OnInit {
 
   
   addMarker(markerData:any) {
-    let marker = new MapMarker(this.markerManager);
-    marker.latitude = Number(markerData.coords.lat);
-    marker.longitude = Number(markerData.coords.lng);
-    marker.label = markerData.title;
-    marker.categ = markerData.categ;
+    // let marker = new MapMarker(this.markerManager);
+    var marker = {
+      latitude: Number(markerData.coords.lat),
+      longitude: Number(markerData.coords.lng),
+      label: markerData.title,
+      categ: markerData.categ,
+      iconUrl: ""
+    }
     // if(markerData.categ) {
     //   var categ = markerData.categ ?(markerData.categ).toLowerCase() :"";
     //   marker.iconUrl = "/assets/markerIcons/" + categ + ".png";
@@ -73,13 +77,18 @@ export class MapComponent implements OnInit {
     } else {
       marker.iconUrl = "/assets/markerIcons/up_icon_geoloc_yellow.svg";
     }
-    this.markerManager.addMarker(marker);
+    // this.markerManager.addMarker(marker);
     this.markers.push(marker);
   }
 
   ngOnInit() { }
 
   ngAfterViewInit () {
+    // print the bounding box
+    // this.agmMap.boundsChange.subscribe((bounds:LatLngBounds) => {
+    //   // LatLngBounds: An immutable class representing a latitude/longitude aligned rectangle.
+    //   // console.log(bounds);
+    // });
     // markerData are pre-fetched
     var markersData = this.route.snapshot.data['markers'];
     (async () => {
@@ -92,9 +101,7 @@ export class MapComponent implements OnInit {
     })();
   }
 
-  public cleanMap() { }
-
-  getInfoMarker(m: MapMarker, gm, infoWindow) {
+  getInfoMarker(m: Marker, gm, infoWindow) {
     if (gm.lastOpen != null) {
       gm.lastOpen.close();
     }
@@ -119,4 +126,13 @@ interface Location {
     scrollwheel: boolean;
     clickableIcons: boolean;
     styles: any[];
+}
+
+interface Marker {
+  latitude?: Number;
+  longitude?: Number;
+  label?: string;
+  categ?: string;
+  iconUrl?: string;
+  description?: string;
 }

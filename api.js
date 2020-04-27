@@ -105,6 +105,10 @@ router.get('/readydata', cors(), async function (req, res) {
     res.send(await mongoSelectReadyData(req.params.q?req.params.q:{}).catch(console.error));
 })
 
+router.post('/readydata', cors(), async function (req, res) {
+    res.send(await mongoSelectReadyData(req.body?req.body:{}).catch(console.error));
+})
+
 router.get('/rawdata', cors(), async function (req, res) {
     res.send(await mongoSelectRawData(req.params.q?req.params.q:{}).catch(console.error));
 })

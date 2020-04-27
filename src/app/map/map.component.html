@@ -1,6 +1,6 @@
 <div class="map-container">
     <div class="map-frame">
-        <agm-map #gm
+        <agm-map #AgmMap
             [latitude]='location.latitude'
             [longitude]='location.longitude'
             [mapTypeId]='location.mapType'
@@ -8,7 +8,7 @@
             [scrollwheel]='location.scrollwheel'
             [clickableIcons]='location.clickableIcons'
             [styles]='location.styles'
-            (mapClick)="hideInfo(gm, $event)">
+            (mapClick)="hideInfo(AgmMap, $event)">
             <!-- <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m"> -->
             <agm-marker-cluster imagePath = "/assets/cluster/cluster">
                 <agm-marker  
@@ -17,7 +17,7 @@
                     [longitude]="m.longitude"
                     [title]="m.label"
                     [iconUrl]="m.iconUrl" 
-                    (markerClick)="getInfoMarker(m, gm, infoWindow)"
+                    (markerClick)="getInfoMarker(m, AgmMap, infoWindow)"
                     >
                     <agm-info-window [disableAutoPan]="false" #infoWindow>
                         <strong>{{m.label}}</strong>

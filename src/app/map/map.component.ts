@@ -92,7 +92,6 @@ export class MapComponent implements OnInit {
     // markerData are pre-fetched
     var markersData = this.route.snapshot.data['markers'];
     (async () => {
-
       markersData.forEach((markerData: any)  => {
         if(markerData && markerData.coords) {
             this.addMarker(markerData);
@@ -109,6 +108,30 @@ export class MapComponent implements OnInit {
     console.log(m);
     infoWindow.open();
   }
+
+  boundsChangeEvent(event) {
+    // this.wsService.getReadyDataBounds(event.getNorthEast(), event.getSouthWest()).subscribe((markerDB: [object]) => {
+    //   console.log(markerDB);
+    //   if(markerDB.length > 0) {
+      //     markerDB.forEach((markerData: any)  => {
+        //       if(markerData && markerData.coords) {
+          //           this.addMarker(markerData);
+          //       }
+          //     });
+          
+          //   }
+          // });
+          // get the markers within this bound
+    // this.markers = [];
+    // this.markersData.filter(x => x && x.coords &&
+    //                             Number(x.coords.lat) <= event.getNorthEast().lat() && 
+    //                             Number(x.coords.lat) >= event.getSouthWest().lat() && 
+    //                             Number(x.coords.lng) <= event.getNorthEast().lng() && 
+    //                             Number(x.coords.lng) >= event.getSouthWest().lng() )
+    //                   .forEach(x => {
+    //                     this.addMarker(x);
+    //                   });
+  };
 
   hideInfo(gm, event) {
     if (gm.lastOpen != null) {

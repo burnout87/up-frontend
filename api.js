@@ -12,6 +12,14 @@ const client = new MongoClient(uri);
 
 router.use(bodyParser.json());
 
+var corsOptions = {
+    origin: "*",
+    methods: ['GET', 'PUT', 'POST'],
+    allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept']
+  }
+  
+router.use(cors(corsOptions));
+
 client.connect();
 
 async function mongoSelectStore(q){
@@ -102,10 +110,10 @@ router.get('/negozianti', cors(), async function (req, res) {
 })
 
 router.get('/readydata', cors(), async function (req, res) {
-    res.send(await mongoSelectReadyData(req.params.q?req.params.q:{}).catch(console.error));
+    res.send(await mongoSelectReadyData(req.query?req.query:{}).catch(console.error));
 })
 
-router.post('/readydata', cors(), async function (req, res) {
+router.post('/readydata', async function (req, res) {
     res.send(await mongoSelectReadyData(req.body?req.body:{}).catch(console.error));
 })
 

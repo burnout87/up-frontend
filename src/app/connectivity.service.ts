@@ -3,6 +3,7 @@ import * as Rx from "rxjs";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { isPlatformBrowser } from '@angular/common';
+import { LatLng } from '@agm/core';
 
 
 @Injectable({
@@ -78,6 +79,48 @@ export class ConnectivityService {
     }
     else {
       return this.http.get(environment.readyData);
+    }
+  }
+
+  public getReadyDataBounds(NEpoint:LatLng, SWpoint:LatLng):Rx.Observable<object> {
+
+    var body = {
+      "$and": [
+          {
+              "coords.lat": {
+                  "$lt": Number(NEpoint.lat())
+              }
+          },
+          {
+              "coords.lat": {
+                  "$gt": Number(SWpoint.lat())
+              }
+          },
+          {
+            "coords.lng": {
+                "$lt": Number(NEpoint.lng())
+            }
+        },
+        {
+            "coords.lng": {
+                "$gt": Number(SWpoint.lng())
+            }
+        }
+      ]
+    } 
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+
+    if(!this.isBrowser) {
+      httpOptions.headers.append('Origin', 'X-Requested-With');
+      return this.http.post(environment.readyData, body, httpOptions);
+    }
+    else {
+      return this.http.post(environment.readyData, JSON.stringify(body), httpOptions);
     }
   }
 

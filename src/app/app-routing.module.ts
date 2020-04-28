@@ -27,7 +27,7 @@ export class NegozianteResolver implements Resolve<Object> {
 
 /*Markers resolver*/
 @Injectable({ providedIn: 'root' })
-export class MarkersResolver implements Resolve<Object> {
+export class MarkersResolver implements Resolve<[Object]> {
   constructor(private cService: ConnectivityService) {}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any 
   {

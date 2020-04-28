@@ -6,6 +6,8 @@
 $custom-theme-foreground: mat-palette($mat-customPaletteForeground, 500);
 $custom-theme-background: mat-palette($mat-customPaletteBackground, 500);
 
+$custom-hover: #13aff0;
+
 html,
 body {
     height: 100%;
@@ -17,6 +19,14 @@ body {
 }
 
 .pointer{ cursor: pointer; }
+
+.bg-yellow {
+    background-color: mat-color($custom-theme-primary);
+}
+
+.bg-lightgray {
+    background-color: mat-color($custom-theme-background);
+}
 
 .example-toolbar{
     background-color: mat-color($custom-theme-primary);
@@ -53,6 +63,6 @@ mat-nav-list {
   
   }
 
-mat-toolbar-row > span:hover {
+mat-toolbar-row > div > span:hover {
     color: mat-color($custom-theme-accent, 500);
   }

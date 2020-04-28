@@ -1,4 +1,4 @@
-.media-card {
+/* .media-card {
     display: inline-flex;
  }
 
@@ -12,7 +12,12 @@
    background-color: #f1f1f1;
    width: 210px;
    margin: 10px;
- }
+ } */
+
+ .item-container {
+  width: 210px;
+  margin: 10px;
+  }
 
  .volto {
     width: 208px;

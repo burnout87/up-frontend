@@ -1,4 +1,5 @@
 
+ 
   .container-page_S {
     width: 90%;
     margin: auto;
@@ -60,14 +61,23 @@
   
   mat-card {
     background-color: none !important;
-    border-radius: none !important;
+    border-radius: 0px !important;
     border: none !important;
     box-shadow: none !important;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
   }
 
-  .mat-card-image:first-child {
-    border-top-left-radius: none !important;
-    border-top-right-radius: none !important;
+  mat-card > img:hover {
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -ms-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
   }
   
   .example-card_S {
@@ -88,19 +98,41 @@
   mat-card-title {
     margin: 10px;
     height: 50px;
+    font-size: 16px;
+    font-weight: 600;
     // white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    // text-overflow: ellipsis;
+    text-align: center;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  
+  mat-card-title:hover {
+    color: #13aff0;
   }
   
   mat-card-subtitle {
     margin: 15px;
     height: 50px;
-    white-space: nowrap;
+    //white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    //text-overflow: ellipsis;
     display: flex;
     align-content: center;
+    div {
+      margin: auto;
+      display: flex;
+      align-content: center;
+      span {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    }
   }
 
 

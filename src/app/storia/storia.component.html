@@ -4,12 +4,11 @@
       <h1 class="mat-display-1" innerHtml="{{storia.title}}"></h1>
     </div>
     <mat-divider></mat-divider>
-    <div class="subtitle-header">
-      <mat-icon aria-hidden="false" aria-label="Example home icon">access_time</mat-icon>
-      <h4 class="mat-h4" innerHtml="{{ storia.date | date: 'dd MMMM yyyy' }}"></h4>
-      <span> - </span>
-      <mat-icon aria-hidden="false" aria-label="Example home icon">chat_bubble_outline</mat-icon>
-      <h4 class="mat-h4"> 0 Commenti</h4>
+    <div class="subtitle-header mat-small">
+      <mat-icon inline="true" aria-hidden="false" aria-label="Example home icon">access_time</mat-icon>
+      <span innerHtml="{{ storia.date | date: 'dd MMMM yyyy' }}  -  "></span>
+      <mat-icon inline="true" aria-hidden="false" aria-label="Example home icon">chat_bubble_outline</mat-icon>
+      <span>0 Commenti</span>
     </div>
     <div class="content-article">
         <p [innerHtml]="storia.content | safeHtml:'html'"></p>
@@ -38,14 +37,15 @@
     <h3 class="mat-h3"><strong> POTREBBE ANCHE PIACERTI </strong></h3>
   </div>
     <div class="list-other">
-        <mat-card *ngFor="let latestStoria of latestStorie" [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" routerLink="/storie/{{latestStoria?.id}}">
-            <img mat-card-image src="{{latestStoria?._media_full}}" >
+        <mat-card [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" *ngFor="let latestStoria of latestStorie" class="pointer" routerLink="/storie/{{latestStoria?.id}}">
+          <img mat-card-image src="{{latestStoria?._media_full}}" >
             <mat-card-footer>
-              <!-- <mat-card-title><h3 class="mat-h3" innerHtml="{{storia.title}}"></h3></mat-card-title> -->
-              <mat-card-title innerHtml="{{latestStoria?.title}}"></mat-card-title>
+              <mat-card-title ellipsis><span innerHtml="{{latestStoria?.title}}"></span></mat-card-title>
               <mat-card-subtitle>
-                <mat-icon aria-hidden="false" aria-label="Example home icon">access_time</mat-icon>
-                <span innerHtml="{{ latestStoria?.date | date: 'dd MMMM yyyy' }}"></span>
+                <div>
+                <mat-icon inline="true" aria-hidden="false" aria-label="Example home icon">access_time</mat-icon>
+                <span class="mat-small" innerHtml="{{ latestStoria?.date | date: 'dd MMMM yyyy' }}"></span>
+                </div>
               </mat-card-subtitle>
             </mat-card-footer>
           </mat-card>

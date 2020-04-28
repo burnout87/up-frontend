@@ -22,6 +22,8 @@ import { HomeComponent } from './home/home.component';
 import { MemberComponent } from './member/member.component';
 import { SafeHtmlPipe } from './safe-html.pipe';
 
+import { EllipsisModule } from 'ngx-ellipsis';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,8 +44,8 @@ import { SafeHtmlPipe } from './safe-html.pipe';
     ShareButtonsModule.withConfig({
       debug: true
     }),
+    EllipsisModule,
     AgmJsMarkerClustererModule,
-    
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDgbhE4JU0eLfjTogXctQkSZIEh-3x5Q-4'
       /* apiKey is required, unless you are a 

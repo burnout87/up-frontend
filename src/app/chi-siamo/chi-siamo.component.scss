@@ -1,5 +1,5 @@
-  
-  .flex-container {
+
+.flex-container {
     display: flex;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -20,8 +20,8 @@
     width: 50%;
   }
 
-  .imagebox-taxi-2 {
-    width: 50%;
+  .imagebox-taxi-3 {
+    width: 20%;
   }
 
   .imagebox-taxi-2 {
@@ -30,9 +30,7 @@
   }
 
   .image-taxi-3 {
-    width: 45%;
-    display: flex;
-    
+    width: 100%;
   }
 
   .image-taxi-2 {
@@ -44,23 +42,6 @@
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-  }
-
-
-  .volto {
-    width: 208px;
-  }
-
-  desc {
-    text-align: center;
-  }
-
-  h4{
-    margin: auto;
-  }
-
-  h5{
-    margin: auto;
   }
 
   .media-box {
@@ -157,6 +138,8 @@
 
   .media-card {
      display: inline-flex;
+     border: 1px solid #dedede;
+     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
 
   .card-container {

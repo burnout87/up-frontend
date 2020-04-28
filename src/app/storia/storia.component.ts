@@ -16,6 +16,7 @@ export class StoriaComponent implements OnInit, AfterViewInit {
 
   public isMax;
 
+  public hrefs;
   public figures;
   public imgfigures;
   public iframes;
@@ -129,6 +130,12 @@ export class StoriaComponent implements OnInit, AfterViewInit {
   ngOnInit() {  }
 
   ngAfterViewInit(): void {
+
+    this.hrefs = document.querySelectorAll('a');
+    this.hrefs.forEach((a) => {
+      a.style.textDecoration = 'none';
+      a.style.color = '#13aff0';
+    });
 
     this.figures = document.querySelectorAll('figure');
     this.imgfigures = document.querySelectorAll('figure > img');

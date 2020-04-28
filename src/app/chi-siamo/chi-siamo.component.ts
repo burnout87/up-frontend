@@ -19,7 +19,7 @@ import Typed from 'typed.js';
 @Component({
   selector: 'app-chi-siamo',
   templateUrl: './chi-siamo.component.html',
-  styleUrls: ['./chi-siamo.component.css']
+  styleUrls: ['./chi-siamo.component.scss']
 })
 export class ChiSiamoComponent implements OnInit {
 
@@ -30,11 +30,11 @@ export class ChiSiamoComponent implements OnInit {
   ngOnInit() {
     var typed = new Typed('#typed', {
       strings: [
-        'Siamo ^1000 <span style="color:#593C8F"> imprenditori</span>', 
-        'Siamo ^1000 <span style="color:#593C8F"> volontari</span>', 
-        'Siamo ^1000 <span style="color:#593C8F"> marketers</span>', 
-        'Siamo ^1000 <span style="color:#593C8F"> persone</span>',
-        'Siamo ^1000 <span style="color:#593C8F"> designers</span>'
+        '<span class="mat-display-3">Siamo ^1000 <span style="color:#593C8F"> imprenditori</span></span>', 
+        '<span class="mat-display-3">Siamo ^1000 <span style="color:#593C8F"> volontari</span></span>', 
+        '<span class="mat-display-3">Siamo ^1000 <span style="color:#593C8F"> marketers</span></span>', 
+        '<span class="mat-display-3">Siamo ^1000 <span style="color:#593C8F"> persone</span></span>',
+        '<span class="mat-display-3">Siamo ^1000 <span style="color:#593C8F"> designers</span></span>'
       ],
       loop: true,
       typeSpeed: 80

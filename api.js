@@ -84,16 +84,40 @@ async function mongoSelectReadyData(q) {
     }
 
   async function mongoInsertRawData(data) {
-    try {
-        const db = client.db('up');
-        const collection = db.collection('rawdata')
-        await collection.insertOne(data);
-        return 1;
-    } catch (e) {
-        console.error(e);
-        return -1;
+        try {
+            const db = client.db('up');
+            const collection = db.collection('rawdata')
+            await collection.insertOne(data);
+            return 1;
+        } catch (e) {
+            console.error(e);
+            return -1;
+        }
     }
-}
+
+    async function mongoSelectPlatforms(q) {
+        var result = {};
+        try {
+            const db = client.db('up');
+            const collection = db.collection('platforms')
+            result = await collection.find(q).toArray();
+        } catch (e) {
+            console.error(e);
+        }
+        return result;
+    }
+  
+    async function mongoInsertPlatform(data) {
+        try {
+            const db = client.db('up');
+            const collection = db.collection('platforms')
+            await collection.insertOne(data);
+            return 1;
+        } catch (e) {
+            console.error(e);
+            return -1;
+        }
+    }
 
 // middleware that is specific to this router
 /*router.use(function timeLog (req, res, next) {
@@ -121,6 +145,10 @@ router.get('/rawdata', cors(), async function (req, res) {
     res.send(await mongoSelectRawData(req.params.q?req.params.q:{}).catch(console.error));
 })
 
+router.get('/platforms', cors(), async function (req, res) {
+    res.send(await mongoSelectPlatforms(req.query?req.query:{}).catch(console.error));
+})
+
 router.get('/negozianti/add/:name/:type', cors(), async function (req, res) {
     res.send({"state":await mongoInsertStore({name: req.params.name,type: req.params.type})});
 })
@@ -135,6 +163,10 @@ router.post('/readydata/add/', cors(), async function (req, res) {
 
 router.post('/rawdata/add/', cors(), async function (req, res) {
     res.send({"state":await mongoInsertRawData(req.body)});
+})
+
+router.post('/platforms/add/', cors(), async function (req, res) {
+    res.send({"state":await mongoInsertPlatform(req.body)});
 })
 
 module.exports = router

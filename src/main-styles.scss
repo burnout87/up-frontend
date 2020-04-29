@@ -20,6 +20,10 @@ body {
 
 .pointer{ cursor: pointer; }
 
+b, strong {
+    font-weight: 600;
+}
+
 .bg-yellow {
     background-color: mat-color($custom-theme-primary);
 }

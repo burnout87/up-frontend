@@ -41,7 +41,7 @@ export class StorieResolver implements Resolve<any> {
   constructor(private cService: ConnectivityService) {}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any 
   {
-     return this.cService.getPosts();
+     return this.cService.getLatestPosts([], 6);
   }
 }
 
@@ -74,7 +74,7 @@ export class LatestStorieResolver implements Resolve<any> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any 
   {
     const storiaId:any = route.paramMap.get('id');
-    return this.cService.getLatestPosts(storiaId);
+    return this.cService.getLatestPosts([storiaId], 3);
   }
 }
 

@@ -28,12 +28,12 @@ export class ConnectivityService {
     }
   }
 
-  public getLatestPosts(idExclude:Number): Rx.Observable<object> {
+  public getLatestPosts(idExclude:Number[], latest: Number): Rx.Observable<object> {
     if(!this.isBrowser) {
-      return this.http.get(environment.posts + '?page=1&per_page=3&_embed&exclude=' + idExclude, { headers: this.headers });
+      return this.http.get(environment.posts + '?page=1&per_page=' + latest + '&_embed&exclude=' + idExclude, { headers: this.headers });
     }
     else {
-      return this.http.get(environment.posts + '?page=1&per_page=3&_embed&exclude=' + idExclude);
+      return this.http.get(environment.posts + '?page=1&per_page=' + latest + '&_embed&exclude=' + idExclude);
     }
   }
 

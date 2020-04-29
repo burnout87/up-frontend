@@ -13,6 +13,7 @@ export class StorieComponent implements OnInit {
   public isSmall;
   public isMedium;
   public isLarge;
+  public loadMoreStorieVisible = true;
 
   storie:Array<Storia> = new Array();
 
@@ -97,8 +98,16 @@ export class StorieComponent implements OnInit {
     });
   }
 
-  ngAfterViewInit(): void {
-    
+  ngAfterViewInit(): void {  }
+
+  loadMoreStories() {
+    // retrieve the ids of the stories to exclude
+    var idsExclude = this.storie.map(x => x.id);
+    this.wsService.getLatestPosts(idsExclude, 3).subscribe((moreStoriesDB:[]) => {
+      this.populateStorie(moreStoriesDB);
+      if(moreStoriesDB.length < 3)
+        this.loadMoreStorieVisible = false;
+    });
   }
 
 }

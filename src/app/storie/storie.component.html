@@ -34,16 +34,16 @@
 <div class="container-card">
   <div class="list-card">
     <mat-card [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" *ngFor="let storia of storie" class="pointer" routerLink="/storie/{{storia.id}}">
-      <img mat-card-image src="{{storia._media_full}}" >
+      <img mat-card-image src="{{storia?._media_full}}" >
       <mat-card-footer>
-        <mat-card-title ellipsis><span innerHtml="{{storia.title}}"></span></mat-card-title>
+        <mat-card-title ellipsis><span innerHtml="{{storia?.title}}"></span></mat-card-title>
         <!-- <mat-card-subtitle innerHtml="{{storia.content}}"></mat-card-subtitle> -->
       </mat-card-footer>
     </mat-card>
   </div>
   
-  <div class="container-load">
-    <button class="button-load" mat-flat-button color="accent"><h3 class="mat-h3">Load More</h3></button>
+  <div class="container-load" *ngIf="loadMoreStorieVisible">
+    <button class="button-load" (click)="loadMoreStories()" mat-flat-button color="accent"><h3 class="mat-h3">Load More</h3></button>
   </div>
 </div>
   

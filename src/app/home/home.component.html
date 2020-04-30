@@ -1,42 +1,45 @@
-<section class="flex-container-home yellow">
-    <div class="flex-item-home videotutorials">
-        <h1 class="title">Aiuta le aziende italiane durante l'emergenza COVID-19!
-            Compra dal tuo commerciante di quartiere</h1>
-
-        <div class="videotutorials-container">
-
-        <div class="videotutorial imagebox-teamwork">
-            <img class="image-teamwork" src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-teamwork-in-office-300x300.png"/>
-        </div>
-        <div class="videotutorial">
-            <p>Unitipossiamo è il più grande aggregatore di tutte le iniziative nate sul territorio italiano per aiutare le attività commerciali a superare il periodo di crisi che stanno vivendo a causa del COVID-19.</p>
-        </div>
-        <div class="videotutorial">
-            <p>Unitipossiamo è il più grande aggregatore di tutte le iniziative nate sul territorio italiano per aiutare le attività commerciali a superare il periodo di crisi che stanno vivendo a causa del COVID-19.</p>
-        </div>
-        
+<section class="flex-container-home bg-yellow">
+    <div class="flex-item-home-img imagebox-teamwork">
+        <img class="image-teamwork" src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-teamwork-in-office-300x300.png"/>
+    </div>
+    <div class="flex-item-home-text">
+        <span class="mat-display-1">Sostieni le attività locali durante l’emergenza Covid-19.</span>
+        <div class="paragraph">
+        <p>Scopri le offerte e i servizi di consegna a domicilio più vicine a te. </p>
+        <p>Aiuterai il tuo commerciante di fiducia a superare questo difficile momento!</p>
         </div>
     </div>
 </section>
 
-<section class="flex-container-home">
-    <div class="flex-item-home videotutorials">
-        <h1 class="title">Trova nella mappa i negozi vicini a te</h1>
+<section class="flex-container">
+    <div class="flex-item-text">
+        <span class="mat-display-1">Come funziona?</span>
+        <div class="paragraph">
+        <p>Ristoranti, librerie, parrucchieri di tutta Italia stanno vivendo un momento molto duro. Ora puoi dare una mano a ciascuno di loro, nel modo più semplice. <strong>Apri la mappa, clicca e sostieni un’attività!</strong></p>
+        </div>
+    </div>
+    <div class="flex-item-action">
+        <button mat-flat-button color="accent">Vai alla mappa</button>
+    </div>
+</section>
+
+<section class="flex-container-map">
+    <div class="flex-item-map">
+        <span class="mat-display-1">Trova nella mappa i negozi vicini a te</span>
+        <div class="subtitle">
         <p>Clicca sull'icona per visitare la piattaforma a cui il negozio è registrato e acquistare i suoi prodotti</p>
+        </div>
         <div class="map">
             <app-map *ngIf="isBrowser"></app-map>
         </div>
-    </div>
-</section>
-
-<section class="flex-container-home">
-    <div class="flex-item-home partners">
-        <h1 class="title">Non hai trovato negozi nei tuoi dintorni?</h1>
+        <span class="mat-display-1">Non hai trovato negozi nei tuoi dintorni?</span>
+        <div class="subtitle">
         <p>Spargi la voce e aiutaci a raggiungere più attività commerciali, condividi il link sui tuoi canali! ツ</p>
+        </div>
     </div>
 </section>
 
-<section class="flex-container-banner gray">
+<section class="flex-container-banner">
     <div id="flex-item-banner">
         <div class="social">
             <form action="https://www.facebook.com/sharer/sharer.php?u=https://unitipossiamo.it/" method="get" target="_blank">
@@ -55,5 +58,18 @@
             </button>
             </form>
         </div>
+    </div>
+</section>
+
+<section class="flex-container">
+    <div class="flex-item-text">
+        <span class="mat-display-1">Hai un’attività?</span>
+        <div class="paragraph">
+        <p>Scopri come registrare la tua offerta in una delle nostre piattaforme. 
+            Avrai maggior visibilità e visitatori da tutta Italia. Tutto in una sola pagina, tutto gratis!</p>
+        </div>
+    </div>
+    <div class="flex-item-action">
+        <button mat-flat-button color="accent">Scopri le piattaforme</button>
     </div>
 </section>

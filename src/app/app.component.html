@@ -11,9 +11,10 @@
           <div class="items-menu">
             <span class="pointer" [class.remove]="isSmallScreen" routerLink='/'>Home</span>
             <span class="pointer" [class.remove]="isSmallScreen" routerLink='/chi-siamo'>Chi siamo</span>
+            <span class="pointer" [class.remove]="isSmallScreen" routerLink='/piattaforme'>Piattaforme</span>
             <span class="pointer" [class.remove]="isSmallScreen" routerLink='/domande'>Domande?</span>
             <span class="pointer" [class.remove]="isSmallScreen" routerLink='/storie'>Storie</span>
-            <span class="pointer" [class.remove]="isSmallScreen" routerLink='/aiutaci'>Aiutaci</span>
+            <!-- <span class="pointer" [class.remove]="isSmallScreen" routerLink='/aiutaci'>Aiutaci</span> -->
             <!-- <span class="pointer" [class.remove]="isSmallScreen" routerLink='/negozianti'>Negozi</span> -->
           </div>
           <button class="example-icon" [class.remove]="!isSmallScreen" mat-icon-button (click)="toggleSide()">
@@ -36,15 +37,18 @@
         <mat-list-item routerLink='/chi-siamo' (click)="closeSide()">
           <strong>Chi siamo</strong>
         </mat-list-item>
+        <mat-list-item routerLink='/piattaforme' (click)="closeSide()">
+          <strong>Piattaforme</strong>
+        </mat-list-item>
         <mat-list-item routerLink='/domande' (click)="closeSide()">
           <strong>Domande?</strong>
         </mat-list-item>
         <mat-list-item routerLink='/storie' (click)="closeSide()">
           <strong>Storie</strong>
         </mat-list-item>
-        <mat-list-item routerLink='/aiutaci' (click)="closeSide()">
+        <!-- <mat-list-item routerLink='/aiutaci' (click)="closeSide()">
           <strong>Aiutaci</strong>
-        </mat-list-item>
+        </mat-list-item> -->
         <!-- <mat-list-item routerLink='/negozianti' (click)="closeSide()">
           <strong>Negozi</strong>
         </mat-list-item> -->

@@ -8,18 +8,33 @@
 
 .flex-container-header {
   display: flex;
-  // flex-direction: row;
-  // flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   padding-left: 4%;
   padding-right: 4%;
 }
 
-.flex-item-header {
+.flex-item-header-img {
   padding: 10px;
   margin: auto;
+  width: 25%;
 }
 
-.titlebox-header {
+.flex-item-header-img_S {
+  padding: 10px;
+  margin: auto;
+  width: 100%;
+}
+
+.flex-item-header-title {
+  padding: 10px;
+  margin: auto;
+  width: 65%;
+}
+
+.flex-item-header-title_S {
+  padding: 10px;
+  margin: auto;
   width: 100%;
 }
 
@@ -31,6 +46,13 @@
     padding-bottom: 4%;
     padding-left: 4%;
     padding-right: 4%;
+  }
+
+  .flex-container_S {
+    padding-top: 0%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
   }
 
   .flex-item {
@@ -54,7 +76,7 @@
   }
 
   .image-Hack_for_Italy {
-    width: 90%;
+    width: 100%;
   }
 
   .flex-item_S {
@@ -165,14 +187,19 @@
   .img-media {
     display: flex;
     width: 140px;
-    height: 140px;
-    // background-color: #FECE2F;
+    //height: 140px;
     margin: auto;
     text-align: center;
     align-content: center;
+    overflow: hidden;
     img{
-      width: 140px;
+      //width: 140px;
+      width: 100%;
     }
+  }
+
+  .img-media_S {
+    width: 100px;
   }
 
   .text-media {
@@ -183,8 +210,16 @@
     text-align: left;
   }
 
+  .text-media_S {
+    width: 178px;
+    height: 76px;
+    padding: 12px 15px;
+    text-align: left;
+  }
+
   .media-card {
      display: inline-flex;
+     background-color: #FFFFFF;
      border: 1px solid #dedede;
      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   }
@@ -219,7 +254,7 @@
     overflow: hidden;
     span {
       color: #999999;
-      margin-right: 5px;
+      margin-right: 2px;
       a {
         text-decoration: none;
         img {

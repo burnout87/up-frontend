@@ -1,8 +1,22 @@
+.imagebox-taxi-3 {
+  width: 40%;
+}
+
+.image-taxi-3 {
+  width: 100%;
+}
 
 .flex-container-header {
   display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
   padding-left: 4%;
   padding-right: 4%;
+}
+
+.flex-item-header {
+  padding: 10px;
+  margin: auto;
 }
 
 .titlebox-header {
@@ -11,8 +25,8 @@
 
 .flex-container {
     display: flex;
-    // flex-direction: row;
-    // flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding-top: 4%;
     padding-bottom: 4%;
     padding-left: 4%;
@@ -22,15 +36,65 @@
   .flex-item {
     padding: 10px;
     margin: auto;
+    width: 100%;
+  }
+
+  .imagebox-taxi-2 {
+    width: 48%;
+    text-align: center;
+  }
+
+  .image-taxi-2 {
+    width: 75%;
+  }
+
+  .imagebox-Hack_for_Italy {
+    width: 48%;
+    text-align: center;
+  }
+
+  .image-Hack_for_Italy {
+    width: 90%;
+  }
+
+  .flex-item_S {
+    padding: 10px;
+    margin: auto;
+    width: 100%;
+    .imagebox-taxi-2 {
+      width: 100%;
+    }
+    .imagebox-Hack_for_Italy{
+      width: 100%;
+    }
+  }
+
+  .flex-item_M {
+    padding: 10px;
+    margin: auto;
+    width: 70%;
+    .imagebox-taxi-2 {
+      width: 70%;
+    }
+    .imagebox-Hack_for_Italy{
+      width: 70%;
+    }
+  }
+
+  .flex-item_L {
+    padding: 10px;
+    margin: auto;
+    width: 48%;
+    .imagebox-Hack_for_Italy{
+      width: 48%;
+    }
   }
 
   .titlebox {
-    width: 50%;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
   .textbox {
-    width: 50%;
     text-align: justify;
     p {
       font-size: 20px;
@@ -40,23 +104,6 @@
 
   .subtitle {
     margin-top: 2%;
-  }
-
-  .imagebox-taxi-3 {
-    width: 40%;
-  }
-
-  .imagebox-taxi-2 {
-    width: 50%;
-    text-align: center;
-  }
-
-  .image-taxi-3 {
-    width: 100%;
-  }
-
-  .image-taxi-2 {
-    width: 75%;
   }
 
   .voltibox {
@@ -104,38 +151,6 @@
     filter: brightness( 100% ) contrast( 100% ) saturate( 0% ) blur( 0px ) hue-rotate( 0deg );
   }
 
-  .imagebox-Hack_for_Italy {
-    width: 50%;
-    text-align: center;
-  }
-
-  .image-Hack_for_Italy {
-    width: 90%;
-  }
-
-  .social {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-  }
-
-  .mat-mini-fab {
-    box-shadow: none !important;
-    color: #FFFFFF;
-    margin-right: 30px;
-  }
-  .facebook {
-    background-color: #3b5998;
-  }
-
-  .linkedin {
-    background-color: #0077b5;
-  }
-
-  .whatsapp {
-    background-color: #25d366;
-  }
-
   .media-container{
     display: flex;
     flex-direction: row;
@@ -179,12 +194,6 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 4%;
-  }
-
-  .card-container > .item-container {
-    background-color: #f1f1f1;
-    width: 210px;
-    margin: 10px;
   }
 
   .media-th {

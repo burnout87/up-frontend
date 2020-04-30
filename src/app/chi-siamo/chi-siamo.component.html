@@ -1,38 +1,38 @@
 
 <section class="flex-container-header bg-yellow">
-    <div class="flex-item imagebox-taxi-3">
+    <div class="flex-item-header imagebox-taxi-3">
         <img class="image-taxi-3" src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-3.png"/>
     </div>
-    <div class="flex-item titlebox-header mat-display-3">
+    <div class="flex-item-header titlebox-header mat-display-3">
         <span id="typed"></span><span>.</span>
     </div>
 </section>
 
 <section class="flex-container">
-    <div class="flex-item titlebox">
+    <div [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" class="titlebox">
         <span class="mat-display-3">Che cos'è Unitipossiamo?</span>
     </div>
-    <div class="flex-item textbox">
+    <div [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" class="textbox">
         <p>Unitipossiamo è il più grande aggregatore di tutte le iniziative nate sul territorio italiano per aiutare le <strong>attività commerciali </strong>a superare il periodo di crisi che stanno vivendo a causa del<strong> COVID-19.</strong></p>    
     </div>
 </section>
 
 <section class="flex-container">
-    <div class="flex-item textbox">
+    <div [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" class="textbox">
         <p>La filosofia che ci unisce ruota intorno alla volontà di <strong>semplificare la ricerca</strong> di attività per l’utente e <strong>aumentare la visibilità</strong> delle offerte online proposte dai commercianti.</p>
         <p>Unitipossiamo incentiva i consumatori a comprare <strong>oggi</strong> un servizio di cui usufruiranno <strong>domani</strong> e supporta i commercianti in difficoltà ad avere visibilità sul territorio.</p>
         <p>Ogni acquisto fatto durante l’emergenza è un atto di solidarietà verso il nostro paese.</p>
     </div>
-    <div class="flex-item imagebox-taxi-2">
+    <div class="imagebox-taxi-2" [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL">
         <img class="image-taxi-2" src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-2.png"/>
     </div>
 </section>
 
 <section class="flex-container bg-lightgray">
-    <div class="flex-item titlebox">
+    <div [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" class="titlebox">
         <span class="mat-display-3">Perchè Unitipossiamo</span>
     </div>
-    <div class="flex-item textbox">
+    <div [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" class="textbox">
         <p>Su tutto il territorio nazionale si moltiplicano le iniziative che, in vario modo, cercano di <strong>aiutare le attività commerciali.</strong> Ma la frammentarietà risulta controproducente.</p>
         <p>Abbiamo quindi pensato di unire tutte le iniziative esistenti in un’unica piattaforma per aiutare coloro che vogliono dare il loro <strong>contributo</strong> a farlo più facilmente.<br>Un aggregatore infatti <strong>semplifica la ricerca</strong> per l’utente e <strong>aumenta la visibilità</strong> delle offerte proposte dai commercianti.</p>
         <p><strong>Unitipossiamo.it</strong> è un’iniziativa nata durante HackforItaly, un hackaton per trovare soluzioni a sostegno <strong>dell’emergenza COVID-19</strong>, tenutasi dal 27 al 29 marzo 2020. La piattaforma nasce come iniziativa <strong>non-profit</strong>, ed è stata realizzata grazie all’impegno volontario di più di venti giovani ed esperti da tutta Italia.</p>
@@ -81,6 +81,34 @@
                                 <span>
                                     <a href="https://www.lastampa.it" target="_blank" rel="noopener">
                                         <span class="mat-small">lastampa.it</span>
+                                    </a> 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-item">
+                    <div class="media-card">
+                        <div class="img-media">
+                            <img src="//cdn.iframe.ly/api/thumbnail?url=http%3A%2F%2Fwww.radiocassinostereo.com%2Fcassinate-coronavirus-uniti-possiamo-la-piattaforma-che-aiuta-i-commercianti%2F%3Ffbclid%3DIwAR2KYO7NelL6U8oBhvbKrYVeONzDrTu767QCIelL9T-Xs_p5cMzWX6RTHAQ&key=a55eef4ce2d285af9dca588fc5160aef">
+                        </div>
+                        <div class="text-media">
+                            <div class="media-th" ellipsis>
+                                <p> Cassinate – Coronavirus, Uniti Possiamo, la piattaforma che aiuta i commercianti </p>
+                            </div>
+                            <div class="media-td" ellipsis>
+                                <p> Venti giovani volontari di tutta Italia, tra cui un cassinate, si sono uniti per mettere a punto un’iniziativa in grado di aiutare le attività commerciali travolte dall’emergenza epidemiologica. In un weekend del mese scorso,... </p>
+                            </div>
+                            <div class="media-tf">
+                                <span>
+                                <a href="http://www.radiocassinostereo.com/" target="_blank" rel="noopener">
+                                    <img src="//cdn.iframe.ly/pj?url=https%3A%2F%2Fi1.wp.com%2Fwww.radiocassinostereo.com%2Fwp-content%2Fuploads%2F2015%2F02%2Fcropped-Logo-Radio-senza-claime-copia.png%3Ffit%3D32%252C32&width=32&key=cb900cefa2200646eb942c48d9e2d786f9c79a30&cache=temp">
+                                </a>
+                                </span>
+                                <span>
+                                    <a href="http://www.radiocassinostereo.com/" target="_blank" rel="noopener">
+                                        <span class="mat-small">RadioCassinoStereo</span>
                                     </a> 
                                 </span>
                             </div>
@@ -147,24 +175,164 @@
                 <div class="media-item">
                     <div class="media-card">
                         <div class="img-media">
-                            <img src="//cdn.iframe.ly/api/thumbnail?url=https%3A%2F%2Fwww.tpi.it%2Feconomia%2Funiti-possiamo-piattaforma-commercianti-coronavirus-20200415586259%2F&key=a55eef4ce2d285af9dca588fc5160aef">
+                            <img src="//cdn.iframe.ly/api/thumbnail?url=https%3A%2F%2Fwww.springeconomy.it%2F2020%2F04%2F09%2Funiti-possiamo-una-nuova-speranza-per-i-commercianti%2F&key=a55eef4ce2d285af9dca588fc5160aef">
                         </div>
                         <div class="text-media">
                             <div class="media-th" ellipsis>
-                                <p> Uniti Possiamo, la piattaforma che aiuta i commercianti durante il Covid </p>
+                                <p> Uniti Possiamo, una nuova speranza per i commercianti. </p>
                             </div>
                             <div class="media-td" ellipsis>
-                                <p> Coronavirus, Unitipossiamo il più grande aggregatore di iniziative per aiutare le attività commerciali a superare il periodo di crisi </p>
+                                <p> Oggi raccontiamo una storia che, seppur appena cominciata, ha già fatto passi da gigante. Una storia di solidarietà e di speranza: Uniti Possiamo </p>
                             </div>
                             <div class="media-tf">
                                 <span>
-                                <a href="https://www.tpi.it/" target="_blank" rel="noopener">
-                                    <img src="//cdn.iframe.ly/pj?url=https%3A%2F%2Fwww.tpi.it%2Ffavicon-32x32.png&width=32&key=31b0bac1793ae4178e6f844f4a17fa590eb4f041&cache=temp">
+                                <a href="https://www.springeconomy.it/" target="_blank" rel="noopener">
+                                    <img src="//cdn.iframe.ly/pj?url=https%3A%2F%2Fi0.wp.com%2Fwww.springeconomy.it%2Fwp-content%2Fuploads%2F2020%2F01%2Fcropped-logo-2-1-1.png%3Ffit%3D32%252C32%26ssl%3D1&width=32&key=f7dcf325f865e79d0b2566209ec984fd0f4ce658&cache=temp">
                                 </a>
                                 </span>
                                 <span>
-                                    <a href="https://www.tpi.it/" target="_blank" rel="noopener">
-                                        <span class="mat-small">TPI</span>
+                                    <a href="https://www.springeconomy.it/" target="_blank" rel="noopener">
+                                        <span class="mat-small">Spring Economy</span>
+                                    </a> 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-item">
+                    <div class="media-card">
+                        <div class="img-media">
+                            <img src="//cdn.iframe.ly/api/thumbnail?url=https%3A%2F%2Fwww.acapo.it%2F2020%2F04%2F09%2Funitipossiamo-per-far-ripartire-economia%2F&key=a55eef4ce2d285af9dca588fc5160aef">
+                        </div>
+                        <div class="text-media">
+                            <div class="media-th" ellipsis>
+                                <p> Unitipossiamo far ripartire l'economia </p>
+                            </div>
+                            <div class="media-td" ellipsis>
+                                <p> Unitipossiamo è una startup non-profit che vuole aiutare le attività commerciali in Italia a superare il periodo di crisi dovuto all’emergenza dal COVID-19. </p>
+                            </div>
+                            <div class="media-tf">
+                                <span>
+                                <a href="https://www.acapo.it/" target="_blank" rel="noopener">
+                                    <img src="//cdn.iframe.ly/pj?url=https%3A%2F%2Fwww.acapo.it%2Fwp-content%2Fuploads%2F2019%2F02%2FaCapo-Logo-Compatto-RGB-Colori.png&width=32&key=6e2f3a2aaecd9c0c17b6ded7d0b05019aa9e4a34&cache=temp">
+                                </a>
+                                </span>
+                                <span>
+                                    <a href="https://www.acapo.it/" target="_blank" rel="noopener">
+                                        <span class="mat-small">aCapo</span>
+                                    </a> 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-item">
+                    <div class="media-card">
+                        <div class="img-media">
+                            <img src="//cdn.iframe.ly/api/thumbnail?url=https%3A%2F%2Fwww.italiastartup.it%2Funitipossiamo-la-piattaforma-per-aiutare-gli-esercenti%2F&key=a55eef4ce2d285af9dca588fc5160aef">
+                        </div>
+                        <div class="text-media">
+                            <div class="media-th" ellipsis>
+                                <p> UNITIPOSSIAMO: la piattaforma per aiutare gli esercenti </p>
+                            </div>
+                            <div class="media-td" ellipsis>
+                                <p> Italia Startup è l’associazione che rappresenta l’ecosistema italiano dell’innovazione e che aggrega startup, scaleup, pmi innovative, centri di innovazione, investitori, abilitatori, studi professionali e corporate. </p>
+                            </div>
+                            <div class="media-tf">
+                                <span>
+                                <a href="https://www.italiastartup.it/" target="_blank" rel="noopener">
+                                    <img src="//cdn.iframe.ly/pj?url=https%3A%2F%2Fwww.italiastartup.it%2Fwp-content%2Fuploads%2F2019%2F05%2Ffavicon-32x32.png&width=32&key=1e784a706f08567273634f49f772593761c423af&cache=temp">
+                                </a>
+                                </span>
+                                <span>
+                                    <a href="https://www.italiastartup.it/" target="_blank" rel="noopener">
+                                        <span class="mat-small">Italia Startup</span>
+                                    </a> 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-item">
+                    <div class="media-card">
+                        <div class="img-media">
+                            <img src="//cdn.iframe.ly/api/thumbnail?url=http%3A%2F%2Fwww.farodiroma.it%2Funiti-possiamo-lidea-dei-giovani-per-rispondere-allepidemia-di-f-luise%2F&key=a55eef4ce2d285af9dca588fc5160aef">
+                        </div>
+                        <div class="text-media">
+                            <div class="media-th" ellipsis>
+                                <p> Uniti Possiamo, l'idea dei giovani per rispondere all'epidemia (di F. Luise) </p>
+                            </div>
+                            <div class="media-td" ellipsis>
+                                <p> L’epidemia di Covid-19, nel nostro Paese, ha causato la chiusura di 45mila attività commerciali, con annessa crisi di liquidità soprattutto per i piccoli imprenditori, e, stando alle prime stime dell’Istat, mette a rischio 630mila lavoratori. </p>
+                            </div>
+                            <div class="media-tf">
+                                <span>
+                                <a href="http://www.farodiroma.it/" target="_blank" rel="noopener">
+                                    <img src="//cdn.iframe.ly/pj?url=http%3A%2F%2Fwww.farodiroma.it%2Fwp-content%2Fuploads%2F2018%2F12%2Fcropped-faro-1-1-32x32.png&width=32&key=1b086c2b7d4dcdcebed0402b5cabeb9adb59d1b5&cache=temp">
+                                </a>
+                                </span>
+                                <span>
+                                    <a href="http://www.farodiroma.it/" target="_blank" rel="noopener">
+                                        <span class="mat-small">FarodiRoma</span>
+                                    </a> 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-item">
+                    <div class="media-card">
+                        <div class="img-media">
+                            <img src="//cdn.iframe.ly/api/thumbnail?url=https%3A%2F%2Fwww.corriere.it%2Ftecnologia%2F20_marzo_27%2Fcoronavirus-arriva-hack-for-italy-team-innovatori-lavoro-curare-paese-797694fe-701b-11ea-82c1-be2d421e9f6b.shtml&key=a55eef4ce2d285af9dca588fc5160aef">
+                        </div>
+                        <div class="text-media">
+                            <div class="media-th" ellipsis>
+                                <p> Coronavirus, arriva «Hack for Italy», team di innovatori al lavoro per curare il Paese </p>
+                            </div>
+                            <div class="media-td" ellipsis>
+                                <p> Una maratona di idee, lunga un weekend, per trovare soluzioni alle sfide economiche e sociali dell’emergenza. Domenica 29 i risultati verranno presentati al pubblico </p>
+                            </div>
+                            <div class="media-tf">
+                                <span>
+                                <a href="https://www.corriere.it/" target="_blank" rel="noopener">
+                                    <img src="//cdn.iframe.ly/pj?url=https%3A%2F%2Fcss2.corriereobjects.it%2Fincludes2013%2FLIBS%2Fcss%2Fassets%2Ftouch-icon-ipad.png&width=32&key=5c0e882863d36c54ae536ef576c4b937a7924fa3&cache=temp">
+                                </a>
+                                </span>
+                                <span>
+                                    <a href="https://www.corriere.it/" target="_blank" rel="noopener">
+                                        <span class="mat-small">Corriere della Sera</span>
+                                    </a> 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-item">
+                    <div class="media-card">
+                        <div class="img-media">
+                            <img src="//cdn.iframe.ly/api/thumbnail?url=https%3A%2F%2Fwww.eunews.it%2F2020%2F03%2F30%2Fhack-for-italy-mondo-innovazione-campo-hackathon-online-italia%2F128379&key=a55eef4ce2d285af9dca588fc5160aef">
+                        </div>
+                        <div class="text-media">
+                            <div class="media-th" ellipsis>
+                                <p> HACK FOR ITALY, il mondo dell’innovazione in campo in un hackathon online per l’Italia </p>
+                            </div>
+                            <div class="media-td" ellipsis>
+                                <p> Bruxelles - Comunità Tech internazionale e italiana hanno unito le forze per combattere la minaccia del COVID-19 e promuovere soluzioni innovative grazie alla piattaforma HACK THE CRISIS.Prenden </p>
+                            </div>
+                            <div class="media-tf">
+                                <span>
+                                <a href="https://www.eunews.it/" target="_blank" rel="noopener">
+                                    <img src="//cdn.iframe.ly/pj?url=https%3A%2F%2Fwww.eunews.it%2Ffavicon.ico&key=dcce2058b465c4249583b1f96f12c9b9f01f4f02&cache=temp-raw">
+                                </a>
+                                </span>
+                                <span>
+                                    <a href="https://www.eunews.it/" target="_blank" rel="noopener">
+                                        <span class="mat-small">Eunews</span>
                                     </a> 
                                 </span>
                             </div>
@@ -236,27 +404,10 @@
 </section>
 
 <section class="flex-container bg-lightgray">
-    <div class="flex-item textbox">
+    <div [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" class="textbox">
         <p>UnitiPossiamo.it è un’iniziativa nata durante HackforItaly, un hackaton per trovare soluzioni contro l’emergenza COVID-19, che si è tenuta dal 27-29 marzo 2020.  Abbiamo aggregato 16 piattaforme e quindi circa 4000 negozi, ma siamo ancora all’inizio! Aiutaci a far conoscere il nostro servizio condividendolo alla tua attività preferita.</p>        
-        <div class="social">
-            <form action="https://www.facebook.com/sharer/sharer.php?u=https://unitipossiamo.it/" method="get" target="_blank">
-            <button mat-mini-fab class="facebook" >
-                <mat-icon>favorite</mat-icon>
-            </button>
-            </form>
-            <form action="https://www.linkedin.com/shareArticle?mini=true&url=https://unitipossiamo.it/" method="get" target="_blank">
-            <button mat-mini-fab class="linkedin" >
-                <mat-icon>favorite</mat-icon>
-            </button>
-            </form>
-            <form action="whatsapp://send?text=https://unitipossiamo.it/" method="get" target="_blank">
-            <button mat-mini-fab class="whatsapp" >
-                <mat-icon>favorite</mat-icon>
-            </button>
-            </form>
-        </div>
     </div>
-    <div class="flex-item imagebox-Hack_for_Italy">
+    <div class="imagebox-Hack_for_Italy" [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL">
         <img class="image-Hack_for_Italy" src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Hack_for_Italy.jpeg"/>
     </div>
 </section>

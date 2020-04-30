@@ -3,7 +3,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MEMBRI } from '../mocked-members';
 import { Member } from '../member';
 import Typed from 'typed.js';
-import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout';
 // @MatSliderModule ({
 //   selector: 'slider-overview-example',
 //   templateUrl: 'slider-overview-example.html',
@@ -26,17 +26,39 @@ export class ChiSiamoComponent implements OnInit {
 
   membri:Member[] = MEMBRI;
 
-  public isMax;
+  public isS;
+  public isM;
+  public isL;
 
   constructor( private breakpointObserver: BreakpointObserver ) {
 
     this.breakpointObserver
-    .observe(['(max-width: 990px)'])
+    .observe([Breakpoints.XSmall, Breakpoints.HandsetPortrait])
     .subscribe((state: BreakpointState) => {
       if (state.matches) {
-        this.isMax = true;
+        this.isS = true;
       } else {
-        this.isMax = false;
+        this.isS = false;
+      }
+    });
+
+    this.breakpointObserver
+    .observe([Breakpoints.Small, Breakpoints.Medium])
+    .subscribe((state: BreakpointState) => {
+      if (state.matches) {
+        this.isM = true;
+      } else {
+        this.isM = false;
+      }
+    });
+
+    this.breakpointObserver
+    .observe([Breakpoints.Large, Breakpoints.XLarge])
+    .subscribe((state: BreakpointState) => {
+      if (state.matches) {
+        this.isL = true;
+      } else {
+        this.isL = false;
       }
     });
 

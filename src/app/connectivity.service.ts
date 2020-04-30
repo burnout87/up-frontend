@@ -19,6 +19,15 @@ export class ConnectivityService {
     this.isBrowser = isPlatformBrowser(platformId);
    }
 
+   public getPlatforms(): Rx.Observable<object> {
+    if(!this.isBrowser) {
+      return this.http.get(environment.platforms, { headers: this.headers });
+    }
+    else {
+      return this.http.get(environment.platforms);
+    }
+  }
+
   public getPosts(): Rx.Observable<object> {
     if(!this.isBrowser) {
       return this.http.get(environment.posts + '?_embed', { headers: this.headers });

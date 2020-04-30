@@ -11,8 +11,6 @@ import { AppComponent } from './app.component';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 
 import { MapComponent } from './map/map.component';
-import { ProviderComponent } from './provider/provider.component';
-import { DomandeComponent } from './domande/domande.component';
 import { ConnectivityService } from './connectivity.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -23,17 +21,20 @@ import { MemberComponent } from './member/member.component';
 import { SafeHtmlPipe } from './safe-html.pipe';
 
 import { EllipsisModule } from 'ngx-ellipsis';
+import { PiattaformeComponent } from './piattaforme/piattaforme.component';
+import { PiattaformaComponent } from './piattaforma/piattaforma.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
-    ProviderComponent,
     routingComponents,
     AiutaciComponent,
     HomeComponent,
     MemberComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    PiattaformeComponent,
+    PiattaformaComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

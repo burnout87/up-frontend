@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProviderComponent } from './provider.component';
+import { PiattaformeComponent } from './piattaforme.component';
 
-describe('ProviderComponent', () => {
-  let component: ProviderComponent;
-  let fixture: ComponentFixture<ProviderComponent>;
+describe('PiattaformeComponent', () => {
+  let component: PiattaformeComponent;
+  let fixture: ComponentFixture<PiattaformeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProviderComponent ]
+      declarations: [ PiattaformeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProviderComponent);
+    fixture = TestBed.createComponent(PiattaformeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

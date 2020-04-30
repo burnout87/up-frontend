@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 import { ConnectivityService } from './connectivity.service';
 import { HomeComponent } from './home/home.component';
 import { AgmMarker } from '@agm/core';
+import { PiattaformeComponent } from './piattaforme/piattaforme.component';
 
 /*Store resolver*/
 @Injectable({ providedIn: 'root' })
@@ -89,6 +90,16 @@ export class LatestMediaResolver implements Resolve<any> {
   }
 }
 
+/*Piattaforme resolver*/
+@Injectable({ providedIn: 'root' })
+export class PiattaformeResolver implements Resolve<any> {
+  constructor(private cService: ConnectivityService) {}
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any 
+  {
+    return this.cService.getPlatforms();
+  }
+}
+
 const routes: Routes = [
   {
     path:  'home',
@@ -133,7 +144,15 @@ const routes: Routes = [
     component: NegozianteComponent,
     resolve: {
       negoziante: NegozianteResolver
+    },
+  },
+  {
+    path: 'piattaforme',
+    component: PiattaformeComponent,
+    resolve: {
+      platforms: PiattaformeResolver
     }
+
   },
   { path: '',   redirectTo: '/home', pathMatch: 'full' }
 ];

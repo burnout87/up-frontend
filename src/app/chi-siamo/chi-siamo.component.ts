@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSliderModule } from '@angular/material/slider';
 import { MEMBRI } from '../mocked-members';
-import { Member } from '../member';
+import { Member } from '../member/member';
 import Typed from 'typed.js';
 import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout';
 // @MatSliderModule ({

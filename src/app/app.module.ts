@@ -12,7 +12,6 @@ import { ShareButtonsModule } from '@ngx-share/buttons';
 
 import { MapComponent } from './map/map.component';
 import { ConnectivityService } from './connectivity.service';
-import { ScrollTopService } from './scrolltop.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MaterialModule } from './material.modules';
@@ -57,7 +56,7 @@ import { PiattaformaComponent } from './piattaforma/piattaforma.component';
     }),
     BrowserAnimationsModule
   ],
-  providers: [ConnectivityService, ScrollTopService, MarkerManager, GoogleMapsAPIWrapper],
+  providers: [ConnectivityService, MarkerManager, GoogleMapsAPIWrapper],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

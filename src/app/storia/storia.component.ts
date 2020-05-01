@@ -2,7 +2,6 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { ConnectivityService } from '../connectivity.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { ScrollTopService } from '../scrolltop.service';
 import { ViewportScroller } from '@angular/common';
 
 @Component({
@@ -30,7 +29,6 @@ export class StoriaComponent implements OnInit, AfterViewInit {
 
   constructor(private route: ActivatedRoute, private wsService: ConnectivityService,
               private breakpointObserver: BreakpointObserver, private router: Router,
-              private scrollTopService: ScrollTopService,
               private viewportScroller: ViewportScroller
     ) {
 

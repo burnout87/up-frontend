@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Piattaforma } from './piattaforma';
 
 @Component({
   selector: 'app-piattaforma',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./piattaforma.component.css']
 })
 export class PiattaformaComponent implements OnInit {
+
+  @Input() piattaforma:Piattaforma;
 
   constructor() { }
 

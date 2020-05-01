@@ -112,28 +112,10 @@ export class MapComponent implements OnInit {
   }
 
   boundsChangeEvent(event) {
-    // this.wsService.getReadyDataBounds(event.getNorthEast(), event.getSouthWest()).subscribe((markerDB: [object]) => {
-    //   console.log(markerDB);
-    //   if(markerDB.length > 0) {
-      //     markerDB.forEach((markerData: any)  => {
-        //       if(markerData && markerData.coords) {
-          //           this.addMarker(markerData);
-          //       }
-          //     });
-          
-          //   }
-          // });
     // draw the markers depending on the bounding box
-    this.markers.filter(x => 
-                      // x.lat <= event.getNorthEast().lat() && 
-                      // x.lat >= event.getSouthWest().lat() && 
-                      // x.lng <= event.getNorthEast().lng() && 
-                      // x.lng >= event.getSouthWest().lng() && 
-                      event.contains({lat: x.lat, lng:x.lng}) &&
-                      !x.isOnMap)
-            .forEach(x => {
-              x.isOnMap = true;
-            });
+    this.markers
+      .filter(x => event.contains({lat: x.lat, lng:x.lng}) && !x.isOnMap)
+      .forEach(x => x.isOnMap = true);
   };
 
   hideInfo(gm, event) {

@@ -8,13 +8,15 @@
             [scrollwheel]='location.scrollwheel'
             [clickableIcons]='location.clickableIcons'
             [styles]='location.styles'
-            (mapClick)="hideInfo(AgmMap, $event)">
+            (mapClick)="hideInfo(AgmMap, $event)"
+            (boundsChange)="boundsChangeEvent($event)">
             <!-- <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m"> -->
             <agm-marker-cluster imagePath = "/assets/cluster/cluster">
-                <agm-marker  
-                    *ngFor="let m of markers" 
-                    [latitude]="m.latitude" 
-                    [longitude]="m.longitude"
+                <ng-container *ngFor="let m of markers" >
+                <agm-marker
+                    *ngIf="m.isOnMap"
+                    [latitude]="m.lat" 
+                    [longitude]="m.lng"
                     [title]="m.label"
                     [iconUrl]="m.iconUrl" 
                     (markerClick)="getInfoMarker(m, AgmMap, infoWindow)"
@@ -24,6 +26,7 @@
                         <p>{{m.categ}}</p>
                     </agm-info-window>
                 </agm-marker>
+                </ng-container>
             </agm-marker-cluster>
         </agm-map>
     </div>

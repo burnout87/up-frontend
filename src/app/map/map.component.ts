@@ -16,7 +16,9 @@ export class MapComponent implements OnInit {
 
   public location: Location;
   public markers: Marker[] = [];
+  public markersData:[] = [];
   public isBrowser: boolean;
+
 
   @ViewChild('AgmMap', {static: false}) agmMap: AgmMap;
 
@@ -59,14 +61,15 @@ export class MapComponent implements OnInit {
   }
 
   
-  addMarker(markerData:any) {
+  buildMarker(markerData:any) {
     // let marker = new MapMarker(this.markerManager);
-    var marker = {
-      latitude: Number(markerData.coords.lat),
-      longitude: Number(markerData.coords.lng),
+    var marker:Marker = {
+      lat: Number(markerData.coords.lat),
+      lng: Number(markerData.coords.lng),
       label: markerData.title,
       categ: markerData.categ,
-      iconUrl: ""
+      iconUrl: "",
+      isOnMap: false
     }
     // if(markerData.categ) {
     //   var categ = markerData.categ ?(markerData.categ).toLowerCase() :"";
@@ -77,7 +80,6 @@ export class MapComponent implements OnInit {
     } else {
       marker.iconUrl = "/assets/markerIcons/up_icon_geoloc_yellow.svg";
     }
-    // this.markerManager.addMarker(marker);
     this.markers.push(marker);
   }
 
@@ -94,7 +96,7 @@ export class MapComponent implements OnInit {
     (async () => {
       markersData.forEach((markerData: any)  => {
         if(markerData && markerData.coords) {
-            this.addMarker(markerData);
+            this.buildMarker(markerData);
         }
       });
     })();
@@ -121,16 +123,17 @@ export class MapComponent implements OnInit {
           
           //   }
           // });
-          // get the markers within this bound
-    // this.markers = [];
-    // this.markersData.filter(x => x && x.coords &&
-    //                             Number(x.coords.lat) <= event.getNorthEast().lat() && 
-    //                             Number(x.coords.lat) >= event.getSouthWest().lat() && 
-    //                             Number(x.coords.lng) <= event.getNorthEast().lng() && 
-    //                             Number(x.coords.lng) >= event.getSouthWest().lng() )
-    //                   .forEach(x => {
-    //                     this.addMarker(x);
-    //                   });
+    // draw the markers depending on the bounding box
+    this.markers.filter(x => 
+                      // x.lat <= event.getNorthEast().lat() && 
+                      // x.lat >= event.getSouthWest().lat() && 
+                      // x.lng <= event.getNorthEast().lng() && 
+                      // x.lng >= event.getSouthWest().lng() && 
+                      event.contains({lat: x.lat, lng:x.lng}) &&
+                      !x.isOnMap)
+            .forEach(x => {
+              x.isOnMap = true;
+            });
   };
 
   hideInfo(gm, event) {
@@ -152,10 +155,11 @@ interface Location {
 }
 
 interface Marker {
-  latitude?: Number;
-  longitude?: Number;
+  lat?: Number;
+  lng?: Number;
   label?: string;
   categ?: string;
   iconUrl?: string;
   description?: string;
+  isOnMap: boolean;
 }

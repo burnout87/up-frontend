@@ -23,6 +23,7 @@ import { SafeHtmlPipe } from './safe-html.pipe';
 import { EllipsisModule } from 'ngx-ellipsis';
 import { PiattaformeComponent } from './piattaforme/piattaforme.component';
 import { PiattaformaComponent } from './piattaforma/piattaforma.component';
+import { PartnersComponent } from './partners/partners.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PiattaformaComponent } from './piattaforma/piattaforma.component';
     MemberComponent,
     SafeHtmlPipe,
     PiattaformeComponent,
-    PiattaformaComponent
+    PiattaformaComponent,
+    PartnersComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

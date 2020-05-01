@@ -2,6 +2,7 @@
 @import './custom.theme.scss';
 
 @import '~@ngx-share/button/themes/modern/modern-dark-theme';
+@import '~@ngx-share/button/themes/circles/circles-dark-theme';
 
 $custom-theme-foreground: mat-palette($mat-customPaletteForeground, 500);
 $custom-theme-background: mat-palette($mat-customPaletteBackground, 500);

@@ -1,6 +1,8 @@
 <section class="flex-container-home bg-yellow">
-    <div class="flex-item-home-img imagebox-teamwork">
-        <img class="image-teamwork" src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-teamwork-in-office-300x300.png"/>
+    <div class="flex-item-home-img">
+        <div class="image-teamwork">
+            <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-teamwork-in-office.png"/>
+        </div>
     </div>
     <div class="flex-item-home-text">
         <span class="mat-display-1">Sostieni le attività locali durante l’emergenza Covid-19.</span>
@@ -23,17 +25,69 @@
     </div>
 </section>
 
-<section class="flex-container-map">
+<section class="flex-container-sostieni">
+    <div class="flex-item-sostieni">
+        <div class="img-step">
+            <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_lens.png" >
+        </div>
+        <div class="container-step">
+            <div class="img-number">
+                <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_one.png" >
+            </div>
+            <div class="text-step">
+                <p>Esplora la mappa e trova il negozio più vicino a te</p>
+            </div>
+        </div>
+    </div>
+    <div class="flex-item-sostieni">
+        <div class="img-step">
+            <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_map_tooltip.png" >
+        </div>
+        <div class="container-step">
+            <div class="img-number">
+                <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_two.png" >
+            </div>
+            <div class="text-step">
+                <p>Clicca sulla sua scheda e scopri che servizi offre sulla piattaforma a cui è registrato</p>
+            </div>
+        </div>
+    </div>
+    <div class="flex-item-sostieni">
+        <div class="img-step">
+            <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_voucher_delivery.png" >
+        </div>
+        <div class="container-step">
+            <div class="img-number">
+                <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_three.png" >
+            </div>
+            <div class="text-step">
+                <p>Acquista un buono o contatta l’esercente per una consegna gratuita</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="flex-container-map bg-accent">
     <div class="flex-item-map">
-        <span class="mat-display-1">Trova nella mappa i negozi vicini a te</span>
-        <div class="subtitle">
+        <span class="mat-display-1 primary-color">Trova nella mappa i negozi vicini a te</span>
+        <div class="subtitle white-color">
         <p>Clicca sull'icona per visitare la piattaforma a cui il negozio è registrato e acquistare i suoi prodotti</p>
+        </div>
+        <div class="container-pointer">
+            <div class="item-pointer">
+                <img src="https://www.unitipossiamo.it/wp-content/uploads/elementor/thumbs/up_legend_delivery-oolukfswj5ktiqcadb1vpa8wujzbcqimt70zh6gnxc.png" >
+                <p class="white-color"><strong>Coupon</strong></p>
+            </div>
+            <div class="item-pointer">
+                <img src="https://www.unitipossiamo.it/wp-content/uploads/elementor/thumbs/up_legend_coupon-oolukev2cbjj74dnisn94shg963y51ewh2dhzwi23k.png" >
+                <p class="white-color"><strong>Delivery</strong></p>
+            </div>
         </div>
         <div class="map">
             <app-map *ngIf="isBrowser"></app-map>
         </div>
-        <span class="mat-display-1">Non hai trovato negozi nei tuoi dintorni?</span>
-        <div class="subtitle">
+        <span class="mat-display-1 primary-color">Non hai trovato negozi nei tuoi dintorni?</span>
+        <div class="subtitle white-color">
         <p>Spargi la voce e aiutaci a raggiungere più attività commerciali, condividi il link sui tuoi canali! ツ</p>
         </div>
     </div>
@@ -61,7 +115,7 @@
     </div>
 </section>
 
-<section class="flex-container">
+<section class="flex-container bg-lightgray">
     <div class="flex-item-text">
         <span class="mat-display-1">Hai un’attività?</span>
         <div class="paragraph">
@@ -71,5 +125,75 @@
     </div>
     <div class="flex-item-action">
         <button mat-flat-button color="accent">Scopri le piattaforme</button>
+    </div>
+</section>
+
+<section class="flex-container-registra bg-lightgray">
+    <div class="flex-item-registra">
+        <div class="img-step">
+            <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_voucher_delivery.png" >
+        </div>
+        <div class="container-step">
+            <div class="img-number">
+                <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_one.png" >
+            </div>
+            <div class="text-step">
+                <p>Esplora la mappa e trova il negozio più vicino a te</p>
+            </div>
+        </div>
+    </div>
+    <div class="flex-item-registra">
+        <div class="img-step">
+            <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_choose_platform.png" >
+        </div>
+        <div class="container-step">
+            <div class="img-number">
+                <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_two.png" >
+            </div>
+            <div class="text-step">
+                <p>Clicca sulla sua scheda e scopri che servizi offre sulla piattaforma a cui è registrato</p>
+            </div>
+        </div>
+    </div>
+    <div class="flex-item-registra">
+        <div class="img-step">
+            <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_register.png" >
+        </div>
+        <div class="container-step">
+            <div class="img-number">
+                <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_three.png" >
+            </div>
+            <div class="text-step">
+                <p>Acquista un buono o contatta l’esercente per una consegna gratuita</p>
+            </div>
+        </div>
+    </div>
+    <div class="flex-item-registra">
+        <div class="img-step">
+            <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_map_pin.png" >
+        </div>
+        <div class="container-step">
+            <div class="img-number">
+                <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_four.png" >
+            </div>
+            <div class="text-step">
+                <p>Acquista un buono o contatta l’esercente per una consegna gratuita</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container-combatti bg-lightgray">
+    <div class="item-combatti">
+        <span class="mat-display-1">Combatti questa crisi con noi!</span>
+        <div class="image-taxi-searching">
+            <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-searching-1.png">
+        </div>
+    </div>
+    <div class="item-combatti-text">
+        <p>Conosci una <b>piattaforma</b> che non è presente nel nostro elenco? Indicacela e la inseriremo subito!</p>
+        <button mat-flat-button color="accent">Vai alla mappa</button>
+        <p>Se vuoi aiutarci con la diffusione di questo progetto puoi usare il nostro <b>press kit!</b></p>
+        <p>Se hai dei suggerimenti scrivici a <b>info@unitipossiamo.it</b></p>
     </div>
 </section>

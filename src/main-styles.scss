@@ -28,8 +28,20 @@ b, strong {
     background-color: mat-color($custom-theme-primary);
 }
 
+.bg-accent {
+    background-color: mat-color($custom-theme-accent);
+}
+
 .bg-lightgray {
     background-color: mat-color($custom-theme-background);
+}
+
+.primary-color {
+    color: mat-color($custom-theme-primary) !important;
+}
+
+.white-color {
+    color: #ffffff !important;
 }
 
 .example-toolbar{

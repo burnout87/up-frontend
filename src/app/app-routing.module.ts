@@ -129,7 +129,8 @@ const routes: Routes = [
     resolve: {
       storia: StoriaResolver,
       latestStorie: LatestStorieResolver
-    }
+    },
+    runGuardsAndResolvers: 'paramsOrQueryParamsChange'
   },
   {
     path: 'domande',
@@ -160,7 +161,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
+    initialNavigation: 'enabled',
+    onSameUrlNavigation: 'reload',
+    scrollPositionRestoration: 'enabled'
 })],
   exports: [RouterModule]
 })

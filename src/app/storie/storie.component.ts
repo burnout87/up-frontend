@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConnectivityService } from '../connectivity.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-storie',
@@ -18,7 +18,7 @@ export class StorieComponent implements OnInit {
   storie:Array<Storia> = new Array();
 
   constructor(private route: ActivatedRoute, private wsService: ConnectivityService, 
-              private breakpointObserver: BreakpointObserver,
+              private breakpointObserver: BreakpointObserver, private router: Router
     ) {
 
       this.breakpointObserver
@@ -54,8 +54,10 @@ export class StorieComponent implements OnInit {
       const dataStorie = this.route.snapshot.data['storie'];
       this.populateStorie(dataStorie);
   }
-
-  ngOnInit() {  }
+  
+  ngOnInit() { }
+  
+  ngAfterViewInit(): void { }
 
   private populateStorie(dataStorie:[]) {
     dataStorie.forEach((wpStoria: any)  => {
@@ -98,7 +100,6 @@ export class StorieComponent implements OnInit {
     });
   }
 
-  ngAfterViewInit(): void {  }
 
   loadMoreStories() {
     // retrieve the ids of the stories to exclude

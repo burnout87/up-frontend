@@ -1,7 +1,9 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { ConnectivityService } from '../connectivity.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { ScrollTopService } from '../scrolltop.service';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-storia',
@@ -24,9 +26,12 @@ export class StoriaComponent implements OnInit, AfterViewInit {
   public storia?: Storia;
   public latestStorie?: Storia[] = [];
 
+  private navigationSubscription;
 
   constructor(private route: ActivatedRoute, private wsService: ConnectivityService,
-              private breakpointObserver: BreakpointObserver,
+              private breakpointObserver: BreakpointObserver, private router: Router,
+              private scrollTopService: ScrollTopService,
+              private viewportScroller: ViewportScroller
     ) {
 
     this.iframes = document.querySelectorAll('iframe');
@@ -79,10 +84,21 @@ export class StoriaComponent implements OnInit, AfterViewInit {
       }
     });
 
-    const dataStoria = this.route.snapshot.data['storia'];
-    const latestStorie = this.route.snapshot.data['latestStorie'];
-    this.storia = this.populateStoria(dataStoria);
-    latestStorie.forEach((latestStoriaData: any) => {
+    this.navigationSubscription = this.router.events.subscribe((e: any) => {
+      // If it is a NavigationEnd event re-initalise the component
+      if (e instanceof NavigationEnd) {
+        this.latestStorie = [];
+        this.loadPageContent();
+        this.viewportScroller.scrollToPosition([0, 0]);
+      }
+    });
+  }
+
+  private loadPageContent() {
+    const storiaData = this.route.snapshot.data['storia'];
+    const latestStorieData = this.route.snapshot.data['latestStorie'];
+    this.storia = this.populateStoria(storiaData);
+    latestStorieData.forEach((latestStoriaData: any) => {
         this.latestStorie.push(this.populateStoria(latestStoriaData));
     });
   }
@@ -128,6 +144,15 @@ export class StoriaComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {  }
+
+  ngOnDestroy() { 
+    // avoid memory leaks here by cleaning up after ourselves. If we  
+    // don't then we will continue to run storia data loading
+    // method on every navigationEnd event.
+    if (this.navigationSubscription) {  
+      this.navigationSubscription.unsubscribe();
+    }
+  }
 
   ngAfterViewInit(): void {
 

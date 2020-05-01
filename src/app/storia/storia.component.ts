@@ -2,7 +2,6 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { ConnectivityService } from '../connectivity.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-storia',
@@ -26,10 +25,10 @@ export class StoriaComponent implements OnInit, AfterViewInit {
   public latestStorie?: Storia[] = [];
 
   private navigationSubscription;
+  private scrollPosition: [number, number];
 
   constructor(private route: ActivatedRoute, private wsService: ConnectivityService,
-              private breakpointObserver: BreakpointObserver, private router: Router,
-              private viewportScroller: ViewportScroller
+              private breakpointObserver: BreakpointObserver, private router: Router
     ) {
 
     this.iframes = document.querySelectorAll('iframe');
@@ -87,7 +86,6 @@ export class StoriaComponent implements OnInit, AfterViewInit {
       if (e instanceof NavigationEnd) {
         this.latestStorie = [];
         this.loadPageContent();
-        this.viewportScroller.scrollToPosition([0, 0]);
       }
     });
   }

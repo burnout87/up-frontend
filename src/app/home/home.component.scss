@@ -143,8 +143,6 @@
 
 .flex-container-banner {
     display: flex;
-    padding-top: 20px;
-    padding-bottom: 20px;
     padding-left: 5%;
     padding-right: 5%;
     text-align: center;
@@ -160,23 +158,6 @@
     display: flex;
     text-align: center;
     justify-content: center;
-  }
-
-  .mat-mini-fab {
-    box-shadow: none !important;
-    color: #FFFFFF;
-    margin-right: 30px;
-  }
-  .facebook {
-    background-color: #3b5998;
-  }
-
-  .linkedin {
-    background-color: #0077b5;
-  }
-
-  .whatsapp {
-    background-color: #25d366;
   }
 
   .flex-container-registra {
@@ -216,6 +197,73 @@
         margin: auto;
       }
     }
+  }
+
+  .container-piattaforme {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
+    .item-piattaforme {
+      padding: 10px;
+      margin: auto;
+      width: 100%;
+      text-align: center;
+      .container-card {
+        width: 100%;
+        margin: auto;
+        .list-card {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-content: center;
+          margin: auto;
+          padding-top: 2em;
+          .card-piattaforme {
+            max-width: 25%;
+            margin: 10px;
+            .img-piattaforma{
+              width: 80%;
+              margin: auto;
+              overflow: hidden;
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  mat-card {
+    border-radius: 5px 5px 5px 5px;
+  
+    mat-card-content {
+      p {
+        text-align: left;
+        overflow: hidden;
+        span {
+          font-size: 21px;
+          font-weight: 600;
+        }
+      }
+      
+    }
+
+    mat-card-actions {
+      margin-bottom: 2em;
+    }
+
+  }
+
+  .container-btn-all {
+    margin: 2em;
+    text-align: center;
   }
 
   .container-combatti {

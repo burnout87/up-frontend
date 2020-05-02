@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule, MarkerManager, GoogleMapsAPIWrapper, Marker } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
-import {  } from '@agm/core';
 import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
 
 import { AppRoutingModule , routingComponents} from './app-routing.module';

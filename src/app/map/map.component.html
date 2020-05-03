@@ -9,9 +9,11 @@
             [clickableIcons]='location.clickableIcons'
             [styles]='location.styles'
             (mapClick)="hideInfo(AgmMap, $event)"
-            (boundsChange)="boundsChangeEvent($event)">
+            (boundsChange)="boundsChangeEvent($event)"
+            (tilesLoaded)="tilesLoadedEvent()">
             <!-- <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m"> -->
-            <agm-marker-cluster imagePath = "/assets/cluster/cluster">
+            <agm-marker-cluster 
+                imagePath="/assets/cluster/cluster">
                 <ng-container *ngFor="let m of markers" >
                 <agm-marker
                     *ngIf="m.isOnMap"

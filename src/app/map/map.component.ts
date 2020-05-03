@@ -2,7 +2,7 @@ import { Component, OnInit, SimpleChanges, Inject, PLATFORM_ID, ViewChild } from
 import { isPlatformBrowser } from '@angular/common';
 import { Subject } from 'rxjs';
 import { ConnectivityService } from '../connectivity.service';
-import { MarkerManager, AgmMap, LatLngBounds } from "@agm/core";
+import { MarkerManager, AgmMap, LatLngBounds, LatLng } from "@agm/core";
 import { ActivatedRoute } from '@angular/router';
 // import { MapMarker } from '../marker';
 
@@ -16,8 +16,10 @@ export class MapComponent implements OnInit {
 
   public location: Location;
   public markers: Marker[] = [];
-  public markersData:[] = [];
+  public markersData:any[] = [];
   public isBrowser: boolean;
+
+  private bounds: any;
 
 
   @ViewChild('AgmMap', {static: false}) agmMap: AgmMap;
@@ -69,7 +71,8 @@ export class MapComponent implements OnInit {
       label: markerData.title,
       categ: markerData.categ,
       iconUrl: "",
-      isOnMap: false
+      isOnMap: false,
+      _id: markerData._id
     }
     // if(markerData.categ) {
     //   var categ = markerData.categ ?(markerData.categ).toLowerCase() :"";
@@ -92,14 +95,17 @@ export class MapComponent implements OnInit {
     //   // console.log(bounds);
     // });
     // markerData are pre-fetched
-    var markersData = this.route.snapshot.data['markers'];
-    (async () => {
-      markersData.forEach((markerData: any)  => {
+    this.markersData = this.route.snapshot.data['markers'];
+    // var ids = this.markersData.filter(x => x._id && x.coords).map(() => this.buildMarker);
+    // var results = Promise.all(ids);
+    // results.then(data => console.log);
+    // (async () => {
+      this.markersData.forEach((markerData: any)  => {
         if(markerData && markerData.coords) {
             this.buildMarker(markerData);
         }
       });
-    })();
+    // })();
   }
 
   getInfoMarker(m: Marker, gm, infoWindow) {
@@ -107,16 +113,20 @@ export class MapComponent implements OnInit {
       gm.lastOpen.close();
     }
     gm.lastOpen = infoWindow;
-    console.log(m);
     infoWindow.open();
   }
 
   boundsChangeEvent(event) {
-    // draw the markers depending on the bounding box
-    this.markers
-      .filter(x => event.contains({lat: x.lat, lng:x.lng}) && !x.isOnMap)
-      .forEach(x => x.isOnMap = true);
+    this.bounds = event;
   };
+
+  tilesLoadedEvent() {
+    this.markers
+      .filter(x => 
+        !x.isOnMap && 
+        this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)}))
+      .forEach(x => x.isOnMap = true);
+  }
 
   hideInfo(gm, event) {
     if (gm.lastOpen != null) {
@@ -127,21 +137,22 @@ export class MapComponent implements OnInit {
 }
 
 interface Location {
-    latitude: number;
-    longitude: number;
-    mapType: string;
-    zoom: number;
-    scrollwheel: boolean;
-    clickableIcons: boolean;
-    styles: any[];
+  latitude: number;
+  longitude: number;
+  mapType: string;
+  zoom: number;
+  scrollwheel: boolean;
+  clickableIcons: boolean;
+  styles: any[];
 }
 
 interface Marker {
-  lat?: Number;
-  lng?: Number;
+  lat?: number;
+  lng?: number;
   label?: string;
   categ?: string;
   iconUrl?: string;
   description?: string;
   isOnMap: boolean;
+  _id: string;
 }

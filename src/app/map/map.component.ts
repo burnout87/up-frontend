@@ -20,13 +20,13 @@ export class MapComponent implements OnInit {
   public isBrowser: boolean;
 
   private bounds: any;
-
+  public geoLocation:Location;
 
   @ViewChild('AgmMap', {static: false}) agmMap: AgmMap;
 
   constructor(private route: ActivatedRoute, private wsService: ConnectivityService, private markerManager: MarkerManager, @Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
-    this.location = {
+    this.geoLocation = {
       zoom: 10,
       latitude: 41.6650266,
       longitude: 12.8701779,
@@ -86,7 +86,11 @@ export class MapComponent implements OnInit {
     this.markers.push(marker);
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
+    }
+  }
 
   ngAfterViewInit () {
     // print the bounding box
@@ -132,6 +136,12 @@ export class MapComponent implements OnInit {
     if (gm.lastOpen != null) {
       gm.lastOpen.close();
     }
+  }
+
+  setPosition(position) {
+    this.geoLocation.latitude = position.coords.latitude;
+    this.geoLocation.longitude = position.coords.longitude;
+    console.log(position.coords);
   }
   
 }

@@ -24,7 +24,9 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   router: Router;
   isBrowser: boolean;
 
-  ngOnInit() { }
+  ngOnInit() { 
+    
+  }
 
   constructor(private _router: Router, @Inject(PLATFORM_ID) platformId: Object,
               private sidenavService: SidenavService,
@@ -64,5 +66,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   closeSide() {
     this.sidenavService.close();
   }
+
 
 }

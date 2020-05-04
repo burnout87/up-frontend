@@ -1,13 +1,13 @@
 <div class="map-container">
     <div class="map-frame">
         <agm-map #AgmMap
-            [latitude]='location.latitude'
-            [longitude]='location.longitude'
-            [mapTypeId]='location.mapType'
-            [zoom]='location.zoom'
-            [scrollwheel]='location.scrollwheel'
-            [clickableIcons]='location.clickableIcons'
-            [styles]='location.styles'
+            [latitude]='geoLocation.latitude'
+            [longitude]='geoLocation.longitude'
+            [mapTypeId]='geoLocation.mapType'
+            [zoom]='geoLocation.zoom'
+            [scrollwheel]='geoLocation.scrollwheel'
+            [clickableIcons]='geoLocation.clickableIcons'
+            [styles]='geoLocation.styles'
             (mapClick)="hideInfo(AgmMap, $event)"
             (boundsChange)="boundsChangeEvent($event)"
             (tilesLoaded)="tilesLoadedEvent()">

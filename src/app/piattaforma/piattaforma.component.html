@@ -1,1 +1,28 @@
-<p>{{piattaforma.name}}</p>
+<!-- <p>{{piattaforma.name}}</p> -->
+
+    <div class="img-piattaforma">
+    <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/5-300x300.png" >
+    </div>
+    <mat-card-content>
+        <div class="descriptions">
+            <p><span>{{piattaforma.name}}</span></p>
+            <p ellipsis>
+                {{piattaforma.desc}}
+            </p>
+        </div>
+        <div>
+            <mat-chip-list aria-label="Fish selection">
+                <mat-chip>{{piattaforma.areas}}</mat-chip>
+                <mat-chip>{{piattaforma.categs | json}}</mat-chip>
+            </mat-chip-list>
+            <mat-chip-list aria-label="Fish selection">
+                <mat-chip>600 – 1.000 attività registrate</mat-chip>
+            </mat-chip-list>
+            <mat-chip-list aria-label="Fish selection">
+                <mat-chip>{{piattaforma.payments}}</mat-chip>
+            </mat-chip-list>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+            <button mat-flat-button color="accent">Vai alla mappa</button>
+      </mat-card-actions>

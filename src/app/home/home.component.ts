@@ -21,4 +21,9 @@ export class HomeComponent implements OnInit {
     this.router = _router;
   }
 
+  scrollToElement($element): void {
+    console.log($element);
+    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
+
 }

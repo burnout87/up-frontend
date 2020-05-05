@@ -28,12 +28,6 @@
     padding-top: 2em;
 }
 
-    p {
-      font-size: 20px;
-      line-height: 1.3em;
-      }
-
-
 .paragraph{
     padding-top: 2em;
 }
@@ -205,10 +199,10 @@
     flex-wrap: wrap;
     padding-top: 4%;
     padding-bottom: 4%;
-    padding-left: 4%;
-    padding-right: 4%;
+    //padding-left: 4%;
+    //padding-right: 4%;
     .item-piattaforme {
-      padding: 10px;
+      //padding: 10px;
       margin: auto;
       width: 100%;
       text-align: center;
@@ -226,12 +220,19 @@
           .card-piattaforme {
             max-width: 25%;
             margin: 10px;
+            height: 660px;
             .img-piattaforma{
-              width: 80%;
+              height: 160px;
               margin: auto;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
               overflow: hidden;
               img {
-                width: 100%;
+                width: 50%;
+                margin: auto;
+                //padding-top: 16px;
               }
             }
           }
@@ -241,22 +242,38 @@
   }
 
   mat-card {
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px !important;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.19) !important;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
   
     mat-card-content {
-      p {
-        text-align: left;
-        overflow: hidden;
-        span {
-          font-size: 21px;
-          font-weight: 600;
+      padding-top: 16px;
+      .descriptions {
+        height: 300px;
+        p {
+          text-align: left;
+          overflow: hidden;
+          span {
+            font-size: 21px;
+            font-weight: 600;
+          }
         }
+      }
+      .content-chips {
+        height: 100px;
       }
       
     }
 
+    .mat-standard-chip {
+      border-radius: 4px !important;
+    }
+
     mat-card-actions {
-      margin-bottom: 2em;
+      button {
+        margin-bottom: 2em;
+      }
     }
 
   }
@@ -264,6 +281,10 @@
   .container-btn-all {
     margin: 2em;
     text-align: center;
+  }
+
+  .mat-stroked-button {
+    border: 2px solid #593c8f !important;
   }
 
   .container-combatti {
@@ -297,4 +318,9 @@
   }
 
   }
+
+  p {
+    font-size: 20px;
+    line-height: 1.3em;
+    }
   

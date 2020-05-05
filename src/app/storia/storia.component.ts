@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, Inject } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Inject, OnDestroy } from '@angular/core';
 import { DOCUMENT } from '@angular/common'; 
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { ConnectivityService } from '../connectivity.service';
@@ -7,9 +7,11 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 @Component({
   selector: 'app-storia',
   templateUrl: './storia.component.html',
-  styleUrls: ['./storia.component.scss']
+  styleUrls: ['./storia.component.scss'],
 })
-export class StoriaComponent implements OnInit, AfterViewInit {
+export class StoriaComponent implements OnInit, AfterViewInit, OnDestroy {
+
+  //@ViewChild('containerStoria', {static: false}) containerStoria: ElementRef;
 
   public isSmall;
   public isMedium;
@@ -143,6 +145,12 @@ export class StoriaComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {  }
 
+  ngAfterViewInit(): void {
+
+    this.applyStyleStoria();
+
+  }
+
   ngOnDestroy() { 
     // avoid memory leaks here by cleaning up after ourselves. If we  
     // don't then we will continue to run storia data loading
@@ -152,8 +160,7 @@ export class StoriaComponent implements OnInit, AfterViewInit {
     }
   }
 
-  ngAfterViewInit(): void {
-
+  applyStyleStoria() {
     this.hrefs = document.querySelectorAll('a');
     this.hrefs.forEach((a) => {
       a.style.textDecoration = 'none';

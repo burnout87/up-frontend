@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="flex-item-action">
-        <button mat-flat-button color="accent">Vai alla mappa</button>
+        <button mat-flat-button color="accent" (click)="scrollToElement(map)">Vai alla mappa</button>
     </div>
 </section>
 
@@ -67,7 +67,7 @@
     </div>
 </section>
 
-<section class="flex-container-map bg-accent">
+<section #map class="flex-container-map bg-accent">
     <div class="flex-item-map">
         <span class="mat-display-1 primary-color">Trova nella mappa i negozi vicini a te</span>
         <div class="subtitle white-color">
@@ -115,7 +115,7 @@
         </div>
     </div>
     <div class="flex-item-action">
-        <button mat-flat-button color="accent">Scopri le piattaforme</button>
+        <button mat-flat-button color="accent" (click)="scrollToElement(piattaforme)">Scopri le piattaforme</button>
     </div>
 </section>
 
@@ -174,7 +174,7 @@
     </div>
 </section>
 
-<section class="container-piattaforme">
+<section #piattaforme class="container-piattaforme">
     <div class="item-piattaforme">
         <span class="mat-display-1">Scopri le piattaforme</span>
 
@@ -183,46 +183,89 @@
 
               <mat-card class="card-piattaforme" routerLink="">
                 <div class="img-piattaforma">
-                <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/Io-resto-a-casa-delivery-ok.png" >
+                <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/Io-resto-a-casa-delivery-ok-300x172.png" >
                 </div>
                 <mat-card-content>
-                    <p><span>iorestoacasa.delivery</span></p>
-                    <p>
-                        Piattaforma in cui è possibile scegliere tra molti negozi che realizzano consegne a domicilio dei loro prodotti. Inserendo il tuo cap è possibile vedere i negozi vicini a te e contattarli per compiere un acquisto.
-                    </p>
+                    <div class="descriptions">
+                        <p><span>iorestoacasa.delivery</span></p>
+                        <p ellipsis>
+                            Piattaforma in cui è possibile scegliere tra molti negozi che realizzano consegne a domicilio dei loro prodotti. Inserendo il tuo cap è possibile vedere i negozi vicini a te e contattarli per compiere un acquisto.
+                        </p>
+                    </div>
+                    <div>
+                        <mat-chip-list aria-label="Fish selection">
+                            <mat-chip>Tutta Italia</mat-chip>
+                            <mat-chip>Generico</mat-chip>
+                        </mat-chip-list>
+                        <mat-chip-list aria-label="Fish selection">
+                            <mat-chip>600 – 1.000 attività registrate</mat-chip>
+                        </mat-chip-list>
+                        <mat-chip-list aria-label="Fish selection">
+                            <mat-chip>Pagamento alla consegna</mat-chip>
+                        </mat-chip-list>
+                    </div>
                   </mat-card-content>
                   <mat-card-actions>
-                    <button mat-flat-button color="accent">Vai alla mappa</button>
+                        <button mat-flat-button color="accent">Vai alla mappa</button>
                   </mat-card-actions>
               </mat-card>
 
               <mat-card class="card-piattaforme" routerLink="">
                 <div class="img-piattaforma">
-                <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/2.png" >
+                <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/2-300x300.png" >
                 </div>
                 <mat-card-content>
-                    <p><span>iorestoacasa.delivery</span></p>
-                    <p>
-                        Piattaforma in cui è possibile scegliere tra molti negozi che realizzano consegne a domicilio dei loro prodotti. Inserendo il tuo cap è possibile vedere i negozi vicini a te e contattarli per compiere un acquisto.
-                    </p>
+                    <div class="descriptions">
+                        <p><span>Torniamo Presto</span></p>
+                        <p ellipsis>
+                            Piattaforma su cui è possibile acquistare carte regalo, in alcuni casi scontate, che potranno essere spese quando i negozi riapriranno.
+                        </p>
+                    </div>
+                    <div>
+                        <mat-chip-list aria-label="Fish selection">
+                            <mat-chip>Nord Italia</mat-chip>
+                            <mat-chip>Alimentari</mat-chip>
+                        </mat-chip-list>
+                        <mat-chip-list aria-label="Fish selection">
+                            <mat-chip>100 – 200 attività registrate</mat-chip>
+                        </mat-chip-list>
+                        <mat-chip-list aria-label="Fish selection">
+                            <mat-chip>Pagamento diretto ai commercianti</mat-chip>
+                        </mat-chip-list>
+                    </div>
                   </mat-card-content>
                   <mat-card-actions>
-                    <button mat-flat-button color="accent">Vai alla mappa</button>
+                        <button mat-flat-button color="accent">Vai alla mappa</button>
                   </mat-card-actions>
               </mat-card>
 
               <mat-card class="card-piattaforme" routerLink="">
                 <div class="img-piattaforma">
-                <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/5.png" >
+                <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/5-300x300.png" >
                 </div>
                 <mat-card-content>
-                    <p><span>iorestoacasa.delivery</span></p>
-                    <p>
-                        Piattaforma in cui è possibile scegliere tra molti negozi che realizzano consegne a domicilio dei loro prodotti. Inserendo il tuo cap è possibile vedere i negozi vicini a te e contattarli per compiere un acquisto.
-                    </p>
+                    <div class="descriptions">
+                        <p><span>Invece Bottega</span></p>
+                        <p ellipsis>
+                            Piattaforma su cui tramite una comoda mappa è possibile individuare tutti i negozi nelle tue vicinanze con consegna a domicilio. Chiamando il negozio è possibile fare il proprio ordine. Sono presenti molte iniziative in tutta Italia.
+                        </p>
+                    </div>
+                    <div>
+                        <mat-chip-list aria-label="Fish selection">
+                            <mat-chip>Tutta Italia</mat-chip>
+                            <mat-chip>Alimentari</mat-chip>
+                            <mat-chip>Ristoranti</mat-chip>
+                        </mat-chip-list>
+                        <mat-chip-list aria-label="Fish selection">
+                            <mat-chip>1.000 – 2.000 attività registrate</mat-chip>
+                        </mat-chip-list>
+                        <mat-chip-list aria-label="Fish selection">
+                            <mat-chip>Pagamento alla consegna</mat-chip>
+                        </mat-chip-list>
+                    </div>
                   </mat-card-content>
                   <mat-card-actions>
-                    <button mat-flat-button color="accent">Vai alla mappa</button>
+                        <button mat-flat-button color="accent">Vai alla mappa</button>
                   </mat-card-actions>
               </mat-card>
 
@@ -230,7 +273,7 @@
         </div>
 
         <div class="container-btn-all" >
-            <button mat-stroked-button color="accent">Scopri tutte le piattaforme</button>
+            <button mat-stroked-button color="accent" routerLink="/piattaforme">Scopri tutte le piattaforme</button>
         </div>
 
     </div>
@@ -249,7 +292,7 @@
     </div>
     <div class="item-combatti-text">
         <p>Conosci una <b>piattaforma</b> che non è presente nel nostro elenco? Indicacela e la inseriremo subito!</p>
-        <button mat-flat-button color="accent">Vai alla mappa</button>
+        <a href="https://info826726.typeform.com/to/B6NZfO" mat-flat-button color="accent">Segnala Piattaforma</a>
         <p>Se vuoi aiutarci con la diffusione di questo progetto puoi usare il nostro <b>press kit!</b></p>
         <p>Se hai dei suggerimenti scrivici a <b>info@unitipossiamo.it</b></p>
     </div>

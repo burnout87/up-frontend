@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-piattaforme',
   templateUrl: './piattaforme.component.html',
-  styleUrls: ['./piattaforme.component.css']
+  styleUrls: ['./piattaforme.component.scss']
 })
 export class PiattaformeComponent implements OnInit {
 

@@ -1,0 +1,80 @@
+.flex-container-home{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
+    .flex-item-home-img {
+      padding: 10px;
+      margin: auto;
+      width: 35%;
+      .image-taxi-7 {
+        width: 75%;
+        margin: auto;
+        img {
+          width: 100%;
+        }
+      }
+  }
+  
+  .flex-item-home-text {
+      padding: 10px;
+      margin: auto;
+      width: 55%;
+  }
+}
+
+.subtitle{
+    padding-top: 2em;
+}
+
+.paragraph{
+    padding-top: 2em;
+}
+
+.container-piattaforme {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    //padding-left: 4%;
+    //padding-right: 4%;
+    .item-piattaforme {
+      //padding: 10px;
+      margin: auto;
+      width: 100%;
+      text-align: center;
+      .container-card {
+        width: 100%;
+        margin: auto;
+        .list-card {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-content: center;
+          margin: auto;
+          padding-top: 2em;
+          .card-piattaforme {
+            max-width: 25%;
+            margin: 10px;
+            height: 660px;
+          }
+        }
+      }
+    }
+  }
+
+  mat-card {
+    border-radius: 5px 5px 5px 5px !important;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.19) !important;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.3em;
+    }

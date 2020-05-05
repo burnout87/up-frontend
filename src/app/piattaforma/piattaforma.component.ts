@@ -4,7 +4,7 @@ import { Piattaforma } from './piattaforma';
 @Component({
   selector: 'app-piattaforma',
   templateUrl: './piattaforma.component.html',
-  styleUrls: ['./piattaforma.component.css']
+  styleUrls: ['./piattaforma.component.scss']
 })
 export class PiattaformaComponent implements OnInit {
 

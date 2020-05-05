@@ -22,14 +22,15 @@ export class PiattaformeComponent implements OnInit {
 
   private populatePiattaforme(dataPiattaforme: []) {
     dataPiattaforme.forEach((dataPiattaforma:any) => {
-      var piattaforma = {
+      var piattaforma: Piattaforma = {
         name: dataPiattaforma.name,
         type: dataPiattaforma.type,
         desc: dataPiattaforma.desc,
         countBusiness: Number(dataPiattaforma.countBusiness),
         categs: dataPiattaforma.categs,
         areas: dataPiattaforma.areas,
-        payments: dataPiattaforma.payments
+        payments: dataPiattaforma.payments,
+        urlImg:  dataPiattaforma. dataPiattaforma
       }
       this.piattaforme.push(piattaforma);
     });

@@ -26,6 +26,14 @@ export class MapComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private wsService: ConnectivityService, private markerManager: MarkerManager, @Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
+    this.markersData = this.route.snapshot.data['markers'];
+    (async () => {
+      this.markersData.forEach((markerData: any)  => {
+        if(markerData && markerData.coords) {
+            this.buildMarker(markerData);
+        }
+      });
+    })();
     this.geoLocation = {
       zoom: 10,
       latitude: 41.6650266,
@@ -72,7 +80,8 @@ export class MapComponent implements OnInit {
       categ: markerData.categ,
       iconUrl: "",
       isOnMap: false,
-      _id: markerData._id
+      _id: markerData._id,
+      coupon: markerData.coupon
     }
     // if(markerData.categ) {
     //   var categ = markerData.categ ?(markerData.categ).toLowerCase() :"";
@@ -92,25 +101,7 @@ export class MapComponent implements OnInit {
     }
   }
 
-  ngAfterViewInit () {
-    // print the bounding box
-    // this.agmMap.boundsChange.subscribe((bounds:LatLngBounds) => {
-    //   // LatLngBounds: An immutable class representing a latitude/longitude aligned rectangle.
-    //   // console.log(bounds);
-    // });
-    // markerData are pre-fetched
-    this.markersData = this.route.snapshot.data['markers'];
-    // var ids = this.markersData.filter(x => x._id && x.coords).map(() => this.buildMarker);
-    // var results = Promise.all(ids);
-    // results.then(data => console.log);
-    // (async () => {
-      this.markersData.forEach((markerData: any)  => {
-        if(markerData && markerData.coords) {
-            this.buildMarker(markerData);
-        }
-      });
-    // })();
-  }
+  ngAfterViewInit () { }
 
   getInfoMarker(m: Marker, gm, infoWindow) {
     if (gm.lastOpen != null) {
@@ -130,6 +121,25 @@ export class MapComponent implements OnInit {
         !x.isOnMap && 
         this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)}))
       .forEach(x => x.isOnMap = true);
+  }
+
+  filterCoupon() {
+    this.markers
+    .filter(x => 
+      x.coupon &&
+      this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)})
+    )
+    .forEach(x => x.isOnMap = !x.isOnMap);
+  }
+
+  filterCategory(categ: string) {
+    this.markers
+    .filter(x => 
+      x.categ &&
+      x.categ.toLowerCase() == categ.toLowerCase() &&
+      this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)})
+    )
+    .forEach(x => x.isOnMap = !x.isOnMap);
   }
 
   hideInfo(gm, event) {
@@ -165,4 +175,5 @@ interface Marker {
   description?: string;
   isOnMap: boolean;
   _id: string;
+  coupon: boolean;
 }

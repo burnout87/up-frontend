@@ -30,7 +30,7 @@ export class PiattaformeComponent implements OnInit {
         categs: dataPiattaforma.categs,
         areas: dataPiattaforma.areas,
         payments: dataPiattaforma.payments,
-        urlImg:  dataPiattaforma. dataPiattaforma
+        urlImg:  dataPiattaforma.urlImg
       }
       this.piattaforme.push(piattaforma);
     });

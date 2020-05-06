@@ -7,4 +7,5 @@ export interface Piattaforma {
     areas: string[];
     payments: string[];
     urlImg: string;
+    link: string;
 }

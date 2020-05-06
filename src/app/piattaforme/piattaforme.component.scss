@@ -60,7 +60,7 @@
           .card-piattaforme {
             max-width: 25%;
             margin: 10px;
-            height: 660px;
+            height: 650px;
           }
         }
       }
@@ -72,6 +72,38 @@
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.19) !important;
     margin: 10px 10px 10px 10px;
     padding: 10px 10px 10px 10px;
+}
+
+.container-combatti {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  padding-left: 4%;
+  padding-right: 4%;
+.item-combatti {
+  padding: 10px;
+  margin: auto;
+  width: 35%;
+  .image-taxi-searching{
+    width: 65%;
+    margin: auto;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.item-combatti-text {
+  padding: 10px;
+  margin: auto;
+  width: 55%;
+  p {
+    padding-top: 2em;
+  }
+}
+
 }
 
 p {

@@ -1,28 +1,28 @@
 <!-- <p>{{piattaforma.name}}</p> -->
 
     <div class="img-piattaforma">
-    <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/5-300x300.png" >
+    <img mat-card-image src="{{piattaforma.urlImg}}" default="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-7.png">
     </div>
     <mat-card-content>
         <div class="descriptions">
-            <p><span>{{piattaforma.name}}</span></p>
-            <p ellipsis>
+            <div class="name-platform" ellipsis>{{piattaforma.name}}</div>
+            <div class="paragraphs" ellipsis>
                 {{piattaforma.desc}}
-            </p>
+            </div>
         </div>
-        <div>
+        <div class="content-chips">
             <mat-chip-list aria-label="Fish selection">
-                <mat-chip>{{piattaforma.areas}}</mat-chip>
-                <mat-chip>{{piattaforma.categs | json}}</mat-chip>
+                <mat-chip ellipsis>{{piattaforma.areas}}</mat-chip>
+                <mat-chip ellipsis *ngFor="let c of piattaforma.categs">{{c}}</mat-chip>
             </mat-chip-list>
             <mat-chip-list aria-label="Fish selection">
-                <mat-chip>600 – 1.000 attività registrate</mat-chip>
+                <mat-chip ellipsis>{{piattaforma.countBusiness}} attività registrate</mat-chip>
             </mat-chip-list>
             <mat-chip-list aria-label="Fish selection">
-                <mat-chip>{{piattaforma.payments}}</mat-chip>
+                <mat-chip ellipsis>{{piattaforma.payments}}</mat-chip>
             </mat-chip-list>
         </div>
       </mat-card-content>
       <mat-card-actions>
-            <button mat-flat-button color="accent">Vai alla mappa</button>
+            <a mat-flat-button color="accent" href="{{piattaforma.link}}" target="_blank">Vai al sito</a>
       </mat-card-actions>

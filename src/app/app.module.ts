@@ -23,6 +23,7 @@ import { EllipsisModule } from 'ngx-ellipsis';
 import { PiattaformeComponent } from './piattaforme/piattaforme.component';
 import { PiattaformaComponent } from './piattaforma/piattaforma.component';
 import { PartnersComponent } from './partners/partners.component';
+import { DefaultImageDirective } from './default-image.directive';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PartnersComponent } from './partners/partners.component';
     SafeHtmlPipe,
     PiattaformeComponent,
     PiattaformaComponent,
-    PartnersComponent
+    PartnersComponent,
+    DefaultImageDirective
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

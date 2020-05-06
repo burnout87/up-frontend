@@ -8,7 +8,7 @@
     text-align: center;
     overflow: hidden;
     img {
-      width: 50%;
+      width: 40%;
       margin: auto;
       //padding-top: 16px;
     }
@@ -18,18 +18,26 @@
     mat-card-content {
       padding-top: 16px;
       .descriptions {
-        height: 300px;
-        p {
+        height: 250px;
+        .name-platform {
+          height: 38px;
           text-align: left;
           overflow: hidden;
-          span {
-            font-size: 21px;
-            font-weight: 600;
-          }
+          font-size: 21px;
+          font-weight: 900;
+        }
+        .paragraphs {
+          height: 196px;
+          text-align: left;
+          overflow: hidden;
+          padding-bottom: 16px;
+          font-size: 20px;
+          line-height: 1.3em;
         }
       }
       .content-chips {
-        height: 100px;
+        height: 152px;
+        overflow: hidden;
       }
       
     }
@@ -38,13 +46,8 @@
       border-radius: 4px !important;
     }
 
-    mat-card-actions {
-      button {
-        margin-bottom: 2em;
-      }
-    }
-
     p {
         font-size: 20px;
         line-height: 1.3em;
         }
+

@@ -49,9 +49,9 @@ export class MapComponent implements OnInit {
       });
     })();
     this.geoLocation = {
-      zoom: 10,
-      latitude: 41.6650266,
-      longitude: 12.8701779,
+      zoom: 11,
+      latitude: 41.901588,
+      longitude: 12.492305,
       mapType:'roadmap',
       scrollwheel: false,
       clickableIcons: false,

@@ -2,7 +2,7 @@
   .flex-item {
     padding: 10px;
     margin: auto;
-    width: 100%;
+    width: 95%;
   }
 
   .partners-box {
@@ -35,4 +35,22 @@
     max-width: 100%; */
     opacity: 0.3;
     filter: brightness( 100% ) contrast( 100% ) saturate( 0% ) blur( 0px ) hue-rotate( 0deg );
+  }
+
+  .flex-item_S {
+    padding: 10px;
+    margin: auto;
+    width: 95%;
+  }
+
+  .flex-item_M {
+    padding: 10px;
+    margin: auto;
+    width: 70%;
+  }
+
+  .flex-item_L {
+    padding: 10px;
+    margin: auto;
+    width: 100%;
   }

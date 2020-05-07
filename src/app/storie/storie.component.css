@@ -2,7 +2,7 @@
   .container-page_S {
     width: 90%;
     margin: auto;
-    padding-top: 2em;
+    /* padding-top: 2em; */
   }
 
   .container-page_M {
@@ -28,7 +28,7 @@
   
   .subtitle-header {
     text-align: left;
-    padding-top: 4em;
+    padding-top: 2em;
   }
   
   .example-button-row button,

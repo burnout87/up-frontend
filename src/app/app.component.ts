@@ -65,6 +65,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   closeSide() {
     this.sidenavService.close();
+    this.isOpen = this.sidenavService.isOpen;
   }
 
 

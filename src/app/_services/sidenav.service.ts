@@ -21,13 +21,13 @@ export class SidenavService {
   }
 
   public close() {
-      return this.sidenav.close();
+      this.sidenav.close();
+      this.isOpen = !this.isOpen;
   }
 
   public toggle(): void {
   this.sidenav.toggle();
   this.isOpen = !this.isOpen;
-  console.log(this.isOpen);
  }
 
 }

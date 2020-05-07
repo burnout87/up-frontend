@@ -1,4 +1,4 @@
-<section class="flex-container-home bg-yellow">
+<section class="flex-container-home bg-yellow" [class.flex-container-home_S]="isS">
     <div class="flex-item-home-img">
         <div class="image-teamwork">
             <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-teamwork-in-office.png"/>
@@ -13,20 +13,20 @@
     </div>
 </section>
 
-<section class="flex-container">
-    <div class="flex-item-text">
+<section class="flex-container" [class.flex-container_S]="isS">
+    <div class="flex-item-text" [class.flex-item-text_S]="isS">
         <span class="mat-display-1">Come funziona?</span>
         <div class="paragraph">
         <p>Ristoranti, librerie, parrucchieri di tutta Italia stanno vivendo un momento molto duro. Ora puoi dare una mano a ciascuno di loro, nel modo più semplice. <strong>Apri la mappa, clicca e sostieni un’attività!</strong></p>
         </div>
     </div>
-    <div class="flex-item-action">
+    <div class="flex-item-action" [class.flex-item-action_S]="isS">
         <button mat-flat-button color="accent" (click)="scrollToElement(map)">Vai alla mappa</button>
     </div>
 </section>
 
-<section class="flex-container-sostieni">
-    <div class="flex-item-sostieni">
+<section class="flex-container-sostieni" [class.flex-container-sostieni_S]="isS">
+    <div class="flex-item-sostieni" [class.flex-item-sostieni_C]="isC">
         <div class="img-step">
             <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_lens.png" >
         </div>
@@ -39,7 +39,7 @@
             </div>
         </div>
     </div>
-    <div class="flex-item-sostieni">
+    <div class="flex-item-sostieni" [class.flex-item-sostieni_C]="isC">
         <div class="img-step">
             <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_map_tooltip.png" >
         </div>
@@ -52,7 +52,7 @@
             </div>
         </div>
     </div>
-    <div class="flex-item-sostieni">
+    <div class="flex-item-sostieni" [class.flex-item-sostieni_C]="isC">
         <div class="img-step">
             <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_voucher_delivery.png" >
         </div>
@@ -67,7 +67,7 @@
     </div>
 </section>
 
-<section #map class="flex-container-map bg-accent">
+<section #map class="flex-container-map bg-accent" [class.flex-container-map_S]="isS">
     <div class="flex-item-map">
         <span class="mat-display-1 primary-color">Trova nella mappa i negozi vicini a te</span>
         <div class="subtitle white-color">
@@ -86,7 +86,9 @@
         <div class="map">
             <app-map *ngIf="isBrowser"></app-map>
         </div>
+        <div class="subtitle">
         <span class="mat-display-1 primary-color">Non hai trovato negozi nei tuoi dintorni?</span>
+        </div>
         <div class="subtitle white-color">
         <p>Spargi la voce e aiutaci a raggiungere più attività commerciali, condividi il link sui tuoi canali! ツ</p>
         </div>
@@ -106,21 +108,21 @@
     </div>
 </section>
 
-<section class="flex-container bg-lightgray">
-    <div class="flex-item-text">
+<section class="flex-container bg-lightgray" [class.flex-container_S]="isS">
+    <div class="flex-item-text" [class.flex-item-text_S]="isS">
         <span class="mat-display-1">Hai un’attività?</span>
         <div class="paragraph">
         <p>Scopri come registrare la tua offerta in una delle nostre piattaforme. 
             Avrai maggior visibilità e visitatori da tutta Italia. Tutto in una sola pagina, tutto gratis!</p>
         </div>
     </div>
-    <div class="flex-item-action">
+    <div class="flex-item-action" [class.flex-item-action_S]="isS">
         <button mat-flat-button color="accent" (click)="scrollToElement(piattaforme)">Scopri le piattaforme</button>
     </div>
 </section>
 
-<section class="flex-container-registra bg-lightgray">
-    <div class="flex-item-registra">
+<section class="flex-container-registra bg-lightgray" [class.flex-container-registra_S]="isS">
+    <div class="flex-item-registra" [class.flex-item-registra_C]="isC">
         <div class="img-step">
             <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_voucher_delivery.png" >
         </div>
@@ -133,7 +135,7 @@
             </div>
         </div>
     </div>
-    <div class="flex-item-registra">
+    <div class="flex-item-registra" [class.flex-item-registra_C]="isC">
         <div class="img-step">
             <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_choose_platform.png" >
         </div>
@@ -146,7 +148,7 @@
             </div>
         </div>
     </div>
-    <div class="flex-item-registra">
+    <div class="flex-item-registra" [class.flex-item-registra_C]="isC">
         <div class="img-step">
             <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_register.png" >
         </div>
@@ -159,7 +161,7 @@
             </div>
         </div>
     </div>
-    <div class="flex-item-registra">
+    <div class="flex-item-registra" [class.flex-item-registra_C]="isC">
         <div class="img-step">
             <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/up_infographic_map_pin.png" >
         </div>
@@ -174,14 +176,14 @@
     </div>
 </section>
 
-<section #piattaforme class="container-piattaforme">
+<section #piattaforme class="container-piattaforme" [class.container-piattaforme_S]="isS">
     <div class="item-piattaforme">
         <span class="mat-display-1">Scopri le piattaforme</span>
 
         <div class="container-card">
             <div class="list-card">
 
-              <mat-card class="card-piattaforme">
+              <mat-card class="card-piattaforme" [class.card-piattaforme_S]="isS" [class.card-piattaforme_M]="isM" [class.card-piattaforme_L]="isL">
                     <div class="img-piattaforma">
                     <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/Io-resto-a-casa-delivery-ok.png" default="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-7.png">
                     </div>
@@ -210,7 +212,7 @@
                       </mat-card-actions>
               </mat-card>
 
-              <mat-card class="card-piattaforme">
+              <mat-card class="card-piattaforme" [class.card-piattaforme_S]="isS" [class.card-piattaforme_M]="isM" [class.card-piattaforme_L]="isL">
                     <div class="img-piattaforma">
                     <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/2.png" default="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-7.png">
                     </div>
@@ -239,7 +241,7 @@
                       </mat-card-actions>
               </mat-card>
 
-              <mat-card class="card-piattaforme">
+              <mat-card class="card-piattaforme" [class.card-piattaforme_S]="isS" [class.card-piattaforme_M]="isM" [class.card-piattaforme_L]="isL">
                     <div class="img-piattaforma">
                     <img mat-card-image src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/5.png" default="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-7.png">
                     </div>
@@ -279,11 +281,11 @@
     </div>
 </section>
 
-<section class="flex-container bg-yellow">
+<section class="flex-container bg-yellow" [class.flex-container_S]="isS">
     <app-partners></app-partners>
 </section>
 
-<section class="container-combatti bg-lightgray">
+<section class="container-combatti bg-lightgray" [class.container-combatti_S]="isS">
     <div class="item-combatti">
         <span class="mat-display-1">Combatti questa crisi con noi!</span>
         <div class="image-taxi-searching">

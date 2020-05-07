@@ -1,6 +1,6 @@
 
-<section class="flex-container-header bg-yellow">
-    <div class="flex-item-header-img imagebox-taxi-3" [class.flex-item-header-img_S]="isS" [class.imagebox-taxi-3_S]="isS">
+<section class="flex-container-header bg-yellow" [class.flex-container-header_S]="isS">
+    <div class="flex-item-header-img imagebox-taxi-3" [class.flex-item-header-img_S]="isS">
         <img class="image-taxi-3" src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-3.png"/>
     </div>
     <div class="flex-item-header-title mat-display-3" [class.flex-item-header-title_S]="isS">
@@ -10,7 +10,7 @@
 
 <section class="flex-container" [class.flex-container_S]="isS">
     <div [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" class="titlebox">
-        <span class="mat-display-2">Che cos'è Unitipossiamo?</span>
+        <span class="mat-display-1">Che cos'è Unitipossiamo?</span>
     </div>
     <div [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" class="textbox">
         <p>Unitipossiamo è il più grande aggregatore di tutte le iniziative nate sul territorio italiano per aiutare le <strong>attività commerciali </strong>a superare il periodo di crisi che stanno vivendo a causa del<strong> COVID-19.</strong></p>    
@@ -30,7 +30,7 @@
 
 <section class="flex-container bg-lightgray" [class.flex-container_S]="isS">
     <div [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" class="titlebox">
-        <span class="mat-display-2">Perchè Unitipossiamo</span>
+        <span class="mat-display-1">Perchè Unitipossiamo</span>
     </div>
     <div [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" class="textbox">
         <p>Su tutto il territorio nazionale si moltiplicano le iniziative che, in vario modo, cercano di <strong>aiutare le attività commerciali.</strong> Ma la frammentarietà risulta controproducente.</p>
@@ -44,7 +44,7 @@
 
 <section class="flex-container" [class.flex-container_S]="isS">
     <div class="flex-item voltibox">
-        <span class="mat-display-2">I nostri volti</span>
+        <span class="mat-display-1">I nostri volti</span>
           <div class="card-container">
             <app-member *ngFor="let membro of membri" [membroData]=membro></app-member>
           </div>
@@ -53,7 +53,7 @@
 
 <section class="flex-container bg-lightgray" [class.flex-container_S]="isS">
     <div class="flex-item media-box">
-        <span class="mat-display-2">Parlano di noi</span>
+        <span class="mat-display-1">Parlano di noi</span>
         <div class="subtitle">
         <p>La nostra iniziativa ha già riscosso attenzione da parte di alcuni media online, contribuendo a far conoscere <b>Unitipossiamo</b> a quante più persone possibili.</p>
         </div>

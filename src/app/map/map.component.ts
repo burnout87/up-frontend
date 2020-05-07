@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { ConnectivityService } from '../connectivity.service';
 import { MarkerManager, AgmMap, LatLngBounds, LatLng } from "@agm/core";
 import { ActivatedRoute } from '@angular/router';
+import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout';
 // import { MapMarker } from '../marker';
 
 @Component({
@@ -13,6 +14,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class MapComponent implements OnInit {
+
+  public isS;
 
   public location: Location;
   public markers: Marker[] = [];
@@ -24,7 +27,18 @@ export class MapComponent implements OnInit {
 
   @ViewChild('AgmMap', {static: false}) agmMap: AgmMap;
 
-  constructor(private route: ActivatedRoute, private wsService: ConnectivityService, private markerManager: MarkerManager, @Inject(PLATFORM_ID) platformId: Object) {
+  constructor(private route: ActivatedRoute, private wsService: ConnectivityService, private markerManager: MarkerManager, @Inject(PLATFORM_ID) platformId: Object, private breakpointObserver: BreakpointObserver) {
+    
+    this.breakpointObserver
+    .observe([Breakpoints.XSmall, Breakpoints.HandsetPortrait])
+    .subscribe((state: BreakpointState) => {
+      if (state.matches) {
+        this.isS = true;
+      } else {
+        this.isS = false;
+      }
+    });    
+    
     this.isBrowser = isPlatformBrowser(platformId);
     this.markersData = this.route.snapshot.data['markers'];
     (async () => {

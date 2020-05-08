@@ -80,6 +80,11 @@ mat-nav-list {
   
   }
 
+mat-toolbar-row > div > span {
+    transition: transform .3s;
+}
+
 mat-toolbar-row > div > span:hover {
     color: mat-color($custom-theme-accent, 500);
+    transform: scale(1.2);
   }

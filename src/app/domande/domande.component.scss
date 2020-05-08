@@ -1,0 +1,40 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .flex-container_S {
+    //padding-top: 0%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  .flex-item {
+    padding: 10px;
+    margin: auto;
+    width: 100%;
+  }
+
+  .flex-item_S {
+    padding: 10px;
+    margin: auto;
+    width: 100%;
+  }
+
+  .flex-item_M {
+    padding: 10px;
+    margin: auto;
+    width: 70%;
+  }
+
+  .flex-item_L {
+    padding: 10px;
+    margin: auto;
+    width: 48%;
+  }

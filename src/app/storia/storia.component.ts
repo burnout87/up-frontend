@@ -85,9 +85,9 @@ export class StoriaComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     });
 
-    this.navigationSubscription = this.router.events.subscribe((e: any) => {
+    this.navigationSubscription = this.router.events.subscribe((evt: any) => {
       // If it is a NavigationEnd event re-initalise the component
-      if (e instanceof NavigationEnd) {
+      if (evt instanceof NavigationEnd) {
         this.latestStorie = [];
         this.loadPageContent();
       }

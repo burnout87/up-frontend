@@ -6,13 +6,16 @@ import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
 import { DomandeComponent } from './domande/domande.component';
 import { NegozianteComponent } from './negoziante/negoziante.component'
 import { NegoziantiComponent } from './negozianti/negozianti.component'
+import { MemberComponent } from './member/member.component';
 import { AiutaciComponent } from './aiutaci/aiutaci.component';
-import { Negoziante } from './negoziante';
+import { PiattaformeComponent } from './piattaforme/piattaforme.component';
+import { PiattaformaComponent } from './piattaforma/piattaforma.component';
+import { PartnersComponent } from './partners/partners.component';import { Negoziante } from './negoziante';
+import { MapComponent } from './map/map.component';
 import { Observable } from 'rxjs';
 import { ConnectivityService } from './connectivity.service';
 import { HomeComponent } from './home/home.component';
 import { AgmMarker } from '@agm/core';
-import { PiattaformeComponent } from './piattaforme/piattaforme.component';
 
 /*Store resolver*/
 @Injectable({ providedIn: 'root' })
@@ -162,12 +165,25 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     initialNavigation: 'enabled',
-    onSameUrlNavigation: 'reload',
-    scrollPositionRestoration: 'enabled'
+    onSameUrlNavigation: 'reload'
 })],
   exports: [RouterModule]
 })
 
 export class AppRoutingModule { }
 
-export const routingComponents = [HomeComponent, ChiSiamoComponent, StorieComponent, StoriaComponent, DomandeComponent, NegozianteComponent, NegoziantiComponent, AiutaciComponent]
+export const RoutingComponents = [
+  HomeComponent, 
+  MapComponent,
+  ChiSiamoComponent, 
+  MemberComponent, 
+  StorieComponent, 
+  StoriaComponent, 
+  DomandeComponent,
+  NegozianteComponent, 
+  NegoziantiComponent, 
+  AiutaciComponent, 
+  PiattaformeComponent,
+  PiattaformaComponent,
+  PartnersComponent
+]

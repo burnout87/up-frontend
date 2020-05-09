@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject, OnDestroy, ViewChild, AfterViewInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { SidenavService } from './_services/sidenav.service';
@@ -21,19 +21,24 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   public isOpen;
 
   title = 'upFrontend';
-  router: Router;
   isBrowser: boolean;
 
   ngOnInit() { 
-    
-  }
+      this._router.events.subscribe((evt) => {
+          // if (!(evt instanceof NavigationEnd)) {
+          if (evt instanceof NavigationEnd) {
+            const contentContainer = document.querySelector('.mat-sidenav-content') || window;
+            contentContainer.scrollTo(0, 0);
+              // return;
+          }
+      });
+   }
 
   constructor(private _router: Router, @Inject(PLATFORM_ID) platformId: Object,
               private sidenavService: SidenavService,
               private breakpointObserver: BreakpointObserver,
   ){
     this.isBrowser = isPlatformBrowser(platformId);
-    this.router = _router;
 
     this.breakpointObserver
     .observe(['(max-width: 800px)'])

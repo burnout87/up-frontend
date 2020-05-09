@@ -1,10 +1,11 @@
 import { Component, OnInit, Inject, OnDestroy, ViewChild, AfterViewInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common'; 
 import { Router, NavigationEnd } from '@angular/router';
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { SidenavService } from './_services/sidenav.service';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { MatSidenav } from '@angular/material';
+import { MatSidenav, MatSidenavContent } from '@angular/material';
 
 
 @Component({
@@ -16,20 +17,26 @@ import { MatSidenav } from '@angular/material';
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('sidenav', {static: false}) public sidenav: MatSidenav;
+  @ViewChild('sidenavContent', {static: false}) public sidenavContent: MatSidenavContent;
 
   public isSmallScreen;
   public isOpen;
+  public contentContainer;
 
   title = 'upFrontend';
   isBrowser: boolean;
 
   ngOnInit() { 
       this._router.events.subscribe((evt) => {
-          // if (!(evt instanceof NavigationEnd)) {
           if (evt instanceof NavigationEnd) {
-            const contentContainer = document.querySelector('.mat-sidenav-content') || window;
-            contentContainer.scrollTo(0, 0);
-              // return;
+              // const contentContainer = this.isBrowser ? document.querySelector('.mat-sidenav-content') || window : document.querySelector('.mat-sidenav-content'); 
+              // if(this.contentContainer)
+              //   this.contentContainer.scrollTo(0, 0);
+              var scrollOptions = {
+                left: 0,
+                top: 0
+              };
+              this.sidenavContent.scrollTo(scrollOptions);
           }
       });
    }
@@ -37,8 +44,10 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(private _router: Router, @Inject(PLATFORM_ID) platformId: Object,
               private sidenavService: SidenavService,
               private breakpointObserver: BreakpointObserver,
-  ){
+              @Inject(DOCUMENT) document
+  ) {
     this.isBrowser = isPlatformBrowser(platformId);
+    // this.contentContainer = document.querySelector('.mat-sidenav-content'); 
 
     this.breakpointObserver
     .observe(['(max-width: 800px)'])

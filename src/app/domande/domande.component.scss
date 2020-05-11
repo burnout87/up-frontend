@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-top: 4%;
+    //height: 100vh;
+    padding-top: 2%;
     padding-bottom: 4%;
     padding-left: 4%;
     padding-right: 4%;
@@ -10,14 +11,24 @@
 
   .flex-container_S {
     //padding-top: 0%;
-    padding-bottom: 0%;
+    height: auto;
+    padding-left: 0%;
+    padding-right: 0%;
+    .mat-expansion-panel-header {
+      height: auto !important;
+    }
+  }
+
+  .flex-container_M {
+    //padding-top: 0%;
+    height: auto;
     padding-left: 0%;
     padding-right: 0%;
   }
 
   .flex-item {
     padding: 10px;
-    margin: auto;
+    //margin: auto;
     width: 100%;
   }
 
@@ -35,6 +46,7 @@
 
   .flex-item_L {
     padding: 10px;
-    margin: auto;
+    //margin: auto;
     width: 48%;
   }
+

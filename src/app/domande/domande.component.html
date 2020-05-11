@@ -1,25 +1,55 @@
 
-<section class="flex-container" [class.flex-container_S]="isS">
+<section class="flex-container" [class.flex-container_S]="isS" [class.flex-container_M]="isM">
     <div class="flex-item" [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL">
 
         <mat-accordion>
 
-            <mat-expansion-panel>
+            <mat-expansion-panel [expanded]="true" (opened)="panelOpenState1 = true"
+            (closed)="panelOpenState1 = false" hideToggle="true">
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  domanda
+                  Perché dovrei comprare oggi una cena al ristorante? O un altro prodotto o servizio?
                 </mat-panel-title>
+                <mat-icon *ngIf="!panelOpenState1">add</mat-icon>
+                <mat-icon *ngIf="panelOpenState1">remove</mat-icon>
               </mat-expansion-panel-header>
-              <p>risposta</p>
+              <p>Ogni attività commerciale deve sostenere dei costi mensili come pagare l’affitto, pagare i dipendenti e così via, comprando oggi qualcosa di cui usufruirai domani stai aiutando le attività commerciali a sostenere tali spese e non chiudere.</p>
             </mat-expansion-panel>
 
-            <mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState2 = true"
+            (closed)="panelOpenState2 = false" hideToggle="true">
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  domanda
+                  Posso comprare direttamente dal sito Unitipossiamo.it?
                 </mat-panel-title>
+                <mat-icon *ngIf="!panelOpenState2">add</mat-icon>
+                <mat-icon *ngIf="panelOpenState2">remove</mat-icon>
               </mat-expansion-panel-header>
-              <p>Risposta</p>
+              <p>No, Unitipossiamo mostra tutte le attività che durante il periodo di crisi COVID-19 stanno offrendo servizi di consegna a domicilio o che vendono coupon e gift-card per poter sostenere le spese e non dover chiudere, ma non si può comprare dal nostro sito. Per acquistare clicca sull’attività e verrai reindirizzato al sito dove potrai effettuare l’acquisto. </p>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (opened)="panelOpenState3 = true"
+            (closed)="panelOpenState3 = false" hideToggle="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Perché quando clicco sull’icona poi non vedo l’attività commerciale nel sito che si apre?
+                </mat-panel-title>
+                <mat-icon *ngIf="!panelOpenState3">add</mat-icon>
+                <mat-icon *ngIf="panelOpenState3">remove</mat-icon>
+              </mat-expansion-panel-header>
+              <p>Per ora possiamo solo rimandarti alla piattaforma su cui l’attività è presente, effettua lì una nuova ricerca e sicuramente troverai l’attività presso cui vuoi compiere l’acquisto. Ma non temere, stiamo lavorando sodo per facilitare questo passaggio. </p>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (opened)="panelOpenState4 = true"
+            (closed)="panelOpenState4 = false" hideToggle="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Cosa faccio se uno dei miei locali preferiti non è nella mappa?
+                </mat-panel-title>
+                <mat-icon *ngIf="!panelOpenState4">add</mat-icon>
+                <mat-icon *ngIf="panelOpenState4">remove</mat-icon>
+              </mat-expansion-panel-header>
+              <p>Contatta i proprietari e invitali su Unitipossiamo.it per poter confrontare tra le varie piattaforme disponibili e scegliere quella che fa per loro.</p>
             </mat-expansion-panel>
 
           </mat-accordion>
@@ -29,22 +59,112 @@
 
         <mat-accordion>
 
-            <mat-expansion-panel>
+            <mat-expansion-panel [expanded]="true" (opened)="panelOpenState5 = true"
+            (closed)="panelOpenState5 = false" hideToggle="true">
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  domanda
+                  Come faccio a registrare la mia attività?
                 </mat-panel-title>
+                <mat-icon *ngIf="!panelOpenState5">add</mat-icon>
+                <mat-icon *ngIf="panelOpenState5">remove</mat-icon>
               </mat-expansion-panel-header>
-              <p>risposta</p>
+              <p>Unitipossiamo.it riunisce le attività che si sono registrate sulle altre piattaforme, non ne registra direttamente. Scegli tra una delle piattaforme presenti sulla home page e registra lì la tua attività, dopo poco la tua attività apparirà anche sulla nostra mappa. Se non succede entro 2 giorni, scrivici una email a info@unitipossiamo.it</p>
             </mat-expansion-panel>
 
-            <mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState6 = true"
+            (closed)="panelOpenState6 = false" hideToggle="true">
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  domanda
+                  Chi può partecipare?
                 </mat-panel-title>
+                <mat-icon *ngIf="!panelOpenState6">add</mat-icon>
+                <mat-icon *ngIf="panelOpenState6">remove</mat-icon>
               </mat-expansion-panel-header>
-              <p>Risposta</p>
+              <p>Qualsiasi attività che voglia consegnare i propri prodotti a domicilio o vendere i propri prodotti e/o servizi tramite coupon e gift-card. Fin ora sulla nostra mappa sono presenti ristoranti, artigiani, meccanici, negozi di abbigliamento, studi medici e odontoiatrici, centri estetici e molti altri.</p>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (opened)="panelOpenState7 = true"
+            (closed)="panelOpenState7 = false" hideToggle="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Come faccio a scegliere la piattaforma su cui registrare la mia attività?
+                </mat-panel-title>
+                <mat-icon *ngIf="!panelOpenState7">add</mat-icon>
+                <mat-icon *ngIf="panelOpenState7">remove</mat-icon>
+              </mat-expansion-panel-header>
+              <p>Confronta le piattaforme presenti sulla nostra home page e scegli quella più adatta a te in base a:</p>
+              <ul>
+                <li>tipo di servizio che vuoi offrire: coupon o consegna a domicilio? </li>
+                <li>le aree geografiche coperte dalla piattaforma (per esempio ce n’è una focalizzata sul Friuli Venezia Giulia);</li>
+                <li>specializzazione settoriale della piattaforma;</li>
+                <li>tipologie di prodotti venduti.</li>
+              </ul>
+              <!-- <mat-list>
+                <mat-list-item ><li>tipo di servizio che vuoi offrire: coupon o consegna a domicilio? </li></mat-list-item>
+                <mat-list-item ><li>le aree geografiche coperte dalla piattaforma (per esempio ce n’è una focalizzata sul Friuli Venezia Giulia);</li></mat-list-item>
+                <mat-list-item ><li>specializzazione settoriale della piattaforma;</li></mat-list-item>
+                <mat-list-item ><li>tipologie di prodotti venduti.</li></mat-list-item>
+              </mat-list> -->
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (opened)="panelOpenState8 = true"
+            (closed)="panelOpenState8 = false" hideToggle="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Cosa posso fare se non riesco ad effettuare consegne a domicilio?
+                </mat-panel-title>
+                <mat-icon *ngIf="!panelOpenState8">add</mat-icon>
+                <mat-icon *ngIf="panelOpenState8">remove</mat-icon>
+              </mat-expansion-panel-header>
+              <p>Scegli una delle piattaforme che permettono di vendere gift-card o coupon, riceverai subito i soldi e potrai vendere i tuoi prodotti o servizi una volta riaperta l’attività.</p>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (opened)="panelOpenState9 = true"
+            (closed)="panelOpenState9 = false" hideToggle="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Cosa è una gift card?
+                </mat-panel-title>
+                <mat-icon *ngIf="!panelOpenState9">add</mat-icon>
+                <mat-icon *ngIf="panelOpenState9">remove</mat-icon>
+              </mat-expansion-panel-header>
+              <p>Si tratta di un buono d’acquisto, come una carta regalo o un buono regalo, che l’acquirente compra ora e che potrà spendere successivamente. Consigliamo di inserire un periodo di validità tra i 9 mesi e 1 anno. </p>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (opened)="panelOpenState10 = true"
+            (closed)="panelOpenState10 = false" hideToggle="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Cos’è un coupon?
+                </mat-panel-title>
+                <mat-icon *ngIf="!panelOpenState10">add</mat-icon>
+                <mat-icon *ngIf="panelOpenState10">remove</mat-icon>
+              </mat-expansion-panel-header>
+              <p>È la stessa cosa di una gift-card, in italiano viene spesso chiamata carta regalo o buono regalo.</p>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (opened)="panelOpenState11 = true"
+            (closed)="panelOpenState11 = false" hideToggle="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  C’è una quota da pagare per iscrivere la mia attività?
+                </mat-panel-title>
+                <mat-icon *ngIf="!panelOpenState11">add</mat-icon>
+                <mat-icon *ngIf="panelOpenState11">remove</mat-icon>
+              </mat-expansion-panel-header>
+              <p>No, la partecipazione per le attività commerciali è gratuita su tutte le piattaforme.</p>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (opened)="panelOpenState12 = true"
+            (closed)="panelOpenState12 = false" hideToggle="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Devo per forza applicare uno sconto?
+                </mat-panel-title>
+                <mat-icon *ngIf="!panelOpenState12">add</mat-icon>
+                <mat-icon *ngIf="panelOpenState12">remove</mat-icon>
+              </mat-expansion-panel-header>
+              <p>Non si è obbligati ma farlo incentiverà le persone a comprare da te.</p>
             </mat-expansion-panel>
 
           </mat-accordion>

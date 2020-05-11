@@ -110,12 +110,16 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit() { 
+    // if(navigator.geolocation) {
+    //   navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
+    // }
+  }
+
+  ngAfterViewInit () { 
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
     }
   }
-
-  ngAfterViewInit () { }
 
   getInfoMarker(m: Marker, gm, infoWindow) {
     if (gm.lastOpen != null) {
@@ -162,7 +166,7 @@ export class MapComponent implements OnInit {
     }
   }
 
-  setPosition(position) {
+  public setPosition(position) {
     this.geoLocation.latitude = position.coords.latitude;
     this.geoLocation.longitude = position.coords.longitude;
     console.log(position.coords);

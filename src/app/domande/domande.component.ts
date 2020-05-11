@@ -12,6 +12,19 @@ export class DomandeComponent implements OnInit {
   public isM;
   public isL;
 
+  public panelOpenState1: boolean;
+  public panelOpenState2: boolean;
+  public panelOpenState3: boolean;
+  public panelOpenState4: boolean;
+  public panelOpenState5: boolean;
+  public panelOpenState6: boolean;
+  public panelOpenState7: boolean;
+  public panelOpenState8: boolean;
+  public panelOpenState9: boolean;
+  public panelOpenState10: boolean;
+  public panelOpenState11: boolean;
+  public panelOpenState12: boolean;
+
   constructor( private breakpointObserver: BreakpointObserver ) { 
 
     this.breakpointObserver

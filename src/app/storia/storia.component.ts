@@ -1,17 +1,19 @@
-import { Component, OnInit, AfterViewInit, Inject, OnDestroy } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Inject, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { DOCUMENT } from '@angular/common'; 
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { ConnectivityService } from '../connectivity.service';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import { SafeHtmlPipe } from '../safe-html.pipe';
 
 @Component({
   selector: 'app-storia',
   templateUrl: './storia.component.html',
   styleUrls: ['./storia.component.scss'],
+  providers: [ SafeHtmlPipe ]
 })
 export class StoriaComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  //@ViewChild('containerStoria', {static: false}) containerStoria: ElementRef;
+  // @ViewChild('pRef', {static: false}) pRef: ElementRef;
 
   public isSmall;
   public isMedium;
@@ -27,12 +29,14 @@ export class StoriaComponent implements OnInit, AfterViewInit, OnDestroy {
   public storia?: Storia;
   public latestStorie?: Storia[] = [];
 
+  public nextStoria: number;
+
   private navigationSubscription;
   private scrollPosition: [number, number];
 
   constructor(private route: ActivatedRoute, private wsService: ConnectivityService,
               private breakpointObserver: BreakpointObserver, private router: Router,
-              @Inject(DOCUMENT) document
+              @Inject(DOCUMENT) document, private sHtmlP: SafeHtmlPipe
     ) {
 
     this.iframes = document.querySelectorAll('iframe');
@@ -146,7 +150,8 @@ export class StoriaComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit() {  }
 
   ngAfterViewInit(): void {
-
+    // console.log(this.pRef.nativeElement.innerHTML);
+    // this.pRef.nativeElement.innerHTML = this.sHtmlP.transform(this.storia.content, 'html');
     this.applyStyleStoria();
 
   }
@@ -191,6 +196,12 @@ export class StoriaComponent implements OnInit, AfterViewInit, OnDestroy {
       });
     }
 
+  }
+
+  onNext(lastId) {
+    this.nextStoria = lastId;
+    console.log("lastId", lastId);
+    this.router.navigate(['/storie/' + lastId]);
   }
 
 }

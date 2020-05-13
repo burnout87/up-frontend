@@ -5,10 +5,17 @@
 @import '~@ngx-share/button/themes/modern/modern-dark-theme';
 @import '~@ngx-share/button/themes/circles/circles-dark-theme';
 
-$config: mat-typography-config();
+//$config: mat-typography-config();
 
 $custom-theme-foreground: mat-palette($mat-customPaletteForeground, 500);
 $custom-theme-background: mat-palette($mat-customPaletteBackground, 500);
+
+$first-family: mat-typography-config(
+  $font-family: 'Montserrat, Sans-serif'
+);
+$second-family: mat-typography-config(
+  $font-family: 'Open Sans, Sans-serif'
+);
 
 $custom-hover: #13aff0;
 
@@ -25,7 +32,7 @@ body {
 .pointer{ cursor: pointer; }
 
 b, strong {
-    font-weight: 600;
+    font-weight: 600 !important;
 }
 
 .bg-yellow {
@@ -52,6 +59,8 @@ b, strong {
     background-color: mat-color($custom-theme-primary);
     span{
         color: mat-color($custom-theme-foreground, 500);
+        font-family: mat-font-family($first-family);
+        font-weight: 100 !important;
     }
 }
 
@@ -68,6 +77,7 @@ mat-sidenav {
     background-color: mat-color($custom-theme-primary);
     span{
         color: mat-color($custom-theme-foreground, 500);
+        font-family: mat-font-family($first-family);
     }
 }
 
@@ -97,15 +107,19 @@ mat-toolbar-row > div > span:hover {
   }
 
 .mat-expansion-panel-header {
-  font-size: mat-font-size($config, title);
-  font-family: mat-font-family($config);
-  font-weight: 500;
+  font-size: mat-font-size($first-custom-typography, title);
+  font-family: mat-font-family($first-family);
+  font-weight: 500 !important;
   //height: auto !important;
   padding: 10px 24px !important;
 }
 
 .mat-expansion-panel-body {
-  font-size: mat-font-size($config, subheading-2);
-  font-family: mat-font-family($config);
+  font-size: mat-font-size($first-custom-typography, subheading-2);
+  font-family: mat-font-family($second-family);
   padding: 16px 24px 16px !important;
+}
+
+.mat-chip {
+    font-family: mat-font-family($second-family);
 }

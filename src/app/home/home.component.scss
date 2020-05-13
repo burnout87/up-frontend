@@ -1,3 +1,14 @@
+
+@import 'src/custom.theme.scss';
+@import 'src/custom-typography.scss';
+
+$first-family: mat-typography-config(
+  $font-family: 'Montserrat, Sans-serif'
+);
+$second-family: mat-typography-config(
+  $font-family: 'Open Sans, Sans-serif'
+);
+
 .flex-container-home{
     display: flex;
     flex-direction: row;
@@ -398,6 +409,7 @@
           height: 38px;
           text-align: left;
           overflow: hidden;
+          font-family: mat-font-family($first-family);
           font-size: 21px;
           font-weight: 900;
         }
@@ -406,6 +418,7 @@
           text-align: left;
           overflow: hidden;
           padding-bottom: 16px;
+          font-family: mat-font-family($second-family);
           font-size: 20px;
           line-height: 1.3em;
         }

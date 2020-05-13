@@ -11,6 +11,7 @@
     </div>
     <div class="content-article">
         <p [innerHtml]="storia.content | safeHtml:'html'"></p>
+        <!-- <p #pRef></p> -->
     </div>
 </div>
 
@@ -36,7 +37,8 @@
     <h3 class="mat-h3"><strong> POTREBBE ANCHE PIACERTI </strong></h3>
   </div>
     <div class="list-other">
-        <mat-card [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" *ngFor="let latestStoria of latestStorie" class="pointer" routerLink="/storie/{{latestStoria?.id}}">
+        <!-- <mat-card [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" *ngFor="let latestStoria of latestStorie" class="pointer" routerLink="/storie/{{latestStoria?.id}}"> -->
+          <mat-card [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" *ngFor="let latestStoria of latestStorie" class="pointer" (click)="onNext(latestStoria?.id)">
           <img mat-card-image src="{{latestStoria?._media_full}}" >
             <mat-card-footer>
               <mat-card-title ellipsis><span innerHtml="{{latestStoria?.title}}"></span></mat-card-title>

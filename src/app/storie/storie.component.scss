@@ -1,4 +1,14 @@
 
+@import 'src/custom.theme.scss';
+@import 'src/custom-typography.scss';
+
+$first-family: mat-typography-config(
+  $font-family: 'Montserrat, Sans-serif'
+);
+$second-family: mat-typography-config(
+  $font-family: 'Open Sans, Sans-serif'
+);
+
   .container-page_S {
     width: 90%;
     margin: auto;
@@ -27,7 +37,7 @@
   }
   
   .subtitle-header {
-    text-align: left;
+    text-align: justify;
     padding-top: 2em;
   }
   
@@ -52,7 +62,7 @@
   }
   
   mat-card {
-    background-color: #FECE2F;
+    background-color: mat-color($custom-theme-primary) !important;
     border-radius: 5px 5px 5px 5px;
     border: 1px solid rgba(0,0,0,.1);
     box-shadow: 0px 0px 6px 0px rgba(30, 30, 30, 0.55) !important;
@@ -76,6 +86,9 @@
   mat-card-title {
     margin: 10px;
     height: 50px;
+    font-family: mat-font-family($second-family);
+    font-size: 16px !important;
+    font-weight: 600 !important;
     /* white-space: nowrap; */
     overflow: hidden;
     /* text-overflow: ellipsis; */
@@ -99,4 +112,9 @@
     padding-left: 2em;
     padding-right: 2em;
   }
+
+  p {
+    font-size: 20px;
+    line-height: 1.3em;
+    }
   

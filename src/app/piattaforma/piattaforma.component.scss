@@ -1,4 +1,13 @@
+@import 'src/custom.theme.scss';
+@import 'src/custom-typography.scss';
 
+$first-family: mat-typography-config(
+  $font-family: 'Montserrat, Sans-serif'
+);
+$second-family: mat-typography-config(
+  $font-family: 'Open Sans, Sans-serif'
+);
+  
   .img-piattaforma{
     height: 160px;
     margin: auto;
@@ -8,7 +17,7 @@
     text-align: center;
     overflow: hidden;
     img {
-      width: 40%;
+      width: 30%;
       margin: auto;
       //padding-top: 16px;
     }
@@ -23,6 +32,7 @@
           height: 38px;
           text-align: left;
           overflow: hidden;
+          font-family: mat-font-family($first-family);
           font-size: 21px;
           font-weight: 900;
         }
@@ -31,6 +41,7 @@
           text-align: left;
           overflow: hidden;
           padding-bottom: 16px;
+          font-family: mat-font-family($second-family);
           font-size: 20px;
           line-height: 1.3em;
         }

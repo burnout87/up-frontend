@@ -1,4 +1,12 @@
+@import 'src/custom.theme.scss';
+@import 'src/custom-typography.scss';
 
+$first-family: mat-typography-config(
+  $font-family: 'Montserrat, Sans-serif'
+);
+$second-family: mat-typography-config(
+  $font-family: 'Open Sans, Sans-serif'
+);
  
   .container-page_S {
     width: 90%;
@@ -99,8 +107,9 @@
   mat-card-title {
     margin: 10px;
     height: 50px;
-    font-size: 16px;
-    font-weight: 600;
+    font-family: mat-font-family($second-family);
+    font-size: 16px !important;
+    font-weight: 600 !important;
     // white-space: nowrap;
     overflow: hidden;
     // text-overflow: ellipsis;

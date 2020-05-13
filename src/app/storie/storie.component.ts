@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-storie',
   templateUrl: './storie.component.html',
-  styleUrls: ['./storie.component.css']
+  styleUrls: ['./storie.component.scss']
 })
 export class StorieComponent implements OnInit {
 

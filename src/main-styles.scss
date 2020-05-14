@@ -35,6 +35,14 @@ b, strong {
     font-weight: 600 !important;
 }
 
+.mat-flat-button {
+  line-height: 5.47vh !important;
+}
+
+.mat-stroked-button {
+  line-height: 5.47vh !important;
+}
+
 .bg-yellow {
     background-color: mat-color($custom-theme-primary);
 }

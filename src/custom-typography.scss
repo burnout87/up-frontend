@@ -14,11 +14,11 @@ $first-custom-typography: mat-typography-config(
   $headline: mat-typography-level(3.65vh, 32px, 400, 'Open Sans, Sans-serif'),
 /*   $title: mat-typography-level(20px, 32px, 500), */
   $title: mat-typography-level(2.73vh, 2em, 500, 'Open Sans, Sans-serif'),
-  $subheading-2: mat-typography-level(16px, 28px, 400, 'Open Sans, Sans-serif'),
+  $subheading-2: mat-typography-level(2.73vh, 28px, 400, 'Open Sans, Sans-serif'),
   $subheading-1: mat-typography-level(15px, 24px, 400, 'Open Sans, Sans-serif'),
   $body-2: mat-typography-level(14px, 24px, 500, 'Open Sans, Sans-serif'),
   $body-1: mat-typography-level(14px, 20px, 400, 'Open Sans, Sans-serif'),
-  $caption: mat-typography-level(12px, 20px, 400, 'Open Sans, Sans-serif'),
-  $button: mat-typography-level(14px, 14px, 500, 'Open Sans, Sans-serif'),
+  $caption: mat-typography-level(1.82vh, 20px, 400, 'Open Sans, Sans-serif'),
+  $button: mat-typography-level(2.28vh, 2.13vh, 500, 'Open Sans, Sans-serif'),
   $input: mat-typography-level(inherit, 1.125, 400, 'Open Sans, Sans-serif')
 );

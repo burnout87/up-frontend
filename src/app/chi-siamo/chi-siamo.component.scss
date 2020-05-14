@@ -1,3 +1,8 @@
+p {
+  font-size: 3.04vh;
+  line-height: 1.3em;
+  }
+
 .flex-container-header {
   display: flex;
   flex-direction: row;
@@ -129,10 +134,6 @@
 
   .textbox {
     text-align: justify;
-    p {
-      font-size: 20px;
-      line-height: 1.3em;
-      }
   }
 
   .subtitle {
@@ -149,10 +150,6 @@
   .media-box {
     width: 100%;
     text-align: center;
-    p {
-    font-size: 20px;
-    line-height: 1.3em;
-    }
   }
 
   .media-container{
@@ -245,4 +242,18 @@
         }
       }
     }
+  }
+
+  .container-partners {
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .container-partners_S {
+    //padding-top: 0%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
   }

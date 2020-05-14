@@ -43,9 +43,9 @@
             <mat-card-footer>
               <mat-card-title ellipsis><span innerHtml="{{latestStoria?.title}}"></span></mat-card-title>
               <mat-card-subtitle>
-                <div>
+                <div class="mat-small">
                 <mat-icon inline="true" aria-hidden="false" aria-label="Example home icon">access_time</mat-icon>
-                <span class="mat-small" innerHtml="{{ latestStoria?.date | date: 'dd MMMM yyyy' }}"></span>
+                <span innerHtml="{{ latestStoria?.date | date: 'dd MMMM yyyy' }}"></span>
                 </div>
               </mat-card-subtitle>
             </mat-card-footer>

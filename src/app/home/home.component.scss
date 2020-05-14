@@ -9,6 +9,11 @@ $second-family: mat-typography-config(
   $font-family: 'Open Sans, Sans-serif'
 );
 
+p {
+  font-size: 3.04vh;
+  line-height: 1.3em;
+  }
+
 .flex-container-home{
     display: flex;
     flex-direction: row;
@@ -151,6 +156,9 @@ $second-family: mat-typography-config(
       width: 80%;
       height: 100px;
       margin: auto;
+      p {
+        font-size: 20px;
+      }
     }
   }
 }
@@ -182,6 +190,9 @@ $second-family: mat-typography-config(
       width: 80%;
       height: 100px;
       margin: auto;
+      p {
+        font-size: 20px;
+      }
     }
   }
 }
@@ -258,7 +269,7 @@ $second-family: mat-typography-config(
     justify-content: center;
     padding-left: 4%;
     padding-right: 4%;
-    padding-bottom: 4%;
+    padding-bottom: 6%;
   }
 
   .flex-container-registra_S {
@@ -294,6 +305,9 @@ $second-family: mat-typography-config(
         width: 80%;
         height: 100px;
         margin: auto;
+        p {
+          font-size: 20px;
+        }
       }
     }
   }
@@ -325,6 +339,9 @@ $second-family: mat-typography-config(
         width: 80%;
         height: 100px;
         margin: auto;
+        p {
+          font-size: 20px;
+        }
       }
     }
   }
@@ -451,6 +468,20 @@ $second-family: mat-typography-config(
     border: 2px solid #593c8f !important;
   }
 
+  .container-partners {
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .container-partners_S {
+    //padding-top: 0%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
   .container-combatti {
     display: flex;
     flex-direction: row;
@@ -496,9 +527,4 @@ $second-family: mat-typography-config(
       width: 100%;
     }
   }
-
-  p {
-    font-size: 20px;
-    line-height: 1.3em;
-    }
   

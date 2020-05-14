@@ -1,20 +1,34 @@
 
-  .flex-item {
+  // .flex-item {
+  //   padding: 10px;
+  //   margin: auto;
+  //   width: 95%;
+  // }
+
+  p {
+    font-size: 3.04vh;
+    line-height: 1.3em;
+    }
+    
+  .flex-item_S {
+    text-align: center;
     padding: 10px;
     margin: auto;
     width: 95%;
   }
 
-  .partners-box {
-    width: 100%;
+  .flex-item_M {
     text-align: center;
-    .subtitle {
-        margin-top: 2%;
-      }
-    p {
-      font-size: 20px;
-      line-height: 1.3em;
-      }
+    padding: 10px;
+    margin: auto;
+    width: 70%;
+  }
+
+  .flex-item_L {
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    width: 100%;
   }
 
   .partners-container {
@@ -22,35 +36,20 @@
     flex-direction: row;
     flex-wrap: wrap;
     padding-top: 4%;
+    .partner {
+      margin: auto;
+      img{
+        width: 70px;
+        padding: 30px;
+        /* width: 60%;
+        max-width: 100%; */
+        opacity: 0.3;
+        filter: brightness( 100% ) contrast( 100% ) saturate( 0% ) blur( 0px ) hue-rotate( 0deg );
+      }
+    }
   }
 
-  .partner {
-    margin: auto;
+  .subtitle {
+    margin-top: 2%;
   }
 
-  .partner img{
-    width: 70px;
-    padding: 30px;
-    /* width: 60%;
-    max-width: 100%; */
-    opacity: 0.3;
-    filter: brightness( 100% ) contrast( 100% ) saturate( 0% ) blur( 0px ) hue-rotate( 0deg );
-  }
-
-  .flex-item_S {
-    padding: 10px;
-    margin: auto;
-    width: 95%;
-  }
-
-  .flex-item_M {
-    padding: 10px;
-    margin: auto;
-    width: 70%;
-  }
-
-  .flex-item_L {
-    padding: 10px;
-    margin: auto;
-    width: 100%;
-  }

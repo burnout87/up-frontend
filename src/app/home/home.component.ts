@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit {
     });
 
     this.breakpointObserver
-    .observe(['(max-width: 700px)'])
+    .observe(['(max-width: 800px)'])
     .subscribe((state: BreakpointState) => {
       if (state.matches) {
         this.isC = true;

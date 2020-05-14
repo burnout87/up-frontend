@@ -7,6 +7,11 @@ $first-family: mat-typography-config(
 $second-family: mat-typography-config(
   $font-family: 'Open Sans, Sans-serif'
 );
+
+p {
+  font-size: 2.28vh;
+  line-height: 1.3em;
+  }
  
   .container-page_S {
     width: 90%;
@@ -185,4 +190,3 @@ $second-family: mat-typography-config(
       text-decoration: none;
     }
   }
-

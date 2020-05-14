@@ -9,6 +9,11 @@ $second-family: mat-typography-config(
   $font-family: 'Open Sans, Sans-serif'
 );
 
+p {
+  font-size: 3.04vh;
+  line-height: 1.3em;
+  }
+
   .container-page_S {
     width: 90%;
     margin: auto;
@@ -109,12 +114,8 @@ $second-family: mat-typography-config(
   
   .button-load {
     padding-top: 1em;
+    padding-bottom: 1em;
     padding-left: 2em;
     padding-right: 2em;
   }
-
-  p {
-    font-size: 20px;
-    line-height: 1.3em;
-    }
   

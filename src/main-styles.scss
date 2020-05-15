@@ -55,6 +55,11 @@ b, strong {
     background-color: mat-color($custom-theme-background);
 }
 
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+
 .primary-color {
     color: mat-color($custom-theme-primary) !important;
 }
@@ -130,4 +135,10 @@ mat-toolbar-row > div > span:hover {
 
 .mat-chip {
     font-family: mat-font-family($second-family);
+}
+
+mat-form-field {
+  //margin-right: 12px;
+  //margin-left: 12px;
+  font-style: italic !important;
 }

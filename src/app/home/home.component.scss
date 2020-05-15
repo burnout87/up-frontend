@@ -212,6 +212,70 @@ p {
   width: 50%;
 }
 
+.container-filter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 4%;
+  //padding-bottom: 4%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.container-filter_S {
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+.item-filter {
+  //margin: auto;
+  float: left;
+  text-align: left;
+  width: 50%;
+}
+
+.item-filter_S {
+  //margin: auto;
+  float: left;
+  text-align: left;
+  width: 100%;
+}
+
+.container-search {
+  //display: flex;
+}
+
+.item-search-text {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.container-filter-categ{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  //padding-top: 4%;
+  padding-bottom: 4%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.container-filter-categ_S{
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+.item-filter-categ {
+  //margin: auto;
+  text-align: left;
+  width: 100%;
+}
+
+.padding-chips {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
 .flex-container-map {
     display: flex;
     flex-direction: row;
@@ -527,4 +591,21 @@ p {
       width: 100%;
     }
   }
-  
+
+  ::ng-deep .mat-form-field {
+    .mat-input-element {
+        color: #ffffff;
+    }
+    .mat-form-field-label {
+        color: mat-color($custom-theme-primary);
+    }
+    .mat-form-field-underline {
+        background-color: mat-color($custom-theme-primary);
+    }
+    .mat-form-field-ripple {
+        background-color: mat-color($custom-theme-primary);
+    }
+    .mat-form-field-required-marker {
+        color: mat-color($custom-theme-primary);
+    }
+}

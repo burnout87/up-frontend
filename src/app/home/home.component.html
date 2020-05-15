@@ -83,6 +83,50 @@
                 <p class="white-color"><strong>Delivery</strong></p>
             </div>
         </div>
+        <div class="container-filter" [class.container-filter_S]="isS">
+            <div class="item-filter" [class.item-filter_S]="isS">
+                <div class="container-search">
+                <div class="item-search-text">
+                    <span class="white-color">Cerca in: </span>
+                </div>
+                <div class="item-search">
+                <form>
+                    <mat-form-field>
+                        <mat-label>Indirizzo</mat-label>
+                        <input matInput type="text" [(ngModel)]="value" name="indirizzo">
+                        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                          <mat-icon>close</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </form>
+                </div>
+                </div>
+            </div>
+            <div class="item-filter" [class.item-filter_S]="isS">
+                <span class="white-color">Scegli il tipo di servizio: </span>
+                <div class="padding-chips">
+                <mat-chip-list multiple="true">
+                    <mat-chip *ngFor="let ser of services" [value]="ser.id" [selected]="ser.selected" (click)="onSelectS(ser)">
+                        <b>{{ ser.name }}</b>
+                        <mat-icon matChipRemove *ngIf="ser.selected">cancel</mat-icon>
+                    </mat-chip>
+                </mat-chip-list>
+                </div>
+            </div>
+        </div>
+        <div class="container-filter-categ" [class.container-filter-categ_S]="isS">
+            <div class="item-filter-categ">
+                <span class="white-color">Filtra per categoria dell'attività: </span>
+                <div class="padding-chips">
+                <mat-chip-list multiple="true">
+                    <mat-chip *ngFor="let cat of categories" [value]="cat.id" [selected]="cat.selected" (click)="onSelectC(cat)">
+                        <b>{{ cat.name }}</b>
+                        <mat-icon matChipRemove *ngIf="cat.selected">cancel</mat-icon>
+                    </mat-chip>
+                </mat-chip-list>
+                </div>
+            </div>
+        </div>
         <div class="map">
             <app-map *ngIf="isBrowser"></app-map>
         </div>

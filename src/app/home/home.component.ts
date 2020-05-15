@@ -4,6 +4,19 @@ import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { MapComponent } from '../map/map.component';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
+import {MatChipInputEvent} from '@angular/material/chips';
+
+export interface Services {
+  id: number;
+  name: string;
+  selected: boolean;
+}
+
+export interface Categories {
+  id: number;
+  name: string;
+  selected: boolean;
+}
 
 @Component({
   selector: 'app-home',
@@ -15,6 +28,22 @@ export class HomeComponent implements OnInit {
   title = 'upFrontend';
   router: Router;
   isBrowser: boolean;
+
+  value = '';
+  public selected: boolean;
+
+  categories: Categories[] = [
+    {id: 1, name: 'Bar e Ristorazione', selected: false},
+    {id: 2, name: 'Birrerie e Pub', selected: false},
+    {id: 3, name: 'Palestre e Benessere', selected: false},
+    {id: 4, name: 'Librerie e Cartolerie', selected: false},
+    {id: 5, name: 'Abbigliamento', selected: false},
+  ];
+
+  services: Services[] = [
+    {id: 1, name: 'consegna a domicilio', selected: false},
+    {id: 2, name: 'buono coupon', selected: false},
+  ];
 
   public isS;
   public isM;
@@ -83,6 +112,14 @@ export class HomeComponent implements OnInit {
 
   filterCategory() {
     this.mapComp.filterCategory('ristorante');
+  }
+
+  public onSelectC(cat: Categories): void {
+    cat.selected = !cat.selected;
+  }
+
+  public onSelectS(ser: Services): void {
+    ser.selected = !ser.selected;
   }
 
 }

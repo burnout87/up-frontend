@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MaterialModule } from './material.modules';
 import { SafeHtmlPipe } from './safe-html.pipe';
+import { FormsModule } from '@angular/forms';
 
 import { EllipsisModule } from 'ngx-ellipsis';
 import { DefaultImageDirective } from './default-image.directive';
@@ -35,6 +36,7 @@ import { DefaultImageDirective } from './default-image.directive';
       debug: true
     }),
     EllipsisModule,
+    FormsModule,
     AgmJsMarkerClustererModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDgbhE4JU0eLfjTogXctQkSZIEh-3x5Q-4'

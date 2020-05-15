@@ -1,8 +1,8 @@
-import { Component, OnInit, SimpleChanges, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
+import { Component, OnInit, SimpleChanges, Inject, PLATFORM_ID, ViewChild, NgZone } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Subject } from 'rxjs';
 import { ConnectivityService } from '../connectivity.service';
-import { MarkerManager, AgmMap, LatLngBounds, LatLng } from "@agm/core";
+import { MarkerManager, AgmMap, LatLngBounds, LatLng, MapsAPILoader } from "@agm/core";
 import { ActivatedRoute } from '@angular/router';
 import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout';
 // import { MapMarker } from '../marker';
@@ -27,7 +27,7 @@ export class MapComponent implements OnInit {
 
   @ViewChild('AgmMap', {static: false}) agmMap: AgmMap;
 
-  constructor(private route: ActivatedRoute, private wsService: ConnectivityService, private markerManager: MarkerManager, @Inject(PLATFORM_ID) platformId: Object, private breakpointObserver: BreakpointObserver) {
+  constructor(private ngZone: NgZone, private route: ActivatedRoute, private wsService: ConnectivityService, private markerManager: MarkerManager, @Inject(PLATFORM_ID) platformId: Object, private breakpointObserver: BreakpointObserver) {
     
     this.breakpointObserver
     .observe([Breakpoints.XSmall, Breakpoints.HandsetPortrait])
@@ -41,13 +41,17 @@ export class MapComponent implements OnInit {
     
     this.isBrowser = isPlatformBrowser(platformId);
     this.markersData = this.route.snapshot.data['markers'];
-    (async () => {
-      this.markersData.forEach((markerData: any)  => {
-        if(markerData && markerData.coords) {
-            this.buildMarker(markerData);
-        }
+    if(this.markersData) {
+      this.ngZone.run(() => {
+        (async () => {
+          this.markersData.forEach((markerData: any)  => {
+            if(markerData && markerData.coords) {
+                this.buildMarker(markerData);
+            }
+          });
+        })();
       });
-    })();
+    }
     this.geoLocation = {
       zoom: 11,
       latitude: 41.901588,
@@ -95,7 +99,9 @@ export class MapComponent implements OnInit {
       iconUrl: "",
       isOnMap: false,
       _id: markerData._id,
-      coupon: markerData.coupon
+      coupon: markerData.coupon,
+      // true -> filtered, retained, so not visualized
+      filtered: false
     }
     // if(markerData.categ) {
     //   var categ = markerData.categ ?(markerData.categ).toLowerCase() :"";
@@ -134,11 +140,14 @@ export class MapComponent implements OnInit {
   };
 
   tilesLoadedEvent() {
+    this.ngZone.run(() => {
     this.markers
       .filter(x => 
         !x.isOnMap && 
+        !x.filtered &&
         this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)}))
       .forEach(x => x.isOnMap = true);
+    });
   }
 
   filterCoupon() {
@@ -147,17 +156,31 @@ export class MapComponent implements OnInit {
       x.coupon &&
       this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)})
     )
-    .forEach(x => x.isOnMap = !x.isOnMap);
+    .forEach(x => { 
+      x.filtered = !x.filtered;
+      x.isOnMap = !x.isOnMap; } );
+
+    this.markers
+    .filter(x => 
+      x.coupon &&
+      !this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)})
+    )
+    .forEach(x => x.filtered = !x.filtered);
+
+  }
+
+  public getBounds() {
+    return this.bounds;
   }
 
   filterCategory(categ: string) {
-    this.markers
-    .filter(x => 
-      x.categ &&
-      x.categ.toLowerCase() == categ.toLowerCase() &&
-      this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)})
-    )
-    .forEach(x => x.isOnMap = !x.isOnMap);
+    // this.markers
+    // .filter(x => 
+    //   x.categ &&
+    //   x.categ.toLowerCase() == categ.toLowerCase() &&
+    //   this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)})
+    // )
+    // .forEach(x => x.isOnMap = !x.isOnMap);
   }
 
   hideInfo(gm, event) {
@@ -169,7 +192,11 @@ export class MapComponent implements OnInit {
   public setPosition(position) {
     this.geoLocation.latitude = position.coords.latitude;
     this.geoLocation.longitude = position.coords.longitude;
-    console.log(position.coords);
+  }
+
+  public centerMap(lat: number, lng: number) {
+    this.geoLocation.latitude = lat;
+    this.geoLocation.longitude = lng;
   }
   
 }
@@ -194,4 +221,5 @@ interface Marker {
   isOnMap: boolean;
   _id: string;
   coupon: boolean;
+  filtered: boolean;
 }

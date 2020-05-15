@@ -33,7 +33,7 @@ export class NegozianteResolver implements Resolve<Object> {
 @Injectable({ providedIn: 'root' })
 export class MarkersResolver implements Resolve<[Object]> {
   constructor(private cService: ConnectivityService) {}
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any 
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> 
   {
     return this.cService.getReadyData();
   }

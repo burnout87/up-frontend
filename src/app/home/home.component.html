@@ -93,7 +93,7 @@
                 <form>
                     <mat-form-field>
                         <mat-label>Indirizzo</mat-label>
-                        <input matInput type="text" [(ngModel)]="value" name="indirizzo">
+                        <input matInput #inputAddress type="text" [(ngModel)]="value" name="indirizzo">
                         <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
                           <mat-icon>close</mat-icon>
                         </button>
@@ -108,7 +108,7 @@
                 <mat-chip-list multiple="true">
                     <mat-chip *ngFor="let ser of services" [value]="ser.id" [selected]="ser.selected" (click)="onSelectS(ser)">
                         <b>{{ ser.name }}</b>
-                        <mat-icon matChipRemove *ngIf="ser.selected">cancel</mat-icon>
+                        <!-- <mat-icon matChipRemove *ngIf="ser.selected">cancel</mat-icon> -->
                     </mat-chip>
                 </mat-chip-list>
                 </div>
@@ -121,7 +121,7 @@
                 <mat-chip-list multiple="true">
                     <mat-chip *ngFor="let cat of categories" [value]="cat.id" [selected]="cat.selected" (click)="onSelectC(cat)">
                         <b>{{ cat.name }}</b>
-                        <mat-icon matChipRemove *ngIf="cat.selected">cancel</mat-icon>
+                        <!-- <mat-icon matChipRemove *ngIf="cat.selected">cancel</mat-icon> -->
                     </mat-chip>
                 </mat-chip-list>
                 </div>

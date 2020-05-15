@@ -1,18 +1,21 @@
-import { Component, OnInit, Inject, ViewChild } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild, Input, ElementRef, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { MapComponent } from '../map/map.component';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import {MatChipInputEvent} from '@angular/material/chips';
+import { MapsAPILoader } from '@agm/core';
+import { MatFormField } from '@angular/material';
 
-export interface Services {
+
+export interface Service {
   id: number;
   name: string;
   selected: boolean;
 }
 
-export interface Categories {
+export interface Categorie {
   id: number;
   name: string;
   selected: boolean;
@@ -28,11 +31,12 @@ export class HomeComponent implements OnInit {
   title = 'upFrontend';
   router: Router;
   isBrowser: boolean;
+  searchBox;
 
   value = '';
   public selected: boolean;
 
-  categories: Categories[] = [
+  categories: Categorie[] = [
     {id: 1, name: 'Bar e Ristorazione', selected: false},
     {id: 2, name: 'Birrerie e Pub', selected: false},
     {id: 3, name: 'Palestre e Benessere', selected: false},
@@ -40,7 +44,7 @@ export class HomeComponent implements OnInit {
     {id: 5, name: 'Abbigliamento', selected: false},
   ];
 
-  services: Services[] = [
+  services: Service[] = [
     {id: 1, name: 'consegna a domicilio', selected: false},
     {id: 2, name: 'buono coupon', selected: false},
   ];
@@ -53,9 +57,39 @@ export class HomeComponent implements OnInit {
   @ViewChild(MapComponent, {static: false})
   private mapComp: MapComponent;
 
+  @ViewChild('inputAddress', {static: false}) 
+  private inputAddress: ElementRef;
+
   ngOnInit() { }
 
-  constructor(private _router: Router, @Inject(PLATFORM_ID) platformId: Object, private breakpointObserver: BreakpointObserver){
+  ngAfterViewInit() {
+    this.mapsAPILoader.load().then(() => {
+      this.searchBox = new google.maps.places.Autocomplete(this.inputAddress.nativeElement);
+      this.searchBox.addListener("place_changed", () => {
+        this.ngZone.run(() => {
+          let place: google.maps.places.PlaceResult = this.searchBox.getPlace();
+          //verify result
+          if (place.geometry === undefined || place.geometry === null) {
+            return;
+          }
+  
+          this.mapComp.centerMap(place.geometry.location.lat(), place.geometry.location.lng())
+        });
+      });
+    });
+    
+    // this.searchBox.addListener('places_changed', function() {
+    //   var places = this.searchBox.getPlaces();
+
+    //   if (places.length == 0) {
+    //     return;
+    //   }
+
+    //   var bounds = this.mapComp.getBounds();
+    // });
+  }
+
+  constructor(private ngZone: NgZone, private mapsAPILoader: MapsAPILoader, private _router: Router, @Inject(PLATFORM_ID) platformId: Object, private breakpointObserver: BreakpointObserver, @Inject(DOCUMENT) document){
     this.isBrowser = isPlatformBrowser(platformId);
     this.router = _router;
 
@@ -106,20 +140,21 @@ export class HomeComponent implements OnInit {
     $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 
-  filterCoupon() {
-    this.mapComp.filterCoupon();
-  }
-
   filterCategory() {
     this.mapComp.filterCategory('ristorante');
   }
 
-  public onSelectC(cat: Categories): void {
+  public onSelectC(cat: Categorie): void {
     cat.selected = !cat.selected;
+    
   }
 
-  public onSelectS(ser: Services): void {
+  public onSelectS(ser: Service): void {
     ser.selected = !ser.selected;
+    if(ser.name == 'buono coupon')
+      this.mapComp.filterCoupon();
+    // else
+
   }
 
 }

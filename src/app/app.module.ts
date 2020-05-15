@@ -39,7 +39,8 @@ import { DefaultImageDirective } from './default-image.directive';
     FormsModule,
     AgmJsMarkerClustererModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDgbhE4JU0eLfjTogXctQkSZIEh-3x5Q-4'
+      apiKey: 'AIzaSyDgbhE4JU0eLfjTogXctQkSZIEh-3x5Q-4',
+      libraries: ['places']
     }),
     BrowserAnimationsModule
   ],

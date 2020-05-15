@@ -22,7 +22,7 @@ export class SidenavService {
 
   public close() {
       this.sidenav.close();
-      this.isOpen = !this.isOpen;
+      this.isOpen = false;
   }
 
   public toggle(): void {

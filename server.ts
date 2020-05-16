@@ -20,13 +20,13 @@ import 'zone.js/dist/zone-node';
 import * as express from 'express';
 import {join} from 'path';
 
-var fs = require('fs');
-var http = require('http');
-var https = require('https');
+// var fs = require('fs');
+// var http = require('http');
+// var https = require('https');
 
-var privateKey  = fs.readFileSync('sslcert/server.key', 'utf8');
-var certificate = fs.readFileSync('sslcert/server.crt', 'utf8');
-var credentials = {key: privateKey, cert: certificate};
+// var privateKey  = fs.readFileSync('sslcert/server.key', 'utf8');
+// var certificate = fs.readFileSync('sslcert/server.crt', 'utf8');
+// var credentials = {key: privateKey, cert: certificate};
 
 const api = require('./api.js');
 // Express server
@@ -53,8 +53,6 @@ app.set('views', DIST_FOLDER);
 // my custom API
 app.use("/api/",api)
 
-// Example Express Rest API endpoints
-// app.get('/api/**', (req, res) => { });
 // Serve static files from /browser
 app.get('*.*', express.static(DIST_FOLDER, {
   maxAge: '1y'

@@ -10,6 +10,10 @@ export const environment = {
   platforms: 'http://15.236.113.180:4000/api/platforms',
   readyData: 'http://15.236.113.180:4000/api/readydata',
   rawData:'http://15.236.113.180:4000/api/rawData'
+  // stores: 'https://localhost:4001/api/negozianti',
+  // readyData: 'https://localhost:4001/api/readydata',
+  // rawData:'https://localhost:4001/api/rawdata',
+  // platforms: 'https://localhost:4001/api/platforms',
 };
 
 /*

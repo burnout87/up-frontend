@@ -87,10 +87,10 @@
             <div class="item-filter" [class.item-filter_S]="isS">
                 <div class="container-search">
                 <div class="item-search-text">
-                    <span class="white-color">Cerca in: </span>
-                </div>
-                <div class="item-search">
+                <!-- <div class="item-search"> -->
                 <form>
+                    <img class="img-zoom" src="/assets/imgs/zoom_ico.png">
+                    <span class="white-color mat-headline"><b>Cerca in:</b></span>
                     <mat-form-field>
                         <mat-label>Indirizzo</mat-label>
                         <input matInput #inputAddress type="text" [(ngModel)]="value" name="indirizzo">
@@ -107,6 +107,7 @@
                 <div class="padding-chips">
                 <mat-chip-list multiple="true">
                     <mat-chip *ngFor="let ser of services" [value]="ser.id" [selected]="ser.selected" (click)="onSelectS(ser)">
+                        <img class="img-chip" src="/assets/imgs/{{ser.ico}}.png">
                         <b>{{ ser.name }}</b>
                         <!-- <mat-icon matChipRemove *ngIf="ser.selected">cancel</mat-icon> -->
                     </mat-chip>
@@ -120,6 +121,7 @@
                 <div class="padding-chips">
                 <mat-chip-list multiple="true">
                     <mat-chip *ngFor="let cat of categories" [value]="cat.id" [selected]="cat.selected" (click)="onSelectC(cat)">
+                        <img class="img-chip" src="/assets/imgs/{{cat.ico}}.png">
                         <b>{{ cat.name }}</b>
                         <!-- <mat-icon matChipRemove *ngIf="cat.selected">cancel</mat-icon> -->
                     </mat-chip>

@@ -242,12 +242,17 @@ p {
 }
 
 .container-search {
-  //display: flex;
+  display: flex;
 }
 
 .item-search-text {
   margin-top: auto;
   margin-bottom: auto;
+  span {
+  //font-size: 42px;
+  font-family: mat-font-family($second-family);
+  font-weight: 800 !important;
+  }
 }
 
 .container-filter-categ{
@@ -274,6 +279,21 @@ p {
 .padding-chips {
   padding-top: 1em;
   padding-bottom: 1em;
+}
+
+.mat-standard-chip {
+  height: auto;
+  border-radius: 21px;
+}
+
+.img-zoom {
+  width: 11%;
+  padding-right: 10px;
+}
+
+.img-chip {
+  height: 31px;
+  padding-right: 10px;
 }
 
 .flex-container-map {

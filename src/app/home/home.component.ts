@@ -13,12 +13,14 @@ export interface Service {
   id: number;
   name: string;
   selected: boolean;
+  ico: string;
 }
 
 export interface Categorie {
   id: number;
   name: string;
   selected: boolean;
+  ico: string;
 }
 
 @Component({
@@ -37,16 +39,16 @@ export class HomeComponent implements OnInit {
   public selected: boolean;
 
   categories: Categorie[] = [
-    {id: 1, name: 'Bar e Ristorazione', selected: false},
-    {id: 2, name: 'Birrerie e Pub', selected: false},
-    {id: 3, name: 'Palestre e Benessere', selected: false},
-    {id: 4, name: 'Librerie e Cartolerie', selected: false},
-    {id: 5, name: 'Abbigliamento', selected: false},
+    {id: 1, name: 'Bar e Ristorazione', selected: false, ico: 'bar_ico' },
+    {id: 2, name: 'Birrerie e Pub', selected: false, ico: 'birrerie_ico'},
+    {id: 3, name: 'Palestre e Benessere', selected: false, ico: 'benessere_ico'},
+    {id: 4, name: 'Librerie e Cartolerie', selected: false, ico: 'librerie_ico'},
+    {id: 5, name: 'Abbigliamento', selected: false, ico: 'empty_ico'},
   ];
 
   services: Service[] = [
-    {id: 1, name: 'consegna a domicilio', selected: false},
-    {id: 2, name: 'buono coupon', selected: false},
+    {id: 1, name: 'consegna a domicilio', selected: false, ico: 'delivery_ico'},
+    {id: 2, name: 'buono coupon', selected: false, ico: 'coupon_ico'},
   ];
 
   public isS;

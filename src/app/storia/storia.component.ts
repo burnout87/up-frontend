@@ -39,7 +39,7 @@ export class StoriaComponent implements OnInit, AfterViewInit, OnDestroy {
               @Inject(DOCUMENT) document, private sHtmlP: SafeHtmlPipe
     ) {
 
-    this.iframes = document.querySelectorAll('iframe');
+    //this.iframes = document.querySelectorAll('iframe');
 
     this.breakpointObserver
     .observe([Breakpoints.XSmall, Breakpoints.HandsetPortrait])
@@ -71,23 +71,23 @@ export class StoriaComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     });
 
-    this.breakpointObserver
-    .observe(['(max-width: 800px)'])
-    .subscribe((state: BreakpointState) => {
-      if (state.matches) {
-        this.isMax = true;
-        this.iframes.forEach((iframe) => {
-          iframe.style.width = '300px';
-          iframe.style.height = '167.75px';
-        });
-      } else {
-        this.isMax = false;
-        this.iframes.forEach((iframe) => {
-          iframe.style.width = '600px';
-          iframe.style.height = '335.5px';
-        });
-      }
-    });
+    // this.breakpointObserver
+    // .observe(['(max-width: 800px)'])
+    // .subscribe((state: BreakpointState) => {
+    //   if (state.matches) {
+    //     this.isMax = true;
+    //     this.iframes.forEach((iframe) => {
+    //       iframe.style.width = '300px';
+    //       iframe.style.height = '167.75px';
+    //     });
+    //   } else {
+    //     this.isMax = false;
+    //     this.iframes.forEach((iframe) => {
+    //       iframe.style.width = '600px';
+    //       iframe.style.height = '335.5px';
+    //     });
+    //   }
+    // });
 
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       // If it is a NavigationEnd event re-initalise the component
@@ -152,7 +152,7 @@ export class StoriaComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     // console.log(this.pRef.nativeElement.innerHTML);
     // this.pRef.nativeElement.innerHTML = this.sHtmlP.transform(this.storia.content, 'html');
-    this.applyStyleStoria();
+    //this.applyStyleStoria();
 
   }
 
@@ -165,38 +165,38 @@ export class StoriaComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  applyStyleStoria() {
-    this.hrefs = document.querySelectorAll('a');
-    this.hrefs.forEach((a) => {
-      a.style.textDecoration = 'none';
-      a.style.color = '#13aff0';
-    });
+  // applyStyleStoria() {
+  //   this.hrefs = document.querySelectorAll('a');
+  //   this.hrefs.forEach((a) => {
+  //     a.style.textDecoration = 'none';
+  //     a.style.color = '#13aff0';
+  //   });
 
-    this.figures = document.querySelectorAll('figure');
-    this.imgfigures = document.querySelectorAll('figure > img');
-    this.iframes = document.querySelectorAll('iframe');
+  //   this.figures = document.querySelectorAll('figure');
+  //   this.imgfigures = document.querySelectorAll('figure > img');
+  //   this.iframes = document.querySelectorAll('iframe');
 
-    this.figures.forEach((figure) => {
-      figure.style.margin = '0px';
-    });
+  //   this.figures.forEach((figure) => {
+  //     figure.style.margin = '0px';
+  //   });
 
-    this.imgfigures.forEach((img) => {
-      img.style.width = '100%';
-    });
+  //   this.imgfigures.forEach((img) => {
+  //     img.style.width = '100%';
+  //   });
 
-    if (this.isMax === true) {
-      this.iframes.forEach((iframe) => {
-        iframe.style.width = '300px';
-        iframe.style.height = '167.75px';
-      });
-    } else {
-      this.iframes.forEach((iframe) => {
-        iframe.style.width = '600px';
-        iframe.style.height = '335.5px';
-      });
-    }
+  //   if (this.isMax === true) {
+  //     this.iframes.forEach((iframe) => {
+  //       iframe.style.width = '300px';
+  //       iframe.style.height = '167.75px';
+  //     });
+  //   } else {
+  //     this.iframes.forEach((iframe) => {
+  //       iframe.style.width = '600px';
+  //       iframe.style.height = '335.5px';
+  //     });
+  //   }
 
-  }
+  // }
 
   onNext(lastId) {
     this.nextStoria = lastId;

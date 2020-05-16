@@ -120,5 +120,11 @@ export const MEMBRI: Member[] = [
         name: "Valerio",
         role: "Marketing & Communication Specialist",
         imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Valerio.jpg"
+    },
+    {
+        id: "21 ",
+        name: "Mattia",
+        role: "Front End Developer",
+        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/05/Foto-team-psd.jpg"
     }
 ]

@@ -71,6 +71,18 @@ async function mongoSelectReadyData(q) {
         }
     }
 
+    async function mongoUpdateReadyData(filter, update) {
+        try {
+            const db = client.db('up');
+            const collection = db.collection('readydata')
+            await collection.updateMany(filter, update);
+            return 1;
+          } catch (e) {
+              console.error(e);
+              return -1;
+          }
+    }
+
     async function mongoSelectRawData(q) {
       var result = {};
         try {
@@ -141,6 +153,7 @@ router.post('/readydata', async function (req, res) {
     res.send(await mongoSelectReadyData(req.body?req.body:{}).catch(console.error));
 })
 
+
 router.get('/rawdata', cors(), async function (req, res) {
     res.send(await mongoSelectRawData(req.params.q?req.params.q:{}).catch(console.error));
 })
@@ -159,6 +172,12 @@ router.post('/negozianti/add/', cors(), async function (req, res) {
 
 router.post('/readydata/add/', cors(), async function (req, res) {
     res.send({"state":await mongoInsertReadyData(req.body)});
+})
+
+router.post('/readydata/modify/', async function(req, res) {
+    filter = req.body.filter;
+    update = req.body.update;
+    res.send({"state": await mongoUpdateReadyData(filter, update)});
 })
 
 router.post('/rawdata/add/', cors(), async function (req, res) {

@@ -4,7 +4,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { SidenavService } from './_services/sidenav.service';
-import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout';
 import { MatSidenav, MatSidenavContent } from '@angular/material';
 
 
@@ -20,6 +20,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('sidenavContent', {static: false}) public sidenavContent: MatSidenavContent;
 
   public isSmallScreen;
+  public isXL;
   public isOpen;
   public contentContainer;
 
@@ -56,6 +57,16 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
         this.isSmallScreen = true;
       } else {
         this.isSmallScreen = false;
+      }
+    });
+
+    this.breakpointObserver
+    .observe([Breakpoints.XLarge])
+    .subscribe((state: BreakpointState) => {
+      if (state.matches) {
+        this.isXL = true;
+      } else {
+        this.isXL = false;
       }
     });
   }

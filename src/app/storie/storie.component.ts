@@ -10,9 +10,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class StorieComponent implements OnInit {
 
-  public isSmall;
-  public isMedium;
-  public isLarge;
+  public isS;
+  public isM;
+  public isL;
+  public isXL;
   public loadMoreStorieVisible = true;
 
   storie:Array<Storia> = new Array();
@@ -25,9 +26,9 @@ export class StorieComponent implements OnInit {
       .observe([Breakpoints.XSmall, Breakpoints.HandsetPortrait])
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
-          this.isSmall = true;
+          this.isS = true;
         } else {
-          this.isSmall = false;
+          this.isS = false;
         }
       });
 
@@ -35,19 +36,29 @@ export class StorieComponent implements OnInit {
       .observe([Breakpoints.Small, Breakpoints.Medium])
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
-          this.isMedium = true;
+          this.isM = true;
         } else {
-          this.isMedium = false;
+          this.isM = false;
         }
       });
 
       this.breakpointObserver
-      .observe([Breakpoints.Large, Breakpoints.XLarge])
+      .observe([Breakpoints.Large])
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
-          this.isLarge = true;
+          this.isL = true;
         } else {
-          this.isLarge = false;
+          this.isL = false;
+        }
+      });
+
+      this.breakpointObserver
+      .observe([Breakpoints.XLarge])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.isXL = true;
+        } else {
+          this.isXL = false;
         }
       });
 

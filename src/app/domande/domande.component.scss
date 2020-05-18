@@ -1,5 +1,6 @@
 p {
   line-height: 1.3em;
+  line-height: 1.8;
   }
 
 .flex-container {
@@ -7,14 +8,10 @@ p {
     flex-direction: row;
     flex-wrap: wrap;
     //height: 100vh;
-    padding-top: 2%;
-    padding-bottom: 4%;
-    padding-left: 4%;
-    padding-right: 4%;
   }
 
   .flex-container_S {
-    //padding-top: 0%;
+    padding-top: 2%;
     height: auto;
     padding-left: 0%;
     padding-right: 0%;
@@ -24,10 +21,24 @@ p {
   }
 
   .flex-container_M {
-    //padding-top: 0%;
+    padding-top: 2%;
     height: auto;
     padding-left: 0%;
     padding-right: 0%;
+  }
+
+  .flex-container_L {
+    padding-top: 2%;
+    padding-bottom: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .flex-container_XL {
+    padding-top: 2%;
+    padding-bottom: 4%;
+    padding-left: 18%;
+    padding-right: 18%;
   }
 
   .flex-item {
@@ -54,3 +65,8 @@ p {
     width: 48%;
   }
 
+  .flex-item_XL {
+    padding: 10px;
+    //margin: auto;
+    width: 48%;
+  }

@@ -54,6 +54,7 @@ export class HomeComponent implements OnInit {
   public isS;
   public isM;
   public isL;
+  public isXL;
   public isC;
 
   @ViewChild(MapComponent, {static: false})
@@ -116,12 +117,22 @@ export class HomeComponent implements OnInit {
     });
 
     this.breakpointObserver
-    .observe([Breakpoints.Large, Breakpoints.XLarge])
+    .observe([Breakpoints.Large])
     .subscribe((state: BreakpointState) => {
       if (state.matches) {
         this.isL = true;
       } else {
         this.isL = false;
+      }
+    });
+
+    this.breakpointObserver
+    .observe([Breakpoints.XLarge])
+    .subscribe((state: BreakpointState) => {
+      if (state.matches) {
+        this.isXL = true;
+      } else {
+        this.isXL = false;
       }
     });
 

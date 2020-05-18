@@ -2,7 +2,7 @@
 <div class="example-container" [class.example-is-mobile]="isSmallScreen" (window:resize)="onResize()">
 
     <mat-toolbar class="example-toolbar">
-        <mat-toolbar-row>
+        <mat-toolbar-row [class.mat-toolbar-row_XL]="isXL">
           <span class="pointer">
             <a routerLink='/'>
                 <img class="logo-header" src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/Logo-Header.svg"/>

@@ -1,34 +1,8 @@
 p {
-  font-size: 3.04vh;
+  //font-size: 3.04vh;
+  font-size: 20px;
   line-height: 1.3em;
   }
-
-.flex-container-home{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-top: 4%;
-    padding-left: 4%;
-    padding-right: 4%;
-    .flex-item-home-img {
-      padding: 10px;
-      margin: auto;
-      width: 35%;
-      .image-taxi-7 {
-        width: 75%;
-        margin: auto;
-        img {
-          width: 100%;
-        }
-      }
-  }
-  
-  .flex-item-home-text {
-      padding: 10px;
-      margin: auto;
-      width: 55%;
-  }
-}
 
 .flex-container-home_S {
   display: flex;
@@ -54,6 +28,87 @@ p {
     padding: 10px;
     margin: auto;
     width: 100%;
+}
+}
+
+.flex-container-home_M{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 4%;
+  padding-left: 4%;
+  padding-right: 4%;
+  .flex-item-home-img {
+    padding: 10px;
+    margin: auto;
+    width: 35%;
+    .image-taxi-7 {
+      width: 75%;
+      margin: auto;
+      img {
+        width: 100%;
+      }
+    }
+}
+
+.flex-item-home-text {
+    padding: 10px;
+    margin: auto;
+    width: 55%;
+}
+}
+
+.flex-container-home_L{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 4%;
+  padding-left: 4%;
+  padding-right: 4%;
+  .flex-item-home-img {
+    padding: 10px;
+    margin: auto;
+    width: 35%;
+    .image-taxi-7 {
+      width: 75%;
+      margin: auto;
+      img {
+        width: 100%;
+      }
+    }
+}
+
+.flex-item-home-text {
+    padding: 10px;
+    margin: auto;
+    width: 55%;
+}
+}
+
+.flex-container-home_XL{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 4%;
+  padding-left: 18%;
+  padding-right: 18%;
+  .flex-item-home-img {
+    padding: 10px;
+    margin: auto;
+    width: 35%;
+    .image-taxi-7 {
+      width: 75%;
+      margin: auto;
+      img {
+        width: 100%;
+      }
+    }
+}
+
+.flex-item-home-text {
+    padding: 10px;
+    margin: auto;
+    width: 55%;
 }
 }
 
@@ -107,9 +162,19 @@ p {
             max-width: 25%;
             margin: 10px;
           }
+
+          .card-piattaforme_XL {
+            max-width: 25%;
+            margin: 10px;
+          }
         }
       }
     }
+  }
+
+  .container-piattaforme_XL {
+    padding-left: 12%;
+    padding-right: 12%;
   }
 
   mat-card {
@@ -123,10 +188,6 @@ p {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-top: 4%;
-  padding-bottom: 4%;
-  padding-left: 4%;
-  padding-right: 4%;
 .item-combatti {
   padding: 10px;
   margin: auto;
@@ -163,4 +224,25 @@ p {
   .item-combatti-text {
     width: 100%;
   }
+}
+
+.container-combatti_M {
+  padding-top: 4%;
+  padding-bottom: 4%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.container-combatti_L {
+  padding-top: 4%;
+  padding-bottom: 4%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.container-combatti_XL {
+  padding-top: 4%;
+  padding-bottom: 4%;
+  padding-left: 18%;
+  padding-right: 18%;
 }

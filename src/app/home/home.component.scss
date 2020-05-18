@@ -10,35 +10,10 @@ $second-family: mat-typography-config(
 );
 
 p {
-  font-size: 3.04vh;
+  //font-size: 3.04vh;
+  font-size: 20px;
   line-height: 1.3em;
   }
-
-.flex-container-home{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-left: 4%;
-    padding-right: 4%;
-    .flex-item-home-img {
-      padding: 10px;
-      margin: auto;
-      width: 35%;
-      .image-teamwork {
-        width: 75%;
-        margin: auto;
-        img {
-          width: 100%;
-        }
-      }
-  }
-  
-  .flex-item-home-text {
-      padding: 10px;
-      margin: auto;
-      width: 55%;
-  }
-}
 
 .flex-container-home_S{
   display: flex;
@@ -66,6 +41,84 @@ p {
 }
 }
 
+.flex-container-home_M{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 4%;
+  padding-right: 4%;
+  .flex-item-home-img {
+    padding: 10px;
+    margin: auto;
+    width: 35%;
+    .image-teamwork {
+      width: 75%;
+      margin: auto;
+      img {
+        width: 100%;
+      }
+    }
+}
+
+.flex-item-home-text {
+    padding: 10px;
+    margin: auto;
+    width: 55%;
+}
+}
+
+.flex-container-home_L{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 4%;
+  padding-right: 4%;
+  .flex-item-home-img {
+    padding: 10px;
+    margin: auto;
+    width: 35%;
+    .image-teamwork {
+      width: 75%;
+      margin: auto;
+      img {
+        width: 100%;
+      }
+    }
+}
+
+.flex-item-home-text {
+    padding: 10px;
+    margin: auto;
+    width: 55%;
+}
+}
+
+.flex-container-home_XL{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 18%;
+  padding-right: 18%;
+  .flex-item-home-img {
+    padding: 10px;
+    margin: auto;
+    width: 35%;
+    .image-teamwork {
+      width: 75%;
+      margin: auto;
+      img {
+        width: 100%;
+      }
+    }
+}
+
+.flex-item-home-text {
+    padding: 10px;
+    margin: auto;
+    width: 55%;
+}
+}
+
 .subtitle{
     padding-top: 2em;
 }
@@ -78,17 +131,31 @@ p {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+
+  .flex-container_S {
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  .flex-container_M {
     padding-top: 4%;
     padding-bottom: 4%;
     padding-left: 4%;
     padding-right: 4%;
   }
 
-  .flex-container_S {
-    //padding-top: 0%;
-    padding-bottom: 0%;
-    padding-left: 0%;
-    padding-right: 0%;
+  .flex-container_L {
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .flex-container_XL {
+    padding-left: 18%;
+    padding-right: 18%;
   }
 
 .flex-item-text {
@@ -118,15 +185,29 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 4%;
-  padding-left: 4%;
-  padding-right: 4%;
 }
 
 .flex-container-sostieni_S {
   padding-bottom: 0%;
   padding-left: 0%;
   padding-right: 0%;
+}
+
+.flex-container-sostieni_M {
+  padding-bottom: 4%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.flex-container-sostieni_L {
+  padding-bottom: 4%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.flex-container-sostieni_XL {
+  padding-left: 18%;
+  padding-right: 18%;
 }
 
 .flex-item-sostieni {
@@ -249,9 +330,23 @@ p {
   margin-top: auto;
   margin-bottom: auto;
   span {
-  //font-size: 42px;
+  font-size: 30px;
   font-family: mat-font-family($second-family);
-  font-weight: 800 !important;
+  font-weight: 900 !important;
+  }
+}
+
+mat-form-field {
+  margin-right: 12px;
+  margin-left: 12px;
+  font-size: 20px !important;
+  font-style: italic !important;
+  //padding-top: 1.25em;
+}
+
+.field_S {
+  mat-form-field {
+    width: 80%;
   }
 }
 
@@ -300,10 +395,6 @@ p {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-top: 4%;
-    padding-bottom: 4%;
-    padding-left: 4%;
-    padding-right: 4%;
   }
 
 .flex-container-map_S {
@@ -311,6 +402,27 @@ p {
   padding-bottom: 0%;
   padding-left: 0%;
   padding-right: 0%;
+}
+
+.flex-container-map_M {
+  padding-top: 4%;
+  padding-bottom: 4%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.flex-container-map_L {
+  padding-top: 4%;
+  padding-bottom: 4%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.flex-container-map_XL {
+  padding-top: 4%;
+  padding-bottom: 4%;
+  padding-left: 18%;
+  padding-right: 18%;
 }
 
   .flex-item-map {
@@ -351,15 +463,30 @@ p {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    padding-left: 4%;
-    padding-right: 4%;
-    padding-bottom: 6%;
   }
 
   .flex-container-registra_S {
     padding-left: 0%;
     padding-right: 0%;
     padding-bottom: 0%;
+  }
+
+  .flex-container-registra_M {
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 6%;
+  }
+
+  .flex-container-registra_L {
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 6%;
+  }
+
+  .flex-container-registra_XL {
+    padding-left: 18%;
+    padding-right: 18%;
+    padding-bottom: 6%;
   }
   
   .flex-item-registra {
@@ -436,8 +563,8 @@ p {
     flex-wrap: wrap;
     padding-top: 4%;
     padding-bottom: 4%;
-    //padding-left: 4%;
-    //padding-right: 4%;
+    padding-top: 4%;
+    padding-bottom: 4%;
     .item-piattaforme {
       //padding: 10px;
       margin: auto;
@@ -486,14 +613,41 @@ p {
             max-width: 25%;
             margin: 10px;
           }
+
+          .card-piattaforme_XL {
+            max-width: 25%;
+            margin: 10px;
+          }
         }
       }
     }
   }
 
   .container-piattaforme_S {
-    //padding-top: 0%;
+    padding-top: 4%;
+    padding-bottom: 4%;
     padding-bottom: 0%;
+  }
+
+  .container-piattaforme_M {
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+
+  .container-piattaforme_L {
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+
+  .container-piattaforme_XL {
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 12%;
+    padding-right: 12%;
   }
 
   mat-card {
@@ -552,28 +706,38 @@ p {
     border: 2px solid #593c8f !important;
   }
 
-  .container-partners {
+  .container-partners_S {
+    padding-top: 4%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  .container-partners_M {
     padding-top: 4%;
     padding-bottom: 4%;
     padding-left: 4%;
     padding-right: 4%;
   }
 
-  .container-partners_S {
-    //padding-top: 0%;
-    padding-bottom: 0%;
-    padding-left: 0%;
-    padding-right: 0%;
+  .container-partners_L {
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .container-partners_XL {
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 18%;
+    padding-right: 18%;
   }
 
   .container-combatti {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-top: 4%;
-    padding-bottom: 4%;
-    padding-left: 4%;
-    padding-right: 4%;
   .item-combatti {
     padding: 10px;
     margin: auto;
@@ -599,7 +763,7 @@ p {
   }
 
   .container-combatti_S {
-    //padding-top: 0%;
+    padding-top: 4%;
     padding-bottom: 0%;
     padding-left: 0%;
     padding-right: 0%;
@@ -612,12 +776,33 @@ p {
     }
   }
 
+  .container-combatti_M {
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .container-combatti_L {
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .container-combatti_XL {
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 18%;
+    padding-right: 18%;
+  }
+
   ::ng-deep .mat-form-field {
     .mat-input-element {
         color: #ffffff;
     }
     .mat-form-field-label {
-        color: mat-color($custom-theme-primary);
+        color: #ffffff;
     }
     .mat-form-field-underline {
         background-color: mat-color($custom-theme-primary);
@@ -628,4 +813,19 @@ p {
     .mat-form-field-required-marker {
         color: mat-color($custom-theme-primary);
     }
+}
+
+::ng-deep .mat-form-field.mat-focused {
+  .mat-form-field-label {
+      color: mat-color($custom-theme-primary);
+  }
+  .mat-form-field-ripple {
+      background-color: mat-color($custom-theme-primary);
+  }
+  .mat-form-field-required-marker {
+      color: mat-color($custom-theme-primary);
+  }
+  .mat-input-element {
+      color: #ffffff;
+  }
 }

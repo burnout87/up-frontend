@@ -9,32 +9,50 @@ $second-family: mat-typography-config(
 );
 
 p {
-  font-size: 2.28vh;
-  line-height: 1.3em;
+  //font-size: 2.28vh;
+  font-weight: 15px;
+  //line-height: 1.3em;
+  line-height: 1.8;
+  }
+
+  .mat-display-1 {
+    font-family: mat-font-family($second-family) !important;
+    font-size: 34px !important;
+    font-weight: 600 !important;
+    line-height: 1.4;
+    letter-spacing: 0.6px !important;
   }
  
-  .container-page_S {
-    width: 90%;
-    margin: auto;
-    //padding-top: 2em;
+  .container-title_S {
+    padding-top: 2%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
   }
 
-  .container-page_M {
-    width: 55%;
-    margin: auto;
-    padding-top: 2em;
+  .container-title_M {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 24%;
+    padding-right: 24%;
   }
 
-  .container-page_L {
-    width: 55%;
-    margin: auto;
-    padding-top: 2em;
+  .container-title_L {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 24%;
+    padding-right: 24%;
   }
 
-.other{
-    width: 90%;
-    margin: auto;
-    padding-top: 2em;
+  .container-title_XL {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 32%;
+    padding-right: 32%;
+  }
+
+  .item {
+    padding: 10px;
   }
 
 .title-header {
@@ -51,12 +69,52 @@ p {
       padding-right: 5px;
   }
 }
+
+.subtitle {
+  font-size: 12px;
+}
   
 .content-article {
     text-align: left;
     padding-top: 2.5em;
-    padding-bottom: 2.5em;
+    padding-bottom: 2.5em;  
+    h2 {
+      font-size: 24px !important;
+    }
+  
+    h3 {
+      font-size: 18px !important;
+    }
   }
+
+.other_S {
+  padding-top: 2%;
+  padding-bottom: 0%;
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+.other_M {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.other_L {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+
+.other_XL {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 18%;
+  padding-right: 18%;
+}
+
   
 .content-other {
     padding-top: 2em;
@@ -105,6 +163,11 @@ p {
   }
 
   .example-card_L {
+    max-width: 25%;
+    margin: 10px;
+  }
+
+  .example-card_XL {
     max-width: 25%;
     margin: 10px;
   }
@@ -160,18 +223,23 @@ p {
   }
 
   .container-social_S {
-    width: 90%;
-    margin: auto;
+    padding-left: 0%;
+    padding-right: 0%;
   }
 
   .container-social_M {
-    width: 80%;
-    margin: auto;
+    padding-left: 4%;
+    padding-right: 4%;
   }
 
   .container-social_L {
-    width: 65%;
-    margin: auto;
+    padding-left: 24%;
+    padding-right: 24%;
+  }
+
+  .container-social_XL {
+    padding-left: 18%;
+    padding-right: 18%;
   }
 
   .button-social {

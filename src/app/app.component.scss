@@ -37,6 +37,11 @@
     padding: 0 5%;
   }
 
+  .mat-toolbar-row_XL {
+    height: 74px;
+    padding: 0 18%;
+  }
+
   /* mat-toolbar-row > span:hover {
     color: #593C8F;
   } */
@@ -57,6 +62,7 @@
 
   .logo-header {
     height: 3em;
+    padding-top: 10px;
   }
   
   /* .example-spacer {

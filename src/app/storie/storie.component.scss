@@ -10,26 +10,37 @@ $second-family: mat-typography-config(
 );
 
 p {
-  font-size: 3.04vh;
+  //font-size: 3.04vh;
+  font-size: 20px;
   line-height: 1.3em;
   }
 
-  .container-page_S {
-    width: 90%;
-    margin: auto;
-    /* padding-top: 2em; */
+  .container-title_S {
+    padding-top: 2%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
   }
 
-  .container-page_M {
-    width: 85%;
-    margin: auto;
-    padding-top: 2em;
+  .container-title_M {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
   }
 
-  .container-page_L {
-    width: 85%;
-    margin: auto;
-    padding-top: 2em;
+  .container-title_L {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .container-title_XL {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 18%;
+    padding-right: 18%;
   }
   
   .test-theme {
@@ -52,8 +63,15 @@ p {
   }
 
   .container-card{
-    width: 100%;
-    margin: auto;
+    padding-bottom: 2%;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .container-card_XL{
+    padding-bottom: 2%;
+    padding-left: 12%;
+    padding-right: 12%;
   }
   
   .list-card {
@@ -72,6 +90,8 @@ p {
     border: 1px solid rgba(0,0,0,.1);
     box-shadow: 0px 0px 6px 0px rgba(30, 30, 30, 0.55) !important;
   }
+
+
   
   .example-card_S {
     max-width: 85%;
@@ -84,6 +104,11 @@ p {
   }
 
   .example-card_L {
+    max-width: 25%;
+    margin: 10px;
+  }
+
+  .example-card_XL {
     max-width: 25%;
     margin: 10px;
   }

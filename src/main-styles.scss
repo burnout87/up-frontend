@@ -34,6 +34,15 @@ body {
 b, strong {
     font-weight: 600 !important;
 }
+
+.mat-display-2 {
+  letter-spacing: 1px;
+}
+
+.mat-display-1 {
+  letter-spacing: 0.6px;
+}
+
 /* 
 .mat-flat-button {
   line-height: 5.47vh !important;
@@ -135,11 +144,4 @@ mat-toolbar-row > div > span:hover {
 
 .mat-chip {
     font-family: mat-font-family($second-family);
-}
-
-mat-form-field {
-  margin-right: 12px;
-  margin-left: 12px;
-  font-style: italic !important;
-  padding-top: 1.25em;
 }

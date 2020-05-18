@@ -1,7 +1,7 @@
 <!-- <p *ngFor="let p of piattaforme">piattaforma {{p.name}}!</p> -->
 <!-- <app-piattaforma *ngFor="let p of piattaforme" [piattaforma]="p"></app-piattaforma> -->
 
-<section class="flex-container-home" [class.flex-container-home_S]="isS">
+<section class="flex-container-home" [class.flex-container-home_S]="isS" [class.flex-container-home_M]="isM" [class.flex-container-home_L]="isL" [class.flex-container-home_XL]="isXL">
     <div class="flex-item-home-img">
         <div class="image-taxi-7">
             <img src="https://www.unitipossiamo.it/wp-content/uploads/2020/03/taxi-7.png"/>
@@ -17,12 +17,12 @@
     </div>
 </section>
 
-<section class="container-piattaforme">
+<section class="container-piattaforme" [class.container-piattaforme_XL]="isXL">
     <div class="item-piattaforme">
 
         <div class="container-card">
             <div class="list-card">
-                <mat-card class="card-piattaforme" [class.card-piattaforme_S]="isS" [class.card-piattaforme_M]="isM" [class.card-piattaforme_L]="isL" *ngFor="let p of piattaforme">
+                <mat-card class="card-piattaforme" [class.card-piattaforme_S]="isS" [class.card-piattaforme_M]="isM" [class.card-piattaforme_L]="isL" [class.card-piattaforme_XL]="isXL" *ngFor="let p of piattaforme">
                 <app-piattaforma [piattaforma]="p"></app-piattaforma>
                 </mat-card>
             </div>
@@ -31,7 +31,7 @@
     </div>
 </section>
 
-<section class="container-combatti bg-lightgray" [class.container-combatti_S]="isS">
+<section class="container-combatti bg-lightgray" [class.container-combatti_S]="isS" [class.container-combatti_M]="isM" [class.container-combatti_L]="isL" [class.container-combatti_XL]="isXL">
     <div class="item-combatti">
         <span class="mat-display-1">Combatti questa crisi con noi!</span>
         <div class="image-taxi-searching">

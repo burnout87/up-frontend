@@ -1,9 +1,11 @@
-<div [class.container-page_S]="isSmall" [class.container-page_M]="isMedium" [class.container-page_L]="isLarge" *ngIf="storia != null">
-    <div class="title-header">
+<div [class.container-title_S]="isS" [class.container-title_M]="isM" [class.container-title_L]="isL" [class.container-title_XL]="isXL" *ngIf="storia != null">
+  <div class="item">  
+  <div class="title-header">
       <span class="mat-display-1" innerHtml="{{storia.title}}"></span>
     </div>
     <mat-divider></mat-divider>
-    <div class="subtitle-header mat-small">
+    <!-- <div class="subtitle-header mat-small"> -->
+    <div class="subtitle-header subtitle">
       <mat-icon inline="true" aria-hidden="false" aria-label="Example home icon">access_time</mat-icon>
       <span innerHtml="{{ storia.date | date: 'dd MMMM yyyy' }}  -  "></span>
       <mat-icon inline="true" aria-hidden="false" aria-label="Example home icon">chat_bubble_outline</mat-icon>
@@ -13,9 +15,11 @@
         <p [innerHtml]="storia.content | safeHtml:'html'"></p>
         <!-- <p #pRef></p> -->
     </div>
+  </div>
 </div>
 
-<div [class.container-social_S]="isSmall" [class.container-social_M]="isMedium" [class.container-social_L]="isLarge">
+<div [class.container-social_S]="isS" [class.container-social_M]="isM" [class.container-social_L]="isL" [class.container-social_XL]="isXL">
+  <div class="item">
   <h4 class="mat-h4"><strong>Condividi su: </strong></h4>
   <div class="button-social">
     <share-buttons [theme]="'modern-dark'"
@@ -27,23 +31,25 @@
    ></share-buttons>
   </div>
   <div class="mat-small">TAG: <span class="tags" *ngFor="let tag of storia?.tags"><a href="{{tag.link}}">{{tag.name | uppercase}}</a></span></div>
+  </div>
 </div>
 
-<div class="other">
+<div class="other" [class.other_S]="isS" [class.other_M]="isM" [class.other_L]="isL" [class.other_XL]="isXL">
 <mat-divider></mat-divider>
 <div class="content-other">
   <div class="title-other">
     <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_right</mat-icon>
-    <span class="mat-h3"><b> POTREBBE ANCHE PIACERTI </b></span>
+    <span class="mat-h4"><b> POTREBBE ANCHE PIACERTI </b></span>
   </div>
     <div class="list-other">
         <!-- <mat-card [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" *ngFor="let latestStoria of latestStorie" class="pointer" routerLink="/storie/{{latestStoria?.id}}"> -->
-          <mat-card [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" *ngFor="let latestStoria of latestStorie" class="pointer" (click)="onNext(latestStoria?.id)">
+          <mat-card [class.example-card_S]="isS" [class.example-card_M]="isM" [class.example-card_L]="isL" [class.example-card_XL]="isXL" *ngFor="let latestStoria of latestStorie" class="pointer" (click)="onNext(latestStoria?.id)">
           <img mat-card-image src="{{latestStoria?._media_full}}" >
             <mat-card-footer>
               <mat-card-title ellipsis><span innerHtml="{{latestStoria?.title}}"></span></mat-card-title>
               <mat-card-subtitle>
-                <div class="mat-small">
+                <!-- <div class="mat-small"> -->
+                  <div class="subtitle">
                 <mat-icon inline="true" aria-hidden="false" aria-label="Example home icon">access_time</mat-icon>
                 <span innerHtml="{{ latestStoria?.date | date: 'dd MMMM yyyy' }}"></span>
                 </div>

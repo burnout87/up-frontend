@@ -21,6 +21,8 @@ export class MapComponent implements OnInit {
   public markers: Marker[] = [];
   public markersData:any[] = [];
   public isBrowser: boolean;
+  public categsSelected: string[] = [];
+  public servicesSelected: string[] = [];
 
   private bounds: any;
   public geoLocation:Location;
@@ -96,6 +98,8 @@ export class MapComponent implements OnInit {
       lng: Number(markerData.coords.lng),
       label: markerData.title,
       categ: markerData.categ,
+      mainCateg: markerData.mainCateg?markerData.mainCateg:"altro",
+      service: markerData.service?markerData.service:"delivery",
       iconUrl: "",
       isOnMap: false,
       _id: markerData._id,
@@ -150,38 +154,81 @@ export class MapComponent implements OnInit {
     });
   }
 
-  filterCoupon() {
+  filterService(service: string) {
+    if(this.servicesSelected.indexOf(service) > -1)
+      this.servicesSelected.push(service);
+    else
+      this.servicesSelected = this.categsSelected.filter(c => c !== service);
+
     this.markers
     .filter(x => 
-      x.coupon &&
       this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)})
     )
     .forEach(x => { 
-      x.filtered = !x.filtered;
-      x.isOnMap = !x.isOnMap; } );
+      if(this.servicesSelected.length == 0 || this.categsSelected.indexOf(x.mainCateg) > -1 || this.servicesSelected.indexOf(service) > -1) {
+        x.filtered = false;
+        x.isOnMap = true;
+      }
+      else {
+        x.filtered = true;
+        x.isOnMap = false;
+      }
+    }
+    );
+  
+    this.markers
+    .filter(x => 
+      !this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)})
+    )
+    .forEach(x => {
+      if(this.servicesSelected.length == 0 || this.categsSelected.indexOf(x.mainCateg) > -1 || this.servicesSelected.indexOf(service) > -1) {
+        x.filtered = false;
+      }
+      else {
+        x.filtered = true;
+      }
+    } );
+  }
+
+  filterCategory(categ: string) {
+    if(this.categsSelected.indexOf(categ) > -1) // de-selection
+      this.categsSelected = this.categsSelected.filter(c => c !== categ);
+    else // selection
+      this.categsSelected.push(categ);
 
     this.markers
     .filter(x => 
-      x.coupon &&
+      this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)})
+    )
+    .forEach(x => {
+      if( this.categsSelected.length == 0 || this.categsSelected.indexOf(x.mainCateg) > -1 || this.servicesSelected.indexOf(x.service) > -1) { // to be displayed over the map
+        x.filtered = false;
+        x.isOnMap = true;
+      }
+      else { // hide it
+        x.filtered = true;
+        x.isOnMap = false;
+      }
+    } );
+
+    this.markers
+    .filter(x => 
       !this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)})
     )
-    .forEach(x => x.filtered = !x.filtered);
-
+    .forEach(x => {
+      if( this.categsSelected.length == 0 || this.categsSelected.indexOf(x.mainCateg) > -1 || this.servicesSelected.indexOf(x.service) > -1) {
+        x.filtered = false;
+      }
+      else {
+        x.filtered = true;
+      }
+    } );
   }
 
   public getBounds() {
     return this.bounds;
   }
 
-  filterCategory(categ: string) {
-    // this.markers
-    // .filter(x => 
-    //   x.categ &&
-    //   x.categ.toLowerCase() == categ.toLowerCase() &&
-    //   this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)})
-    // )
-    // .forEach(x => x.isOnMap = !x.isOnMap);
-  }
 
   hideInfo(gm, event) {
     if (gm.lastOpen != null) {
@@ -222,4 +269,6 @@ interface Marker {
   _id: string;
   coupon: boolean;
   filtered: boolean;
+  mainCateg?: string;
+  service?: string;
 }

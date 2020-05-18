@@ -14,6 +14,7 @@ export interface Service {
   name: string;
   selected: boolean;
   ico: string;
+  type: string;
 }
 
 export interface Categorie {
@@ -21,6 +22,7 @@ export interface Categorie {
   name: string;
   selected: boolean;
   ico: string;
+  mainCateg: string;
 }
 
 @Component({
@@ -39,16 +41,18 @@ export class HomeComponent implements OnInit {
   public selected: boolean;
 
   categories: Categorie[] = [
-    {id: 1, name: 'Bar e Ristorazione', selected: false, ico: 'bar_ico' },
-    {id: 2, name: 'Birrerie e Pub', selected: false, ico: 'birrerie_ico'},
-    {id: 3, name: 'Palestre e Benessere', selected: false, ico: 'benessere_ico'},
-    {id: 4, name: 'Librerie e Cartolerie', selected: false, ico: 'librerie_ico'},
-    {id: 5, name: 'Abbigliamento', selected: false, ico: 'empty_ico'},
+    {id: 1, name: 'Bar e Ristorazione', selected: false, ico: 'bar_ico', mainCateg: 'ristoranti e bar', },
+    {id: 2, name: 'Alimentari', selected: false, ico: 'empty_ico', mainCateg: 'alimentari', },
+    {id: 3, name: 'Turismo', selected: false, ico: 'empty_ico', mainCateg: 'turismo', },
+    {id: 4, name: 'Giardinaggio ', selected: false, ico: 'empty_ico', mainCateg: 'giardinaggio', },
+    {id: 5, name: 'Shopping', selected: false, ico: 'empty_ico', mainCateg: 'shopping', },
+    {id: 6, name: 'Animali', selected: false, ico: 'empty_ico', mainCateg: 'animali', },
+    {id: 7, name: 'Altro', selected: false, ico: 'empty_ico', mainCateg: 'altro', },
   ];
 
   services: Service[] = [
-    {id: 1, name: 'consegna a domicilio', selected: false, ico: 'delivery_ico'},
-    {id: 2, name: 'buono coupon', selected: false, ico: 'coupon_ico'},
+    {id: 1, name: 'consegna a domicilio', selected: false, ico: 'delivery_ico', type: "delivery",},
+    {id: 2, name: 'buono coupon', selected: false, ico: 'coupon_ico', type: "coupon",},
   ];
 
   public isS;
@@ -159,15 +163,12 @@ export class HomeComponent implements OnInit {
 
   public onSelectC(cat: Categorie): void {
     cat.selected = !cat.selected;
-    
+    this.mapComp.filterCategory(cat.mainCateg);
   }
 
   public onSelectS(ser: Service): void {
     ser.selected = !ser.selected;
-    if(ser.name == 'buono coupon')
-      this.mapComp.filterCoupon();
-    // else
-
+    this.mapComp.filterService(ser.type);
   }
 
 }

@@ -39,7 +39,7 @@
 
   .mat-toolbar-row_XL {
     height: 74px;
-    padding: 0 18%;
+    padding: 0 19%;
   }
 
   /* mat-toolbar-row > span:hover {
@@ -60,8 +60,12 @@
     font-size: 16px;
   }
 
+  span:focus {
+    outline: 0;
+  }
+
   .logo-header {
-    height: 3em;
+    height: 2em;
     padding-top: 10px;
   }
   

@@ -19,7 +19,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('sidenav', {static: false}) public sidenav: MatSidenav;
   @ViewChild('sidenavContent', {static: false}) public sidenavContent: MatSidenavContent;
 
-  public isSmallScreen;
+  public isSmallScreen = true;
   public isXL;
   public isOpen;
   public contentContainer;

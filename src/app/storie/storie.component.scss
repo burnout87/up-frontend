@@ -15,6 +15,10 @@ p {
   line-height: 1.3em;
   }
 
+  .title_XL{
+    font-size: 36px !important;
+  }
+
   .container-title_S {
     padding-top: 2%;
     padding-bottom: 0%;
@@ -49,12 +53,14 @@ p {
   
   .title-header {
     padding-top: 2em;
+    margin: 10px;
     text-align: center;
   }
   
   .subtitle-header {
     text-align: justify;
     padding-top: 2em;
+    margin: 10px;
   }
   
   .example-button-row button,
@@ -64,8 +70,8 @@ p {
 
   .container-card{
     padding-bottom: 2%;
-    padding-left: 4%;
-    padding-right: 4%;
+    //padding-left: 4%;
+    //padding-right: 4%;
   }
 
   .container-card_XL{

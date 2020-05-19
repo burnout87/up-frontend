@@ -15,25 +15,29 @@ p {
   line-height: 1.3em;
   }
 
-.title_S {
+  .title_XL{
+    font-size: 50px !important;
+  }
+
+.title-header_S {
   font-family: mat-font-family($first-family);
   font-size: 5.12vw !important;
   font-weight: 800 !important;
 }
 
-.title_M {
+.title-header_M {
   font-family: mat-font-family($first-family);
   font-size: 5.12vw !important;
   font-weight: 800 !important;
 }
 
-.title_L {
+.title-header_L {
   font-family: mat-font-family($first-family);
   font-size: 4.68vw !important;
   font-weight: 800 !important;
 }
 
-.title_XL {
+.title-header_XL {
   font-family: mat-font-family($first-family);
   font-size: 5.47vh !important;
   font-weight: 800 !important;

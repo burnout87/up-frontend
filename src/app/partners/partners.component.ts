@@ -11,6 +11,7 @@ export class PartnersComponent implements OnInit {
   public isS;
   public isM;
   public isL;
+  public isXL;
 
   constructor( private breakpointObserver: BreakpointObserver ) {
 
@@ -41,6 +42,16 @@ export class PartnersComponent implements OnInit {
         this.isL = true;
       } else {
         this.isL = false;
+      }
+    });
+
+    this.breakpointObserver
+    .observe([Breakpoints.XLarge])
+    .subscribe((state: BreakpointState) => {
+      if (state.matches) {
+        this.isXL = true;
+      } else {
+        this.isXL = false;
       }
     });
 

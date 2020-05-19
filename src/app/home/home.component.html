@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="flex-item-home-text">
-        <span class="mat-display-1">Sostieni le attività locali durante l’emergenza Covid-19.</span>
+        <span class="mat-display-1" [class.title_XL]="isXL">Sostieni le attività locali durante l’emergenza Covid-19.</span>
         <div class="paragraph">
         <p>Scopri le offerte e i servizi di consegna a domicilio più vicine a te. </p>
         <p>Aiuterai il tuo commerciante di fiducia a superare questo difficile momento!</p>
@@ -86,7 +86,7 @@
         <div class="container-filter" [class.container-filter_S]="isS">
             <div class="item-filter" [class.item-filter_S]="isS">
                 <div class="container-search">
-                <div class="item-search-text" [class.field_S]="isS">
+                <div class="item-search-text" [class.field_S]="isS" [class.field_M]="isM" [class.field_L]="isL" [class.field_XL]="isXL">
                 <!-- <div class="item-search"> -->
                 <form>
                     <img class="img-zoom" src="/assets/imgs/zoom_ico.png">

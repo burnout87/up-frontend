@@ -1,8 +1,8 @@
 import { Component, OnInit, SimpleChanges, Inject, PLATFORM_ID, ViewChild, NgZone } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { ConnectivityService } from '../connectivity.service';
-import { MarkerManager, AgmMap, LatLngBounds, LatLng, MapsAPILoader } from "@agm/core";
+import { MarkerManager, AgmMap, LatLngBounds, LatLng, MapsAPILoader, AgmMarker } from "@agm/core";
 import { ActivatedRoute } from '@angular/router';
 import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout';
 // import { MapMarker } from '../marker';
@@ -92,7 +92,6 @@ export class MapComponent implements OnInit {
 
   
   buildMarker(markerData:any) {
-    // let marker = new MapMarker(this.markerManager);
     var marker:Marker = {
       lat: Number(markerData.coords.lat),
       lng: Number(markerData.coords.lng),
@@ -120,6 +119,7 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit() { 
+    
     // if(navigator.geolocation) {
     //   navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
     // }
@@ -145,63 +145,49 @@ export class MapComponent implements OnInit {
 
   tilesLoadedEvent() {
     this.ngZone.run(() => {
-    this.markers
-      .filter(x => 
-        !x.isOnMap && 
-        !x.filtered &&
-        this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)}))
-      .forEach(x => x.isOnMap = true);
+      this.markers
+        .filter(x => 
+          !x.isOnMap && 
+          !x.filtered &&
+          this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)}))
+        .forEach(x => x.isOnMap = true);
+      });
+  }
+
+  filterService(service: string) : Promise<any>  {
+    if(this.servicesSelected.indexOf(service) > -1)
+      this.servicesSelected = this.servicesSelected.filter(c => c !== service);
+    else
+      this.servicesSelected.push(service);
+    return new Promise( (resolve, reject) => {
+      this.filter();
+      resolve();
     });
   }
 
-  filterService(service: string) {
-    if(this.servicesSelected.indexOf(service) > -1)
-      this.servicesSelected.push(service);
-    else
-      this.servicesSelected = this.categsSelected.filter(c => c !== service);
-
-    this.markers
-    .filter(x => 
-      this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)})
-    )
-    .forEach(x => { 
-      if(this.servicesSelected.length == 0 || this.categsSelected.indexOf(x.mainCateg) > -1 || this.servicesSelected.indexOf(service) > -1) {
-        x.filtered = false;
-        x.isOnMap = true;
-      }
-      else {
-        x.filtered = true;
-        x.isOnMap = false;
-      }
-    }
-    );
-  
-    this.markers
-    .filter(x => 
-      !this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)})
-    )
-    .forEach(x => {
-      if(this.servicesSelected.length == 0 || this.categsSelected.indexOf(x.mainCateg) > -1 || this.servicesSelected.indexOf(service) > -1) {
-        x.filtered = false;
-      }
-      else {
-        x.filtered = true;
-      }
-    } );
-  }
-
-  filterCategory(categ: string) {
+  filterCategory(categ: string) : Promise<any> {
     if(this.categsSelected.indexOf(categ) > -1) // de-selection
       this.categsSelected = this.categsSelected.filter(c => c !== categ);
     else // selection
       this.categsSelected.push(categ);
 
+    return new Promise( (resolve, reject) => {
+      this.filter();
+      resolve();
+    });
+  }
+
+  private filter() {
     this.markers
     .filter(x => 
       this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)})
     )
     .forEach(x => {
-      if( this.categsSelected.length == 0 || this.categsSelected.indexOf(x.mainCateg) > -1 || this.servicesSelected.indexOf(x.service) > -1) { // to be displayed over the map
+      if( (this.servicesSelected.length == 0 && this.categsSelected.length == 0) || 
+      (this.categsSelected.indexOf(x.mainCateg) > -1 && this.servicesSelected.indexOf(x.service) > -1) ||
+      (this.servicesSelected.length == 0 && this.categsSelected.indexOf(x.mainCateg) > -1) || 
+      (this.categsSelected.length == 0 && this.servicesSelected.indexOf(x.service) > -1)) { 
+        // display over the map
         x.filtered = false;
         x.isOnMap = true;
       }
@@ -216,7 +202,10 @@ export class MapComponent implements OnInit {
       !this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)})
     )
     .forEach(x => {
-      if( this.categsSelected.length == 0 || this.categsSelected.indexOf(x.mainCateg) > -1 || this.servicesSelected.indexOf(x.service) > -1) {
+      if( (this.servicesSelected.length == 0 && this.categsSelected.length == 0) || 
+      (this.categsSelected.indexOf(x.mainCateg) > -1 && this.servicesSelected.indexOf(x.service) > -1) ||
+      (this.servicesSelected.length == 0 && this.categsSelected.indexOf(x.mainCateg) > -1) || 
+      (this.categsSelected.length == 0 && this.servicesSelected.indexOf(x.service) > -1)) {
         x.filtered = false;
       }
       else {

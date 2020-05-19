@@ -15,14 +15,16 @@ export interface Service {
   selected: boolean;
   ico: string;
   type: string;
+  loading: boolean;
 }
 
-export interface Categorie {
+export interface Category {
   id: number;
   name: string;
   selected: boolean;
   ico: string;
   mainCateg: string;
+  loading: boolean; 
 }
 
 @Component({
@@ -40,19 +42,19 @@ export class HomeComponent implements OnInit {
   value = '';
   public selected: boolean;
 
-  categories: Categorie[] = [
-    {id: 1, name: 'Bar e Ristorazione', selected: false, ico: 'bar_ico', mainCateg: 'ristoranti e bar', },
-    {id: 2, name: 'Alimentari', selected: false, ico: 'empty_ico', mainCateg: 'alimentari', },
-    {id: 3, name: 'Turismo', selected: false, ico: 'empty_ico', mainCateg: 'turismo', },
-    {id: 4, name: 'Giardinaggio ', selected: false, ico: 'empty_ico', mainCateg: 'giardinaggio', },
-    {id: 5, name: 'Shopping', selected: false, ico: 'empty_ico', mainCateg: 'shopping', },
-    {id: 6, name: 'Animali', selected: false, ico: 'empty_ico', mainCateg: 'animali', },
-    {id: 7, name: 'Altro', selected: false, ico: 'empty_ico', mainCateg: 'altro', },
+  categories: Category[] = [
+    {id: 1, name: 'Bar e Ristorazione', selected: false, ico: 'bar_ico', mainCateg: 'ristoranti e bar', loading: false, },
+    {id: 2, name: 'Alimentari', selected: false, ico: 'empty_ico', mainCateg: 'alimentari', loading: false,},
+    {id: 3, name: 'Turismo', selected: false, ico: 'empty_ico', mainCateg: 'turismo', loading: false,},
+    {id: 4, name: 'Giardinaggio ', selected: false, ico: 'empty_ico', mainCateg: 'giardinaggio', loading: false,},
+    {id: 5, name: 'Shopping', selected: false, ico: 'empty_ico', mainCateg: 'shopping', loading: false,},
+    {id: 6, name: 'Animali', selected: false, ico: 'empty_ico', mainCateg: 'animali', loading: false,},
+    {id: 7, name: 'Altro', selected: false, ico: 'empty_ico', mainCateg: 'altro', loading: false,},
   ];
 
   services: Service[] = [
-    {id: 1, name: 'consegna a domicilio', selected: false, ico: 'delivery_ico', type: "delivery",},
-    {id: 2, name: 'buono coupon', selected: false, ico: 'coupon_ico', type: "coupon",},
+    {id: 1, name: 'consegna a domicilio', selected: false, ico: 'delivery_ico', type: "delivery", loading: false,},
+    {id: 2, name: 'buono coupon', selected: false, ico: 'coupon_ico', type: "coupon", loading: false,},
   ];
 
   public isS;
@@ -161,14 +163,20 @@ export class HomeComponent implements OnInit {
     this.mapComp.filterCategory('ristorante');
   }
 
-  public onSelectC(cat: Categorie): void {
+  public onSelectC(cat: Category): void {
     cat.selected = !cat.selected;
-    this.mapComp.filterCategory(cat.mainCateg);
+    cat.loading = true;
+    this.mapComp.filterCategory(cat.mainCateg).then(() => {
+      cat.loading = false;
+    });
   }
 
   public onSelectS(ser: Service): void {
     ser.selected = !ser.selected;
-    this.mapComp.filterService(ser.type);
+    ser.loading = true;
+    this.mapComp.filterService(ser.type).then(() => {
+      ser.loading = false;
+    });
   }
 
 }

@@ -107,7 +107,8 @@
                 <div class="padding-chips">
                 <mat-chip-list multiple="true">
                     <mat-chip *ngFor="let ser of services" [value]="ser.id" [selected]="ser.selected" (click)="onSelectS(ser)">
-                        <img class="img-chip" src="/assets/imgs/{{ser.ico}}.png">
+                        <!-- <mat-spinner *ngIf="ser.loading"></mat-spinner> -->
+                        <img *ngIf="!ser.loading" class="img-chip" src="/assets/imgs/{{ser.ico}}.png">
                         <b>{{ ser.name }}</b>
                         <!-- <mat-icon matChipRemove *ngIf="ser.selected">cancel</mat-icon> -->
                     </mat-chip>
@@ -121,7 +122,8 @@
                 <div class="padding-chips">
                 <mat-chip-list multiple="true">
                     <mat-chip *ngFor="let cat of categories" [value]="cat.id" [selected]="cat.selected" (click)="onSelectC(cat)">
-                        <img class="img-chip" src="/assets/imgs/{{cat.ico}}.png">
+                        <!-- <mat-spinner *ngIf="cat.loading"></mat-spinner> -->
+                        <img *ngIf="!cat.loading" class="img-chip" src="/assets/imgs/{{cat.ico}}.png">
                         <b>{{ cat.name }}</b>
                         <!-- <mat-icon matChipRemove *ngIf="cat.selected">cancel</mat-icon> -->
                     </mat-chip>

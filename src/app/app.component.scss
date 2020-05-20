@@ -77,8 +77,15 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    span{
+      display: none;
+    }
   }
 
+  .visible-span {
+    display: unset !important;
+  }
+  
   footer {
     background-color: #1E1E1E;
     color: #FFFFFF;

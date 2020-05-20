@@ -9,11 +9,11 @@
             </a>
           </span>
           <div class="items-menu">
-            <span class="pointer" [class.remove]="isSmallScreen" routerLink='/'>Home</span>
-            <span class="pointer" [class.remove]="isSmallScreen" routerLink='/chi-siamo'>Chi siamo</span>
-            <span class="pointer" [class.remove]="isSmallScreen" routerLink='/piattaforme'>Piattaforme</span>
-            <span class="pointer" [class.remove]="isSmallScreen" routerLink='/domande'>Domande?</span>
-            <span class="pointer" [class.remove]="isSmallScreen" routerLink='/storie'>Storie</span>
+            <span class="pointer" [class.visible-span]="!isSmallScreen" routerLink='/'>Home</span>
+            <span class="pointer" [class.visible-span]="!isSmallScreen" routerLink='/chi-siamo'>Chi siamo</span>
+            <span class="pointer" [class.visible-span]="!isSmallScreen" routerLink='/piattaforme'>Piattaforme</span>
+            <span class="pointer" [class.visible-span]="!isSmallScreen" routerLink='/domande'>Domande?</span>
+            <span class="pointer" [class.visible-span]="!isSmallScreen" routerLink='/storie'>Storie</span>
             <!-- <span class="pointer" [class.remove]="isSmallScreen" routerLink='/aiutaci'>Aiutaci</span> -->
             <!-- <span class="pointer" [class.remove]="isSmallScreen" routerLink='/negozianti'>Negozi</span> -->
           </div>

@@ -66,7 +66,6 @@
         </div>
     </div>
 </section>
-
 <section #map class="flex-container-map bg-accent" [class.flex-container-map_S]="isS" [class.flex-container-map_M]="isM" [class.flex-container-map_L]="isL" [class.flex-container-map_XL]="isXL">
     <div class="flex-item-map">
         <span class="mat-display-1 primary-color">Trova nella mappa i negozi vicini a te</span>
@@ -120,14 +119,14 @@
             <div class="item-filter-categ">
                 <span class="white-color">Filtra per categoria dell'attività: </span>
                 <div class="padding-chips">
-                <mat-chip-list multiple="true">
-                    <mat-chip *ngFor="let cat of categories" [value]="cat.id" [selected]="cat.selected" (click)="onSelectC(cat)">
-                        <!-- <mat-spinner *ngIf="cat.loading"></mat-spinner> -->
-                        <img *ngIf="!cat.loading" class="img-chip" src="/assets/imgs/{{cat.ico}}.png">
-                        <b>{{ cat.name }}</b>
-                        <!-- <mat-icon matChipRemove *ngIf="cat.selected">cancel</mat-icon> -->
-                    </mat-chip>
-                </mat-chip-list>
+                    <mat-chip-list multiple="true">
+                        <mat-chip *ngFor="let cat of categories" [value]="cat.id" [selected]="cat.selected" (click)="onSelectC(cat)">
+                            <!-- <mat-spinner *ngIf="cat.loading"></mat-spinner> -->
+                            <!-- <img *ngIf="!cat.loading" class="img-chip" src="/assets/imgs/{{cat.ico}}.png"> -->
+                            <b>{{ cat.name }}</b>
+                            <!-- <mat-icon matChipRemove *ngIf="cat.selected">cancel</mat-icon> -->
+                        </mat-chip>
+                    </mat-chip-list>
                 </div>
             </div>
         </div>
@@ -138,7 +137,7 @@
         <span class="mat-display-1 primary-color">Non hai trovato negozi nei tuoi dintorni?</span>
         </div>
         <div class="subtitle white-color">
-        <p>Spargi la voce e aiutaci a raggiungere più attività commerciali, condividi il link sui tuoi canali! ツ</p>
+        <p>Spargi la voce e aiutaci a raggiungere più attività commerciali, condividi la nostra pagina con i tuoi amici!</p>
         </div>
     </div>
 </section>

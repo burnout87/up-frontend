@@ -107,7 +107,7 @@
                 <mat-chip-list multiple="true">
                     <mat-chip *ngFor="let ser of services" [value]="ser.id" [selected]="ser.selected" (click)="onSelectS(ser)">
                         <!-- <mat-spinner *ngIf="ser.loading"></mat-spinner> -->
-                        <img *ngIf="!ser.loading" class="img-chip" src="/assets/imgs/{{ser.ico}}.png">
+                        <!-- <img *ngIf="!ser.loading" class="img-chip" src="/assets/imgs/{{ser.ico}}.png"> -->
                         <b>{{ ser.name }}</b>
                         <!-- <mat-icon matChipRemove *ngIf="ser.selected">cancel</mat-icon> -->
                     </mat-chip>

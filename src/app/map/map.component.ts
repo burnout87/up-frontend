@@ -55,7 +55,7 @@ export class MapComponent implements OnInit {
       });
     }
     this.geoLocation = {
-      zoom: 11,
+      zoom: 13,
       latitude: 41.901588,
       longitude: 12.492305,
       mapType:'roadmap',
@@ -230,9 +230,10 @@ export class MapComponent implements OnInit {
     this.geoLocation.longitude = position.coords.longitude;
   }
 
-  public centerMap(lat: number, lng: number) {
+  public centerMap(lat: number, lng: number, zoom: number) {
     this.geoLocation.latitude = lat;
     this.geoLocation.longitude = lng;
+    this.geoLocation.zoom = zoom;
   }
   
 }

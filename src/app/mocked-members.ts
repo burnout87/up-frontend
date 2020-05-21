@@ -5,121 +5,121 @@ export const MEMBRI: Member[] = [
         id: "1",
         name: "Elena",
         role: "Innovative Business Developer",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Elena-B.jpg"
+        imgUrl: "/assests/imgs/faces/Elena-B.jpg"
     },
     {
         id: "2",
         name: "Alfredo",
         role: "Full Stack Developer",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Alfredo.jpg"
+        imgUrl: "/assests/imgs/faces/Alfredo.jpg"
     },
     {
         id: "3",
         name: "Giona",
         role: "Project Manager & Retail Expert",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Giona.jpg"
+        imgUrl: "/assests/imgs/faces/Giona.jpg"
     },
     {
         id: "4",
         name: "Daniele",
         role: "Imprenditore",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Daniele.jpg"
+        imgUrl: "/assests/imgs/faces/Daniele.jpg"
     },
     {
         id: "5",
         name: "Lara",
         role: "UX Designer & Researcher",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Lara.jpg"
+        imgUrl: "/assests/imgs/faces/Lara.jpg"
     },
     {
         id: "6",
         name: "Davide",
         role: "Product Designer",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Davide.jpg"
+        imgUrl: "/assests/imgs/faces/Davide.jpg"
     },
     {
         id: "7",
         name: "Nicola",
         role: "Management Engineer",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Nicola.jpg"
+        imgUrl: "/assests/imgs/faces/Nicola.jpg"
     },
     {
         id: "8",
         name: "Chiara",
         role: "Brand Communication Specialist",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Chiara.jpg"
+        imgUrl: "/assests/imgs/faces/Chiara.jpg"
     },
     {
         id: "9",
         name: "Lorenzo",
         role: "Energy Engineer",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Lorenzo.jpg"
+        imgUrl: "/assests/imgs/faces/Lorenzo.jpg"
     },
     {
         id: "10",
         name: "Elena",
         role: "Product Operations Manager",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Elena-C.jpg"
+        imgUrl: "/assests/imgs/faces/Elena-C.jpg"
     },
     {
         id: "11",
         name: "Alessio",
         role: "Front End Developer",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Alessio.jpg"
+        imgUrl: "/assests/imgs/faces/Alessio.jpg"
     },
     {
         id: "12",
         name: "Federico",
         role: "Social Innovation Specialist",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Federico.jpg"
+        imgUrl: "/assests/imgs/faces/Federico.jpg"
     },
     {
         id: "13",
         name: "Andrea",
         role: "Project Manager",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Andrea.jpg"
+        imgUrl: "/assests/imgs/faces/Andrea.jpg"
     },
     {
         id: "14",
         name: "Gianluca",
         role: "Web Marketing Strategist",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Gianluca.jpg"
+        imgUrl: "/assests/imgs/faces/Gianluca.jpg"
     },
     {
         id: "15",
         name: "Gabriele",
         role: "Full Stack Developer",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Gabriele.jpg"
+        imgUrl: "/assests/imgs/faces/Gabriele.jpg"
     },
     {
         id: "16",
         name: "Elide",
         role: "Supply Chain Specialist",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Elide.jpg"
+        imgUrl: "/assests/imgs/faces/Elide.jpg"
     },
     {
         id: "17",
         name: "Martina",
         role: "Investment & Market Strategist",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Martina.jpg"
+        imgUrl: "/assests/imgs/faces/Martina.jpg"
     },
     {
         id: "18",
         name: "Enrico",
         role: "Data Scientist",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Enrico.jpg"
+        imgUrl: "/assests/imgs/faces/Enrico.jpg"
     },
     {
         id: "19",
         name: "Irene",
         role: "Service & Graphic Designer",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Irene.jpg"
+        imgUrl: "/assests/imgs/faces/Irene.jpg"
     },
     {
         id: "20 ",
         name: "Valerio",
         role: "Marketing & Communication Specialist",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/04/Valerio.jpg"
+        imgUrl: "/assests/imgs/faces/Valerio.jpg"
     },
     {
         id: "21 ",

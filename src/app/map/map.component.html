@@ -24,8 +24,12 @@
                     (markerClick)="getInfoMarker(m, AgmMap, infoWindow)"
                     >
                     <agm-info-window [disableAutoPan]="false" #infoWindow>
-                        <strong>{{m.label}}</strong>
-                        <p>{{m.categ}}</p>
+                        <!-- <strong>{{m.label}}</strong>
+                        <p>{{m.categ}}</p> -->
+                            <div class="etichetta"><b>{{m.label}}</b></div>
+                            <div class="categorie"><b>{{m.categ}}</b></div>
+                            <div class="descrizione"><img src="{{m.iconUrl}}"><p>{{m.label}}</p></div>
+                            <div class="btn-visita"><a href="{{m.label}}" target="_blank">Visita</a></div>
                     </agm-info-window>
                 </agm-marker>
                 </ng-container>

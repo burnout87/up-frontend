@@ -100,9 +100,12 @@ export class MapComponent implements OnInit {
       mainCateg: markerData.mainCateg?markerData.mainCateg:"altro",
       service: markerData.service?markerData.service:"delivery",
       iconUrl: "",
+      link: markerData.link?markerData.link:"",
       isOnMap: false,
+      address: markerData.address,
       _id: markerData._id,
       coupon: markerData.coupon,
+      descr: markerData.descr?markerData.descr:"",
       // true -> filtered, retained, so not visualized
       filtered: false
     }
@@ -261,4 +264,7 @@ interface Marker {
   filtered: boolean;
   mainCateg?: string;
   service?: string;
+  link?: string;
+  address?: string;
+  descr?: string;
 }

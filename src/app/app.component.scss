@@ -82,8 +82,12 @@
     }
   }
 
-  .visible-span {
-    display: unset !important;
+  @media screen and (min-width: 800px) {
+    .items-menu {
+      span {
+        display: unset !important;
+      }
+    }
   }
   
   footer {

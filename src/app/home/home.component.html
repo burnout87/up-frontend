@@ -130,7 +130,7 @@
                 </div>
             </div>
         </div>
-        <div class="map">
+        <div class="map" *ngIf="loadMap">
             <app-map *ngIf="isBrowser"></app-map>
         </div>
         <div class="subtitle">

@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
   title = 'upFrontend';
   router: Router;
   isBrowser: boolean;
+  loadMap: boolean;
   searchBox;
 
   value = '';
@@ -99,6 +100,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private ngZone: NgZone, private mapsAPILoader: MapsAPILoader, private _router: Router, @Inject(PLATFORM_ID) platformId: Object, private breakpointObserver: BreakpointObserver, @Inject(DOCUMENT) document){
     this.isBrowser = isPlatformBrowser(platformId);
+    this.loadMap = false;
     this.router = _router;
 
     this.breakpointObserver
@@ -150,7 +152,7 @@ export class HomeComponent implements OnInit {
         this.isC = false;
       }
     });
-
+    this.loadMap = true;
   }
 
   scrollToElement($element): void {

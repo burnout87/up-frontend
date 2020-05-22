@@ -1,4 +1,4 @@
-<section class="bg-yellow" [class.flex-container-home_S]="isS" [class.flex-container-home_M]="isM" [class.flex-container-home_L]="isL" [class.flex-container-home_XL]="isXL">
+<section class="flex-container-home_S bg-yellow" [class.flex-container-home_S]="isS" [class.flex-container-home_M]="isM" [class.flex-container-home_L]="isL" [class.flex-container-home_XL]="isXL">
     <div class="flex-item-home-img">
         <div class="image-teamwork">
             <img src="/assets/imgs/taxi-teamwork-in-office.png"/>
@@ -13,20 +13,20 @@
     </div>
 </section>
 
-<section class="flex-container" [class.flex-container_S]="isS" [class.flex-container_M]="isM" [class.flex-container_L]="isL" [class.flex-container_XL]="isXL">
-    <div class="flex-item-text" [class.flex-item-text_S]="isS">
+<section class="flex-container flex-container_S" [class.flex-container_S]="isS" [class.flex-container_M]="isM" [class.flex-container_L]="isL" [class.flex-container_XL]="isXL">
+    <div class="flex-item-text_S" [class.flex-item-text]="!isS">
         <span class="mat-display-1">Come funziona?</span>
         <div class="paragraph">
         <p>Ristoranti, librerie, parrucchieri di tutta Italia stanno vivendo un momento molto duro. Ora puoi dare una mano a ciascuno di loro, nel modo più semplice. <strong>Apri la mappa, clicca e sostieni un’attività!</strong></p>
         </div>
     </div>
-    <div class="flex-item-action" [class.flex-item-action_S]="isS">
+    <div class="flex-item-action_S" [class.flex-item-action]="!isS">
         <button mat-flat-button color="accent" (click)="scrollToElement(map)">Vai alla mappa</button>
     </div>
 </section>
 
-<section class="flex-container-sostieni" [class.flex-container-sostieni_S]="isS" [class.flex-container-sostieni_M]="isM" [class.flex-container-sostieni_L]="isL" [class.flex-container-sostieni_XL]="isXL">
-    <div class="flex-item-sostieni" [class.flex-item-sostieni_C]="isC">
+<section class="flex-container-sostieni flex-container-sostieni_S" [class.flex-container-sostieni_S]="isS" [class.flex-container-sostieni_M]="isM" [class.flex-container-sostieni_L]="isL" [class.flex-container-sostieni_XL]="isXL">
+    <div class="flex-item-sostieni_C" [class.flex-item-sostieni]="!isC">
         <div class="img-step">
             <img src="/assets/imgs/up_infographic_lens.png" >
         </div>
@@ -39,7 +39,7 @@
             </div>
         </div>
     </div>
-    <div class="flex-item-sostieni" [class.flex-item-sostieni_C]="isC">
+    <div class="flex-item-sostieni_C" [class.flex-item-sostieni]="!isC">
         <div class="img-step">
             <img src="/assets/imgs/up_infographic_map_tooltip.png" >
         </div>
@@ -52,7 +52,7 @@
             </div>
         </div>
     </div>
-    <div class="flex-item-sostieni" [class.flex-item-sostieni_C]="isC">
+    <div class="flex-item-sostieni_C" [class.flex-item-sostieni]="!isC">
         <div class="img-step">
             <img src="/assets/imgs/up_infographic_voucher_delivery.png" >
         </div>
@@ -66,7 +66,7 @@
         </div>
     </div>
 </section>
-<section #map class="flex-container-map bg-accent" [class.flex-container-map_S]="isS" [class.flex-container-map_M]="isM" [class.flex-container-map_L]="isL" [class.flex-container-map_XL]="isXL">
+<section #map class="flex-container-map flex-container-map_S bg-accent" [class.flex-container-map_S]="isS" [class.flex-container-map_M]="isM" [class.flex-container-map_L]="isL" [class.flex-container-map_XL]="isXL">
     <div class="flex-item-map">
         <span class="mat-display-1 primary-color">Trova nella mappa i negozi vicini a te</span>
         <div class="subtitle white-color">
@@ -82,10 +82,10 @@
                 <p class="white-color"><strong>Delivery</strong></p>
             </div>
         </div> -->
-        <div class="container-filter" [class.container-filter_S]="isS">
-            <div class="item-filter" [class.item-filter_S]="isS">
+        <div class="container-filter_S" [class.container-filter]="!isS">
+            <div class="item-filter_S" [class.item-filter]="!isS">
                 <div class="container-search">
-                <div class="item-search-text" [class.field_S]="isS" [class.field_M]="isM" [class.field_L]="isL" [class.field_XL]="isXL">
+                <div class="item-search-text field_S" [class.field_S]="isS" [class.field_M]="isM" [class.field_L]="isL" [class.field_XL]="isXL">
                 <!-- <div class="item-search"> -->
                 <form>
                     <img class="img-zoom" src="/assets/imgs/zoom_ico.png">
@@ -101,7 +101,7 @@
                 </div>
                 </div>
             </div>
-            <div class="item-filter" [class.item-filter_S]="isS">
+            <div class="item-filter_S" [class.item-filter]="!isS">
                 <span class="white-color">Scegli il tipo di servizio: </span>
                 <div class="padding-chips">
                 <mat-chip-list multiple="true">
@@ -115,7 +115,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-filter-categ" [class.container-filter-categ_S]="isS">
+        <div class="container-filter-categ_S" [class.container-filter-categ]="!isS">
             <div class="item-filter-categ">
                 <span class="white-color">Filtra per categoria dell'attività: </span>
                 <div class="padding-chips">
@@ -155,21 +155,21 @@
     </div>
 </section>
 
-<section class="flex-container bg-lightgray" [class.flex-container_S]="isS" [class.flex-container_M]="isM" [class.flex-container_L]="isL" [class.flex-container_XL]="isXL">
-    <div class="flex-item-text" [class.flex-item-text_S]="isS">
+<section class="flex-container flex-container_S bg-lightgray" [class.flex-container_S]="isS" [class.flex-container_M]="isM" [class.flex-container_L]="isL" [class.flex-container_XL]="isXL">
+    <div class="flex-item-text_S" [class.flex-item-text]="!isS">
         <span class="mat-display-1">Hai un’attività?</span>
         <div class="paragraph">
         <p>Scopri come registrare la tua offerta in una delle nostre piattaforme. 
             Avrai maggior visibilità e visitatori da tutta Italia. Tutto in una sola pagina, tutto gratis!</p>
         </div>
     </div>
-    <div class="flex-item-action" [class.flex-item-action_S]="isS">
+    <div class="flex-item-action_S" [class.flex-item-action]="!isS">
         <button mat-flat-button color="accent" (click)="scrollToElement(piattaforme)">Scopri le piattaforme</button>
     </div>
 </section>
 
-<section class="flex-container-registra bg-lightgray" [class.flex-container-registra_S]="isS" [class.flex-container-registra_M]="isM" [class.flex-container-registra_L]="isL" [class.flex-container-registra_XL]="isXL">
-    <div class="flex-item-registra" [class.flex-item-registra_C]="isC">
+<section class="flex-container-registra flex-container-registra_S bg-lightgray" [class.flex-container-registra_S]="isS" [class.flex-container-registra_M]="isM" [class.flex-container-registra_L]="isL" [class.flex-container-registra_XL]="isXL">
+    <div class="flex-item-registra_C" [class.flex-item-registra]="!isC">
         <div class="img-step">
             <img src="/assets/imgs/up_infographic_voucher_delivery.png" >
         </div>
@@ -182,7 +182,7 @@
             </div>
         </div>
     </div>
-    <div class="flex-item-registra" [class.flex-item-registra_C]="isC">
+    <div class="flex-item-registra_C" [class.flex-item-registra]="!isC">
         <div class="img-step">
             <img src="/assets/imgs/up_infographic_choose_platform.png" >
         </div>
@@ -195,7 +195,7 @@
             </div>
         </div>
     </div>
-    <div class="flex-item-registra" [class.flex-item-registra_C]="isC">
+    <div class="flex-item-registra_C" [class.flex-item-registra]="!isC">
         <div class="img-step">
             <img src="/assets/imgs/up_infographic_register.png" >
         </div>
@@ -208,7 +208,7 @@
             </div>
         </div>
     </div>
-    <div class="flex-item-registra" [class.flex-item-registra_C]="isC">
+    <div class="flex-item-registra_C" [class.flex-item-registra]="!isC">
         <div class="img-step">
             <img src="/assets/imgs/up_infographic_map_pin.png" >
         </div>
@@ -223,14 +223,14 @@
     </div>
 </section>
 
-<section #piattaforme class="container-piattaforme" [class.container-piattaforme_S]="isS" [class.container-piattaforme_M]="isM" [class.container-piattaforme_L]="isL" [class.container-piattaforme_XL]="isXL">
+<section #piattaforme class="container-piattaforme container-piattaforme_S" [class.container-piattaforme_S]="isS" [class.container-piattaforme_M]="isM" [class.container-piattaforme_L]="isL" [class.container-piattaforme_XL]="isXL">
     <div class="item-piattaforme">
         <span class="mat-display-1">Scopri le piattaforme</span>
 
         <div class="container-card">
             <div class="list-card">
 
-              <mat-card class="card-piattaforme" [class.card-piattaforme_S]="isS" [class.card-piattaforme_M]="isM" [class.card-piattaforme_L]="isL" [class.card-piattaforme_XL]="isXL">
+              <mat-card class="card-piattaforme card-piattaforme_S" [class.card-piattaforme_S]="isS" [class.card-piattaforme_M]="isM" [class.card-piattaforme_L]="isL" [class.card-piattaforme_XL]="isXL">
                     <div class="img-piattaforma">
                     <img mat-card-image src="/assets/imgs/Io-resto-a-casa-delivery-ok.png" default="/assets/imgs/taxi-7.png">
                     </div>
@@ -259,7 +259,7 @@
                       </mat-card-actions>
               </mat-card>
 
-              <mat-card class="card-piattaforme" [class.card-piattaforme_S]="isS" [class.card-piattaforme_M]="isM" [class.card-piattaforme_L]="isL" [class.card-piattaforme_XL]="isXL">
+              <mat-card class="card-piattaforme card-piattaforme_S" [class.card-piattaforme_S]="isS" [class.card-piattaforme_M]="isM" [class.card-piattaforme_L]="isL" [class.card-piattaforme_XL]="isXL">
                     <div class="img-piattaforma">
                     <img mat-card-image src="/assets/imgs/2.png" default="/assets/imgs/taxi-7.png">
                     </div>
@@ -288,7 +288,7 @@
                       </mat-card-actions>
               </mat-card>
 
-              <mat-card class="card-piattaforme" [class.card-piattaforme_S]="isS" [class.card-piattaforme_M]="isM" [class.card-piattaforme_L]="isL" [class.card-piattaforme_XL]="isXL">
+              <mat-card class="card-piattaforme card-piattaforme_S" [class.card-piattaforme_S]="isS" [class.card-piattaforme_M]="isM" [class.card-piattaforme_L]="isL" [class.card-piattaforme_XL]="isXL">
                     <div class="img-piattaforma">
                     <img mat-card-image src="/assets/imgs/5.png" default="/assets/imgs/taxi-7.png">
                     </div>
@@ -328,11 +328,11 @@
     </div>
 </section>
 
-<section class="container-partners bg-yellow" [class.container-partners_S]="isS" [class.container-partners_M]="isM" [class.container-partners_L]="isL" [class.container-partners_XL]="isXL">
+<section class="container-partners_S bg-yellow" [class.container-partners_S]="isS" [class.container-partners_M]="isM" [class.container-partners_L]="isL" [class.container-partners_XL]="isXL">
     <app-partners></app-partners>
 </section>
 
-<section class="container-combatti bg-lightgray" [class.container-combatti_S]="isS" [class.container-combatti_M]="isM" [class.container-combatti_L]="isL" [class.container-combatti_XL]="isXL">
+<section class="container-combatti container-combatti_S bg-lightgray" [class.container-combatti_S]="isS" [class.container-combatti_M]="isM" [class.container-combatti_L]="isL" [class.container-combatti_XL]="isXL">
     <div class="item-combatti">
         <span class="mat-display-1">Combatti questa crisi con noi!</span>
         <div class="image-taxi-searching">

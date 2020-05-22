@@ -165,26 +165,32 @@ p {
     padding-right: 18%;
   }
 
-.flex-item-text {
-    padding: 10px;
-    margin: auto;
-    width: 65%;
-}
-
 .flex-item-text_S {
+  padding: 10px;
+  margin: auto;
   width: 100%;
 }
 
-.flex-item-action {
-    padding: 10px;
+.flex-item-text {
+  padding: 10px;
+  margin: auto;
+  width: 65%;
+}
+
+.flex-item-action_S {
+  padding: 10px;
     margin: auto;
-    width: 25%;
+    width: 100%;
     margin: auto;
     text-align: center;
 }
 
-.flex-item-action_S {
-  width: 100%;
+.flex-item-action {
+  padding: 10px;
+  margin: auto;
+  width: 25%;
+  margin: auto;
+  text-align: center;
 }
 
 .flex-container-sostieni {
@@ -216,40 +222,6 @@ p {
   padding-left: 18%;
   padding-right: 18%;
   padding-bottom: 4%;
-}
-
-.flex-item-sostieni {
-  padding: 10px;
-  margin: auto;
-  width: 30%;
-  .img-step {
-    width: 60%;
-    padding-bottom: 20%;
-    margin: auto;
-    img {
-      width: 100%;
-    }
-  }
-  .container-step {
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    .img-number {
-      width: 20%;
-      img {
-        width: 80%;
-      }
-    }
-    .text-step {
-      width: 80%;
-      height: 100px;
-      margin: auto;
-      p {
-        font-size: 20px;
-      }
-    }
-  }
 }
 
 .flex-item-sostieni_C {
@@ -286,6 +258,40 @@ p {
   }
 }
 
+.flex-item-sostieni {
+  padding: 10px;
+  margin: auto;
+  width: 30%;
+  .img-step {
+    width: 60%;
+    padding-bottom: 20%;
+    margin: auto;
+    img {
+      width: 100%;
+    }
+  }
+  .container-step {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    .img-number {
+      width: 20%;
+      img {
+        width: 80%;
+      }
+    }
+    .text-step {
+      width: 80%;
+      height: 100px;
+      margin: auto;
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
 .container-pointer{
   display: flex;
   flex-direction: row;
@@ -301,6 +307,15 @@ p {
   width: 50%;
 }
 
+.container-filter_S {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 4%;
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
 .container-filter {
   display: flex;
   flex-direction: row;
@@ -311,9 +326,11 @@ p {
   padding-right: 4%;
 }
 
-.container-filter_S {
-  padding-left: 0%;
-  padding-right: 0%;
+.item-filter_S {
+  //margin: auto;
+  float: left;
+  text-align: left;
+  width: 100%;
 }
 
 .item-filter {
@@ -321,13 +338,6 @@ p {
   float: left;
   text-align: left;
   width: 50%;
-}
-
-.item-filter_S {
-  //margin: auto;
-  float: left;
-  text-align: left;
-  width: 100%;
 }
 
 .container-search {
@@ -377,6 +387,16 @@ mat-form-field {
   }
 }
 
+.container-filter-categ_S{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  //padding-top: 4%;
+  padding-bottom: 4%;
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
 .container-filter-categ{
   display: flex;
   flex-direction: row;
@@ -385,11 +405,6 @@ mat-form-field {
   padding-bottom: 4%;
   padding-left: 4%;
   padding-right: 4%;
-}
-
-.container-filter-categ_S{
-  padding-left: 0%;
-  padding-right: 0%;
 }
 
 .item-filter-categ {
@@ -515,40 +530,6 @@ mat-form-field {
     padding-right: 18%;
     padding-bottom: 4%;
   }
-  
-  .flex-item-registra {
-    padding: 10px;
-    margin: auto;
-    width: 20%;
-    .img-step {
-      width: 60%;
-      padding-bottom: 20%;
-      margin: auto;
-      img {
-        width: 100%;
-      }
-    }
-    .container-step {
-      width: 100%;
-      margin: auto;
-      display: flex;
-      justify-content: center;
-      .img-number {
-        width: 20%;
-        img {
-          width: 80%;
-        }
-      }
-      .text-step {
-        width: 80%;
-        height: 100px;
-        margin: auto;
-        p {
-          font-size: 20px;
-        }
-      }
-    }
-  }
 
   .flex-item-registra_C {
     padding: 10px;
@@ -571,6 +552,40 @@ mat-form-field {
         width: 20%;
         img {
           width: 60%;
+        }
+      }
+      .text-step {
+        width: 80%;
+        height: 100px;
+        margin: auto;
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .flex-item-registra {
+    padding: 10px;
+    margin: auto;
+    width: 20%;
+    .img-step {
+      width: 60%;
+      padding-bottom: 20%;
+      margin: auto;
+      img {
+        width: 100%;
+      }
+    }
+    .container-step {
+      width: 100%;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      .img-number {
+        width: 20%;
+        img {
+          width: 80%;
         }
       }
       .text-step {

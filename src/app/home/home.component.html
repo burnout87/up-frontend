@@ -1,7 +1,13 @@
 <section class="flex-container-home_S bg-yellow" [class.flex-container-home_S]="isS" [class.flex-container-home_M]="isM" [class.flex-container-home_L]="isL" [class.flex-container-home_XL]="isXL">
     <div class="flex-item-home-img">
         <div class="image-teamwork">
-            <img src="/assets/imgs/taxi-teamwork-in-office.png"/>
+            <img srcset="/assets/imgs/taxi-teamwork-in-office-150x150.png 150w,
+                         /assets/imgs/taxi-teamwork-in-office-300x300.png 300w,
+                         /assets/imgs/taxi-teamwork-in-office.png 912w"
+                 sizes="(max-width: 599px) 250px,
+                        (max-width: 1023px) 300px,
+                        100%"
+                 src="/assets/imgs/taxi-teamwork-in-office.png" alt="teamwork">
         </div>
     </div>
     <div class="flex-item-home-text">

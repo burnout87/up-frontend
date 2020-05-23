@@ -1,12 +1,10 @@
-import { Component, OnInit, Inject, ViewChild, Input, ElementRef, NgZone } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { MapComponent } from '../map/map.component';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import {MatChipInputEvent} from '@angular/material/chips';
 import { MapsAPILoader } from '@agm/core';
-import { MatFormField } from '@angular/material';
 
 
 export interface Service {

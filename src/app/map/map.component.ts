@@ -1,11 +1,9 @@
-import { Component, OnInit, SimpleChanges, Inject, PLATFORM_ID, ViewChild, NgZone } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID, ViewChild, NgZone, EventEmitter } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { Subject, Observable } from 'rxjs';
 import { ConnectivityService } from '../connectivity.service';
-import { MarkerManager, AgmMap, LatLngBounds, LatLng, MapsAPILoader, AgmMarker } from "@agm/core";
+import { MarkerManager, AgmMap } from "@agm/core";
 import { ActivatedRoute } from '@angular/router';
 import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout';
-// import { MapMarker } from '../marker';
 
 @Component({
   selector: 'app-map',
@@ -19,12 +17,14 @@ export class MapComponent implements OnInit {
 
   public location: Location;
   public markers: Marker[] = [];
+  public closest: Marker[] = [];
   public markersData:any[] = [];
   public isBrowser: boolean;
   public categsSelected: string[] = [];
   public servicesSelected: string[] = [];
 
   private bounds: any;
+  private fitBounds: boolean;
   public geoLocation:Location;
 
   @ViewChild('AgmMap', {static: false}) agmMap: AgmMap;
@@ -102,6 +102,7 @@ export class MapComponent implements OnInit {
       iconUrl: "",
       link: markerData.link?markerData.link:"",
       isOnMap: false,
+      agmFitBounds: false,
       address: markerData.address,
       _id: markerData._id,
       coupon: markerData.coupon,
@@ -148,12 +149,12 @@ export class MapComponent implements OnInit {
 
   tilesLoadedEvent() {
     this.ngZone.run(() => {
-      this.markers
-        .filter(x => 
-          !x.isOnMap && 
-          !x.filtered &&
-          this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)}))
-        .forEach(x => x.isOnMap = true);
+        this.markers
+          .filter(x => 
+            !x.isOnMap && 
+            !x.filtered &&
+            this.bounds.contains({lat: Number(x.lat), lng:Number(x.lng)}))
+          .forEach(x => x.isOnMap = true);
       });
   }
 
@@ -234,12 +235,42 @@ export class MapComponent implements OnInit {
   }
 
   public centerMap(lat: number, lng: number, zoom: number) {
+    this.closest = [];
+    this.closest = this.findClosestN(lat, lng, 12);
     this.geoLocation.latitude = lat;
     this.geoLocation.longitude = lng;
-    this.geoLocation.zoom = zoom;
+
+    if(this.closest.length > 0) {
+
+      var bounds: google.maps.LatLngBounds = new google.maps.LatLngBounds();
+      bounds.extend(new google.maps.LatLng(lat, lng));
+      this.closest.forEach(c => {
+        bounds.extend(new google.maps.LatLng(c.lat, c.lng));
+      });
+      this.bounds = bounds;
+      // @ts-ignore
+      this.agmMap._mapsWrapper.fitBounds(bounds, 0);
+
+    }
+
   }
-  
-}
+
+  private findClosestN(lat: number, lng: number, numberOfResults) {
+    this.closest = [];
+    for (var i = 0; i < this.markers.length; i++) {
+      this.markers[i].distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(lat, lng), new google.maps.LatLng(this.markers[i].lat, this.markers[i].lng));
+      this.markers[i].isOnMap = false;
+      this.closest.push(this.markers[i]);
+    }
+    this.closest.sort(this.sortByDist);
+    return this.closest.splice(0, numberOfResults);
+  }
+
+  private sortByDist(a, b) {
+      return (a.distance - b.distance);
+  }
+    
+  }
 
 interface Location {
   latitude: number;
@@ -259,12 +290,14 @@ interface Marker {
   iconUrl?: string;
   description?: string;
   isOnMap: boolean;
-  _id: string;
-  coupon: boolean;
+  _id?: string;
+  coupon?: boolean;
   filtered: boolean;
   mainCateg?: string;
   service?: string;
   link?: string;
   address?: string;
   descr?: string;
+  distance?: number;
+  agmFitBounds?: boolean;
 }

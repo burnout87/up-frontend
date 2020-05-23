@@ -11,7 +11,6 @@
             (mapClick)="hideInfo(AgmMap, $event)"
             (boundsChange)="boundsChangeEvent($event)"
             (tilesLoaded)="tilesLoadedEvent()">
-            <!-- <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m"> -->
             <agm-marker-cluster 
                 imagePath="/assets/cluster/cluster">
                 <ng-container *ngFor="let m of markers" >
@@ -20,7 +19,7 @@
                     [latitude]="m.lat" 
                     [longitude]="m.lng"
                     [title]="m.label"
-                    [iconUrl]="m.iconUrl" 
+                    [iconUrl]="m.iconUrl"
                     (markerClick)="getInfoMarker(m, AgmMap, infoWindow)"
                     >
                     <agm-info-window [disableAutoPan]="false" #infoWindow>

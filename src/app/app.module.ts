@@ -40,7 +40,7 @@ import { DefaultImageDirective } from './default-image.directive';
     AgmJsMarkerClustererModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDgbhE4JU0eLfjTogXctQkSZIEh-3x5Q-4',
-      libraries: ['places']
+      libraries: ['places', 'geometry']
     }),
     BrowserAnimationsModule
   ],

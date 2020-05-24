@@ -125,6 +125,6 @@ export const MEMBRI: Member[] = [
         id: "21 ",
         name: "Mattia",
         role: "Front End Developer",
-        imgUrl: "https://www.unitipossiamo.it/wp-content/uploads/2020/05/Foto-team-psd.jpg"
+        imgUrl: "/assets/imgs/Foto-team-psd.jpg"
     }
 ]

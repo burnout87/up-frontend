@@ -125,7 +125,7 @@ p {
 
 .image-teamwork {
   .img {
-    background-image: url("/assets/imgs/taxi-teamwork-in-office-150x150.png");
+    background-image: url("/assets/imgs/_teamwork_250x250.png");
     background-position: center;
     background-repeat:no-repeat;
     background-size: 100% 100%;
@@ -134,7 +134,7 @@ p {
   }
   @media (min-width: 800px) {
     .img {
-      background-image: url("/assets/imgs/taxi-teamwork-in-office-300x300.png");
+      background-image: url("/assets/imgs/_teamwork_250x250.png");
       background-position: center;
       background-repeat:no-repeat;
       background-size: 100% 100%;
@@ -144,7 +144,7 @@ p {
   }
   @media (min-width: 1000px) {
     .img {
-      background-image: url("/assets/imgs/taxi-teamwork-in-office.png");
+      background-image: url("/assets/imgs/_teamwork_450x450.png");
       background-position: center;
       background-repeat:no-repeat;
       background-size: 100% 100%;
@@ -833,6 +833,37 @@ mat-form-field {
     }
   }
 
+  }
+
+  .image-taxi-searching {
+    .img {
+      background-image: url("/assets/imgs/_searching_250x250.png");
+      background-position: center;
+      background-repeat:no-repeat;
+      background-size: 100% 100%;
+      height: 0%;
+      padding-bottom: 100%;
+    }
+    @media (min-width: 800px) {
+      .img {
+        background-image: url("/assets/imgs/_searching_250x250.png");
+        background-position: center;
+        background-repeat:no-repeat;
+        background-size: 100% 100%;
+        height: 0%;
+        padding-bottom: 100%;
+      }
+    }
+    @media (min-width: 1000px) {
+      .img {
+        background-image: url("/assets/imgs/_searching_450x450.png");
+        background-position: center;
+        background-repeat:no-repeat;
+        background-size: 100% 100%;
+        height: 0%;
+        padding-bottom: 100%;
+      }
+    }
   }
 
   .container-combatti_S {

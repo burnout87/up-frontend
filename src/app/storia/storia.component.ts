@@ -154,6 +154,34 @@ export class StoriaComponent implements OnInit, AfterViewInit, OnDestroy {
       _media_medium_large: dataStoria._embedded["wp:featuredmedia"][0].media_details.sizes.medium_large?dataStoria._embedded["wp:featuredmedia"][0].media_details.sizes.medium_large.source_url:""
     };
 
+    storia.link =  'https://ww.unitipossiamo.it/storie/' + storia.id
+
+    storia._links_self = storia._links_self.replace("www.unitipossiamo.it", "www.unitipossiamo.it:8443");
+    storia._links_collection = storia._links_collection.replace("www.unitipossiamo.it", "www.unitipossiamo.it:8443");
+    storia._links_about = storia._links_about.replace("www.unitipossiamo.it", "www.unitipossiamo.it:8443");
+    storia._links_replies = storia._links_replies.replace("www.unitipossiamo.it", "www.unitipossiamo.it:8443");
+
+    storia._media_full = storia._media_full.replace("www.unitipossiamo.it", "www.unitipossiamo.it:8443");
+    storia._media_medium = storia._media_medium.replace("www.unitipossiamo.it", "www.unitipossiamo.it:8443");
+    storia._media_large = storia._media_large.replace("www.unitipossiamo.it", "www.unitipossiamo.it:8443");
+    storia._media_thumbnail = storia._media_thumbnail.replace("www.unitipossiamo.it", "www.unitipossiamo.it:8443");
+    storia._media_medium_large = storia._media_medium_large.replace("www.unitipossiamo.it", "www.unitipossiamo.it:8443");
+
+    storia._media_full = storia._media_full.substring( storia._media_full.indexOf("https://www.uniti") , storia._media_full.length);
+    storia._media_medium = storia._media_medium.substring( storia._media_medium.indexOf("https://www.uniti") , storia._media_medium.length);
+    storia._media_large = storia._media_large.substring( storia._media_large.indexOf("https://www.uniti") , storia._media_large.length);
+    storia._media_thumbnail = storia._media_thumbnail.substring( storia._media_thumbnail.indexOf("https://www.uniti") , storia._media_thumbnail.length);
+    storia._media_medium_large = storia._media_medium_large.substring( storia._media_medium_large.indexOf("https://www.uniti") , storia._media_medium_large.length);
+
+    // normalize links of the images inside the content
+    if(storia.content.indexOf("<img") > -1 ) {
+      var i = storia.content.indexOf("https://www.unitipossiamo.it/");
+      while( i > -1 ) {
+        storia.content = storia.content.replace(storia.content.substring(storia.content.lastIndexOf("\"", i) + 1, i), "").replace("https://www.unitipossiamo.it/", "https://www.unitipossiamo.it:8443/");
+        i = storia.content.indexOf("https://www.unitipossiamo.it/");
+      }
+    }
+
     return storia;
     
   }

@@ -68,39 +68,7 @@ export class HomeComponent implements OnInit {
   @ViewChild('inputAddress', {static: false}) 
   private inputAddress: ElementRef;
 
-  ngOnInit() { }
-
-  ngAfterViewInit() {
-    this.mapsAPILoader.load().then(() => {
-      this.searchBox = new google.maps.places.Autocomplete(this.inputAddress.nativeElement);
-      this.searchBox.addListener("place_changed", () => {
-        this.ngZone.run(() => {
-          let place: google.maps.places.PlaceResult = this.searchBox.getPlace();
-          //verify result
-          if (place.geometry === undefined || place.geometry === null) {
-            return;
-          }
-          this.mapComp.centerMap(place.geometry.location.lat(), place.geometry.location.lng(), 16)
-        });
-      });
-    });
-    
-    // this.searchBox.addListener('places_changed', function() {
-    //   var places = this.searchBox.getPlaces();
-
-    //   if (places.length == 0) {
-    //     return;
-    //   }
-
-    //   var bounds = this.mapComp.getBounds();
-    // });
-  }
-
-  constructor(private ngZone: NgZone, private mapsAPILoader: MapsAPILoader, private _router: Router, @Inject(PLATFORM_ID) platformId: Object, private breakpointObserver: BreakpointObserver, @Inject(DOCUMENT) document){
-    this.isBrowser = isPlatformBrowser(platformId);
-    this.loadMap = false;
-    this.router = _router;
-
+  ngOnInit() {
     this.breakpointObserver
     .observe([Breakpoints.XSmall, Breakpoints.HandsetPortrait])
     .subscribe((state: BreakpointState) => {
@@ -151,6 +119,40 @@ export class HomeComponent implements OnInit {
       }
     });
     this.loadMap = true;
+   }
+
+  ngAfterViewInit() {
+    this.mapsAPILoader.load().then(() => {
+      this.searchBox = new google.maps.places.Autocomplete(this.inputAddress.nativeElement);
+      this.searchBox.addListener("place_changed", () => {
+        this.ngZone.run(() => {
+          let place: google.maps.places.PlaceResult = this.searchBox.getPlace();
+          //verify result
+          if (place.geometry === undefined || place.geometry === null) {
+            return;
+          }
+          this.mapComp.centerMap(place.geometry.location.lat(), place.geometry.location.lng(), 16)
+        });
+      });
+    });
+    
+    // this.searchBox.addListener('places_changed', function() {
+    //   var places = this.searchBox.getPlaces();
+
+    //   if (places.length == 0) {
+    //     return;
+    //   }
+
+    //   var bounds = this.mapComp.getBounds();
+    // });
+  }
+
+  constructor(private ngZone: NgZone, private mapsAPILoader: MapsAPILoader, private _router: Router, @Inject(PLATFORM_ID) platformId: Object, private breakpointObserver: BreakpointObserver, @Inject(DOCUMENT) document){
+    this.isBrowser = isPlatformBrowser(platformId);
+    this.loadMap = false;
+    this.router = _router;
+
+    
   }
 
   scrollToElement($element): void {

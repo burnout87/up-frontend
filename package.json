@@ -11,7 +11,7 @@
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build && ng run upFrontend:server:production --bundleDependencies all",
+    "build:client-and-server-bundles": "ng build --prod && ng run upFrontend:server:production --bundleDependencies all",
     "server:start": "pm2 start dist/server --name upserver",
     "server:stop": "pm2 stop upserver",
     "server:restart": "pm2 restart upserver"

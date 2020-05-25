@@ -31,6 +31,41 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/imgs/favicon-16x16.png">
 </head>
 <body class="mat-typography">
-  <app-root></app-root>
+  <app-root>
+    <style>      
+      .root-loader {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        margin: 0px;
+        padding: 0px;
+        background-color: #ffffff;
+        width: 100%;
+        height: 100%;
+      }
+
+      .root-img {
+        position: absolute;
+        width: 128px;
+        height: 128px;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        animation: roll 2s infinite;
+      }
+
+      @keyframes roll {
+        0% {
+          transform: translate(-50%, -50%) rotate(0);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+    </style>
+    <div class="root-loader">
+      <img class="root-img" src="assets/imgs/up_only_logo.png">
+    </div>
+  </app-root>
 </body>
 </html>

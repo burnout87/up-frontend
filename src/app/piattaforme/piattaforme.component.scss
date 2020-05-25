@@ -22,9 +22,9 @@ p {
       .image-taxi-7 {
         width: 75%;
         margin: auto;
-        img {
-          width: 100%;
-        }
+        // img {
+        //   width: 100%;
+        // }
       }
   }
 
@@ -49,9 +49,9 @@ p {
       .image-teamwork {
         width: 75%;
         margin: auto;
-        img {
-          width: 100%;
-        }
+        // img {
+        //   width: 100%;
+        // }
       }
   }
   .flex-item-home-text {
@@ -75,9 +75,9 @@ p {
     .image-taxi-7 {
       width: 75%;
       margin: auto;
-      img {
-        width: 100%;
-      }
+      // img {
+      //   width: 100%;
+      // }
     }
 }
 
@@ -102,9 +102,9 @@ p {
     .image-taxi-7 {
       width: 75%;
       margin: auto;
-      img {
-        width: 100%;
-      }
+      // img {
+      //   width: 100%;
+      // }
     }
 }
 
@@ -129,9 +129,9 @@ p {
     .image-taxi-7 {
       width: 75%;
       margin: auto;
-      img {
-        width: 100%;
-      }
+      // img {
+      //   width: 100%;
+      // }
     }
 }
 
@@ -256,9 +256,9 @@ p {
   .image-taxi-searching{
     width: 65%;
     margin: auto;
-    img {
-      width: 100%;
-    }
+    // img {
+    //   width: 100%;
+    // }
   }
 }
 
@@ -271,6 +271,37 @@ p {
   }
 }
 
+}
+
+.image-taxi-searching {
+  .img {
+    background-image: url("/assets/imgs/_searching_250x250.png");
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    height: 0%;
+    padding-bottom: 100%;
+  }
+  @media (min-width: 800px) {
+    .img {
+      background-image: url("/assets/imgs/_searching_250x250.png");
+      background-position: center;
+      background-repeat:no-repeat;
+      background-size: 100% 100%;
+      height: 0%;
+      padding-bottom: 100%;
+    }
+  }
+  @media (min-width: 1000px) {
+    .img {
+      background-image: url("/assets/imgs/_searching_450x450.png");
+      background-position: center;
+      background-repeat:no-repeat;
+      background-size: 100% 100%;
+      height: 0%;
+      padding-bottom: 100%;
+    }
+  }
 }
 
 .container-combatti_S {

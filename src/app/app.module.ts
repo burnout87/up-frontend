@@ -18,13 +18,15 @@ import { FormsModule } from '@angular/forms';
 
 import { EllipsisModule } from 'ngx-ellipsis';
 import { DefaultImageDirective } from './default-image.directive';
+import { LazyLoadDirective } from './lazy-load.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     RoutingComponents,
     SafeHtmlPipe,
-    DefaultImageDirective
+    DefaultImageDirective,
+    LazyLoadDirective
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

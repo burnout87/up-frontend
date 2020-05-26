@@ -1,6 +1,8 @@
 import { enableProdMode } from '@angular/core';
 
+import { AppServerModule } from './app/app.server.module';
 import { environment } from './environments/environment';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 if (environment.production) {
   enableProdMode();
@@ -12,3 +14,7 @@ export { AppServerModule } from './app/app.server.module';
 export { ngExpressEngine } from "@nguniversal/express-engine";
 export { provideModuleMap } from "@nguniversal/module-map-ngfactory-loader";
 
+document.addEventListener('DOMContentLoaded', () => {
+  platformBrowserDynamic().bootstrapModule(AppServerModule)
+.catch(err => console.error(err));
+});

@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/fonts.scss",
               "src/custom.theme.scss",
               "src/main-styles.scss"
             ],
@@ -90,6 +91,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/fonts.scss",
               "src/custom.theme.scss",
               "src/main-styles.scss"
             ],

@@ -1,40 +1,40 @@
 
-<section class="flex-container-header bg-yellow" [class.flex-container-header_S]="isS" [class.flex-container-header_M]="isM" [class.flex-container-header_L]="isL" [class.flex-container-header_XL]="isXL">
+<section class="flex-container-header bg-yellow">
     <div class="flex-item-header-img">
         <div class="imagebox-taxi-3">
             <div class="img"></div>
         </div>
     </div>
-    <div class="flex-item-header-title" [class.title-header_S]="isS" [class.title-header_M]="isM" [class.title-header_L]="isL" [class.title-header_XL]="isXL">
+    <div class="flex-item-header-title title-header">
         <span id="typed"></span><span>.</span>
     </div>
 </section>
 
-<section class="flex-container" [class.flex-container_S]="isS" [class.flex-container_M]="isM" [class.flex-container_L]="isL" [class.flex-container_XL]="isXL">
-    <div [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" [class.flex-item_XL]="isXL" class="titlebox">
-        <span class="mat-display-1" [class.title_XL]="isXL">Che cos'è Unitipossiamo?</span>
+<section class="flex-container">
+    <div class="flex-item titlebox">
+        <span class="mat-display-1 title_XL">Che cos'è Unitipossiamo?</span>
     </div>
-    <div [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" [class.flex-item_XL]="isXL" class="textbox">
+    <div class="flex-item textbox">
         <p>Unitipossiamo è il più grande aggregatore di tutte le iniziative nate sul territorio italiano per aiutare le <strong>attività commerciali </strong>a superare il periodo di crisi che stanno vivendo a causa del<strong> COVID-19.</strong></p>    
     </div>
 </section>
 
-<section class="flex-container" [class.flex-container_S]="isS" [class.flex-container_M]="isM" [class.flex-container_L]="isL" [class.flex-container_XL]="isXL">
-    <div [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" [class.flex-item_XL]="isXL" class="textbox">
+<section class="flex-container">
+    <div class="flex-item textbox">
         <p>La filosofia che ci unisce ruota intorno alla volontà di <strong>semplificare la ricerca</strong> di attività per l’utente e <strong>aumentare la visibilità</strong> delle offerte online proposte dai commercianti.</p>
         <p>Unitipossiamo incentiva i consumatori a comprare <strong>oggi</strong> un servizio di cui usufruiranno <strong>domani</strong> e supporta i commercianti in difficoltà ad avere visibilità sul territorio.</p>
         <p>Ogni acquisto fatto durante l’emergenza è un atto di solidarietà verso il nostro paese.</p>
     </div>
-    <div class="imagebox-taxi-2" [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" [class.flex-item_XL]="isXL">
+    <div class="imagebox-taxi-2 flex-item">
         <img class="image-taxi-2" src="/assets/imgs/taxi-2.png"/>
     </div>
 </section>
 
-<section class="flex-container bg-lightgray" [class.flex-container_S]="isS" [class.flex-container_M]="isM" [class.flex-container_L]="isL" [class.flex-container_XL]="isXL">
-    <div [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" [class.flex-item_XL]="isXL" class="titlebox">
-        <span class="mat-display-1" [class.title_XL]="isXL">Perchè Unitipossiamo</span>
+<section class="flex-container bg-lightgray">
+    <div class="flex-item textbox titlebox">
+        <span class="mat-display-1 title_XL">Perchè Unitipossiamo</span>
     </div>
-    <div [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" [class.flex-item_XL]="isXL" class="textbox">
+    <div class="flex-item textbox">
         <p>Su tutto il territorio nazionale si moltiplicano le iniziative che, in vario modo, cercano di <strong>aiutare le attività commerciali.</strong> Ma la frammentarietà risulta controproducente.</p>
         <p>Abbiamo quindi pensato di unire tutte le iniziative esistenti in un’unica piattaforma per aiutare coloro che vogliono dare il loro <strong>contributo</strong> a farlo più facilmente.<br>Un aggregatore infatti <strong>semplifica la ricerca</strong> per l’utente e <strong>aumenta la visibilità</strong> delle offerte proposte dai commercianti.</p>
         <p><strong>Unitipossiamo.it</strong> è un’iniziativa nata durante HackforItaly, un hackaton per trovare soluzioni a sostegno <strong>dell’emergenza COVID-19</strong>, tenutasi dal 27 al 29 marzo 2020. La piattaforma nasce come iniziativa <strong>non-profit</strong>, ed è stata realizzata grazie all’impegno volontario di più di venti giovani ed esperti da tutta Italia.</p>
@@ -44,18 +44,18 @@
 
 <!-- Members cards-->
 
-<section class="container-members" [class.container-members_S]="isS" [class.container-members_M]="isM" [class.container-members_L]="isL" [class.container-members_XL]="isXL">
+<section class="container-members">
     <div class="flex-item voltibox">
-        <span class="mat-display-1" [class.title_XL]="isXL">I nostri volti</span>
+        <span class="mat-display-1 title_XL">I nostri volti</span>
           <div class="card-container">
             <app-member *ngFor="let membro of membri" [membroData]=membro></app-member>
           </div>
     </div>
 </section>
 
-<section class="flex-container bg-lightgray" [class.flex-container_S]="isS" [class.flex-container_M]="isM" [class.flex-container_L]="isL" [class.flex-container_XL]="isXL">
+<section class="flex-container bg-lightgray">
     <div class="flex-item media-box">
-        <span class="mat-display-1" [class.title_XL]="isXL">Parlano di noi</span>
+        <span class="mat-display-1 title_XL">Parlano di noi</span>
         <div class="subtitle">
         <p>La nostra iniziativa ha già riscosso attenzione da parte di alcuni media online, contribuendo a far conoscere <b>Unitipossiamo</b> a quante più persone possibili.</p>
         </div>
@@ -64,12 +64,12 @@
                 
                 <div class="media-item">
                     <div class="media-card">
-                        <div class="img-media" [class.img-media_S]="isS">
+                        <div class="img-media">
                             <a href="https://www.lastampa.it/novara/2020/04/27/news/due-ingegneri-novaresi-nel-team-di-unitipossiamo-un-sito-sostiene-il-commercio-locale-che-consegna-a-domicilio-1.38768589" target="_blank" rel="noopener">
                                 <img src="//cdn.iframe.ly/api/thumbnail?url=https%3A%2F%2Fwww.lastampa.it%2Fnovara%2F2020%2F04%2F27%2Fnews%2Fdue-ingegneri-novaresi-nel-team-di-unitipossiamo-un-sito-sostiene-il-commercio-locale-che-consegna-a-domicilio-1.38768589&key=a55eef4ce2d285af9dca588fc5160aef">
                             </a>
                         </div>
-                        <div class="text-media" [class.text-media_S]="isS">
+                        <div class="text-media">
                             <div class="media-th" ellipsis>
                                 <p> Due ingegneri novaresi nel team di “Unitipossiamo”: un sito sostiene il commercio locale che consegna a domicilio </p>
                             </div>
@@ -94,12 +94,12 @@
 
                 <div class="media-item">
                     <div class="media-card">
-                        <div class="img-media" [class.img-media_S]="isS">
+                        <div class="img-media">
                             <a href="http://www.radiocassinostereo.com/cassinate-coronavirus-uniti-possiamo-la-piattaforma-che-aiuta-i-commercianti/?fbclid=IwAR2KYO7NelL6U8oBhvbKrYVeONzDrTu767QCIelL9T-Xs_p5cMzWX6RTHAQ" target="_blank" rel="noopener">
                             <img src="//cdn.iframe.ly/api/thumbnail?url=http%3A%2F%2Fwww.radiocassinostereo.com%2Fcassinate-coronavirus-uniti-possiamo-la-piattaforma-che-aiuta-i-commercianti%2F%3Ffbclid%3DIwAR2KYO7NelL6U8oBhvbKrYVeONzDrTu767QCIelL9T-Xs_p5cMzWX6RTHAQ&key=a55eef4ce2d285af9dca588fc5160aef">
                             </a>
                         </div>
-                        <div class="text-media" [class.text-media_S]="isS">
+                        <div class="text-media">
                             <div class="media-th" ellipsis>
                                 <p> Cassinate – Coronavirus, Uniti Possiamo, la piattaforma che aiuta i commercianti </p>
                             </div>
@@ -130,12 +130,12 @@
 
                 <div class="media-item">
                     <div class="media-card">
-                        <div class="img-media" [class.img-media_S]="isS">
+                        <div class="img-media">
                             <a href="https://www.som.polimi.it/unitipossiamo-la-piattaforma-per-aiutare-gli-esercenti/" target="_blank" rel="noopener">
                             <img src="//cdn.iframe.ly/api/thumbnail?url=https%3A%2F%2Fwww.som.polimi.it%2Funitipossiamo-la-piattaforma-per-aiutare-gli-esercenti%2F&key=a55eef4ce2d285af9dca588fc5160aef">
                             </a>
                         </div>
-                        <div class="text-media" [class.text-media_S]="isS">
+                        <div class="text-media">
                             <div class="media-th" ellipsis>
                                 <p> UNITIPOSSIAMO la piattaforma per aiutare gli esercenti </p>
                             </div>
@@ -166,12 +166,12 @@
 
                 <div class="media-item">
                     <div class="media-card">
-                        <div class="img-media" [class.img-media_S]="isS">
+                        <div class="img-media">
                             <a href="https://www.tpi.it/economia/uniti-possiamo-piattaforma-commercianti-coronavirus-20200415586259/" target="_blank" rel="noopener">
                             <img src="//cdn.iframe.ly/api/thumbnail?url=https%3A%2F%2Fwww.tpi.it%2Feconomia%2Funiti-possiamo-piattaforma-commercianti-coronavirus-20200415586259%2F&key=a55eef4ce2d285af9dca588fc5160aef">
                             </a>
                         </div>
-                        <div class="text-media" [class.text-media_S]="isS">
+                        <div class="text-media">
                             <div class="media-th" ellipsis>
                                 <p> Uniti Possiamo, la piattaforma che aiuta i commercianti durante il Covid </p>
                             </div>
@@ -196,12 +196,12 @@
 
                 <div class="media-item">
                     <div class="media-card">
-                        <div class="img-media" [class.img-media_S]="isS">
+                        <div class="img-media">
                             <a href="https://www.springeconomy.it/2020/04/09/uniti-possiamo-una-nuova-speranza-per-i-commercianti/" target="_blank" rel="noopener">
                             <img src="//cdn.iframe.ly/api/thumbnail?url=https%3A%2F%2Fwww.springeconomy.it%2F2020%2F04%2F09%2Funiti-possiamo-una-nuova-speranza-per-i-commercianti%2F&key=a55eef4ce2d285af9dca588fc5160aef">
                             </a>
                         </div>
-                        <div class="text-media" [class.text-media_S]="isS">
+                        <div class="text-media">
                             <div class="media-th" ellipsis>
                                 <p> Uniti Possiamo, una nuova speranza per i commercianti. </p>
                             </div>
@@ -232,12 +232,12 @@
 
                 <div class="media-item">
                     <div class="media-card">
-                        <div class="img-media" [class.img-media_S]="isS">
+                        <div class="img-media">
                             <a href="https://www.acapo.it/2020/04/09/unitipossiamo-per-far-ripartire-economia/" target="_blank" rel="noopener">
                             <img src="//cdn.iframe.ly/api/thumbnail?url=https%3A%2F%2Fwww.acapo.it%2F2020%2F04%2F09%2Funitipossiamo-per-far-ripartire-economia%2F&key=a55eef4ce2d285af9dca588fc5160aef">
                             </a>
                         </div>
-                        <div class="text-media" [class.text-media_S]="isS">
+                        <div class="text-media">
                             <div class="media-th" ellipsis>
                                 <p> Unitipossiamo far ripartire l'economia </p>
                             </div>
@@ -268,12 +268,12 @@
 
                 <div class="media-item">
                     <div class="media-card">
-                        <div class="img-media" [class.img-media_S]="isS">
+                        <div class="img-media">
                             <a href="https://www.italiastartup.it/unitipossiamo-la-piattaforma-per-aiutare-gli-esercenti/" target="_blank" rel="noopener">
                             <img src="//cdn.iframe.ly/api/thumbnail?url=https%3A%2F%2Fwww.springeconomy.it%2F2020%2F04%2F09%2Funiti-possiamo-una-nuova-speranza-per-i-commercianti%2F&key=a55eef4ce2d285af9dca588fc5160aef">
                             </a>
                         </div>
-                        <div class="text-media" [class.text-media_S]="isS">
+                        <div class="text-media">
                             <div class="media-th" ellipsis>
                                 <p> UNITIPOSSIAMO: la piattaforma per aiutare gli esercenti </p>
                             </div>
@@ -298,12 +298,12 @@
 
                 <div class="media-item">
                     <div class="media-card">
-                        <div class="img-media" [class.img-media_S]="isS">
+                        <div class="img-media">
                             <a href="http://www.farodiroma.it/uniti-possiamo-lidea-dei-giovani-per-rispondere-allepidemia-di-f-luise/" target="_blank" rel="noopener">
                             <img src="//cdn.iframe.ly/api/thumbnail?url=http%3A%2F%2Fwww.farodiroma.it%2Funiti-possiamo-lidea-dei-giovani-per-rispondere-allepidemia-di-f-luise%2F&key=a55eef4ce2d285af9dca588fc5160aef">
                             </a>
                         </div>
-                        <div class="text-media" [class.text-media_S]="isS">
+                        <div class="text-media">
                             <div class="media-th" ellipsis>
                                 <p> Uniti Possiamo, l'idea dei giovani per rispondere all'epidemia (di F. Luise) </p>
                             </div>
@@ -334,12 +334,12 @@
 
                 <div class="media-item">
                     <div class="media-card">
-                        <div class="img-media" [class.img-media_S]="isS">
+                        <div class="img-media">
                             <a href="https://www.corriere.it/tecnologia/20_marzo_27/coronavirus-arriva-hack-for-italy-team-innovatori-lavoro-curare-paese-797694fe-701b-11ea-82c1-be2d421e9f6b.shtml" target="_blank" rel="noopener">
                             <img src="//cdn.iframe.ly/api/thumbnail?url=https%3A%2F%2Fwww.corriere.it%2Ftecnologia%2F20_marzo_27%2Fcoronavirus-arriva-hack-for-italy-team-innovatori-lavoro-curare-paese-797694fe-701b-11ea-82c1-be2d421e9f6b.shtml&key=a55eef4ce2d285af9dca588fc5160aef">
                             </a>
                         </div>
-                        <div class="text-media" [class.text-media_S]="isS">
+                        <div class="text-media">
                             <div class="media-th" ellipsis>
                                 <p> Coronavirus, arriva «Hack for Italy», team di innovatori al lavoro per curare il Paese </p>
                             </div>
@@ -370,12 +370,12 @@
 
                 <div class="media-item">
                     <div class="media-card">
-                        <div class="img-media" [class.img-media_S]="isS">
+                        <div class="img-media">
                             <a href="https://www.eunews.it/2020/03/30/hack-for-italy-mondo-innovazione-campo-hackathon-online-italia/128379" target="_blank" rel="noopener">
                             <img src="//cdn.iframe.ly/api/thumbnail?url=https%3A%2F%2Fwww.eunews.it%2F2020%2F03%2F30%2Fhack-for-italy-mondo-innovazione-campo-hackathon-online-italia%2F128379&key=a55eef4ce2d285af9dca588fc5160aef">
                             </a>
                         </div>
-                        <div class="text-media" [class.text-media_S]="isS">
+                        <div class="text-media">
                             <div class="media-th" ellipsis>
                                 <p> HACK FOR ITALY, il mondo dell’innovazione in campo in un hackathon online per l’Italia </p>
                             </div>
@@ -409,15 +409,15 @@
     </div>
 </section>
 
-<section class="container-partners" [class.container-partners_S]="isS" [class.container-partners_M]="isM" [class.container-partners_L]="isL" [class.container-partners_XL]="isXL">
+<section class="container-partners">
     <app-partners></app-partners>
 </section>
 
-<!-- <section class="flex-container bg-lightgray" [class.flex-container_S]="isS" [class.flex-container_M]="isM" [class.flex-container_L]="isL" [class.flex-container_XL]="isXL">
-    <div [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" [class.flex-item_XL]="isXL" class="textbox">
+<!-- <section class="flex-container bg-lightgray">
+    <div class="flex-item textbox">
         <p>UnitiPossiamo.it è un’iniziativa nata durante HackforItaly, un hackaton per trovare soluzioni contro l’emergenza COVID-19, che si è tenuta dal 27-29 marzo 2020.  Abbiamo aggregato 16 piattaforme e quindi circa 4000 negozi, ma siamo ancora all’inizio! Aiutaci a far conoscere il nostro servizio condividendolo alla tua attività preferita.</p>        
     </div>
-    <div class="imagebox-Hack_for_Italy" [class.flex-item_S]="isS" [class.flex-item_M]="isM" [class.flex-item_L]="isL" [class.flex-item_XL]="isXL">
+    <div class="imagebox-Hack_for_Italy flex-item">
         <img class="image-Hack_for_Italy" src="https://www.unitipossiamo.it/wp-content/uploads/2020/04/Hack_for_Italy.jpeg"/>
     </div>
 </section> -->

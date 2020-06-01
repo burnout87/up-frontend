@@ -1,41 +1,31 @@
+$XSmall: '(max-width: 599.99px)';
+$Small: '(min-width: 600px) and (max-width: 959.99px)';
+$Medium: '(min-width: 960px) and (max-width: 1279.99px)';
+$Large: '(min-width: 1280px) and (max-width: 1919.99px)';
+$XLarge: '(min-width: 1920px)';
+$HandsetPortrait: '(max-width: 599.99px) and (orientation: portrait)';
+
+$Custom: '(min-width: 800px)';
+
+$small: $HandsetPortrait;
+$medium: $Small + ', ' + $Medium;
+$large: $Large;
+$xlarge: $XLarge;
+$custom: $Custom;
+
 p {
   //font-size: 3.04vh;
   font-size: 20px;
   line-height: 1.3em;
   }
 
+  @media only screen and #{$xlarge} {
   .title_XL{
     font-size: 36px !important;
   }
-
-  .flex-container-home{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-top: 4%;
-    padding-left: 4%;
-    padding-right: 4%;
-    .flex-item-home-img {
-      padding: 10px;
-      margin: auto;
-      width: 35%;
-      .image-taxi-7 {
-        width: 75%;
-        margin: auto;
-        // img {
-        //   width: 100%;
-        // }
-      }
   }
 
-  .flex-item-home-text {
-      padding: 10px;
-      margin: auto;
-      width: 55%;
-  }
-}
-
-  .flex-container-home_S {
+  .flex-container-home {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -46,7 +36,7 @@ p {
       padding: 10px;
       margin: auto;
       width: 100%;
-      .image-teamwork {
+      .image-taxi-7 {
         width: 75%;
         margin: auto;
         // img {
@@ -60,8 +50,8 @@ p {
       width: 100%;
   }
   }
-
-.flex-container-home_M{
+  @media only screen and #{$medium} {
+.flex-container-home {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -87,8 +77,10 @@ p {
     width: 55%;
 }
 }
+  }
 
-.flex-container-home_L{
+  @media only screen and #{$large} {
+.flex-container-home {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -114,8 +106,10 @@ p {
     width: 55%;
 }
 }
+  }
 
-.flex-container-home_XL{
+@media only screen and #{$xlarge} {
+.flex-container-home {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -141,6 +135,7 @@ p {
     width: 55%;
 }
 }
+}
 
 .image-taxi-7 {
   .img {
@@ -151,7 +146,7 @@ p {
     height: 0%;
     padding-bottom: 100%;
   }
-  @media (min-width: 800px) {
+  @media only screen and (min-width: 800px) {
     .img {
       background-image: url("/assets/imgs/_taxi-7_250x.png");
       background-position: center;
@@ -161,7 +156,7 @@ p {
       padding-bottom: 100%;
     }
   }
-  @media (min-width: 1000px) {
+  @media only screen and (min-width: 1000px) {
     .img {
       background-image: url("/assets/imgs/_taxi-7_450x.png");
       background-position: center;
@@ -205,37 +200,39 @@ p {
           align-content: center;
           margin: auto;
           padding-top: 2em;
+          
           .card-piattaforme {
             height: 650px;
-          }
-          
-          .card-piattaforme_S {
             max-width: 85%;
             margin: 10px;
           }
-          
-          .card-piattaforme_M {
+          @media only screen and #{$medium} {
+          .card-piattaforme {
             max-width: 40%;
             margin: 10px;
           }
-        
-          .card-piattaforme_L {
+          }
+          @media only screen and #{$large} {
+          .card-piattaforme {
             max-width: 25%;
             margin: 10px;
           }
-
-          .card-piattaforme_XL {
+          }
+          @media only screen and #{$xlarge} {
+          .card-piattaforme {
             max-width: 25%;
             margin: 10px;
+          }
           }
         }
       }
     }
   }
-
-  .container-piattaforme_XL {
+  @media only screen and #{$xlarge} {
+  .container-piattaforme {
     padding-left: 12%;
     padding-right: 12%;
+  }
   }
 
   mat-card {
@@ -282,7 +279,7 @@ p {
     height: 0%;
     padding-bottom: 100%;
   }
-  @media (min-width: 800px) {
+  @media only screen and (min-width: 800px) {
     .img {
       background-image: url("/assets/imgs/_searching_250x250.png");
       background-position: center;
@@ -292,7 +289,7 @@ p {
       padding-bottom: 100%;
     }
   }
-  @media (min-width: 1000px) {
+  @media only screen and (min-width: 1000px) {
     .img {
       background-image: url("/assets/imgs/_searching_450x450.png");
       background-position: center;
@@ -304,7 +301,8 @@ p {
   }
 }
 
-.container-combatti_S {
+@media only screen and #{$small} {
+.container-combatti {
   //padding-top: 0%;
   padding-bottom: 0%;
   padding-left: 0%;
@@ -317,24 +315,31 @@ p {
     width: 100%;
   }
 }
+}
 
-.container-combatti_M {
+@media only screen and #{$medium} {
+.container-combatti {
   padding-top: 4%;
   padding-bottom: 4%;
   padding-left: 4%;
   padding-right: 4%;
 }
+}
 
-.container-combatti_L {
+@media only screen and #{$large} {
+.container-combatti {
   padding-top: 4%;
   padding-bottom: 4%;
   padding-left: 4%;
   padding-right: 4%;
 }
+}
 
-.container-combatti_XL {
+@media only screen and #{$xlarge} {
+.container-combatti {
   padding-top: 4%;
   padding-bottom: 4%;
   padding-left: 18%;
   padding-right: 18%;
+}
 }

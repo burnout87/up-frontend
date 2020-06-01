@@ -9,42 +9,65 @@ $second-family: mat-typography-config(
   $font-family: 'Open Sans, Sans-serif'
 );
 
+$XSmall: '(max-width: 599.99px)';
+$Small: '(min-width: 600px) and (max-width: 959.99px)';
+$Medium: '(min-width: 960px) and (max-width: 1279.99px)';
+$Large: '(min-width: 1280px) and (max-width: 1919.99px)';
+$XLarge: '(min-width: 1920px)';
+$HandsetPortrait: '(max-width: 599.99px) and (orientation: portrait)';
+
+$Custom: '(min-width: 800px)';
+
+$small: $HandsetPortrait;
+$medium: $Small + ', ' + $Medium;
+$large: $Large;
+$xlarge: $XLarge;
+$custom: $Custom;
+
 p {
   //font-size: 3.04vh;
   font-size: 20px;
   line-height: 1.3em;
   }
 
+  @media only screen and #{$xlarge} {
   .title_XL{
     font-size: 36px !important;
   }
+  }
 
-  .container-title_S {
+  .container-title {
     padding-top: 2%;
     padding-bottom: 0%;
     padding-left: 0%;
     padding-right: 0%;
   }
 
-  .container-title_M {
+  @media only screen and #{$medium} {
+  .container-title {
     padding-top: 2%;
     padding-bottom: 2%;
     padding-left: 4%;
     padding-right: 4%;
   }
+  }
 
-  .container-title_L {
+  @media only screen and #{$large} {
+  .container-title {
     padding-top: 2%;
     padding-bottom: 2%;
     padding-left: 4%;
     padding-right: 4%;
   }
+  }
 
-  .container-title_XL {
+  @media only screen and #{$xlarge} {
+  .container-title {
     padding-top: 2%;
     padding-bottom: 2%;
     padding-left: 18%;
     padding-right: 18%;
+  }
   }
   
   .test-theme {
@@ -74,10 +97,12 @@ p {
     //padding-right: 4%;
   }
 
-  .container-card_XL{
+  @media only screen and #{$xlarge} {
+  .container-card{
     padding-bottom: 2%;
     padding-left: 12%;
     padding-right: 12%;
+  }
   }
   
   .list-card {
@@ -97,26 +122,30 @@ p {
     box-shadow: 0px 0px 6px 0px rgba(30, 30, 30, 0.55) !important;
   }
 
-
-  
-  .example-card_S {
+  .example-card {
     max-width: 85%;
     margin: 10px;
   }
   
-  .example-card_M {
+  @media only screen and #{$medium} {
+  .example-card {
     max-width: 40%;
     margin: 10px;
   }
+  }
 
-  .example-card_L {
+  @media only screen and #{$large} {
+  .example-card {
     max-width: 25%;
     margin: 10px;
   }
+  }
 
-  .example-card_XL {
+  @media only screen and #{$xlarge} {
+  .example-card {
     max-width: 25%;
     margin: 10px;
+  }
   }
   
   mat-card-title {

@@ -8,6 +8,21 @@ $second-family: mat-typography-config(
   $font-family: 'Open Sans, Sans-serif'
 );
 
+$XSmall: '(max-width: 599.99px)';
+$Small: '(min-width: 600px) and (max-width: 959.99px)';
+$Medium: '(min-width: 960px) and (max-width: 1279.99px)';
+$Large: '(min-width: 1280px) and (max-width: 1919.99px)';
+$XLarge: '(min-width: 1920px)';
+$HandsetPortrait: '(max-width: 599.99px) and (orientation: portrait)';
+
+$Custom: '(min-width: 800px)';
+
+$small: $HandsetPortrait;
+$medium: $Small + ', ' + $Medium;
+$large: $Large;
+$xlarge: $XLarge;
+$custom: $Custom;
+
 p {
   //font-size: 2.28vh;
   font-weight: 15px;
@@ -23,32 +38,38 @@ p {
     letter-spacing: 0.6px !important;
   }
  
-  .container-title_S {
+  .container-title {
     padding-top: 2%;
     padding-bottom: 0%;
     padding-left: 0%;
     padding-right: 0%;
   }
 
-  .container-title_M {
+  @media only screen and #{$medium} {
+  .container-title {
     padding-top: 2%;
     padding-bottom: 2%;
     padding-left: 24%;
     padding-right: 24%;
   }
+  }
 
-  .container-title_L {
+  @media only screen and #{$large} {
+  .container-title {
     padding-top: 2%;
     padding-bottom: 2%;
     padding-left: 24%;
     padding-right: 24%;
   }
+  }
 
-  .container-title_XL {
+  @media only screen and #{$xlarge} {
+  .container-title {
     padding-top: 2%;
     padding-bottom: 2%;
     padding-left: 32%;
     padding-right: 32%;
+  }
   }
 
   .item {
@@ -87,34 +108,40 @@ p {
     }
   }
 
-.other_S {
+.other {
   padding-top: 2%;
   padding-bottom: 0%;
   padding-left: 0%;
   padding-right: 0%;
 }
 
-.other_M {
+@media only screen and #{$medium} {
+.other {
   padding-top: 2%;
   padding-bottom: 2%;
   padding-left: 4%;
   padding-right: 4%;
 }
+}
 
-.other_L {
+
+@media only screen and #{$large} {
+.other {
   padding-top: 2%;
   padding-bottom: 2%;
   padding-left: 8%;
   padding-right: 8%;
 }
+}
 
-.other_XL {
+@media only screen and #{$xlarge} {
+.other {
   padding-top: 2%;
   padding-bottom: 2%;
   padding-left: 18%;
   padding-right: 18%;
 }
-
+}
   
 .content-other {
     padding-top: 2em;
@@ -152,24 +179,30 @@ p {
     transition: opacity 0.3s;
   }
   
-  .example-card_S {
+  .example-card {
     max-width: 85%;
     margin: 10px;
   }
   
-  .example-card_M {
+  @media only screen and #{$medium} {
+  .example-card {
     max-width: 40%;
     margin: 10px;
   }
+  }
 
-  .example-card_L {
+  @media only screen and #{$large} {
+  .example-card {
     max-width: 25%;
     margin: 10px;
   }
+  }
 
-  .example-card_XL {
+  @media only screen and #{$xlarge} {
+  .example-card {
     max-width: 25%;
     margin: 10px;
+  }
   }
   
   mat-card-title {
@@ -222,24 +255,30 @@ p {
     }
   }
 
-  .container-social_S {
+  .container-social {
     padding-left: 0%;
     padding-right: 0%;
   }
 
-  .container-social_M {
+  @media only screen and #{$medium} {
+  .container-social {
     padding-left: 4%;
     padding-right: 4%;
   }
+  }
 
-  .container-social_L {
+  @media only screen and #{$large} {
+  .container-social {
     padding-left: 24%;
     padding-right: 24%;
   }
+  }
 
-  .container-social_XL {
+  @media only screen and #{$xlarge} {
+  .container-social {
     padding-left: 18%;
     padding-right: 18%;
+  }
   }
 
   .button-social {

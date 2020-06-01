@@ -1,3 +1,18 @@
+$XSmall: '(max-width: 599.99px)';
+$Small: '(min-width: 600px) and (max-width: 959.99px)';
+$Medium: '(min-width: 960px) and (max-width: 1279.99px)';
+$Large: '(min-width: 1280px) and (max-width: 1919.99px)';
+$XLarge: '(min-width: 1920px)';
+$HandsetPortrait: '(max-width: 599.99px) and (orientation: portrait)';
+
+$Custom: '(min-width: 800px)';
+
+$small: $HandsetPortrait;
+$medium: $Small + ', ' + $Medium;
+$large: $Large;
+$xlarge: $XLarge;
+$custom: $Custom;
+
 p {
   line-height: 1.3em;
   line-height: 1.8;
@@ -9,8 +24,11 @@ p {
     flex-wrap: wrap;
     //height: 100vh;
   }
-
-  .flex-container_S {
+  @media only screen and #{$small} {
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding-top: 2%;
     height: auto;
     padding-left: 0%;
@@ -19,54 +37,74 @@ p {
       height: auto !important;
     }
   }
-
-  .flex-container_M {
+  }
+  @media only screen and #{$medium} {
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding-top: 2%;
     height: auto;
     padding-left: 0%;
     padding-right: 0%;
   }
-
-  .flex-container_L {
+  }
+  @media only screen and #{$large} {
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding-top: 2%;
     padding-bottom: 4%;
     padding-left: 4%;
     padding-right: 4%;
   }
-
-  .flex-container_XL {
+  }
+  @media only screen and #{$xlarge} {
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding-top: 2%;
     padding-bottom: 4%;
     padding-left: 18%;
     padding-right: 18%;
   }
-
+  }
+  
   .flex-item {
     padding: 10px;
     //margin: auto;
     width: 100%;
   }
-
-  .flex-item_S {
+  @media only screen and #{$small} {
+  .flex-item {
     padding: 10px;
     margin: auto;
     width: 100%;
   }
+  }
 
-  .flex-item_M {
+  @media only screen and #{$medium} {
+  .flex-item {
     padding: 10px;
     margin: auto;
     width: 70%;
   }
+  }
 
-  .flex-item_L {
+  @media only screen and #{$large} {
+  .flex-item {
     padding: 10px;
     //margin: auto;
     width: 48%;
   }
+  }
 
+  @media only screen and #{$xlarge} {
   .flex-item_XL {
     padding: 10px;
     //margin: auto;
     width: 48%;
+  }
   }

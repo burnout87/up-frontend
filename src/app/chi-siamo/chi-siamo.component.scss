@@ -9,41 +9,60 @@ $second-family: mat-typography-config(
   $font-family: 'Open Sans, Sans-serif'
 );
 
+$XSmall: '(max-width: 599.99px)';
+$Small: '(min-width: 600px) and (max-width: 959.99px)';
+$Medium: '(min-width: 960px) and (max-width: 1279.99px)';
+$Large: '(min-width: 1280px) and (max-width: 1919.99px)';
+$XLarge: '(min-width: 1920px)';
+$HandsetPortrait: '(max-width: 599.99px) and (orientation: portrait)';
+
+$Custom: '(min-width: 800px)';
+
+$small: $HandsetPortrait;
+$medium: $Small + ', ' + $Medium;
+$large: $Large;
+$xlarge: $XLarge;
+$custom: $Custom;
+
 p {
   //font-size: 3.04vh;
   font-size: 20px;
   line-height: 1.3em;
   }
 
+  @media only screen and #{$xlarge} {
   .title_XL{
     font-size: 50px !important;
   }
+  }
 
-.title-header_S {
+.title-header {
   font-family: mat-font-family($first-family);
   font-size: 5.12vw !important;
   font-weight: 800 !important;
 }
-
-.title-header_M {
+@media only screen and #{$medium} {
+.title-header {
   font-family: mat-font-family($first-family);
   font-size: 5.12vw !important;
   font-weight: 800 !important;
 }
-
-.title-header_L {
+}
+@media only screen and #{$large} {
+.title-header {
   font-family: mat-font-family($first-family);
   font-size: 4.68vw !important;
   font-weight: 800 !important;
 }
-
-.title-header_XL {
+}
+@media only screen and #{$xlarge} {
+.title-header {
   font-family: mat-font-family($first-family);
   font-size: 5.47vh !important;
   font-weight: 800 !important;
 }
-
-.flex-container-header_S {
+}
+.flex-container-header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -68,8 +87,8 @@ p {
     text-align: center;
   }
 }
-
-.flex-container-header_M {
+@media only screen and #{$medium} {
+.flex-container-header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -91,10 +110,12 @@ p {
     padding: 10px;
     margin: auto;
     width: 65%;
+    text-align: left;
   }
 }
-
-.flex-container-header_L {
+}
+@media only screen and #{$large} {
+.flex-container-header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -116,10 +137,12 @@ p {
     padding: 10px;
     margin: auto;
     width: 65%;
+    text-align: left;
   }
 }
-
-.flex-container-header_XL {
+}
+@media only screen and #{$xlarge} {
+.flex-container-header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -141,7 +164,9 @@ p {
     padding: 10px;
     margin: auto;
     width: 65%;
+    text-align: left;
   }
+}
 }
 
 .imagebox-taxi-3 {
@@ -153,7 +178,7 @@ p {
     height: 0%;
     padding-bottom: 100%;
   }
-  @media (min-width: 800px) {
+  @media only screen and (min-width: 800px) {
     .img {
       background-image: url("/assets/imgs/_taxi-3_250x.png");
       background-position: center;
@@ -163,7 +188,7 @@ p {
       padding-bottom: 100%;
     }
   }
-  @media (min-width: 1000px) {
+  @media only screen and (min-width: 1000px) {
     .img {
       background-image: url("/assets/imgs/_taxi-3_450x.png");
       background-position: center;
@@ -175,7 +200,19 @@ p {
   }
 }
 
-.flex-container {
+  @media only screen and #{$small} {
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 4%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  }
+  @media only screen and #{$medium} {
+  .flex-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -184,35 +221,42 @@ p {
     padding-left: 4%;
     padding-right: 4%;
   }
-
-  .flex-container_S {
-    padding-top: 4%;
-    padding-bottom: 0%;
-    padding-left: 0%;
-    padding-right: 0%;
   }
-
-  .flex-container_M {
+  @media only screen and #{$large} {
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding-top: 4%;
     padding-bottom: 4%;
     padding-left: 4%;
     padding-right: 4%;
   }
-
-  .flex-container_L {
-    padding-top: 4%;
-    padding-bottom: 4%;
-    padding-left: 4%;
-    padding-right: 4%;
   }
-
-  .flex-container_XL {
+  @media only screen and #{$xlarge} {
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding-top: 4%;
     padding-bottom: 4%;
     padding-left: 18%;
     padding-right: 18%;
   }
-
+  }
+  
+  @media only screen and #{$small} {
+  .container-members {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 4%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  }
+  @media only screen and #{$medium} {
   .container-members {
     display: flex;
     flex-direction: row;
@@ -222,33 +266,28 @@ p {
     padding-left: 4%;
     padding-right: 4%;
   }
-
-  .container-members_S {
-    padding-top: 4%;
-    padding-bottom: 0%;
-    padding-left: 0%;
-    padding-right: 0%;
   }
-
-  .container-members_M {
+  @media only screen and #{$large} {
+  .container-members {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding-top: 4%;
     padding-bottom: 4%;
     padding-left: 4%;
     padding-right: 4%;
   }
-
-  .container-members_L {
-    padding-top: 4%;
-    padding-bottom: 4%;
-    padding-left: 4%;
-    padding-right: 4%;
   }
-
-  .container-members_XL {
+  @media only screen and #{$xlarge} {
+  .container-members {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding-top: 4%;
     padding-bottom: 4%;
     padding-left: 18%;
     padding-right: 18%;
+  }
   }
 
   .flex-item {
@@ -275,7 +314,7 @@ p {
     width: 100%;
   }
 
-  .flex-item_S {
+  .flex-item {
     padding: 10px;
     margin: auto;
     width: 100%;
@@ -286,8 +325,8 @@ p {
       width: 100%;
     }
   }
-
-  .flex-item_M {
+  @media only screen and #{$medium} {
+  .flex-item {
     padding: 10px;
     margin: auto;
     width: 70%;
@@ -298,7 +337,8 @@ p {
       width: 70%;
     }
   }
-  
+  }
+
   .imagebox-taxi-2 {
     .img {
       background-image: url("/assets/imgs/_taxi-2_250x.png");
@@ -308,7 +348,7 @@ p {
       height: 0%;
       padding-bottom: 100%;
     }
-    @media (min-width: 800px) {
+    @media only screen and (min-width: 800px) {
       .img {
         background-image: url("/assets/imgs/_taxi-2_250x.png");
         background-position: center;
@@ -318,7 +358,7 @@ p {
         padding-bottom: 100%;
       }
     }
-    @media (min-width: 1000px) {
+    @media only screen and (min-width: 1000px) {
       .img {
         background-image: url("/assets/imgs/_taxi-2_450x.png");
         background-position: center;
@@ -330,22 +370,31 @@ p {
     }
   }
 
-  .flex-item_L {
+  @media only screen and #{$large} {
+  .flex-item {
     padding: 10px;
     margin: auto;
     width: 48%;
+    .imagebox-taxi-2 {
+      width: 100%;
+    }
     .imagebox-Hack_for_Italy{
       width: 48%;
     }
   }
-
-  .flex-item_XL {
+  }
+  @media only screen and #{$xlarge} {
+  .flex-item {
     padding: 10px;
     margin: auto;
     width: 48%;
+    .imagebox-taxi-2 {
+      width: 100%;
+    }
     .imagebox-Hack_for_Italy{
       width: 48%;
     }
+  }
   }
 
   .titlebox {
@@ -396,9 +445,20 @@ p {
       width: 100%;
     }
   }
-
-  .img-media_S {
+  @media only screen and #{$small} {
+  .img-media {
+    display: flex;
     width: 100px;
+    //height: 140px;
+    margin: auto;
+    text-align: center;
+    align-content: center;
+    overflow: hidden;
+    img{
+      //width: 140px;
+      width: 100%;
+    }
+  }
   }
 
   .text-media {
@@ -408,14 +468,15 @@ p {
     background-color: #FFFFFF;
     text-align: left;
   }
-
-  .text-media_S {
+  @media only screen and #{$small} {
+  .text-media {
     width: 178px;
     height: 76px;
     padding: 12px 15px;
+    background-color: #FFFFFF;
     text-align: left;
   }
-
+  }
   .media-card {
      display: inline-flex;
      background-color: #FFFFFF;
@@ -454,7 +515,11 @@ p {
     span {
       color: #999999;
       margin-right: 2px;
-        font-size: 12px;
+      font-size: 12px;
+      white-space: nowrap;
+      height: 18px;
+      overflow: hidden;
+      text-overflow: ellipsis;
       a {
         text-decoration: none;
         img {
@@ -464,31 +529,35 @@ p {
       }
     }
   }
-
-  .container-partners_S {
+  @media only screen and #{$small} {
+  .container-partners {
     padding-top: 4%;
     padding-bottom: 0%;
     padding-left: 0%;
     padding-right: 0%;
   }
-
-  .container-partners_M {
+  }
+  @media only screen and #{$medium} {
+  .container-partners {
     padding-top: 4%;
     padding-bottom: 4%;
     padding-left: 4%;
     padding-right: 4%;
   }
-
-  .container-partners_L {
+  }
+  @media only screen and #{$large} {
+  .container-partners {
     padding-top: 4%;
     padding-bottom: 4%;
     padding-left: 4%;
     padding-right: 4%;
   }
-
-  .container-partners_XL {
+  }
+  @media only screen and #{$xlarge} {
+  .container-partners {
     padding-top: 4%;
     padding-bottom: 4%;
     padding-left: 18%;
     padding-right: 18%;
+  }
   }

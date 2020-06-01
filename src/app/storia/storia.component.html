@@ -1,4 +1,4 @@
-<div [class.container-title_S]="isS" [class.container-title_M]="isM" [class.container-title_L]="isL" [class.container-title_XL]="isXL" *ngIf="storia != null">
+<div class="container-title" *ngIf="storia != null">
   <div class="item">  
   <div class="title-header">
       <span class="mat-display-1" innerHtml="{{storia.title}}"></span>
@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<div [class.container-social_S]="isS" [class.container-social_M]="isM" [class.container-social_L]="isL" [class.container-social_XL]="isXL">
+<div class="container-social">
   <div class="item">
   <h4 class="mat-h4"><strong>Condividi su: </strong></h4>
   <div class="button-social">
@@ -34,7 +34,7 @@
   </div>
 </div>
 
-<div class="other" [class.other_S]="isS" [class.other_M]="isM" [class.other_L]="isL" [class.other_XL]="isXL">
+<div class="other">
 <mat-divider></mat-divider>
 <div class="content-other">
   <div class="title-other">
@@ -43,7 +43,7 @@
   </div>
     <div class="list-other">
         <!-- <mat-card [class.example-card_S]="isSmall" [class.example-card_M]="isMedium" [class.example-card_L]="isLarge" *ngFor="let latestStoria of latestStorie" class="pointer" routerLink="/storie/{{latestStoria?.id}}"> -->
-          <mat-card [class.example-card_S]="isS" [class.example-card_M]="isM" [class.example-card_L]="isL" [class.example-card_XL]="isXL" *ngFor="let latestStoria of latestStorie" class="pointer" (click)="onNext(latestStoria?.id)">
+          <mat-card class="example-card pointer" *ngFor="let latestStoria of latestStorie" (click)="onNext(latestStoria?.id)">
           <img mat-card-image src="{{latestStoria?._media_full}}" >
             <mat-card-footer>
               <mat-card-title ellipsis><span innerHtml="{{latestStoria?.title}}"></span></mat-card-title>

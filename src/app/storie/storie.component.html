@@ -1,5 +1,5 @@
 
-<div [class.container-title_S]="isS" [class.container-title_M]="isM" [class.container-title_L]="isL" [class.container-title_XL]="isXL">
+<div class="container-title">
 
   <!-- <div class="test-theme">
   
@@ -23,7 +23,7 @@
   </div> -->
   
   <div class="title-header">
-    <span class="mat-display-1" [class.title_XL]="isXL">Le nostre storie</span>
+    <span class="mat-display-1 title_XL">Le nostre storie</span>
   </div>
   
   <div class="subtitle-header">
@@ -32,9 +32,9 @@
   </div>
 
 </div>
-<div class="container-card" [class.container-card_XL]="isXL">
+<div class="container-card">
   <div class="list-card">
-    <mat-card [class.example-card_S]="isS" [class.example-card_M]="isM" [class.example-card_L]="isL" [class.example-card_XL]="isXL" *ngFor="let storia of storie" class="pointer" routerLink="/storie/{{storia.id}}">
+    <mat-card class="example-card pointer" *ngFor="let storia of storie" routerLink="/storie/{{storia.id}}">
       <img mat-card-image src="{{storia?._media_full}}" >
       <mat-card-footer>
         <mat-card-title ellipsis><span innerHtml="{{storia?.title}}"></span></mat-card-title>
